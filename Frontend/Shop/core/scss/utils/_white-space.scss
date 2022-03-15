@@ -1,0 +1,21 @@
+.white-space {
+  &-nowrap {
+    white-space: nowrap;
+  }
+
+  &-normal {
+    white-space: normal;
+  }
+
+  @include md {
+    &-md {
+      &-nowrap {
+        white-space: nowrap;
+      }
+
+      &-normal {
+        white-space: normal;
+      }
+    }
+  }
+}

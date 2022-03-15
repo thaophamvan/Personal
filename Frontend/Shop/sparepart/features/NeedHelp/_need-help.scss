@@ -1,0 +1,16 @@
+$block-odh: ".odh";
+#{$block-odh} {
+  &-need-help {
+    &__imgwrap {
+      width: $odh-need-help__imgwrap-width;
+      height: $odh-need-help__imgwrap-width;
+      @include md {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    &__title {
+      @include property('text-transform', $odh-need-help__title-text-transform)
+    }
+  }
+}

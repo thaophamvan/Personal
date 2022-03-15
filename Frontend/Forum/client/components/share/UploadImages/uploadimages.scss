@@ -1,0 +1,13 @@
+.bn_editor-comment{
+  &__upload{
+    &-link{            
+      vertical-align: middle;        
+      overflow: hidden;
+    }
+    &-button{
+      opacity: 0;
+      z-index: 2;            
+      top: 0;      
+    }
+  }  
+}

@@ -1,0 +1,54 @@
+// .mobile--hide {
+//   display: none;
+//   @include md {
+//     display: block;
+//   }
+// }
+.disable-click {
+  @include md {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: black;
+  }
+}
+.active-overlay {
+  position: fixed;
+  width: 100%;
+  height: auto;
+}
+.divider {
+  height: 1px;
+  width: 100%;
+  @include property('background-color', $divider-color);
+  margin: 2 * $spacer 0;
+  border: none;
+}
+.divider-vertical {
+    border-right: 1px solid #5555551a;
+    height: 10px;
+    margin: auto 15px;
+}
+.payment-method-list {
+  margin: 10px 0 0;
+  &__item {
+    margin-bottom: 5px;
+    &:not(:last-child) {
+      padding-right: 15px;
+    }
+    span {
+      @include fs(34);
+    }
+  }
+}
+
+.content-wrapper {
+  word-break: break-word;
+  @include ie {
+    word-wrap: break-word;
+  }
+
+  @include edge {
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,14 @@
+include ../../../core/mixinComponents/mixinComponents
+
++modal('deleteWishlistConfirmModal', '')
+  +modalHeader('Delete this favourites list')
+  +modalBody.text--left
+    .d-flex.align-items-center.justify-content-center.pos-absolute.loading(v-show="loading")
+      +LoadingIndicator
+    p.fs-16.lh-24 Are you sure you want to delete “{{deletedWishlist.displayName}}”?
+  +modalFooter
+    .row
+      .col-12.col-md-6
+        button.btn.btn--primary.w-100.mb-10.mb-md-0(@click="confirmDelete") Yes, delete list
+      .col-12.col-md-6
+        button.btn.btn--outline-primary.w-100(@click="cancelDelete") Cancel

@@ -1,0 +1,21 @@
+include ../../../core/mixinComponents/mixinComponents
+
+.find-pnc
+  h4.fs-20.lh-26.primary.mb-10.fs-md-26.lh-md-34 {{title}}
+  .mb-20.mb-md-40
+    p.fs-16.lh-24.secondary.mb-20(v-html="description")
+    .find-pnc__serial-img-wrap.img-center
+      img(:src="img" :alt="img")
+    p.fs-14.lh-20.second-text.md-primary {{exampleImgCaption}}
+  h4.fs-20.lh-26.mb-10.fs-md-26.lh-md-34 {{categoryTitle}}
+  p.fs-16.lh-24.secondary.mb-20 {{categorySecondTitle}}
+  .selectbox.find-pnc__category-list-selectbox.mb-20(ref="categorySelectBox" data-target="selection-category" data-type="select")
+    button.btn.selectbox__btn.js_selectbox__btn(type="button") Select category
+    #selection-category.popup.selectbox__options-popup.js_selectbox__options
+      .selectbox__option.js_selectbox__option(v-for="item of categoryList" :key="item.key" :data-key="item.key") {{item.displayText}}
+  div(v-if="categoryData")
+    p.fs-600.fs-16.lh-24.fw-600 {{categoryData.displayText}}
+    p.fs-16.lh-24.mb-10.mb-md-20 {{categoryData.description}}
+    .find-pnc__category-imgwrap.mb-10.img-center
+      img(class='img' :src='categoryData.img' :alt='categoryData.img')
+    p.fs-14.lh-24.md-primary(v-html="categoryData.hintText")

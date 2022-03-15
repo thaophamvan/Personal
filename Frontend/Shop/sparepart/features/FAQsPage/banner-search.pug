@@ -1,0 +1,21 @@
+include ../../../core/mixinComponents/mixinComponents
+
+.banner-search.pos-relative
+  .banner-search__img-wrapper
+    +PictureLazy("w-100 banner-search__img","images/hero-banner/banner-image-mobile-375x350.png","images/hero-banner/banner-home-krk.png")
+  .banner-search__content-wrapper.btn-back
+    .banner-search__content.md-container
+      .banner-search__content-offset
+        a(href="#").white.js_faqs__banner-search-back-btn.faqs__banner-search-back-btn.text--uppercase.pos-absolute.fs-12.lh-14.fw-600.none-underline.px-15.px-md-0.pt-15.pt.md-20.d-flex.align-items-center
+          span.icon-rightarrow.mr-10
+          | back to faqs
+  .banner-search__content-wrapper
+    .banner-search__content.md-container
+      .banner-search__content-offset
+        .banner-search__text-content.pos-absolute
+          h1.banner-search__title.mb-md-20 Frequently Asked Questions
+        form.form-group.pos-absolute.banner-search__form.w-100.px-15.js_faqs__banner-search-form
+          .pos-relative.banner-search__form-wrapper
+            input.form-control.w-100(placeholder="Enter question or keywords" v-model="searchText").js_faqs__banner-search-input
+            a.pos-absolute.banner-search__form-icon.cursor-pointer.js_faqs__banner-search-icon
+              span.icon-search.fs-18

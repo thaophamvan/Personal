@@ -1,0 +1,130 @@
+$block: ".top-header";
+
+#{$block} {
+  display: none;
+  height: 40px;
+  width: 100%;
+  padding: $top-header-padding;
+  background: $top-header_bg-color;
+  &__my-account {
+    display: flex;
+    align-items: center;
+    height: 40px;
+  }
+  @include md {
+    display: flex;
+  }
+
+  .btn {
+    font-weight: normal;
+  }
+
+  &__acc {
+    top: 40px;
+    right: -20px;
+    background-color: $top-header__acc-bg-color;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+    &-list {
+      margin: 18px 0;
+    }
+    &-btn {
+      align-items: center;
+    }
+
+    &-arrow {
+      margin-left: 5px;
+      font-size: 6px;
+      &.icon-dropdown:before {
+        color: $top-header__acc-arrow-color;
+      }
+    }
+
+    &-item {
+      padding: 12px 20px;
+      font-size: $small-font-size;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+
+      &-link {
+        color: $top-header__acc-item-link-color;
+        @include fs(14);
+        font-weight: normal;
+        text-decoration: none;
+      }
+    }
+
+    &-icon {
+      margin: 0px 9px 0 0;
+      @include fs(16);
+    }
+  }
+
+  .icon-call-us {
+    color: $top-header_icon-call-us-color;
+    @include fs(18);
+  }
+
+  &__sign-out-link {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+  }
+  &__select-languages {
+    .btn-link {
+      color: $top-header__btn-link-color;
+      .icon-dropdown {
+        @include fs(6);
+        margin-left: 4px;
+      }
+    }
+  }
+
+  &__sign-out {
+    margin-left: 3 * $spacer;
+  }
+  .btn-link {
+    color: $top-header__btn-link-color;
+    text-transform: $top-header__btn-link-text-tranform;
+  }
+  &__site-name.btn {
+    text-transform: $top-header__site-name-text-transform;
+  }
+}
+
+.hi-user {
+  background: $hi-user_bg;
+  padding: 15px;
+  text-align: center;
+  color: $hi-user_color;
+  font-weight: 600;
+  @include device {
+    width: 91%;
+    margin: auto;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  @include md {
+    height: auto;
+  }
+}
+
+.header--container {
+  height: 70px;
+  @include md {
+    height: auto;
+  }
+}
+
+.top-nav--is-toggled.active-overlay {
+  .header {
+    box-shadow: none;
+  }
+}

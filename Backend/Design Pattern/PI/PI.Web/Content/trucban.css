@@ -1,0 +1,64 @@
+.header-slide {
+    width: 100%;
+    
+    text-align: center;
+    background-color: #ffffff;
+    color: #039;
+    border-bottom: 3px solid #e7e7e7;
+}
+.header-text {
+    font: bold 2em Arial, Helvetica, sans-serif; 
+}
+.header-sub-text {
+     font: bold 2em Arial, Helvetica, sans-serif; 
+}
+.header-date {
+    font: bold 2em Arial, Helvetica, sans-serif;
+    margin: 0 0 5px 0;
+}
+
+table, th, td {
+    border: 1px solid gold;
+    border-collapse: collapse;
+}
+
+.pos-relative {
+    position: relative;
+}
+.block-slide {
+    margin: 0;
+    padding: 20px;
+    background: #507CD1;
+    position: absolute;
+    font:1.9em Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+.vung-trucchihuy {
+    margin: 0;
+}
+.vun-tructacchien {
+    margin: 0;
+}
+.bang-trucchihuy {
+    width: 100%;
+}
+.ten-donvi {
+    font: bold 1em Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+.ten-hinhthuctruc {
+    font: bold 1em Arial, Helvetica, sans-serif;
+    text-align: left;
+}
+.bang-trucbantacchien{ width: 100%;}
+.bang-trucchihuy,.bang-trucbantacchien {
+    font: 1em Arial, Helvetica, sans-serif
+}
+th, td {
+    padding: 2px 5px 2px 5px;
+    text-align: center;    
+}

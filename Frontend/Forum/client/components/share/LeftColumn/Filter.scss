@@ -1,0 +1,108 @@
+.bn_topbar__setting{
+  &__filter-asread{
+    .material-icons{
+      font-size: 28px;
+    }
+    .tooltip{
+      top: 38px;
+      right: 56px;
+    }
+  }
+  &__filter-orderby {
+    align-self: center;
+
+    &__dropdown{
+      font-size: 12px;
+      position: relative;    
+      text-decoration: none;
+      color: #69abf5;
+      border-radius: 3px;
+      border: 1px solid #c5c5c5;
+      background: #fff;
+      height: 24px;
+      padding-right: 24px;
+      margin-left:8px;
+
+      &:before {
+        content: 'keyboard_arrow_down';
+        position: absolute;
+        top: 1px;
+        right: 0;
+        color: #5c5c5c;
+        font-size: 24px;
+      }
+    }
+
+    &__list-options{
+      position: absolute;
+      z-index: 10;
+      background: #fff;
+      top: 25px;
+      right: 0;
+      margin: 0;
+      padding: 3px 8px;
+      border: 1px solid #e4e3e1;
+      font: 400 12px Helvetica Neue,Helvetica,Arial sans-serif;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+      list-style: none;
+      width: 150px;
+      display: inline-block;   
+      cursor: auto !important;      
+    }
+    &__item-text{
+      font-weight: bold;
+      color: #000;
+      font-size: 14px;
+      padding: 4px 0;
+      outline: none;
+    }
+    &__item-thread,&__item-comment{
+      color: #000;
+
+      &.selected{        
+        a{
+          &:before {
+            content: 'done';
+            position: absolute;
+            color: #000;
+            font-size: 19px;
+            top: 0;
+            left: 0;            
+          }
+        }
+      }
+      a{
+        padding: 3px 0 3px 22px;
+        position: relative;
+        display: block;
+        cursor: pointer;
+      }
+    }
+    &__item-thread{
+      
+    }
+    &__item-comment{
+      
+    }
+    .material-icons {
+        font-size: 23px;
+        color: #000;
+    }    
+
+    &.no-access{
+      pointer-events: none;
+      cursor: default;
+
+      .bn_topbar__setting__filter-orderby__dropdown{
+        border: 1px solid #d3d3d3;
+        background:transparent;
+
+        &:before, .material-icons {
+          color: #d3d3d3;
+        }        
+      }
+    }
+  }
+}
+
+

@@ -1,0 +1,11 @@
+.idea/
+.DS_Store
+yarn.lock
+.package-lock.json
+
+node_modules/
+tmp/
+.env
+*.swp
+/.npmrc
+build

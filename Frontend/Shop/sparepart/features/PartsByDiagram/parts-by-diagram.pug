@@ -1,0 +1,50 @@
+include ../../../core/mixinComponents/mixinComponents
+
+.parts-by-diagram.js_parts-by-diagram-component
+  .parts-by-diagram__header-wrapper
+    .parts-by-diagram__header
+      .parts-by-diagram__filters
+        p.parts-by-diagram__filters-text Shop by part diagrams for “94418490600”
+        .part-by-diagram__filters-btns
+          button.btn.parts-by-diagram__filter-btn.js_parts-by-diagram__filter-btn.active(data-value="D") Door
+          button.btn.parts-by-diagram__filter-btn.js_parts-by-diagram__filter-btn(data-value="E") Electrical equipment
+          button.btn.parts-by-diagram__filter-btn.js_parts-by-diagram__filter-btn(data-value="C") Control panel
+          button.btn.parts-by-diagram__filter-btn.js_parts-by-diagram__filter-btn(data-value="H") Housing
+      .parts-by-diagram__need-help-content
+        a(href="#").parts-by-diagram__need-help.js_parts-by-diagram__need-help Need help?
+        .parts-by-diagram__need-help-popup
+          b#js_right-nav_part-diagrams How to use the parts diagrams
+          br
+          | Call us on 
+          b 1300 666 019
+
+  .parts-by-diagram__body-wrapper.js_parts-by-diagram(diagram-code = "94418490600")
+    .parts-by-diagram__body.row
+      .col-md-5
+        .parts-by-diagram__find-part.form-group.js_diagram__search-area
+          label.parts-by-diagram__find-part-label Enter diagram code to find part
+          input.form-control.js_diagram__search-input(type="text" placeholder="Type in diagram code")
+          span.icon-search.js_diagram__search-icon
+          .diagram-auto-complate.js_diagram-auto-complete
+        .parts-by-diagram__diagram-img-wrapper
+          +ImgLazy("", "images/tech-spec.jpg", "diagram-img")
+      .col-md-6.offset-md-1
+        p.parts-by-diagram__showing-text Showing all 
+          strong ‘door’
+          |&nbsp;parts
+        .js_product-part-list-wrapper  
+          ul.row.js_product-part-list
+          .d-flex.justify-content-center
+            .loading-dots.product-list__loading-more.hide.js_product-part-list__loading-more
+              .loading-dots--dot.loading-dots__one
+              .loading-dots--dot.loading-dots__two
+              .loading-dots--dot.loading-dots__three
+              .loading-dots--dot.loading-dots__four
+            button.btn.product-list__load-more-button.js_product-part-list__load-more-button Show more products
+    h4 How tou se our part diagrams
+    p.text--bold If you're unsure about the name of your part, these diagrams are what you need.
+    p 1. Find the part on the drawing and take a note of the number
+    p 2. Find the corresponding number on the product list to the right of the drawing
+    p 3. Click on your part and buy in confidence
++AddToWishlistModal
+

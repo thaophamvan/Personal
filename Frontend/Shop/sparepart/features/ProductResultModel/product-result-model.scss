@@ -1,0 +1,86 @@
+$block: ".product-result-model";
+
+#{$block} {
+  &__img-wrapper {
+    height: 105px;
+    @include md {
+      height: 160px;
+    }
+  }
+
+  &__find-pnc {
+    margin-right: -15px;
+    margin-left: -15px;
+    @include md {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  .selectbox {
+    width: 100%;
+    @include md {
+      width: 420px;
+    }
+  }
+
+  &__view-part-diagrams {
+    margin-right: -15px;
+    margin-left: -15px;
+
+    @include md {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    button {
+      margin: 0 10px 10px 0;
+      padding: 8px 15px 7px;
+      border: 1px solid $primary;
+      color: $primary;
+      background-color: $white;
+      line-height: 17px;
+
+      &.active {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  &__diagram-img-wrapper {
+    height: 300px;
+    @include md {
+      height: 420px;
+      img {
+        margin: 0;
+      }
+    }
+  }
+
+  &__find-part {
+    .icon-search {
+      top: calc(50% - 7px);
+      right: 20px;
+    }
+    @include md {
+      background-color: $primary-lighten-1;
+      opacity: 0.7;
+
+      .form-control {
+        color: $primary-lighten-1;
+        width: 440px;
+      }
+    }
+  }
+
+  &__find-part-title {
+    @include md {
+      color: $white;
+    }
+  }
+
+  h1 {
+    font-weight: $font-weight-semibold;
+  }
+}

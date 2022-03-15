@@ -1,0 +1,231 @@
+.hero-banner {
+  position: relative;
+  display: none;
+  @include property('background', $hero-banner_bg);
+  &__img {
+    &:after{
+      opacity: 0.3;
+      background: black;
+      position: absolute;
+      z-index: 0;
+      @include property('content', $hero-banner__img-after-content);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      max-height: 500px;
+      min-height: 320px;
+      object-fit: cover;
+      @include md {
+        min-height: 400px;
+      }
+    }
+    @include md {
+      min-height: 400px;
+    }
+    //fix lazy load on edge
+    min-height: 1px;
+  }
+  &__content {
+    position: relative;
+    @include md {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      max-width: 1389px;
+      padding: 0 105px;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+  &__wrapper {
+    width: 520px;
+    padding: 40px;
+    @include device {
+      width: 100%;
+      max-width: 91%;
+      flex: 0 0 91%;
+      padding: 20px;
+      margin: -40px auto 0;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  &__heading {
+    margin: -4px 0 10px 0;
+    text-align: left;
+    &.small-title,
+    &.small-title span {
+      @include fs(40);
+      font-weight: 600;
+      line-height: 1.111;
+    }
+  }
+  .btn.btn--primary {
+    margin: 35px 0 0;
+    text-decoration: none;
+    font-weight: 600;
+    @include fs(14);
+    padding: 14px 32px;
+  }
+  &.small-banner {
+    max-height: 352px;
+    overflow: hidden;
+    .hero-banner {
+      &__content {
+        max-height: 352px;
+        @include device {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: 0;
+          transform: translate(-50%, -50%);
+          width: 91%;
+          max-width: 420px;
+        }
+      }
+      &__heading {
+        color: $hero-banner_small-banner-heading-color;
+        @include fs(20);
+        text-align: left;
+        @include md {
+          @include fs(30);
+        }
+      }
+      &__wrapper {
+        background: none;
+      }
+    }
+    .btn.btn--primary {
+      @include fs(14);
+    }
+  }
+  &:first-child{
+    display: block;
+  }
+
+  &.theme {
+    .hero-banner {
+      &__content {
+        color: $hero-banner_theme-content-color;
+      }
+      &__heading {
+        color: $hero-banner_theme-heading-color $white;
+      }
+    }
+    .btn.btn--primary {
+      background: $hero-banner_theme-btn-bg;
+      color: $hero-banner_theme-btn-bg-color;
+    }
+    p {
+      color: $hero-banner_theme-text;
+    }
+  }
+
+  &.theme--white,
+  &.theme--default {
+    .hero-banner {
+      &__wrapper {
+        background:$primary;
+        opacity: $hero-banner__wrapper-opacity;
+      }
+      &__heading {
+        color: $primary;
+        &.small-title,
+        span,
+        p {
+          color: $primary;
+        }
+      }
+    }
+    .btn.btn--primary {
+      background: $white;
+      color: $primary;
+    }
+    p {
+      color: $primary;
+    }
+  }
+
+  &.theme--none {
+    .hero-banner {
+      &__wrapper {
+        background:$primary;
+        opacity: $hero-banner__wrapper-opacity;
+      }
+      &__heading {
+        color: $primary;
+        &.small-title,
+        span,
+        p {
+          color: $primary;
+        }
+      }
+    }
+    .btn.btn--primary {
+      background: $white;
+      color: $primary;
+    }
+    p {
+      color: $primary;
+    }
+  }
+
+  &.theme--brown {
+    .hero-banner {
+      &__wrapper {
+        background: $hero-banner__wrapper-bg-theme--brown-sm;
+        @include md{
+          background: $hero-banner__wrapper-bg-theme--brown-md;
+        }
+        opacity: $hero-banner__wrapper-opacity;
+      }
+      &__heading {
+        color: $hero-banner__heading-color--theme--brown;
+        &.small-title,
+        span,
+        p {
+          color: $hero-banner__heading-color--theme--brown;
+        }
+      }
+    }
+    .btn.btn--primary {
+      background: $white;
+      color: $primary;
+    }
+    p {
+      color: $hero-banner__p-color;
+    }
+  }
+}
+.hero-banner-slider {
+  .glide__bullets{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 8;
+    .glide__bullet{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      margin: 0 8px;
+      padding: 0;
+      &--active{
+        background: $hero-banner-slider_glide-bullets-active-bg;
+      }
+    }
+  }
+}
+
+.glide--slider{
+  .hero-banner{
+    display: block;
+  }
+}

@@ -1,0 +1,32 @@
+$block: ".popup";
+
+#{$block} {
+  &.show {
+    display: block;
+  }
+  &__backdrop {
+    z-index: 17;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+  }
+
+  &__arrow-box {
+    position: relative;
+    height: 13px;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      border-color: transparent transparent $white transparent;
+      border-style: solid;
+      border-width: 0px 20px 13px 20px;
+      height: 0px;
+      width: 0px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.un-order-list {
+  li {
+    position: relative;
+    padding-left: 20px;
+    &::before {
+      position: absolute;
+      content: "";
+      top: calc(50% - 1px);
+      left: 0;
+      width: 2px;
+      height: 2px;
+      background-color: $primary;
+    }
+  }
+}

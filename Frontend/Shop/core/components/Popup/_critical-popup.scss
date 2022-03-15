@@ -1,0 +1,9 @@
+$block: ".popup";
+
+#{$block} {
+  position: absolute;
+  overflow: hidden;
+  display: none;
+  z-index: 12;
+  min-width: 190px;
+}

@@ -1,0 +1,2 @@
+MSBuild SimpleFormsViewsManager.csproj /target:CleanUp
+MSBuild TestSimpleFormsViewsManager\TestSimpleFormsViewsManager.csproj /target:CleanUp

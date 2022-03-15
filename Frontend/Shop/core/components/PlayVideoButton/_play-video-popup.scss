@@ -1,0 +1,38 @@
+$popup-video: ".popup__video";
+$modal: ".modal";
+#{$popup-video} {
+  .close-modal-icon{
+    background-color: $white;
+    color: $dark;
+    border-radius: 1000px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0;
+    right: -15px;
+    top: -15px;
+  }
+}
+
+
+#{$modal} {
+  &#{$popup-video}{
+    .modal-inner{
+      top: 15%;
+      width: 85%;
+      @include md {
+        top: 20%;
+        width: auto;
+      }
+    }
+    .modal-content{
+      iframe{
+        width: 100%;
+        @include md {
+          width: auto;
+          min-width: 994px;
+        }
+      }
+    } 
+  }
+}

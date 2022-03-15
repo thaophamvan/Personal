@@ -1,0 +1,19 @@
+.find-pnc {
+  &__serial-img-wrap {
+    height: 100px;
+    @include md {
+      height: 160px;
+    }
+  }
+
+  &__category-list-selectbox {
+    width: 100%;
+  }
+
+  &__category-imgwrap {
+    height: 194px;
+    @include md {
+      height: 310px;
+    }
+  }
+}

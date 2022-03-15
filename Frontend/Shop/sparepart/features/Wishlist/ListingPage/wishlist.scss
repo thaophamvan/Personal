@@ -1,0 +1,91 @@
+$block: ".wishlist";
+
+#{$block} {
+  min-height: 50vh;
+  position: relative;
+  &__empty-wishlist-btn {
+    width: 270px;
+    @include md {
+      width: 220px;
+    }
+  }
+
+  &__sortby-selectbox {
+    width: 100%;
+    @include md {
+      width: 220px;
+    }
+  }
+
+  &__product-imgwrap {
+    height: 120px;
+  }
+
+  &__products-img {
+    border-radius: 2px;
+    border: 1px solid $light-gray;
+    min-height: 345px;
+  }
+
+  &__create-new-btn {
+    @include md {
+      width: 200px;
+    }
+  }
+
+  &__product-mask {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.25;
+  }
+
+  &__product-mask-number {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .loading {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+  }
+
+  .loading-input {
+    top: calc(50% - 15px);
+    right: rem(10);
+  }
+
+  &__loading {
+    .loading-dots {
+      align-self: auto;
+      padding-top: 10%;
+    }
+  }
+
+  &__title {
+    font-family: $wishlist__title-font-family;
+    text-transform: $wishlist__title-text-transform;
+  }
+  &__item{
+    &-content{
+      @include property('background', $wishlist__item-bg);
+      @include property('padding', $wishlist__item-padding);
+      &-img{
+        @include property('border', $wishlist__item-img-border);
+      }
+      .primary, *, &-content-description, &-delete{
+        @include property('color', $wishlist__item-text-color);
+      }
+    }
+    &.py-25{
+      @include property('padding-top', $wishlist__item-py-top);
+      @include property('padding-bottom', $wishlist__item-py-bottom);
+    }
+  }
+}

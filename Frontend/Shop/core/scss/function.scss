@@ -1,0 +1,18 @@
+@function rem($value) {
+  @return strip-unit($value) / 16 + rem;
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function isNotEmpty($value) {
+  @if $value == "" or $value == () or length($value) == 0 {
+    @return false;
+  }
+  @return true;
+}

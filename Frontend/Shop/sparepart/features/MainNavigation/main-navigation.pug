@@ -1,0 +1,39 @@
+nav.top-nav.px-15.js_top-nav.px-md-40.pos-relative
+  .pos-relative.justify-content-between.align-items-center.d-flex.w-100.h-100
+    .top-nav__burger.js_top-nav__burger.cursor-pointer.d-md-none
+      i.top-nav__burger-line
+      i.top-nav__burger-line
+      i.top-nav__burger-line
+    .pos-absolute.top-nav__logo.d-flex.justify-content-center.align-items-center.pos-md-static.h-100
+      .d-flex.align-items-center.h-100
+        a(href="/")
+          img.top-nav__logo-img(src="images/icons/test_logo_sg.svg" alt="test Australia")
+        .d-none.d-md-flex.align-items-center.ml-70.pl-15.h-100
+          .h-100.d-flex.align-items-center.top-nav__category-title
+            a(role="button").fs-16.lh-16.btn.btn-link--primary.fw-500.js_top-nav__main-menu-btn Products
+          .h-100.d-flex.align-items-center.top-nav__category-title
+            a(href="#").fs-16.lh-16.btn.btn-link--primary.fw-500 Supports
+          .h-100.d-flex.align-items-center.top-nav__category-title
+            a(href="#").fs-16.lh-16.btn.btn-link--primary.fw-500 Promotions
+    .d-flex.align-items-center
+      span.top-nav__search-icon.icon-search.js_top-nav__search-icon.fs-20.mr-25.cursor-pointer(data-component="propagationStopper")
+      .top-nav__close-search-icon.js_top-nav__close-search-icon.cursor-pointer.fs-20.mr-25.d-none
+        span.icon__cross
+      div.top-nav__basket-icon.js-modal.pos-relative.d-inline-flex.cursor-pointer(data-modal="miniCart" data-component="minicart")
+        span.icon-cart.fs-20
+        span.top-nav__basket-count.js_top-nav__basket-count.pos-absolute.fs-12.lh-14.white.fw-600.d-flex.align-items-center.justify-content-center 1
+  .top-nav__search-area.js_top-nav__search-area(data-component="propagationStopper").d-none
+    form.js_top-nav__search-form.top-nav__search-form(data-site-search-url="/search-part/?searchtext=")
+      input.top-nav__search-input.js_top-nav__search-input(placeholder="Search spare parts, accessories" type="text" aria-label="search")
+    span.top-nav__search-area-icon.icon-search.cursor-pointer.js_top-nav__submit-search-icon
+    .top-nav__search-results-wrapper
+      .js_top-nav__search-results
+      .top-nav__need-help-search.d-md-none
+        .span.top-nav__need-help-search__label Need help with your search?
+        a.js_top-nav__find-pnc-btn.btn-link.text--primary How do I find my product number (PNC)?
+        a(href="#").btn-link.text--primary Visit the FAQs page
+        a(href="#").btn-link.text--primary Call us on 1300 666 019
+.top-nav__menu--container.js_top-nav__menu--container
+  .top-nav__menu-body-wrapper.js_top-nav__menu-body-wrapper
+  .top-nav__menu-close-icon.js_top-nav__menu-close-icon.cursor-pointer.d-flex.align-items-center.justify-content-center.bg-primary-lighten-1.d-md-none
+    span.icon-add.fs-20

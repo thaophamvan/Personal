@@ -1,0 +1,30 @@
+$block = ".checkbox-field";
+
+{$block} {
+  display: flex;
+  align-items: flex-start;
+  border: 0;
+  background: none;
+
+  &__label {
+    margin: 2px 0 0 4px;
+    text-align: left;
+  }
+
+  .icon {
+    flex: 0 0 auto;
+    fill: $c-gray-darker;
+  }
+
+  &:focus {
+    outline: 0;
+
+    .icon {
+      border: 1px dotted $c-gray-base;
+    }
+  }
+
+  &[disabled] {
+    opacity: .6;
+  }
+}

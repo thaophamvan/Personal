@@ -1,0 +1,221 @@
+.card-img-bg {
+    position: relative;
+    height: 100%;
+    @include device {
+        margin-top: 20px;
+    }
+    > img {
+        min-height: 297px;
+    }
+    &:after {
+        position: absolute;
+        content: "";
+        @include property('background', $card-img-bg_after-background);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    &__icon
+    {
+        height: 76px;
+        width : 76px;
+    }
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        padding: 20px 15px 100px;
+        @include md {
+            padding: 40px 40px 100px 40px;
+        }
+    }
+    &__title {
+        color: $card-img-bg__title-color;
+        line-height: 38px;
+        margin-bottom: 15px;
+        text-align: left;
+        @include fs(32);
+        font-weight: $card-img-bg__title-font-weight;
+        text-transform: $card-img-bg__title-text-transform;
+        font-family: $card-img-bg__title-font-family;
+        p,
+        span {
+            font-weight: 600;
+            @include fs(32);
+            @include device {
+                line-height: 1.25;
+            }
+        }
+    }
+    &__description {
+        color: $card-img-bg__description-color;
+        line-height: 24px;
+    }
+    &__link .btn-link {
+        position: absolute;
+        bottom: 40px;
+        left: 15px;
+        background: $card-img-bg__link-btn-bg-color;
+        color: $card-img-bg__link-btn-color;
+        font-size: $btn-font-size;
+        font-weight: $card-img-bg__link-btn-font-weight;
+        padding: $card-img-bg__link-padding;
+        border-radius: $card-img-bg__link-radius;
+        border: $card-img-bg__link-btn-border;
+        text-transform: $card-img-bg__link-btn-text-transform;
+        @include md {
+            left: 40px;
+        }
+        &:hover{
+            background-color: $card-img-bg__link-btn-hover-bg-color;
+            opacity: $card-img-bg__link-btn-hover-opacity;
+            border: $card-img-bg__link-btn-hover-border;
+            color: $card-img-bg__link-btn-hover-color;
+        }
+    }
+    .block-img-text__link a {
+        &:after {
+            border-top: 1px solid $card-img-bg__img-text__link-border;
+            border-left: 1px solid $card-img-bg__img-text__link-border;
+        }
+        &:before {
+            border: 1px solid $card-img-bg__img-text__link-border;
+        }
+    }
+    .warranty {
+        margin-bottom: 0;
+        a {
+            color: $white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+            padding-right: 25px;
+            text-decoration: none;
+            &:before {
+                content: "";
+                width: 15px;
+                height: 15px;
+                border: 1px solid $card-img-bg__warranty-border;
+                border-radius: 50%;
+                position: absolute;
+                right: 0;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                border-top: 1px solid $card-img-bg__warranty-border;
+                border-left: 1px solid $card-img-bg__warranty-border;
+                right: 6px;
+                transform: rotate(135deg);
+                top: 5px;
+            }
+        }
+    }
+    &.secondary-bg {
+        &:after {
+            opacity: 0.8;
+        }
+    }
+    /* &.theme{
+        .card-img-bg{
+            &__content, &__title, &__description{
+                color: white;
+            }
+            &__link .btn-link{
+                background: white;
+            }
+        }
+    }
+    &.theme-none{
+        &:after{
+            background: none;
+        }
+        .card-img-bg{
+            &__title, &__description{
+                color: $card-img-bg__title;
+            }
+            &__link .btn-link{
+                background: $theme-none_btn-bg;
+                border-color: $theme-none_btn-bg;
+                color: white;
+            }
+        }
+    }
+    &.theme-white, &.theme-default{
+        &:after{
+            background: #fff;
+        }
+        .card-img-bg{
+            &__title, &__description{
+                color: $primary;
+            }
+            &__link .btn-link{
+                background: $primary;
+                color: white;
+            }
+        }
+    }
+    &.theme-black{
+        &:after{
+            background: black;
+        }
+        .card-img-bg{
+            &__title, &__description{
+                color: $white;
+            }
+            &__link .btn-link{
+                background: $card-img-bg_theme-black-link-bg;
+                color: $card-img-bg_theme-black-link-color;
+            }
+        }
+    }
+    &.theme-dark-gray{
+        &:after{
+            background: #333333;
+        }
+        .card-img-bg{
+            &__title, &__description{
+                color: $white;
+            }
+            &__link .btn-link{
+                background: $card-img-bg_theme-dark-gray-link-bg;
+                color: $card-img-bg_theme-dark-gray-link-color;
+            }
+        }
+    }
+    &.theme-gray{
+        &:after{
+            background: #999999;
+        }
+        .card-img-bg{
+            &__title, &__description{
+                color: black;
+            }
+            &__link .btn-link{
+                background: $card-img-bg_theme-gray-link-bg;
+                color: $card-img-bg_theme-gray-link-color;
+            }
+        }
+    }
+    &.theme-light-gray{
+        &:after{
+            background: #c1c1c1;
+        }
+        .card-img-bg{
+            &__title, &__description{
+                color: black;
+            }
+            &__link .btn-link{
+                background: $card-img-bg_theme-light-gray-link-bg;
+                color: $card-img-bg_theme-light-gray-link-color;
+            }
+        }
+    } */
+}

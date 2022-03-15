@@ -1,0 +1,38 @@
+.general-search-result(data-component='generalSearchResult')
+  .general-search-result__container
+    a(href="/").general-search-result__back-btn.text--uppercase
+        span.icon-dropdown
+        span BACK TO HOME
+    .general-search-result__info.row.align-items-center
+      .col-12.general-search-result__info-text There are no results for&nbsp;
+        span.general-search-result__info-keyword.text--bold.js_keyword "sealler"
+    .general-search-result__suggestion.row
+      .col-12.col-md-5.offset-md-1
+        .general-search-result__suggestion-block
+          .general-search-result__suggestion-title Search tips
+          ul
+            li Check your spelling 
+            li Try a different search term 
+            li For the best results enter your product number 
+            li (PNC) to find parts compatible with your appliance
+        .general-search-result__suggestion-block
+          .general-search-result__suggestion-title Need help with your search?
+          ul
+            li <a href="#" class="js_find-pnc-btn">How do I find my product number (PNC)?</a>
+            li <a href="#"> Visit the FAQs page</a>
+            li <a href="tel:1300666019"> Call us on 1300 666 019</a>
+      .col-12.col-md-5
+        form.general-search-result__suggestion-search-form.js_search-form
+          .form
+            .form-group
+              label.form-label Enter Model Number or PNC to find parts
+              input.form-control.js_pnc-or-model-number__input(placeholder = "Enter your model number or PNC")
+              a.general-search-result__suggestion-search-find-pnc-btn.cursor-pointer.js_find-pnc-btn(href="#") How do I find my product number (PNC)?
+            .form-group
+              label.form-label Add part type to filter your search&nbsp;
+                span.text-muted (optional)
+              input.form-control.js_part-input(placeholder = "Enter part description or part number")
+          .hero-banner__tab-btn
+            button.btn.btn--primary.expanded View spare parts
+
+        

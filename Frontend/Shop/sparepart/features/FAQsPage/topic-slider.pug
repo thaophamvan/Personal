@@ -1,0 +1,16 @@
+.pt-30.pb-50.faqs__topic-banner.py-md-70
+  .d-flex.align-items-center.justify-content-between.container.d-md-block.mb-10.mb-md-20
+    .text--center
+      h2.faqs__topic-title.primary FAQs by topic
+    a.text--uppercase.fs-14.lh-20.primary.fw-600.d-md-none.btn.btn-link--primary(@click="toggerShowSlider" v-if="enableShowAll") {{ !showAll ? 'view all' : 'show less'}}
+  .px-md-40.px-15
+    .glide(ref="glide")
+      .glide__track(data-glide-el="track" :class="{ 'no-slider': showAll }").align-items-center
+        .glide__slides.justify-content-center
+          .glide__slide(v-for="topic of topics" @click="handleSelectTopic(topic)" )
+            .faqs__category-img-wrapper.d-flex
+              img.lazyImg(src="/dist/images/default-img-bg.svg" alt="" :data-src="topic.img")
+            .text--center.fs-16.lh-20.primary.pt-10.faqs__category-title {{topic.displayName}}
+      .glide__arrows(data-glide-el="controls" v-show="showArrowBtn")
+        button.glide__arrow.glide__arrow--left(data-glide-dir="<")
+        button.glide__arrow.glide__arrow--right(data-glide-dir=">")

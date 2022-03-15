@@ -1,0 +1,149 @@
+.product-filter
+  h2.product-filter__title.d-none.d-md-block Filter
+  h2.btn-link.product-filter__title.d-md-none.is-active.cursor-pointer(data-component="popup" data-target="productFilter" data-type="collapse" data-root="productFilter") Filter
+  #productFilter.product-filter__body.collapse.js_product-filter__body
+    .js_product-filter__body-wrapper
+      .product-filter__header
+        .d-flex.justify-content-between.align-items-center
+          span.product-filter__applied-filters-title Applied Filter
+          a.btn.btn-link.product-filter__clean-all-filter.js_product-filter__clean-all-filter Clear All
+        .product-filter__applied-filters-wrapper.js_product-filter__applied-filters-wrapper
+          .product-filter__applied-filters.js_product-filter__applied-filters
+            span.product-filter__applied-filter-item(data-text="French Door" data-key="Type" data-link) French Door
+              span.product-filter__remove-filter.icon__cross.js_product-filter__remove-filter
+      ul.product-filter__filters.js_product-filter__filters
+        li.product-filter__filter
+          .btn.btn-link.product-filter__filter-title.text--primary.text--uppercase.is-active(data-component="popup" data-target="filterType" data-type="collapse" data-parent="productFilter" data-root="productFilter") Type
+          #filterType.collapse.show
+            ul.product-filter__filter-items
+              li.product-filter__filter-item.show.js_product-filter__filter-item(data-key="Type" data-text="All" data-link) All (30)
+              li.product-filter__filter-item.show.js_product-filter__filter-item.product-filter__filter-item.show--active(data-key="Type" data-text="French Door" data-link) French Door (10)
+              li.product-filter__filter-item.show.js_product-filter__filter-item(data-key="Type" data-text="Side by Side" data-link) Side by Side (11)
+              li.product-filter__filter-item.show.js_product-filter__filter-item(data-key="Type" data-text="Bottom Freezer" data-link) Bottom Freezer (1)
+              li.product-filter__filter-item.show.js_product-filter__filter-item(data-key="Type" data-text="Top Freezer" data-link) Top Freezer (0)
+        li.product-filter__filter
+          .btn.btn-link.product-filter__filter-title.text--primary.text--uppercase(data-component="popup" data-target="filterSpecifications" data-type="collapse" data-parent="productFilter" data-root="productFilter") Specifications
+          #filterSpecifications.collapse
+            ul.product-filter__filter-items
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Specifications" data-text="68L").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label 68L
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Specifications" data-text="70L").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label 70L
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Specifications" data-text="71L").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label 71L
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Specifications" data-text="72L").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label 72L
+        li.product-filter__filter
+          .btn.btn-link.product-filter__filter-title.text--primary.text--uppercase(data-component="popup" data-target="filterBrand" data-type="collapse" data-parent="productFilter" data-root="productFilter") brand
+          #filterBrand.collapse
+            ul.product-filter__filter-items
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Brand" data-text="AEG" ).checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label AEG
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Brand" data-text="test").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label test
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Brand" data-text="Kelvinator").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label Kelvinator
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Brand" data-text="simpson").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label Simpson
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Brand" data-text="westinghouse").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label Westinghouse
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Brand" data-text="zanussi").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label Zanussi
+        li.product-filter__filter
+          .btn.btn-link.product-filter__filter-title.text--primary.text--uppercase(data-component="popup" data-target="filterPrice" data-type="collapse" data-parent="productFilter" data-root="productFilter") Price
+          #filterPrice.collapse
+            ul.product-filter__filter-items
+              li.product-filter__filter-item.show
+                label.radio
+                  input.radio__input(type="radio" name="Price" data-key="Price" data-text="$0 to $500" ).js_product-filter__filter-item
+                  span.radio__checkmark
+                  span.radio__label $0 to $500
+              li.product-filter__filter-item.show
+                label.radio
+                  input.radio__input(type="radio" name="Price" data-key="Price" data-text="$500 to $1000").js_product-filter__filter-item
+                  span.radio__checkmark
+                  span.radio__label $500 to $1000
+              li.product-filter__filter-item.show
+                label.radio
+                  input.radio__input(type="radio" name="Price" data-key="Price" data-text="$1000 to $1500").js_product-filter__filter-item
+                  span.radio__checkmark
+                  span.radio__label $1000 to $1500
+              li.product-filter__filter-item.show
+                label.radio
+                  input.radio__input(type="radio" name="Price" data-key="Price" data-text="$1500 to $2000").js_product-filter__filter-item
+                  span.radio__checkmark
+                  span.radio__label $1500 to $2000
+              li.product-filter__filter-item.show
+                label.radio
+                  input.radio__input(type="radio" name="Price" data-key="Price" data-text="$2000 to $3000").js_product-filter__filter-item
+                  span.radio__checkmark
+                  span.radio__label $2000 to $3000
+        li.product-filter__filter
+          .btn.btn-link.product-filter__filter-title.text--primary.text--uppercase(data-component="popup" data-target="filterConditions" data-type="collapse" data-parent="productFilter" data-root="productFilter") Conditions
+          #filterConditions.collapse
+            ul.product-filter__filter-items
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Condition" data-text="New").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label New
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Condition" data-text="T2").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label T2
+        li.product-filter__filter
+          .btn.btn-link.product-filter__filter-title.text--primary.text--uppercase(data-component="popup" data-target="filterStyle" data-type="collapse" data-parent="productFilter" data-root="productFilter") Style
+          #filterStyle.collapse
+            ul.product-filter__filter-items
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Style" data-text="Style Name 1").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label Style Name 1
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Style" data-text="Style Name 2").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label Style Name 2
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Style" data-text="Style Name 3").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label Style Name 3
+              li.product-filter__filter-item.show
+                label.checkbox
+                  input(type="checkbox" data-key="Style" data-text="Style Name 4").checkbox__input.js_product-filter__filter-item
+                  span.checkbox__checkmark
+                  span.checkbox__label Style Name 4
+

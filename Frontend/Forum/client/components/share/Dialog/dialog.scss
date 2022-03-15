@@ -1,0 +1,12 @@
+.bn_help-box{
+    z-index: 12;
+}
+.bn_help-box__overlay {
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba(10,10,10,.86);
+}

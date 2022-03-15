@@ -1,0 +1,17 @@
+include ../../../core/mixinComponents/mixinComponents
+
+li.product-list__product.col-12
+  .product-list__product-wrapper
+    .product-list__product-flag.text--uppercase.text--xsmall.text--center.text--white offer
+    .product-list__product-body
+      .product-list__product-media
+        a.product-list__product-img-link.btn-link(href="{{Url}}")
+          img(class="product-list__product-img" src="{{itemImage}}" alt="{{itemName}}")
+      .product-list__product-info
+        a(href="{{Url}}").btn-link.product-list__product-name {{itemName}}
+        a(href="{{Url}}").btn-link.product-list__product-name {{itemType}}
+        a(href="{{Url}}").btn-link.product-list__product-code.text--uppercase {{pnc}}
+        |In-stock ({{stockQuantity}})
+    .product-list__product-footer
+      .product-list__add-to-wishlist
+        +BtnAddToWishlist('{{pnc}}')

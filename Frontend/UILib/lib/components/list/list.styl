@@ -1,0 +1,131 @@
+$block = ".klara-ui-list";
+$small = 1;
+$medium = 2;
+$large = 4;
+
+padding-horizontally($multiplier) {
+  margin-right: (- 4 * $multiplier)px;
+  margin-left: (- 4 * $multiplier)px;
+
+  > li {
+    padding-right: (4 * $multiplier)px;
+    padding-left: (4 * $multiplier)px;
+  }
+}
+
+padding-vertically($multiplier) {
+  margin-top: (- 4 * $multiplier)px;
+  margin-bottom: (- 4 * $multiplier)px;
+
+  > li {
+    padding-top: (4 * $multiplier)px;
+    padding-bottom: (4 * $multiplier)px;
+  }
+}
+
+{$block} {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  list-style: none;
+
+  &__auto-size {
+    > li {
+      flex: 1;
+    }
+  }
+
+  &__centered {
+    align-items: center;
+  }
+
+  &__center-center {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+    &{$block}__padding-small {
+      padding-horizontally($small);
+    }
+
+    &{$block}__padding-medium {
+      padding-horizontally($medium);
+    }
+
+    &{$block}__padding-large {
+      padding-horizontally($large);
+    }
+  }
+
+  &__right {
+    flex-direction: row;
+    justify-content: flex-end;
+
+    &{$block}__padding-small {
+      padding-horizontally($small);
+    }
+
+    &{$block}__padding-medium {
+      padding-horizontally($medium);
+    }
+
+    &{$block}__padding-large {
+      padding-horizontally($large);
+    }
+  }
+
+  &__down {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &{$block}__padding-small {
+      padding-vertically($small);
+    }
+
+    &{$block}__padding-medium {
+      padding-vertically($medium);
+    }
+
+    &{$block}__padding-large {
+      padding-vertically($large);
+    }
+  }
+
+  &__left {
+    flex-direction: row;
+    justify-content: flex-start;
+
+    &{$block}__padding-small {
+      padding-horizontally($small);
+    }
+
+    &{$block}__padding-medium {
+      padding-horizontally($medium);
+    }
+
+    &{$block}__padding-large {
+      padding-horizontally($large);
+    }
+  }
+
+  &__up {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &{$block}__padding-small {
+      padding-vertically($small);
+    }
+
+    &{$block}__padding-medium {
+      padding-vertically($medium);
+    }
+
+    &{$block}__padding-large {
+      padding-vertically($large);
+    }
+  }
+}

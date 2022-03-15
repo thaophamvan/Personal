@@ -1,0 +1,8 @@
+mixin LoginToView(loginUrl,isNotAuthenticated)
+  a(v-if=isNotAuthenticated rel="IDS_Login nofollow noreferrer" :href=loginUrl target="_self")&attributes(attributes).none-underline.fs-16.lh-16.text--left.cursor-pointer
+    span.text--primary Member Price:&nbsp;
+    span.text--dark.underline Login to view
+  a(v-else-if=loginUrl rel="nofollow noreferrer" :href=loginUrl target="_self")&attributes(attributes).none-underline.fs-16.lh-16.text--left.cursor-pointer
+    span.text--primary Member Price:&nbsp;
+    span.text--dark.underline Join the club
+  

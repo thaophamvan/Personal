@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0">
+	<class name="MvpSample.Core.Domain.Customer, MvpSample.Core" table="Customers">
+		<id name="ID" column="CustomerID">
+			<generator class="assigned" />
+		</id>
+
+		<property name="CompanyName" column="CompanyName" />
+		<property name="ContactName" column="ContactName" />
+
+		<bag name="Orders" lazy="true" table="Orders" inverse="true"
+			access="NHibernate.Generics.GenericAccessor, NHibernate.Generics" >
+			<key column="CustomerID" />
+			<one-to-many class="MvpSample.Core.Domain.Order, MvpSample.Core" />
+		</bag>
+	</class>
+</hibernate-mapping>

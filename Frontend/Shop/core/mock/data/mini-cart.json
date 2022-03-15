@@ -1,0 +1,46 @@
+{
+  "cartPage": "http://google.com",
+  "maxItemsPerCart": 10,
+  "subTotal": 1000,
+  "currencyPrefix": "",
+  "currencySuffix": "AUD",
+  "itemCount": 10,
+  "products": [
+    {
+      "img": "/dist/images/block-img-bg.svg",
+      "title": "EWF1042BDWA",
+      "code": "EWF1042BDWA_1",
+      "quantity": 10,
+      "subTotal": 1000,
+      "link": "/en-SG/laundry-0af893fb/laundry-care/washing-machines/front-load-washing-machines/ewf1042bdwa-9a01d3f0/?variationCode=EWF1042BDWA_1",
+      "shipmentId":-1
+    },
+    {
+      "img": "/dist/images/block-img-bg.svg",
+      "title": "EWF1042BDWA",
+      "code": "EWF1042BDWA_1",
+      "quantity": 10,
+      "subTotal": 1000,
+      "link": "/en-SG/laundry-0af893fb/laundry-care/washing-machines/front-load-washing-machines/ewf1042bdwa-9a01d3f0/?variationCode=EWF1042BDWA_1",
+      "shipmentId":-1
+    },
+    {
+      "img": "/dist/images/block-img-bg.svg",
+      "title": "EWF1042BDWA",
+      "code": "EWF1042BDWA_1",
+      "quantity": 10,
+      "subTotal": 1000,
+      "link": "/en-SG/laundry-0af893fb/laundry-care/washing-machines/front-load-washing-machines/ewf1042bdwa-9a01d3f0/?variationCode=EWF1042BDWA_1",
+      "shipmentId":-1
+    },
+    {
+      "img": "/dist/images/block-img-bg.svg",
+      "title": "EWF1042BDWA",
+      "code": "EWF1042BDWA_1",
+      "quantity": 10,
+      "subTotal": 1000,
+      "link": "/en-SG/laundry-0af893fb/laundry-care/washing-machines/front-load-washing-machines/ewf1042bdwa-9a01d3f0/?variationCode=EWF1042BDWA_1",
+      "shipmentId":-1
+    }
+  ]
+}

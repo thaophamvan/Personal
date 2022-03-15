@@ -1,0 +1,78 @@
+$checkbox-size: 16px;
+$radio-size: 16px;
+
+.checkbox,
+.radio {
+  display: inline-block;
+  position: relative;
+  padding-left: $checkbox-size + 10px;
+  cursor: pointer;
+  user-select: none;
+  line-height: 22px;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  &__checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: $checkbox-size;
+    width: $checkbox-size;
+    border: 2px solid $checkbox__checkmark-color;
+  }
+
+  &__label {
+    @include property('color', $checkbox__label-color);
+  }
+
+  &__input:checked ~ &__checkmark {
+    border: 2px solid $checkbox__input-checked-color;
+    &::after {
+      display: block;
+    }
+  }
+}
+
+.checkbox {
+  &__checkmark {
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: $checkbox-size / 4;
+      width: 4px;
+      height: 8px;
+      top: 1px;
+      border: solid $checkbox__input-checked-color;
+      border-width: 0 $checkbox-size / 10 $checkbox-size / 10 0;
+      transform: rotate(45deg);
+    }
+  }
+}
+.radio {
+  &__checkmark {
+    border-radius: 50%;
+    $top: $radio-size / 2;
+    top: calc(50% - #{$top});
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+      //left: $radio-size / 5;
+      width: $radio-size / 2 - 2px;
+      height: $radio-size / 2 - 2px;
+      //top: $radio-size / 5;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: $checkbox__input-checked-color;
+    }
+  }
+}

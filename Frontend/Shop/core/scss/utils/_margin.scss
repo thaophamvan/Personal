@@ -1,0 +1,97 @@
+$local_margin_units: $spacing; //
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @if $infix != "" {
+    @include media-breakpoint-up($breakpoint) {
+      @each $value in $local_margin_units {
+        .ma#{$infix}-#{$value} {
+          margin: rem($value);
+        }
+        .mx#{$infix}-#{$value} {
+          margin-left: rem($value);
+          margin-right: rem($value);
+        }
+
+        .my#{$infix}-#{$value} {
+          margin-top: rem($value);
+          margin-bottom: rem($value);
+        }
+
+        .mt#{$infix}-#{$value} {
+          margin-top: rem($value);
+        }
+
+        .mb#{$infix}-#{$value} {
+          margin-bottom: rem($value);
+        }
+
+        .ml#{$infix}-#{$value} {
+          margin-left: rem($value);
+        }
+        .mr#{$infix}-#{$value} {
+          margin-right: rem($value);
+        }
+      }
+    }
+    @include media-breakpoint-up($breakpoint) {
+      .mx#{$infix}-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .my#{$infix}-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+
+      .ma#{$infix}-auto {
+        margin: auto;
+      }
+    }
+  } @else {
+    @each $value in $local_margin_units {
+      .ma-#{$value} {
+        margin: rem($value);
+      }
+      .mx-#{$value} {
+        margin-left: rem($value);
+        margin-right: rem($value);
+      }
+
+      .my-#{$value} {
+        margin-top: rem($value);
+        margin-bottom: rem($value);
+      }
+
+      .mt-#{$value} {
+        margin-top: rem($value);
+      }
+
+      .mb-#{$value} {
+        margin-bottom: rem($value);
+      }
+
+      .ml-#{$value} {
+        margin-left: rem($value);
+      }
+      .mr-#{$value} {
+        margin-right: rem($value);
+      }
+    }
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .my-auto {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .ma-auto {
+      margin: auto;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0">
+	<class name="MvpSample.Core.Domain.Order, MvpSample.Core" table="Orders">
+		<id name="ID" column="OrderID" unsaved-value="0">
+			<generator class="identity" />
+		</id>
+
+		<property name="OrderDate" column="OrderDate" />
+		<property name="ShipToName" column="ShipName" />
+
+		<many-to-one name="OrderedBy" column="CustomerID" class="MvpSample.Core.Domain.Customer, MvpSample.Core"
+			access="NHibernate.Generics.GenericAccessor, NHibernate.Generics" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,38 @@
+include ../Modal/Modal
+
+mixin AddToWishlistModal
+  +modal('addToWishlistModal', 'add-to-wishlist__modal')
+    +modalHeader('Save to favourites')
+    +modalBody
+
+mixin BtnAddToWishlist(productCode, style="link")
+  - if(style === 'link')
+    +BtnAddToWishlistLink(productCode)
+  - if(style === 'button')
+    +BtnAddToWishlistButton(productCode)
+
+mixin BtnAddToWishlistLink(productCode="")
+  div.btn.btn-link--primary.none-underline.add-to-wishlist__btn.cursor-pointer(href="#" data-add-to-wishlist data-modal='addToWishlistModal'  data-product-code=productCode v-bind:data-product-code=productCode)&attributes(attributes)
+    svg(viewBox="0 0 34 32").e-icon.w16.primary
+      use(xlink:href="#wishlist-f")
+    span.add-to-wishlist__btn-text.js_sap__login Save to favourites
+
+
+mixin BtnAddToWishlistButton(productCode = "")
+  button.btn.btn--outline-primary.w-100(data-add-to-wishlist data-modal='addToWishlistModal'  data-product-code=productCode v-bind:data-product-code=productCode)&attributes(attributes)
+    svg(viewBox="0 0 34 32").e-icon.w16.primary
+      use(xlink:href="#wishlist-f")
+    span.add-to-wishlist__btn-text.js_sap__login Save to favourites
+
+mixin BtnAddToWishlistVue(productCode)
+  .add-to-wishlist__btn.cursor-pointer(data-add-to-wishlist data-modal='addToWishlistModal' v-bind:data-product-code=productCode)
+    svg(viewBox="0 0 34 32").e-icon.w16.primary
+      use(xlink:href="#wishlist-f")
+    span.add-to-wishlist__btn-text.js_sap__login Save to favourites
+
+
+
+
+
+
+

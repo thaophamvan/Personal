@@ -1,0 +1,9 @@
+include ../../../core/mixinComponents/mixinComponents
+
+div.top-nav__search-results(v-if="show" ref="searchResults" @scroll="handleScroll")
+  .top-nav__search-results-item(v-for="item of items" :key="item.code || item.displayName")
+    a.top-nav__search-results-link(:href="item.link")
+      p.top-nav__search-results-text {{item.code}}
+      p.top-nav__search-results-text {{item.displayName}}
+  .d-flex.align-items-center.justify-content-center
+    +LoadingIndicator(true)(v-show="loadingMore")

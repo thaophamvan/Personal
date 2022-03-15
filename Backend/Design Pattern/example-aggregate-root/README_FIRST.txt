@@ -1,0 +1,1 @@
+﻿The code in this sample is designed to illustrate how an AggregateRoot functions. Start by looking through the tests. These illustrate how to send in commands and load state from history.

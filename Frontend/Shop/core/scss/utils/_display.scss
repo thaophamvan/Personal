@@ -1,0 +1,40 @@
+.d {
+  &-flex {
+    display: flex;
+  }
+  &-block {
+    display: block;
+  }
+  &-none {
+    display: none;
+  }
+  &-table {
+    display: table;
+  }
+  &-inline-flex {
+    display: inline-flex;
+  }
+}
+
+@include md {
+  .d-md {
+    &-flex {
+      display: flex;
+    }
+    &-block {
+      display: block;
+    }
+    &-inline-block {
+      display: inline-block;
+    }
+    &-none {
+      display: none;
+    }
+    &-table {
+      display: table;
+    }
+    &-inline-flex {
+      display: inline-flex;
+    }
+  }
+}

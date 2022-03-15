@@ -1,0 +1,125 @@
+.search-result {
+  &__title {
+    margin-bottom: 30px;
+    color: $gray;
+    text-align: center;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+.hero-search {
+  margin: 60px 0;
+  position: relative;
+  &__title {
+    text-align: center;
+  }
+  &__form {
+    @include md {
+      max-width: 784px;
+    }
+    margin: 33px auto 0;
+    position: relative;
+  }
+  &__form-controls {
+    position: relative;
+  }
+  &__form-input {
+    @include fs(14);
+    padding: 0.66rem 40px 0.66rem 1.16rem;
+    color: $gray;
+    margin-bottom: 13px;
+    width: 100%;
+  }
+  &__pipe {
+    position: absolute;
+    top: 11px;
+    border: 1px solid $medium-gray;
+    right: 31px;
+    height: 19px;
+  }
+  &__result-found {
+    text-align: center;
+    @include fs(20);
+    line-height: 2;
+    color: $gray;
+    padding-top: 10px;
+  }
+  &__result-all {
+    text-align: center;
+    color: $primary;
+  }
+  &__result-val {
+    font-weight: 600;
+    padding: 0 5px;
+    color: $primary-lighten-1;
+    @include fs(14);
+    line-height: 1.57;
+    text-decoration: none;
+    &.active {
+      color: $primary;
+      text-decoration: underline;
+    }
+    span {
+      font-weight: 500;
+    }
+  }
+  &__btn {
+    position: absolute;
+    @include fs(14);
+    right: 5px;
+    top: 14px;
+    width: 31px;
+    background: transparent;
+    &:hover,
+    &:visited,
+    &:active {
+      background: transparent;
+    }
+  }
+}
+
+.categories-search {
+  margin: 90px 0 60px;
+  .row {
+    align-items: center;
+  }
+  &__item {
+    align-items: center;
+    padding-bottom: 30px;
+  }
+  &__link {
+    font-weight: 600;
+  }
+}
+
+.products-search {
+  margin: 90px 0 60px;
+}
+
+.general-search {
+  margin: 90px 0 60px;
+  ul {
+    margin: 0 -15px;
+  }
+  &__item {
+    border-bottom: 1px solid $pistachio-gray;
+    padding: 18px 15px 0;
+    margin: 0;
+    &:first-child {
+      border-top: 1px solid $pistachio-gray;
+    }
+  }
+  &__link-head {
+    @include fs(20);
+    line-height: 26px;
+    text-align: left;
+    color: $primary;
+    font-weight: 600;
+  }
+  &__link-desc {
+    line-height: 20px;
+    color: $gray;
+  }
+}

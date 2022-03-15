@@ -1,0 +1,14 @@
+.get-in-touch {
+  .selectbox{
+    width: 100%;
+  }
+  .meassage{
+    height: 130px;
+  }
+  select {
+    min-height: 48px;
+    width: 100%;
+    color: $gray;
+    border: 1px solid $light-gray-border-cart;
+  }
+}

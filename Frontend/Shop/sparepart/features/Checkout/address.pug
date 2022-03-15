@@ -1,0 +1,47 @@
+.card
+  h4.card__header.d-flex.align-items-center.lh-26.fs-200
+    span.card__number 1
+    | Address
+  .card__body
+    //ADDRESS DETAILS
+    form.form.js_address-form
+      h4.lh-26.fs-20.pb-10 Delivery Details
+      //DELIVERY PICKER
+      .js_shipping-address-detail-form
+        include ./address/delivery-addresses
+
+      .callout.primary.mb-20
+        label.checkbox.text--primary
+          input.checkbox__input.js_use-different-billing-address(type="checkbox")
+          span.checkbox__checkmark
+            i.fa.fa-check
+          | Send my order invoice to a different billing address
+
+      .js_billing-address-detail-form.hidden
+        h4.lh-26.fs-20.pb-10 Billing Details
+        .js_billing-address-detail-form
+          .checkout-page__address-warning.d-flex.align-items-center.mb-20.mb-md-30.py-10.px-15.bg-primary-lighten-3.pos-relative.fs-14.lh-20
+            svg(viewBox="0 0 27 32").e-icon
+              use(xlink:href="#info-circle")
+            p.ml-5.fs-14.d-block You have a default address saved
+          .js_billing-selector
+            .checkout-page__address-info.fs-16.lh-24.d-md-flex.py-20.px-15
+              .checkout-page__address-selector.pr-md-10
+                label.radio.fw-600.primary
+                  input.radio__input.js_pick-address(type="radio")
+                  span.radio__checkmark
+                    i.fa.fa-check
+                  | DEFAULT ADDRESS
+                  span.d-none.d-md-block.blue.opacity-05  (Select)
+              .pl-md-20.pl-25.gray
+                p.m-0
+                  strong Michelle Rossier
+                  br
+                  | 123 Smith Rd
+                  br
+                  | Casula, NSW 2170
+                  br
+                  | Australia
+            .js_add-address-shipping.primary.btn-link.fs-16.lh-24.underline.fw-600.pb-20 Or enter different address
+
+      button.btn.btn--primary.expanded.disabled.mb-1 Continue to Payment

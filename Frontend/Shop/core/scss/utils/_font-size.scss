@@ -1,0 +1,24 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint);
+  $font-size-list: map-get($grid-font-size, $breakpoint);
+
+  @if $infix != "" {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      .fs#{$infix} {
+        @each $font-size-value in $font-size-list {
+          &-#{$font-size-value} {
+            font-size: rem($font-size-value);
+          }
+        }
+      }
+    }
+  } @else {
+    .fs {
+      @each $font-size-value in $font-size-list {
+        &-#{$font-size-value} {
+          font-size: rem($font-size-value);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+.right-nav--container
+  .right-nav(:class="{ open: isShow }")
+    .right-nav__close-icon.d-flex(@click="hide()").cursor-pointer
+      svg(viewBox="0 0 33 32").e-icon.e-icon-add.deg45.white
+        use(xlink:href="#add")
+    .right-nav__body
+      div(ref="content")
+  .right-nav__overlay(:class="{ active: isShow }", @click="hide()")

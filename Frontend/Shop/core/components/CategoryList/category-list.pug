@@ -1,0 +1,51 @@
+include ../../mixinComponents/mixinComponents
+.category-list
+  .category-list__title.clearFix
+    button.category-list__title-button.js_category-list__title-button View all
+    h3 Browse by Category
+  .category-list__slider.glide.js_category-list__slider(data-component="categoryListSlider")
+    div.glide__track(data-glide-el="track")
+      .glide__slides
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/Ovens.png","images/card-img-bg.png","Ovens | test Singapore")
+            p Ovens
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/Cooker.png","images/card-img-bg.png","Cooker hood | test Singapore")
+            p Cooker hood
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/Fridges.png","images/card-img-bg.png","Fridges | test Singapore")
+            p Fridges
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/Fridges.png","images/card-img-bg.png","Fridges | test Singapore")
+            p Irons
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/Rectangle.png","images/card-img-bg.png","Rectangle | test Singapore")
+            p Rectangle
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/Toasters.png","images/card-img-bg.png","Dryer | test Singapore")
+            p Toasters
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/Vacuum.png","images/card-img-bg.png","Ovens | test Singapore")
+            p Vacuum
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/Washer.png","images/card-img-bg.png","Dishwasher | test Singapore")
+            p Washer
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/ovens.png","images/card-img-bg.png","Ovens | test Singapore")
+            p Ovens
+        .category-list__item.glide__slide
+          a.none-underline(href="#")
+            +ImgLazy("","images/category/Cooker.png","images/card-img-bg.png","Cooker hood | test Singapore")
+            p Cooker hood
+    .glide__arrows(data-glide-el="controls")
+      button.glide__arrow.glide__arrow--left(data-glide-dir="<")
+      button.glide__arrow.glide__arrow--right(data-glide-dir=">")

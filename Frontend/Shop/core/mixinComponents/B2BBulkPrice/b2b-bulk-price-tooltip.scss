@@ -1,0 +1,63 @@
+$block: ".product-list";
+
+#{$block} {
+    &__product-bulk-pricing {
+        padding-bottom: 15px;
+        color: $second-text-color;
+        @include fs(14);
+        .bulk-info {
+            background: url('/dist/b2b/images/icons/bulk-info.svg') no-repeat center;
+            width: 15px;
+            height: 15px;
+            background-size: cover;
+            position: relative;
+            display: inline-block;
+            vertical-align: text-bottom; 
+            margin-left: 5px;
+            cursor: pointer;
+            &:hover .product-list__product-bulk-popup {
+                z-index: 9;
+                opacity: 1;
+            }
+        }
+    }
+    &__product-bulk-popup {
+        position: absolute;
+        left: -55px;
+        bottom: 25px;
+        min-width: 130px;
+        background: $primary-lighten-3;
+        padding: 10px;
+        border-radius: 2px;
+        opacity: 0;
+        z-index: -1;
+        transition: all .3s ease-in-out;
+        @include md {
+            left: 25px;
+            bottom: -5px;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            left: 55px;
+            border: 8px solid transparent;
+            border-top-color: $primary-lighten-3;
+            bottom: -14px;
+            @include md{
+                left: -16px;
+                border: 8px solid transparent;
+                border-right-color: $primary-lighten-3;
+                bottom: 5px;
+            }
+        }
+        &-item {
+            white-space: nowrap;
+            color: $second-text-color;
+            @include fs(14);
+            .price {
+                @include fs(16);
+                color: $primary;
+            }
+        }
+    }
+}

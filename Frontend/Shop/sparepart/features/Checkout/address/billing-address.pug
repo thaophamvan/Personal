@@ -1,0 +1,27 @@
+div.js-billing-address.new-address(ref="newBillingAddress")
+  .form-group
+    label.form-label.required First name
+    <input class="form-control" name='Model.BillingAddress.FirstName' placeholder="Enter first name" required data-valueMissing="First name is required" maxlength="62" pattern=".*\S.*" data-patternMismatch="First name is required">
+  .form-group
+    label.form-label.required Last name
+    <input class="form-control" name='Model.BillingAddress.LastName' placeholder="Enter last name" required data-valueMissing="Last name is required" maxlength="62" pattern=".*\S.*" data-patternMismatch="Last name is required">
+  .form-group
+    label.form-label.required Email address 
+    //- input.form-control(name='Model.ShippingAddress.Email' placeholder='your order confirmation will be sent to this email' required) 
+    <input class="form-control" required  type="email" name="Model.BillingAddress.Email" data-valueMissing="Email is required" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$" data-patternMismatch="Invalid Email" />
+  .form-group
+    label.form-label.required Address
+    input.form-control.js_address-suggestion(placeholder='Enter a location')
+    a.form-link.js_manuallyAddress.cursor-pointer.checkout-page__add-address-shipping Or enter manually
+  .js_manuallyAddress-content.hidden
+    include ./billing-address-manually.pug
+  label.checkbox.mb-20
+    input.checkbox__input.js_billing__radio-input(type="checkbox")
+    input.js_hiden_savedefault_billingaddress(type="hidden" name="Model.BillingAddress.BillingDefault")
+    span.checkbox__checkmark
+      i.fa.fa-check
+    | Save as my default billing address
+
+
+
+

@@ -1,0 +1,119 @@
+@import "../variables";
+
+// theme color
+$primary: #000000;
+$secondary: #FF6319;
+$primary-lighten-1: #7d7d7d;
+$primary-lighten-2: #adb9c3;
+$primary-lighten-3: #ebebeb;
+$primary-lighten-4: #fafcfc;
+$light-gray: #f6f6f6;
+$dark-gray: #dadada;
+$sale-off-color: #e02020;
+
+$disabled-color: #b8bbbd;
+$disabled-bgr: $pistachio-gray;
+
+$not-found-page-text-color: #353536;
+$odhd-box-bg: #f4f7f8;
+$product-list-product: #e0dfdf;
+
+$font-family-Sans: "Din", "Microsoft YaHei", "SimSun", "Heiti SC", Roboto, Arial, sans-serif;
+$font-family-regular: "Din", "Microsoft YaHei", "SimSun", "Heiti SC", Roboto, Arial, sans-serif;
+$font-family-SemiBold: "Din-bold", "Microsoft YaHei", "SimSun", "Heiti SC", Roboto, Arial, sans-serif;
+$search-block-fs:1rem;
+
+
+@import "default";
+
+//specific style go here
+
+
+// top header
+.category-list .glide__slides {
+    justify-content: center;
+}
+//hi user
+
+//top nav
+
+//hero banner
+$hero-banner__wrapper-bg: $secondary;
+$hero-banner__wrapper-bg-theme--brown-sm: $secondary;
+$hero-banner__wrapper-bg-theme--brown-md: $secondary;
+
+//category list
+$category-list__item-text-transform: uppercase;
+$category-list_glide__arrow-border:$secondary;
+
+//block img text
+
+//card img bg
+$card-img-bg__link-btn-border: 1px solid $white;
+
+//footer
+
+//mini cart
+
+//button
+
+//qty
+
+//form
+
+//select
+
+//selectbox
+
+//category
+
+//product filter
+$product-filter__filter-title-color: $primary;
+
+//product list
+
+//pagination
+
+//product detail
+
+//my account
+
+//order history
+
+//h1, h2, h3, h4, h5, h6
+
+//shopping cart
+
+//checkout
+
+//step
+
+//card
+
+//icomoon color
+
+//subpage
+
+//line
+
+//checkbox, radio
+
+//back btn
+
+//collout
+
+//you-may-also-like
+
+//wishlist
+
+//wishlist detail
+
+//faqs
+$faqs_odh-need-help__card-title-font-size: rem(14);
+$faqs_odh-need-help__card-title-text-transform: inherit;
+
+$footer__subscribe-form-wrapper-content: #fff;
+$footer__subscribe-form-wrapper-bg:#ff6319;
+$footer__subscribe-form-wrapper-button-bg:#fff;
+$footer__subscribe-form-wrapper-button-content:#ff6319;
+$footer__subscribe-form-wrapper-errormsg:#fff;

@@ -1,0 +1,83 @@
+$local_padding_units: $spacing;
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @if $infix != "" {
+    @include media-breakpoint-up($breakpoint) {
+      @each $value in $local_padding_units {
+        .pa#{$infix}-#{$value} {
+          padding: rem($value);
+        }
+        .px#{$infix}-#{$value} {
+          padding-left: rem($value);
+          padding-right: rem($value);
+        }
+
+        .py#{$infix}-#{$value} {
+          padding-top: rem($value);
+          padding-bottom: rem($value);
+        }
+
+        .pt#{$infix}-#{$value} {
+          padding-top: rem($value);
+        }
+
+        .pb#{$infix}-#{$value} {
+          padding-bottom: rem($value);
+        }
+
+        .pl#{$infix}-#{$value} {
+          padding-left: rem($value);
+        }
+        .pr#{$infix}-#{$value} {
+          padding-right: rem($value);
+        }
+      }
+
+      .px#{$infix}-auto {
+        padding-left: auto;
+        padding-right: auto;
+      }
+
+      .py#{$infix}-auto {
+        padding-top: auto;
+        padding-bottom: auto;
+      }
+
+      .pa#{$infix}-auto {
+        padding: auto;
+      }
+    }
+  } @else {
+    @each $value in $local_padding_units {
+      .pa-#{$value} {
+        padding: rem($value);
+      }
+      .px-#{$value} {
+        padding-left: rem($value);
+        padding-right: rem($value);
+      }
+
+      .py-#{$value} {
+        padding-top: rem($value);
+        padding-bottom: rem($value);
+      }
+
+      .pt-#{$value} {
+        padding-top: rem($value);
+      }
+
+      .pb-#{$value} {
+        padding-bottom: rem($value);
+      }
+
+      .pl-#{$value} {
+        padding-left: rem($value);
+      }
+      .pr-#{$value} {
+        padding-right: rem($value);
+      }
+    }
+  }
+}

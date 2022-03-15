@@ -1,0 +1,8 @@
+form.form-group(@submit="handleSubmitForm")
+  input.form-control.w-100(type="text" placeholder="Enter PNC or model number" v-model="pncOrModel" aria-label="Enter PNC or model number").js_product-compatibility-input
+  a.d-block.fs-14.lh20.primary.mt-10(href="javaScript:void(0);" @click="handleClickFindPNC") How do I find my product number (PNC) or model number?
+  button.w-100.btn.btn--primary.mt-30.mb-10 Check
+  div(v-show="submited").d-flex.align-items-baseline
+    svg.e-icon.h16.mr-5(:class="[isValid ? 'e-icon__check' : 'e-icon__x']", viewBox="0 0 32 32")
+      use(:xlink:href="[isValid ? '#check' : '#x']")
+    span {{isValid ? 'This part is compatible with your appliance' : 'This part is not compatible with your appliance' }}

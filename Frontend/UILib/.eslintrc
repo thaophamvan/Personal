@@ -1,0 +1,71 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["mocha", "mocha-cleanup"],
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    "no-underscore-dangle": [
+      1,
+      {
+        "allow": ["_id", "__INITIAL_STATE__"]
+      }
+    ],
+    "object-curly-newline": 0,
+    "prefer-destructuring": 0,
+    "global-require": 0,
+    "max-len": [
+      2,
+      {
+        "code": 120,
+        "ignoreStrings": true,
+        "ignoreComments": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "react/no-typos": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/extensions": [1, "never", { "jsx": "always", "json": "always" }],
+    "import/no-extraneous-dependencies": [
+      2,
+      {
+        "devDependencies": true
+      }
+    ],
+    "jsx-a11y/no-noninteractive-tabindex": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0,
+    "jsx-a11y/no-autofocus": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/alt-text": 0,
+    "jsx-a11y/img-has-alt": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/label-has-for": 0,
+    "mocha-cleanup/asserts-limit": [
+      1,
+      {
+        "assertsLimit": 16,
+        "skipSkipped": true
+      }
+    ],
+    "mocha-cleanup/disallow-stub-spy-restore-in-it": 0,
+    "mocha-cleanup/complexity-it": 0,
+    "mocha-cleanup/no-empty-body": 0,
+    "mocha/no-exclusive-tests": 2,
+    "mocha/handle-done-callback": 2
+  },
+  "env": {
+    "browser": true,
+    "mocha": true
+  },
+  "globals": {
+    "global": true,
+    "sinon": true,
+    "expect": true,
+    "Feature": false,
+    "Scenario": false,
+    "Given": false,
+    "When": false,
+    "Then": false,
+    "And": false,
+    "But": false
+  }
+}

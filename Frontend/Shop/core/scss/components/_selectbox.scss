@@ -1,0 +1,133 @@
+$block: ".selectbox";
+
+#{$block} {
+  position: relative;
+  padding: 0;
+  width: 190px;
+
+  &.selected {
+    .selectbox__btn {
+      font-weight: 600;
+      color: $selectbox__selected-btn-color;
+    }
+  }
+
+  &--sort,
+  &--sort.selected {
+    #{$block} {
+      &__btn {
+        @include property('text-transform', $selectbox__sort-text-transform);
+        @include property('font-weight', $selectbox__sort-font-weight);
+      }
+    }
+  }
+
+  &__options-popup {
+    min-width: 100%;
+    width: 100%;
+    background-color: $selectbox__options-popup-bg;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+    border: 1px solid $selectbox__options-popup-border;
+    border-top: none;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    max-height: 240px;
+    overflow: auto;
+  }
+  &.is-active {
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      background-color: $selectbox__is-active-bg;
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+      left: 20px;
+      z-index: 1;
+    }
+  }
+  &__btn {
+    width: 100%;
+    height: 48px;
+    background-color: $selectbox__btn-bg;
+    position: relative;
+    border: 1px solid $selectbox__btn-border;
+    border-radius: $selectbox__btn-border-radius;
+    color: $selectbox__btn-color;
+    text-align: left;
+    padding: 13px 40px 13px 20px;
+    line-height: 20px;
+    display: block;
+    @include fs(16);
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: $selectbox__btn-text-transform;
+    &:disabled {
+      background-color: $selectbox__btn-bg;
+      color: $selectbox__btn-color;
+      opacity: .7;
+    }
+
+    &.error {
+      border-color: $selectbox__btn-error-border;
+    }
+
+    &.color-primary {
+      color: $selectbox__btn-primary-color;
+    }
+
+    &:hover {
+      background-color: $selectbox__btn-hover-bg;
+    }
+
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: solid $selectbox__btn-after-border;
+      transform: translateY(-70%) rotate(45deg);
+      border-width: 0 2px 2px 0;
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 19px;
+      transition: all 0.35s;
+    }
+
+    > div {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  &.is-active &__btn {
+    border: 1px solid $selectbox__active-border;
+    border-bottom-color: transparent;
+    color: $selectbox__active-color;
+    font-weight: 600;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    &::after {
+      transform: translateY(-30%) rotate(-135deg);
+    }
+  }
+  &__option {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    @include fs(16);
+    color: $selectbox__option-color;
+    text-align: left;
+    cursor: pointer;
+
+    &.is-active,
+    &:hover {
+      background-color: $selectbox__option-hover-bg;
+      font-weight: 600;
+    }
+  }
+}

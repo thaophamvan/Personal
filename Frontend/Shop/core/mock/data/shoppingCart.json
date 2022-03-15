@@ -1,0 +1,140 @@
+{
+  "data": {
+    "cartPage": "/cart/",
+    "maxItemsPerCart": 3,
+    "subTotal": 59,
+    "total": 59,
+    "shippingTotal": 0,
+    "currencyPrefix": "$",
+    "currencySuffix": "",
+    "itemCount": 2,
+    "mustChangeShippingMethod": false,
+    "canPickupAtOffice": true,
+    "deliveryOption": "pickup-at-office",
+    "products": [
+      {
+        "img": "https://www.test.im/products/XMLLARGERIMAGE/EWF1042BDWA_SG_700x700.png",
+        "title": "10kg UltimateCare™ 800 Washing Machine",
+        "code": "EWF1042BDWA",
+        "quantity": 2,
+        "subTotal": 30,
+        "link": "https://shop.dev.test.com.au/appliances/washing-machines/ewf1042bdwa/",
+        "shipmentId": -1
+      },
+      {
+        "img": "https://www.test.im/products/XMLLARGERIMAGE/EWF14023_SG_v4_700x700.png",
+        "title": "10kg UltimateCare™ Washing Machine",
+        "code": "EWF14023",
+        "quantity": 1,
+        "subTotal": 29,
+        "link": "https://shop.dev.test.com.au/appliances/washing-machines/ewf14023/",
+        "shipmentId": -1
+      }
+    ],
+    "postCode": "",
+    "deliveryNote": "2019-11-11",
+    "checkoutPage": "/cart/",
+    "shippingMethods": [
+      {
+        "id": "7cdb3549-7efb-461a-b001-73830efa7573",
+        "displayName": "Fast Ship",
+        "name": "FastShip",
+        "description": "Fast as fuck",
+        "rate": 10,
+        "selected": true
+      },
+      {
+        "id": "dc341553-2eef-4a04-8b77-cec34d5aa347",
+        "displayName": "Washing Machine Shipping",
+        "name": "WashingMachineShipping",
+        "description": "Ok fine",
+        "rate": 15,
+        "selected": false
+      },
+      {
+        "id": "eb4d9e02-85d9-4a09-be01-9f86e3a9355b",
+        "displayName": "Standard Shipping",
+        "name": "StandardShipping",
+        "description": "Standard Shipping Hihi",
+        "rate": 5,
+        "selected": false
+      }
+    ]
+  },
+  "remove": {
+    "products": [],
+    "warning": 7,
+    "subTotal": 1000,
+    "shippingTotal": 79,
+    "total": 1079,
+    "currencyPrefix": "$",
+    "currencySuffix": ""
+  },
+  "updateQuantity": {
+    "productSubTotal": 2000,
+    "warning": 7,
+    "totalItem": 30,
+    "subTotal": 3000,
+    "shippingTotal": 79,
+    "total": 3079,
+    "currencyPrefix": "$",
+    "currencySuffix": "",
+    "canPickupAtOffice": false,
+    "deliveryOption": "pickup-at-office",
+    "products":[
+      {
+        "img": "images/checkout-cart/oven.png",
+        "title": "EWF1042BDWA",
+        "code": "EWF1042BDWA_1",
+        "quantity": 10,
+        "subTotal": 2000,
+        "link": "/en-SG/laundry-0af893fb/laundry-care/washing-machines/front-load-washing-machines/ewf1042bdwa-9a01d3f0/?variationCode=EWF1042BDWA_1",
+        "shipmentId":-1
+      }
+    ]
+  },
+  "deliveryStandard": {
+    "subTotal": 3000,
+    "shippingTotal": 60.5,
+    "total": 3060.5
+  },
+  "deliverySaturday": {
+    "subTotal": 3000,
+    "shippingTotal": 71.5,
+    "total": 3071.5
+  },
+  "deliveryEvening": {
+    "subTotal": 3000,
+    "shippingTotal": 77.5,
+    "total": 3077.5
+  },
+  "shippingMethods": [
+    { "id": "S1",
+      "name": "Location 1",
+      "rate": "50",
+      "description": "this is description",
+      "selected": true,
+      "date": "2019-11-08"
+    },
+    { "id": "S2",
+      "name": "Location 2",
+      "rate": "50",
+      "description": "this is description",
+      "selected": false
+    },
+    { "id": "S3",
+      "name": "Location 3",
+      "rate": "50",
+      "description": "this is description",
+      "selected": false
+    }
+  ],
+  "delivery": {
+    "subTotal": 3000,
+    "shippingTotal": 79,
+    "total": 2079
+  },
+  "submit": {
+    "checkoutURL": "google.com"
+  }
+}

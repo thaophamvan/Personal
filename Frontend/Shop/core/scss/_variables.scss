@@ -1,0 +1,137 @@
+//Colors --------------------------------
+$dark: #000 !default;
+$white: #FFF !default;
+$gray: #333 !default;
+$blue: #011e41 !default;
+$green: #2f8b3a !default;
+$brown: #4a1e18 !default;
+$red: #be3d3d !default;
+$pink: #cb5898 !default;
+$yellow: #ffc107 !default;
+
+$medium-gray: #848588;
+$medium4-gray: #bcbcbc;
+$dark2-gray: #585858;
+$light-gray: #dadada;
+$pale-gray: #f4f5f6;
+$pistachio-gray: #dbdfe1;
+$out-of-stock-color: #e20c0c;
+$danger-color: #e20c0c;
+$secondary-highlight: #6c7b67;
+$light-gray-border-cart: $light-gray;
+$gray-lighten: #d4d8d2;
+$sale-off-color: #ff3b30;
+$skyblue-dark: #2b2936;
+$second-text-color: #4f4e53;
+$diff-text-color: $gray;
+$suitable-brands:#F6F6F6;
+$suitable-brands-border:#D3D3D3;
+$medium-blue: #3b5998;
+$dark-red: #b00;
+$dark-pink: #bc2a8d;
+
+// theme color
+$secondary: #3b4536;
+$warning: #fcf8e3;
+$success: $green;
+$alert: $red;
+
+$text-color: $gray;
+$text-color-lighten-1: #666;
+$text-color-lighten-2: #999;
+$text-color-maintenance: #111111;
+
+$line-color: #d8d8d8;
+$line-color-2: #d9d9d9;
+
+$shopping-cart-danger-color: $red;
+
+// typography
+$font-weight-base: 500;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-regular: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-base: 1.5;
+
+$h1-line-height: calc(60 / 54);
+$h2-line-height: calc(48 / 40);
+$h3-line-height: calc(38 / 32);
+$h4-line-height: calc(34 / 26);
+$h5-line-height: calc(26 / 20);
+$h6-line-height: calc(26 / 20);
+$small-line-height: calc(20 / 14);
+$smallest-line-height: calc(24 / 12);
+
+$font-size-base: 1rem;
+
+$h1-font-size: $font-size-base * 3.375;
+$h2-font-size: $font-size-base * 2.5;
+$h3-font-size: $font-size-base * 2;
+$h4-font-size: $font-size-base * 1.625;
+$h5-font-sise: $font-size-base * 1.25;
+$small-font-size: $font-size-base * 0.875;
+$smallest-font-size: $font-size-base * 0.75;
+$large-font-size: $font-size-base * 1.125;
+
+// font-size map-get
+$grid-font-size: (
+  "xs": 8 10 12 14 16 18 20 24 26 28 32,
+  "md": 16 18 20 24 26 32 36 40 48 54,
+);
+
+// line-height map-get
+$grid-line-height: (
+  "xs": 14 16 18 20 22 24 26 34 36 38 40,
+  "md": 14 16 20 22 24 26 32 34 36 38 44 48 60,
+);
+
+// spacing
+$spacer: 0.625rem;
+$gap: 15px;
+$spacing: 0 5 10 15 18 20 22 25 30 35 40 45 50 60 70 80 90; // px
+
+// grid containers
+$container-max-width: (
+  xs: 0,
+  md: 1180px,
+) !default;
+$grid-breakpoints: (
+  xs: 0,
+  md: 992px,
+);
+
+$grid-gutter: (
+  xs: 15px,
+  md: 20px,
+);
+
+$grid-columns: 12;
+$container-padding-x: 15px !default;
+
+// components
+$border-width: 1px !default;
+$border-radius: 0.25rem;
+
+// dropdown
+$dropdown-border: 2px solid $gray;
+$dropdown-item-bg-active-color: rgba(223, 231, 234, 0.6);
+
+// checkbox
+$checkbox-size: 16px;
+
+// radio
+$radio-size: 16px;
+
+// input
+$input-button-border: 1px solod $line-color;
+$input-padding-x: $spacer;
+$input-padding-y: $spacer * 2;
+$input-font-size: $font-size-base;
+$input-light-height: $line-height-base;
+
+// main navigation
+$menu-width: 315px;
+$menu-container-width: 375px;

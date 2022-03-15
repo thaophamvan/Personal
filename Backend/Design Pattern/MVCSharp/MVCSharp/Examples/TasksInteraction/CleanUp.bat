@@ -1,0 +1,1 @@
+MSBuild TasksInteraction.csproj /target:CleanUp

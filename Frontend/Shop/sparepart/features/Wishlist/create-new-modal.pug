@@ -1,0 +1,18 @@
+include ../../../core/mixinComponents/mixinComponents
+
++modal('createNewWishlistModal', 'list-wishlists__create-new-modal')
+  +modalHeader('Create new list')
+  +modalBody()(class="pos-relative")
+    .d-flex.align-items-center.justify-content-center.pos-absolute.loading(v-show="loading")
+      +LoadingIndicator
+    .add-to-wishlist__message.pos-relative.mb-30.bg-primary-lighten-3.fs-14.lh-20.px-15.py-10.text--left.d-flex.align-items-center.error-message(v-if="submited && errorMessage")
+      span(v-html="errorMessage")
+    form.form-group.text--left(@submit="handleCreateNewWishlist")
+      p.fs-16.lh-24.fw-600.mb-5 Create new favourites list
+      input.form-control.w-100(placeholder="Enter list name" v-model="wishlistName")
+  +modalFooter
+    .row
+      .col-12.col-md-6
+        button.btn.btn--primary.w-100.mb-10.mb-md-0(:disabled="!wishlistName.trim()" @click="handleCreateNewWishlist") Save to Favourites
+      .col-12.col-md-6
+        button.btn.btn--outline-primary.w-100(@click="closeCreateNewModal") Cancel

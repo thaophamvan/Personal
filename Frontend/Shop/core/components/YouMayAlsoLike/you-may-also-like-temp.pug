@@ -1,0 +1,39 @@
+include ../../mixinComponents/mixinComponents
+
+div.py-50
+  div.loading-indicator.d-flex.align-items-center(v-if="loading")
+    +LoadingIndicator
+  div(v-if="products.length > 0")
+    h2.you-may-also-like__title.fs-20.lh-26.text--center.py-30.fs-md-40.lh-md-48 {{headerText}}
+    .glide.js_glide.mb-50(ref="slider")
+      .glide__track(data-glide-el="track")
+        .glide__slides.row
+          .glide__slide.pos-relative.col-md-4(v-for="product of products" :key="product.variationCode")
+            .d-flex.flex-column.h-100.you-may-also-like-card
+              .d-flex.flex-column.h-100
+                span.bg-sale-off.white.text--uppercase.pos-absolute.pa-5.lh-14.fs-12.fw-600.mt-10(v-if="product.promotionLabel") {{product.promotionLabel}}
+                a.you-may-also-like__img-wrapper.pa-15(:href="product.partUrl").img-center
+                  +ImgLazy("", "", "")(:data-src="product.partImage" :alt="product.partTitle")
+                a(:href="product.partUrl").fs-18.lh-24.pt-10.pb-5.fs-md-20.lh-md-26.fw-600.none-underline.you-may-also-like__part-name {{product.partTitle}}
+              div
+                a(:href="product.partUrl").none-underline.fs-14.lh-20.fw-600.pb-5.you-may-also-like__part-number.d-block {{product.partNumber}}
+                p.fs-14.lh-18.pb-10.lh-md-20.you-may-also-like__part-category {{product.partDetailedDescriptionStripHtml}}
+                .d-md-flex.align-items-center.justify-content-between.mb-10.mb-md-15
+                  div
+                    p.you-may-also-like__product-stock.pb-5.fw-600.fs-14.lh-18 {{product.instock}} {{product.edaTime}}
+                      div.d-flex.align-items-baseline
+                        p.fs-20.lh-26.fs-md-26.lh-md-34.you-may-also-like__product-price.fw-600 {{product.isDiscount ? product.discountPrice : product.realPrice}}
+                        del.fs-14.fs-md-16.lh-20.second-text-color.ml-5.opacity-05(v-if="product.isDiscount") {{product.realPrice}}
+                  .you-may-also-like__recurring-box.text--primary-color(v-if="product.enableAutoDelivery")
+                    .fs-10.fw-600 {{product.autoDeliveryText}}
+                    span.you-may-also-like__recurring-box__discount.fs-12.fw-600.btn--primary.pointer-md-none {{product.autoDeliveryPlanInfor.recurringPercentOff}}
+                    .d-md-flex.align-items-center.justify-content-center.fs-10.mt-5 {{product.autoDeliveryFrom}}
+                      span.fs-20.lh-26.fs-md-26.lh-md-34.you-may-also-like__product-price.fw-600.ml-5 {{product.autoDeliveryPlanInfor.discountedPrice}}
+                +BtnAddToCart('product.variationCode')(v-if="product.displayButtonState==1" :disabled="!product.isInStock")
+                +BtnRequestPrice('product.variationCode', "Request Price")(v-else-if="product.displayButtonState==2")
+                +BtnNoLongerAvailable('product.variationCode', "Not available")(v-else-if="product.displayButtonState==0")
+                .mt-10.mt-md-15.you-may-also-like__add-to-wishlist-btn
+                  +BtnAddToWishlistLink('product.partNumber')
+      .glide__bullets(data-glide-el="controls[nav]").text--center.pt-40.d-md-none
+        button.glide__bullet(data-glide-dir="=0" aria-hidden="true" tabindex="-1").pa-0.mr-10
+        button.glide__bullet(data-glide-dir="=1" aria-hidden="true" tabindex="-1").pa-0

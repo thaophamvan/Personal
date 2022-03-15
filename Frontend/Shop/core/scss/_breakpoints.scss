@@ -1,0 +1,76 @@
+// Breakpoint
+$lg-width: 1200px;
+$md-width: 992px;
+$sm-width: 768px;
+$xs-width: 576px;
+
+@mixin md {
+    @media (min-width: #{$md-width}) {
+        @content;
+    }
+}
+
+// @mixin ms-md {
+//     @media (min-width: #{$md-width}) and (max-width: #{$lg-width}) {
+//         @content;
+//     }
+// }
+
+// @mixin sm {
+//     @media (min-width: #{$sm-width}) {
+//         @content;
+//     }
+// }
+
+// @mixin xs {
+//     @media screen and (min-width: #{$xs-width}) {
+//         @content;
+//     }
+// }
+
+// @mixin desktop {
+//     @media screen and (min-width: #{$md-width}) {
+//         @content;
+//     }
+// }
+
+@mixin device {
+    @media screen and (max-width: #{$md-width - 1px}) {
+        @content;
+    }
+}
+
+// @mixin tablet {
+//     @media (min-width: #{$sm-width}) and (max-width: #{$md-width - 1px}) {
+//         @content;
+//     }
+// }
+
+// @mixin print {
+//     @media print {
+//         @content;
+//     }
+// }
+
+// @mixin landscape {
+//     @media screen and (orientation: landscape) {
+//         @content;
+//     }
+// }
+
+// @mixin portrait {
+//     @media screen and (max-device-width: 920px) {
+//         @content;
+//     }
+// }
+
+@mixin ie {
+    @media screen and (min-width: 0\0) {
+        @content;
+    }
+}
+@mixin edge {
+    @supports (display: -ms-grid) {
+        @content;
+    }
+}

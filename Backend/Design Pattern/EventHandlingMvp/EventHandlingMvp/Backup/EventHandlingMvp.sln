@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "C:\...\EventHandlingMvp\", ".", "{623ECB99-7822-4019-A8C2-A81965789D24}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/EventHandlingMvp"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\Dev\RandD\MVP\EventHandlingMvp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\EventHandlingMvp\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/EventHandlingMvp"
+		Release.AspNetCompiler.PhysicalPath = "..\..\Dev\RandD\MVP\EventHandlingMvp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\EventHandlingMvp\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "2312"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{623ECB99-7822-4019-A8C2-A81965789D24}.Debug|.NET.ActiveCfg = Debug|.NET
+		{623ECB99-7822-4019-A8C2-A81965789D24}.Debug|.NET.Build.0 = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

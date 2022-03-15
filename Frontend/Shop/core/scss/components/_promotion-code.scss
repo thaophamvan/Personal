@@ -1,0 +1,31 @@
+.promotion-code {
+  display: flex;
+  padding: 2 * $spacer;
+  background-color: $primary-lighten-3;
+  .promotion-code__input {
+    display: block;
+    input {
+      width: 100%;
+    }
+  }
+  .promotion-code__btn {
+    min-width: 160px;
+  }
+  @include device {
+    flex-wrap: wrap;
+    .promotion-code__input {
+      display: block;
+      width: 100%;
+      margin-right: 0;
+      input {
+        width: 100%;
+        height: 48px;
+      }
+      margin-bottom: 10px;
+    }
+    .promotion-code__btn {
+      width: 100%;
+      height: 48px;
+    }
+  }
+}

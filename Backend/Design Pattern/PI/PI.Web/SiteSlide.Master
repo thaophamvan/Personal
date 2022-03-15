@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteSlide.Master.cs" Inherits="PI.Web.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Phần Mềm Trình Diễn Thông Tin</title>
+    <link rel="stylesheet" href="../Content/swiper.css">
+    <link rel="stylesheet" href="../Content/slide.css">
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <script src="../Scripts/Swiper/swiper.min.js"></script>
+    
+</head>
+<body>
+   
+       <asp:ContentPlaceHolder ID="MainContentFullScreen" runat="server">
+        </asp:ContentPlaceHolder>
+   
+</body>
+</html>

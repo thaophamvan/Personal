@@ -1,0 +1,109 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F9E76AF-5061-43EC-ACA4-6775E1783789}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCSharp.Examples.TasksInteraction</RootNamespace>
+    <AssemblyName>TasksInteraction %28Win%29</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Presentation\Win\ABAdvancedOptionsView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Win\ABAdvancedOptionsView.Designer.cs">
+      <DependentUpon>ABAdvancedOptionsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Win\ABMainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Win\ABMainView.Designer.cs">
+      <DependentUpon>ABMainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Win\EmployeesView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Win\EmployeesView.Designer.cs">
+      <DependentUpon>EmployeesView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Win\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\Win\ABAdvancedOptionsView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ABAdvancedOptionsView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Win\ABMainView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ABMainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Win\EmployeesView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EmployeesView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MVCSharp\MVCSharp.csproj">
+      <Project>{C04A36B0-4A58-45D4-B95B-A4A58AFEBC95}</Project>
+      <Name>MVCSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="TasksInteraction.csproj">
+      <Project>{273295B2-2B3C-4723-ACF3-EB8903D9D4C2}</Project>
+      <Name>TasksInteraction</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

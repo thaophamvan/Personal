@@ -1,0 +1,212 @@
+$block = ".text-field";
+
+{$block} {
+  $anim-time = 100ms;
+  $padding-step = 6px;
+
+  getSpacing($size, $line-height) {
+    (($line-height - $size) / 2);
+  }
+
+  /*
+   * Goal is to have following setup
+   * Label + 6px + Text + 6px + Floor + 6px + Helper/Error Text
+   */
+  $s-input-font = 16px;
+  $s-input-line-height = 24px;
+  $s-label-font = 14px;
+  $f-label-scale = unit(($s-label-font / $s-input-font), "");
+  $s-label-line-height = $f-label-scale * $s-input-line-height;
+  $s-label-vert-shift = -1 * ($padding-step + $s-label-line-height - getSpacing($s-label-font, $s-label-line-height));
+  $s-input-padding = $padding-step - getSpacing($s-input-font, $s-input-line-height); // approx value as well
+  $s-floor-height-small = 1px;
+  $s-floor-height-normal = 2px;
+  $s-helper-text-line-height = 16px;
+  $s-floor-bottom-padding = $padding-step - getSpacing($s-label-font, $s-helper-text-line-height);
+  $s-field-top-padding = $s-input-padding + $s-label-line-height;
+  $s-field-bottom-padding = $s-floor-bottom-padding + $s-helper-text-line-height;
+  $s-field-padding = $s-field-top-padding 0 0;
+
+  active-label() {
+    transform: scale($f-label-scale) translateY($s-label-vert-shift);
+  }
+
+  clamp-lines($lines-count = 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    if ($lines-count == 1) {
+      max-width: 100%;
+      white-space: nowrap;
+    } else {
+      /*
+       * This is weird, little documented,
+       * and not supported in other than webkit-based browsers,
+       * but it's better than nothing to ensure layout is bulletproof
+       */
+      display: -webkit-box;
+      -webkit-line-clamp: $lines-count; // @stylint ignore
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  position: relative;
+  padding: $s-field-padding;
+  font-size: $s-input-font;
+  line-height: $s-input-line-height;
+
+  &__label {
+    position: absolute;
+    color: $c-gray-base;
+    pointer-events: none;
+
+    clamp-lines();
+  }
+
+  &__label {
+    transition: transform $anim-time;
+    transform-origin: 0 0;
+  }
+
+  &__placeholder {
+    color: $c-gray-base;
+  }
+
+  &__input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+  }
+
+  &__loader {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    min-width: 18px;
+  }
+
+  &__control {
+    min-height: $s-input-line-height + $s-input-padding;
+    border: 0 none;
+    background: rgba(0, 0, 0, 0);
+    color: $c-gray-darker;
+    font-family: inherit;
+    line-height: inherit;
+    resize: none;
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    caret-color: $c-gray-darker; // @stylint ignore
+
+    &:focus {
+      outline: 0 none;
+    }
+
+    &::placeholder {
+      @extend {$block}__placeholder;
+    }
+  }
+
+  &__control--native {
+    display: block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 0 $s-input-padding;
+    width: 100%;
+  }
+
+  &__floor-wrap {
+    margin: 0 0 $s-floor-bottom-padding;
+  }
+
+  &__floor {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    border: 0 none;
+    border-bottom: $s-floor-height-small solid $c-gray-base;
+    transition: border-color $anim-time;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    min-height: $s-field-bottom-padding;
+    font-size: $s-label-font;
+    line-height: $s-helper-text-line-height;
+    pointer-events: none;
+  }
+
+  &__error-text, &__helper-text {
+    flex: 1;
+    color: $c-gray-base;
+  }
+
+  &__error-text {
+    color: $c-danger-base;
+  }
+
+  &__counter {
+    margin: 0 0 0 15px;
+  }
+
+  &:hover {
+    {$block}__floor {
+      border-bottom: $s-floor-height-small solid $c-gray-dark;
+    }
+  }
+
+  &:focus {
+    outline: 0 none;
+  }
+
+  &&--focused { // because &:hover is heavier than &--*
+    {$block}__label {
+      active-label();
+
+      color: $c-brand-base;
+    }
+
+    {$block}__floor {
+      border-bottom: $s-floor-height-normal solid $c-brand-base;
+    }
+  }
+
+  &&--has-no-border {
+    {$block}__floor {
+      border: 0 none;
+    }
+  }
+
+  &--filled {
+    {$block}__label {
+      active-label();
+    }
+  }
+
+  &&--invalid {
+    {$block}__label {
+      active-label();
+
+      color: $c-danger-base;
+    }
+
+    {$block}__floor {
+      border-bottom: $s-floor-height-normal solid $c-danger-base;
+    }
+  }
+
+  &&--disabled {
+    cursor: not-allowed;
+
+    {$block}__control {
+      color: $c-gray-dark;
+      cursor: inherit;
+    }
+
+    {$block}__floor {
+      border-bottom: $s-floor-height-small solid $c-gray-lighter;
+    }
+  }
+}

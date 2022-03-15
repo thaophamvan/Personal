@@ -1,0 +1,60 @@
+include ../../../core/mixinComponents/mixinComponents
+- inquery1 = {"value": 1, "text": "inquery 1"}
+- inquery2 = {"value": 2, "text": "inquery 2"}
+- inquery3 = {"value": 3, "text": "inquery 3"}
+- emptySelect = { "value": null, "text": "Select inquery"}
+- inquerys = [emptySelect, inquery1, inquery2, inquery3]
+
+.get-in-touch
+	.container.mb-50
+		.row
+			.col-12.col-md-8.offset-md-2(data-component="getInTouch")
+				a(href="#").fs-12.lh-14.fw-600.text--uppercase.none-underline.mb-50.mb-md-30.mt-20.d-flex.align-items-center
+					span.icon-rightarrow.mr-10
+					|back to home
+				h3.fs-32.lh-34.mt-50 Get in touch
+				h4.fs-26.lh-34.mt-30.mb-15 Call us
+				p Contact customer care on 1300 666 019
+				p Monday to Friday 1am - 7pm
+				p Saturday 8am - 3pm 
+				p Sunday 10am - 3pm 
+				h4.fs-26.lh-34.mt-30 Email us
+				form.row
+					.col-12.col-md-6
+						.form-group
+							label.form-label.mt-20 First name
+							input.form-control.w-100(placeholder = "Enter first name")
+					.col-12.col-md-6
+						.form-group
+							label.form-label.mt-20 Last name
+							input.form-control.w-100(placeholder = "Enter last name")
+					.col-12.col-md-6
+						.form-group
+							label.form-label.mt-20 Email address
+							input.form-control.w-100(placeholder = "Enter your email")
+					.col-12.col-md-6
+						.form-group
+							label.form-label.mt-20 Type of inquery
+							+SelectBox('listInquery', inquerys, 'js_get-in-touch__selectbox', 'Select inquery')
+					.col-12.col-md-12
+						.form-group
+							label.form-label.mt-20 Contact number
+								span.text-muted (optional)
+							input.form-control.w-100(placeholder = "Contact number")
+							
+					.col-12.col-md-12
+						.form-group
+							label.form-label.mt-20 Message
+								span.text-muted (optional)
+							textarea.form-control.meassage.w-100
+					.col-12.col-md-6
+						button.btn.btn--primary.mt-20.w-100.fs-16 Send email
+				h4.fs-26.lh-34.mt-30.mb-15 Support services
+				p
+					a(href="#" title="Find user manual") Find user manual
+				p
+					a(href="#" title="Find a service centre") Find a service centre
+				p
+					a(href="#" title="Find a store") Find a store
+				p
+					a(href="#" title="View FAQs") View FAQs

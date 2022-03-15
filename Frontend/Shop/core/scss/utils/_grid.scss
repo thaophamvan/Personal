@@ -1,0 +1,79 @@
+$classes: ();
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint);
+  $gutter: map-get(
+    $map: $grid-gutter,
+    $key: $breakpoint,
+  );
+  @if $infix != "" {
+    $infixClasses: ();
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      $classes: join($classes, unquote(".col#{$infix}"), comma);
+      $infixClasses: join($classes, unquote(".col#{$infix}"), comma);
+      .col#{$infix} {
+        flex-basis: 0;
+        flex-grow: 1;
+        min-width: 0;
+        max-width: 100%;
+      }
+      @for $i from 1 through $grid-columns {
+        $classes: join($classes, unquote(".col#{$infix}-#{$i}"), comma);
+        $infixClasses: join($classes, unquote(".col#{$infix}-#{$i}"), comma);
+        .col#{$infix}-#{$i} {
+          flex: 0 0 percentage($i / $grid-columns);
+          max-width: percentage($i / $grid-columns);
+        }
+        .offset#{$infix}-#{$i} {
+          margin-left: percentage($i / $grid-columns);
+        }
+      }
+      #{$infixClasses} {
+        padding-right: $gutter / 2;
+        padding-left: $gutter / 2;
+      }
+      .row {
+        margin-left: -$gutter / 2;
+        margin-right: -$gutter / 2;
+      }
+    }
+  } @else {
+    $infixClasses: ();
+    $classes: join($classes, unquote(".col"), comma);
+    $infixClasses: join($classes, unquote(".col"), comma);
+    .col {
+      flex-basis: 0;
+      flex-grow: 1;
+      min-width: 0;
+      max-width: 100%;
+    }
+    @for $i from 1 through $grid-columns {
+      $classes: join($classes, unquote(".col#{$infix}-#{$i}"), comma);
+      $infixClasses: join($classes, unquote(".col#{$infix}-#{$i}"), comma);
+      .col-#{$i} {
+        flex: 0 0 percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
+      }
+      .offset-#{$i} {
+        margin-left: percentage($i / $grid-columns);
+      }
+    }
+    #{$infixClasses} {
+      padding-right: $gutter / 2;
+      padding-left: $gutter / 2;
+    }
+    .row {
+      margin-left: -$gutter / 2;
+      margin-right: -$gutter / 2;
+    }
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+#{$classes} {
+  position: relative;
+  width: 100%;
+}

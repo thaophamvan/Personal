@@ -1,0 +1,57 @@
+include ../../mixinComponents/mixinComponents
+h2.myacc-form__header.odhd-form__order-number Order Number: {{orderNumber}}
+div.odhd-order
+  div.odhd-order__wrapper
+    div.odhd-order__block.col-md-4.p-0
+      span.odhd-order__detail-title Order Details
+      div.odhd-form__group
+        label.odhd-form__label Order number:
+        span.odhd-form__value {{orderNumber}} / {{orderRef}}
+      div.odhd-form__group
+        label.odhd-form__label Order date:
+        span.odhd-form__value {{createdDate}}
+      div.odhd-form__group
+        label.odhd-form__label Order status:
+        span.odhd-form__value.text-underline {{status}}
+    div.odhd-order__block.col-md-4.p-0
+      span.odhd-order__detail-title Delivery Details
+      div.odhd-form__group
+        span.odhd-form__value {{deliveryName}}
+      div.odhd-form__group
+        span.odhd-form__value {{deliveryStreetNumber}}
+      div.odhd-form__group
+        span.odhd-form__value {{deliveryStateAndPostcode}}
+    div.odhd-order__block.col-md-4.p-0
+      span.odhd-order__detail-title Billing Details
+      div.odhd-form__group
+        span.odhd-form__value {{billingName}}
+      div.odhd-form__group
+        span.odhd-form__value {{billingStreetNumber}}
+      div.odhd-form__group
+        span.odhd-form__value {{billingStateAndPostcode}}
+  div.odhd-order__wrapper.odhd-order__wrapper--intruction(class='{{showDelivery}}')
+    div.odhd-order__block.col-md-12.p-0
+      span.odhd-order__detail-title.delivery-instruction Delivery Intructions : 
+      span.odhd-form__value.intructions-content {{deliveryInstructions}}
+  a.odh-form__download-invoice(href='{{invoice}}' target="_blank") View invoice
+    span.odh-form__download-icon.icon-download
+div.odhd-product-list__head
+  div.odhd-product-list__head-name.p-0.col-md-8 Product
+  div.odhd-product-list__head-name.mobile--hide.text--center.col-md-2 Quantity
+  div.odhd-product-list__head-name.mobile--hide.text--right.p-0.col-md-2 Sub-total
+div.odhd-product-list__content.js_odhd-product-list__content
+div.odhd-product-total__head
+  div.odhd-product-total__group.p-0
+    span.odhd-product-total__normal-label Sub-total
+    span.odhd-product-total__normal-val {{subTotal}}
+  div.odhd-product-total__group.p-0
+    span.odhd-product-total__normal-label Delivery
+    span.odhd-product-total__normal-val {{shippingTotal}}
+  div.odhd-product-total__group.p-0
+    span.odhd-product-total__normal-label Discount
+    span.odhd-product-total__normal-val {{discountTotal}}
+  div.odhd-product-total__group.p-0
+    div.odhd-product-total__total
+      span.odhd-product-total__normal-label.font-weight-600 Total
+      span.odhd-product-total__normal-val.font-weight-600 {{total}}
+    div.odhd-product-total__gst-include GST Include

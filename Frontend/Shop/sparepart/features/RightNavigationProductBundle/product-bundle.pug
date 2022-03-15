@@ -1,0 +1,10 @@
+include ../../../core/mixinComponents/mixinComponents
+.product-bundle
+  h4.product-bundle__title {{bundleName}}
+  .product-bundle__content
+    p.text--bold {{bundleTitle}} | ${{bundlePrice}} <span>${{normalPrice}}</span>
+    p {{bundleDescription}}
+    button.btn.btn--primary.expanded.product-bundle__add-to-cart Add offer to cart
+    ul.product-bundle__content-items.row
+    button.btn.btn--primary.expanded.product-bundle__add-to-cart Add offer to cart
+    p {{condition}}

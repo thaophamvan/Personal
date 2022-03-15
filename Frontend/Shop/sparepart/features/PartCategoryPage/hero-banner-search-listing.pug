@@ -1,0 +1,35 @@
+include ../../../core/mixinComponents/mixinComponents
+
+- category1 = {"value": 1, "text": "Ovens"}
+- category2 = {"value": 2, "text": "Washing Machine"}
+- category3 = {"value": 3, "text": "Cooker Hoods"}
+- emptySelect = { "value": null, "text": "Select category"}
+- categorys = [emptySelect, category1, category2, category3]
+
+.hero-banner-standard
+	.hero-banner-listing
+		.hero-banner-listing__img.bg-primary-lighten-3
+		.hero-banner-listing__content
+			a(href="/").hero-banner-listing__back-btn.text--uppercase.primary.fs-12.lh-14
+				span.icon-dropdown
+				span Back To home
+			.d-flex.hero-banner-listing__heading-container
+				h1.hero-banner-listing__heading.primary.fs-md-48.fs-26.lh-34.lh-md-60 test Spare Parts & Accessories
+		.hero-banner-listing__search
+			.hero-banner-listing__tab-container.active
+				form.js_search-form
+					.hero-banner-listing__collapse-btn.is-active(data-component="popup" data-target="searchPnc" data-type="collapse" data-root="searchPnc") Enter PNC or model number to find parts
+					#searchPnc.hero-banner-listing__collapse.collapse.show.js_collapse-wrapper
+						.hero-banner-listing__collapse-container.popup__content.js_collapse-container
+							.form.hero-banner-listing__tab-col
+								.form-group
+									label.form-label.mobile-hide Enter PNC or model number to find parts
+									input.form-control(placeholder = "Enter PNC or model number").js_pinc-or-model__input
+									a.js_finc-pnc-btn.cursor-pointer How do I find my product number (PNC)?
+							.form.hero-banner-listing__tab-col
+								.form-group
+									label.form-label Add part type to filter your search&nbsp;
+										span.text-muted (optional)
+									input.form-control(placeholder = "Enter part description or part number").js_part-type__input
+							.hero-banner-listing__tab-btn
+								button.btn.btn--primary View spare parts

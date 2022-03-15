@@ -1,0 +1,22 @@
+$block: ".product-sorting";
+
+#{$block} {
+  padding: 10px 0 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid $light-gray;
+  @include md {
+    @include property('padding-top', $product-sorting_padding-top);
+    padding-bottom: 40px;
+    padding-left: 15px;
+    border-bottom: none;
+  }
+
+  &__sort-by {
+    padding-top: 20px;
+    width: 190px;
+    @include md {
+      order: 10;
+      padding-top: 0;
+    }
+  }
+}

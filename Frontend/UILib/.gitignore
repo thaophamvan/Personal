@@ -1,0 +1,12 @@
+.idea/
+.DS_Store
+
+node_modules/
+tmp/
+.env
+*.swp
+/.npmrc
+dist
+build
+.vscode
+.nvimrc

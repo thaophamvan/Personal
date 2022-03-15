@@ -1,0 +1,35 @@
+.new-address(ref="newAddress")
+    .form-group
+        label.form-label.required First name
+        <input class="form-control" name='Model.ShippingAddress.FirstName' required data-valueMissing="First name is required" maxlength="62" pattern=".*\S.*" data-patternMismatch="First name is required">
+    .form-group
+        label.form-label.required Last name
+        <input class="form-control" name='Model.ShippingAddress.LastName' required data-valueMissing="Last name is required" maxlength="62" pattern=".*\S.*" data-patternMismatch="Last name is required">
+    .form-group
+        label.form-label.required Contact number
+        <input class='form-control' type="text" maxlength="10" name='Model.ShippingAddress.DaytimePhoneNumber' required data-valueMissing="Primary number is required" pattern="^[0-9]{10}$" data-patternMismatch="Please enter a correct format (XXXXXXXXXX, with no spaces). Only numbers are allowed."  />
+    .form-group
+        label.form-label.required Email address
+        //- input.form-control(name='Model.ShippingAddress.Email' placeholder='your order confirmation will be sent to this email' required) 
+        <input class="form-control" required type="email" name="Model.ShippingAddress.Email" data-valueMissing="Email is required" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$" data-patternMismatch="Invalid Email" />
+    .form-group
+        label.form-label.required Address
+        input.form-control.js_address-suggestion(placeholder='Enter a location')
+        a.form-link.js_manuallyAddress.cursor-pointer.checkout-page__add-address-shipping Or enter manually
+    .js_manuallyAddress-content.hidden
+        include ./new-address-manually.pug
+    .form-group
+        label.form-label Company name
+            span.text-muted  (optional)
+        input.form-control(name='Model.ShippingAddress.OrganizationName' maxlength="64")
+    .form-group
+        label.form-label Australian business number (ABN)
+            span.text-muted  (optional)
+        input.form-control(name='Model.ShippingAddress.Abn' data-abn-number maxlength="14" placeholder="Enter Abn" )
+    label.checkbox.text--primary.mb-20
+        input.checkbox__input.js_delivery__radio-input(type="checkbox")
+        input.js_hiden_savedefault_deliveryaddress(type="hidden" name="Model.ShippingAddress.ShippingDefault")
+        span.checkbox__checkmark
+            i.fa.fa-check
+        | Save as my default delivery address
+

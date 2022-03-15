@@ -1,0 +1,9 @@
+export { default as app } from './app';
+export { default as footer } from './footer';
+export { default as leftColumn } from './leftColumn';
+export { default as user } from './user';
+export { default as mainTopic } from './mainTopic';
+export { default as statistic } from './statistic';
+export { default as search } from './search';
+export { default as loading } from './loading';
+export { default as admin } from './admin';

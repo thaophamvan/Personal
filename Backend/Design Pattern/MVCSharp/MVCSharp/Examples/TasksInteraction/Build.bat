@@ -1,0 +1,1 @@
+MSBuild TasksInteraction.sln /target:Build

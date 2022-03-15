@@ -1,0 +1,11 @@
+$block: ".promotion-banner-result";
+
+#{$block} {
+  .icon-checked {
+    margin-right: 8px;
+  }
+
+  .path1:before {
+    color: $primary;
+  }
+}

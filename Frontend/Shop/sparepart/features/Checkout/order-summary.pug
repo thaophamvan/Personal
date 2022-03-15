@@ -1,0 +1,42 @@
+.col-md-6.col-lg-5.order-summary
+  .card
+    h4.card__header.order-summary__header.d-flex.bg-primary-lighten-1.d-md-none.fs-16.lh-24.align-items-center.pl-15(data-component="popup" data-target="order-summary" data-type="collapse") Order Summary
+    h4.card__header.bg-primary-lighten-1.d-none.d-md-flex.fs-20.lh-26 Order Summary
+    .collapse(id='order-summary')
+      .card__body
+        .order-summary__list
+          .d-flex
+            .order-summary__item-img
+              img.img-responsive(src="images/checkout-cart/oven.png" alt="oven")
+            .order-summary__item-detail.w-100
+              .d-flex.mb-2
+                .col-8
+                  h4.fs-16.lh-24.fs-md-14.lh-md-22 test 71L Built-in Oven with Smart Food Probe
+                  div.lh-22.fs-14.skyblue-dark CODE123X
+                  div.skyblue-dark.lh-22.fs-14 Qty: 1
+                .col-4.text--right
+                  span.price.primary.fs-16.lh-22 $1000
+        hr.divider
+        .d-flex.lh-22
+          .col-8
+            p.primary.fs-16.fs-md-14.fw-600 Standard Delivery
+          .col-4.text--right
+            span.primary.fs-16.fs-md-14.price $65
+        hr.divider
+        .order-summary__calculation
+          .d-flex.lh-22.pb-15
+            .col-8
+              p.fs-16.fw-600 Sub-total
+            .col-4.text--right
+              p.primary.fs-16 $1,100.00
+          .d-flex.pb-20
+            .col-8
+              p.fs-16.primary.fw-600 Delivery
+            .col-4.text--right
+              p.fs-16.primary.calculation__price $60,50
+          .d-flex.lh-22
+            .col-8
+              p.fs-20.primary.fw-600 TOTAL
+            .col-4.text--right
+              p.fs-20.primary.calculation__price--total.fw-600 $1,100.00
+              p.fs-12.lh-18.skyblue-dark.ext--right GST Included

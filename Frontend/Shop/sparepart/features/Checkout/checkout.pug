@@ -1,0 +1,14 @@
+include ../../../core/mixinComponents/mixinComponents
+.checkout-page.w-100.mx-auto(data-component='checkout')
+  block content
+    .w-100.px-15.checkout-page__content
+      a.btn.btn--link.back-to-cart BACK TO CART
+      h1.pt-15.pb-60.text--center.checkout-page_head-title
+          span.checkout-page_head-title-text Secure Checkout
+      .w-100.mx-auto.my-auto.pos-relative.checkout-page__steps
+          +Steps()
+      .d-flex
+        .checkout-page__address.w-100.d-md-inline-block
+          include ./address
+        include ./order-summary
+script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXh-BsP3WW3eRWnldpRJXPXcahYU9zMf8&libraries=places&types=regions&country=AU&postal_code=2020")

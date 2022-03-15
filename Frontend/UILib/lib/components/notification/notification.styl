@@ -1,0 +1,77 @@
+$block = ".notification";
+$transition-delay = .5s;
+
+{$block} {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background: $c-danger-base;
+  color: $c-white-base;
+  transition: all $transition-delay linear;
+
+  &--overlay {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    left: 0;
+
+    &{$block}--showing {
+      bottom: 0;
+    }
+  }
+
+  &--non-overlay {
+    height: 0;
+
+    {$block}__inner {
+      height: 0;
+      transition: all $transition-delay linear;
+      transform: translateY(25px);
+    }
+
+    &{$block}--showing {
+      height: 50px;
+
+      {$block}__inner {
+        display: flex;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+
+    & button {
+      margin-right: 5px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    & {$block}__countdown-value {
+      margin-left: 10px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--info {
+    background: $c-gray-darkest;
+  }
+
+  &--hidden {
+    bottom: -50px;
+  }
+}

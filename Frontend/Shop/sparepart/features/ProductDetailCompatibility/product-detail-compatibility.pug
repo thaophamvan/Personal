@@ -1,0 +1,29 @@
+.product-detail-comp.md-container(data-component="productDetailCompatibility")
+    .row.justify-content-between
+        .col-12.bg-primary-lighten-3.col-md-4.product-detail-comp__card.js_product-detail-comp__product-compatibility
+            h6.d-flex.fs-16.lh-19.fw-600.ma-0.mx-15.py-20.justify-content-between.align-items-center.d-md-none.js_product-detail-comp__product-compatibility-collapse(data-component="popup" data-type="collapse" data-target="product-compatibility") Check product compatibility
+                span.icon-dropdown.d-md-none.fs-8
+            h6.d-flex.fs-16.lh-19.fw-600.ma-0.mx-15.py-20.justify-content-between.align-items-center.d-none.d-md-block Check product compatibility
+            #product-compatibility.collapse.product-detail-comp__content.mx-15
+                .mb-30
+                    p.mb-10.fs-16.lh-24.primary Enter you appliance product number (PNC) to find out if this part fits your appliance
+                    .js_check-product-compatibility-form
+        .col-12.bg-primary-lighten-3.col-md-4.product-detail-comp__card
+            h6.d-flex.fs-16.lh-19.fw-600.ma-0.mx-15.py-20.justify-content-between.align-items-center(data-component="popup" data-type="collapse" data-target="product-compatibility-replacement") This part replaces older products (2)
+                span.icon-dropdown.d-md-none.fs-8
+            #product-compatibility-replacement.collapse.product-detail-comp__content.mx-15
+                .mb-30
+                    p.fs-16.lh-24.primary.mb-10 This part replaces the following superceded parts:
+                    ul.primary.fs-16.lh-24.px-10.un-order-list.px-md-0
+                        li 3114367034
+                        li 3114367034
+                        li 3114367034
+        .col-12.bg-primary-lighten-3.col-md-4.product-detail-comp__card
+            h6.d-flex.fs-16.lh-19.fw-600.ma-0.mx-15.py-20.justify-content-between.align-items-center(data-component="popup" data-type="collapse" data-target="product-compatibility-delivery") Check product compatibility
+                span.icon-dropdown.d-md-none.fs-8
+            #product-compatibility-delivery.collapse.product-detail-comp__content.mx-15
+                .mb-30
+                    ul.un-order-list.fs-16.lh-24
+                        li Delivery is available Australia wide
+                        li Standard 2-10 day delivery is $14.95 per order
+                    a.fs-14.lh-20.mt-20(href="#") See Delivery details

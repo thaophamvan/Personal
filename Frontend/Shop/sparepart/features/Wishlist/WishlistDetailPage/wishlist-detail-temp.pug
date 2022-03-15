@@ -1,0 +1,104 @@
+include ../../../../core/mixinComponents/mixinComponents
+
+.pt-15.pb-50
+  .loading.pos-absolute.d-flex(v-show="loading")
+    +LoadingIndicator()(class="pos-absolute")
+  a(:href="wishlistUrl").none-underline.mb-30.d-inline-flex.align-items-center
+    span.icon-rightarrow.mr-10
+    span.wishlist-detail__back-to-list-btn.fs-12.lh-14.fw-600.text--uppercase back to list
+  .d-md-flex.justify-content-between.mb-md-40
+    .d-flex.align-items-center.mb-40.justify-content-center.justify-md-content-start.mb-md-0.pr-md-20.flex-grow-1.flex-auto.flex-shrink-1
+      .form-group.w-100.flex-grow-1(v-if="editing").pos-relative
+        input.form-control.w-100(v-model="newWishlistName" ref="wishlistNameInput" @blur="handleSubmitChangeWishlistName" @keydown.enter="$event.target.blur()" :readonly="loadingName")
+        +LoadingIndicator(true).pos-absolute.loading-name(v-if="loadingName")
+      h1.fs-32.lh-38.fw-600.fs-md-54.lh-md-60(v-if="!editing") {{wishlistName}}
+      span.icon-edit.ml-10.fs-20.fs-md-26.cursor-pointer.flex-1(@click="enableEditingName" v-if="!editing")
+    .d-flex.align-items-center.justify-content-between.mb-30.mb-md-0.flex-auto.flex-shrink-0.flex-grow-0
+      div(data-modal="deleteWishlistConfirmModal" ref="deleteWishlistBtn")
+        a(href="#" @click="deleteWishlist").none-underline.d-flex.align-items-center.d-md-none
+          span.icon-delete.mr-10.fs-20
+          span.fs-14.lh-20.fw-600.mt-5 Delete Favourite
+        button.wishlist-detail__btn.btn.btn--outline-primary.d-none.d-md-flex.align-items-center.justify-content-center.mr-20(@click="deleteWishlist")
+          span.icon-delete.mr-10.fs-20
+          span Delete Favourite
+      a(href="#" @click="addListToCart" :class="{disabled: products.length === 0}").none-underline.d-flex.align-items-center.d-md-none
+        span.icon-cart.mr-10.fs-20
+        span.fs-14.lh-20.fw-600.mt-5 Add list to cart
+      button.wishlist-detail__btn.btn.btn--outline-primary.d-none.d-md-flex.align-items-center.justify-content-center(@click="addListToCart" :disabled="products.length === 0")
+        span.icon-cart.mr-10.fs-20
+        span Add list to cart
+  .d-flex.justify-content-between.flex-wrap.align-items-start.mb-30.pos-relative
+    .selectbox.wishlist-detail__sortby.mb-20.mb-md-0.selectbox--sort(ref="sortBySelectbox" data-component="popup" data-target="wishlist-detail__sortby" data-type="select" :key="sortValue")
+      button.btn.selectbox__btn.js_selectbox__btn(type="button") {{ activeSort ? activeSort.displayName : 'Sort by'}}
+      #wishlist-detail__sortby.popup.selectbox__options-popup.js_selectbox__options 
+        .selectbox__option.js_selectbox__option(v-for="sortItem of sortData" :data-key="sortItem.name" :class="{'is-active': isSortActive(sortItem.name)}") {{sortItem.displayName}}
+    .pos-md-absolute.wishlist-detail__item-count
+      p.fs-16.lh-20.mt-md-10.text--center {{itemCountStr}}
+    a(href="#" @click="showShareWishlistModal" ref="shareWishlistBtn" data-modal="shareWishlistModal" :class="{disabled: products.length === 0}").none-underline.d-flex.align-items-center.mt-md-10
+      span.icon-share.fs-18.mr-10
+      span.fs-14.lh-20.fw-600 Share Favourite
+  .row(v-if="products.length > 0")
+    .col-12.col-md-4.py-30(v-for="product of products" :key="product.code").wishlist-detail__product
+      .flex-column.d-flex.h-100.wishlist-detail__product-wraper
+        .flex-column.d-flex.h-100
+          a(:href="product.productUrl").wishlist-detail__product-imgwrap.img-center.mb-10.none-underline
+            +ImgLazy("", "", "")(:data-src="product.img" :alt="product.displayName")
+          a(:href="product.productUrl").fs-18.lh-24.mb-5.fw-600.none-underline.fs-md-20.lh-md-26.wishlist-detail-info__text-color {{product.displayName}}
+          a(:href="product.productUrl").fs-14.lh-20.skyblue-dark.mb-10.fw-600.none-underline.wishlist-detail-info__text-color {{product.code}}
+          p.fs-14.lh-20.second-text.mb-5.wishlist-detail-info__text-color {{product.description}}
+          p.fs-14.lh-18.primary-lighten-1.fw-600.mb-15(v-if="false" ) {{product.stockText}} {{product.edaTime}}
+          .qty-control.clearfix.mb-10(v-if="product.enableAutoDelivery && !product.IsSuperseded && product.instock")
+            button.decrease(@click="decreaseProduct(product)")
+              span -
+            input(type="number" :value="product.quantity || 1" readonly)
+            button.increase(@click="increaseProduct(product)")
+              span +
+          .d-flex.align-items-center.justify-content-between.mb-15(v-if="product.enableAutoDelivery && !product.IsSuperseded")
+            div.wishlist-detail__recurring-side-box
+              .fs-14.lh-18.primary-lighten-1.fw-600.mb-5 {{product.stockText}} {{product.edaTime}}
+              .d-flex.align-items-baseline
+                .fs-20.lh-26.fw-600.mr-10.fs-md-26.lh-md-34.wishlist-detail-info__text-color {{product.promotionPrice ? product.promotionPrice : product.totalPrice}}
+                del.fs-14.lh-20.second-text.opacity-05(v-if="product.promotionPrice") {{product.totalPrice}}
+            div.wishlist-detail__recurring-box.text--primary-color
+              .fs-10.fw-600 {{product.autoDeliveryText}}
+              span.wishlist-detail__recurring-box__discount.fs-12.fw-600.btn--primary.pointer-md-none {{product.autoDeliveryPlanInfor.recurringPercentOff}}
+              .d-flex.align-items-center.justify-content-center.fs-10.mt-5 {{product.autoDeliveryFrom}}
+                span.fs-20.lh-26.fw-600.fs-md-26.lh-md-34.wishlist-detail-info__text-color.ml-5 {{product.autoDeliveryPlanInfor.discountedPrice}}
+          .d-flex.align-items-center.justify-content-between.mb-15(v-else-if="!product.IsSuperseded")
+            .d-flex.align-items-baseline
+              .fs-20.lh-26.fw-600.mr-10.fs-md-26.lh-md-34.wishlist-detail-info__text-color {{product.promotionPrice ? product.promotionPrice : product.totalPrice}}
+              del.fs-14.lh-20.second-text.opacity-05(v-if="product.promotionPrice") {{product.totalPrice}}
+            .qty-control.clearfix(v-if="product.instock" )
+              button.decrease(@click="decreaseProduct(product)")
+                span -
+              input(type="number" :value="product.quantity || 1" readonly)
+              button.increase(@click="increaseProduct(product)")
+                span +
+        .flex-column.d-flex
+          .mb-10
+            +BtnAddToCart('product.variantCode',null)(:disabled="!product.instock || product.isSuperseded")
+              span(v-if="product.isSuperseded") Superseded
+              span(v-else) Add To Cart
+          .d-flex.align-items-center.justify-content-between
+            div
+              a.none-underline.d-flex.align-items-center.btn.btn-link--primary(href="#" data-add-to-wishlist data-modal='addToWishlistModal' v-bind:data-product-code="product.code" v-if="!product.isSuperseded")
+                span.icon-save-to.fs-20.mr-5
+                span.fs-14.lh-20.fw-600.mt-5.wishlist-detail-info__text-color Save to
+            a(href="#" @click="deleteProduct(product, $event)").none-underline.d-flex.align-items-center
+              span.icon-delete.fs-20.mr-5
+              span.fs-14.lh-20.fw-600.mt-5.wishlist-detail-info__text-color Remove
+  .text--center.pt-md-30(v-if="products.length === 0 && loaded")
+    include ./empty.pug
+  include ../delete-confirm-modal.pug
+  include ./share-wishlist-modal.pug
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+$block = ".badge";
+
+{$block} {
+  display: inline-block;
+  border: 1px dotted $c-gray-lighter;
+  border-radius: 3px;
+  background: $c-gray-lighter;
+  color: $c-gray-darker;
+  font-weight: 400;
+  font-size: 14px;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 3px 10px 3px 5px;
+    min-height: 24px;
+    color: $c-gray-darker;
+    line-height: 1;
+
+    svg {
+      flex-shrink: 0;
+      margin: 0 5px 0 0;
+      fill: $c-gray-darker;
+    }
+  }
+
+  &.badge--right-aligned-icon {$block}__container {
+    flex-direction: row-reverse;
+    padding: 3px 5px 3px 10px;
+
+    svg {
+      margin: 0 0 0 5px;
+    }
+  }
+
+  &.badge--inline {
+    display: inline-block;
+    margin-right: 3px;
+    margin-bottom: 3px;
+  }
+
+  &.badge--outline {
+    border: 1px dotted $c-gray-base;
+  }
+}

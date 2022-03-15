@@ -1,0 +1,7 @@
+$block: ".collapse";
+
+#{$block} {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.2s ease-in-out;
+}

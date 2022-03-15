@@ -1,0 +1,21 @@
+@import '../../../core/scss/critical';
+@import '../../../core/components/JsTabs/js-tabs-base';
+@import '../../../core/components/ProductDetailSlider/product-detail-slider';
+
+@import '../../features/TopHeader/top-header';
+@import '../../features/ProductDetailInfo/product-detail-info';
+@import '../../features/MainNavigation/critical-main-navigation';
+
+.product-detail-back-btn {
+    color: $product-detail-back-btn-color;
+    .icon-rightarrow:before{
+    	color: $product-detail-back-btn-color;
+    }
+}
+
+.product-detail {
+    &__wrapper {
+        @include property('background-color', $product-detail__wrapper-bg-color);
+        @include property('padding-bottom', $product-detail__wrapper-padding-bottom);
+    }
+}

@@ -1,0 +1,9 @@
+extends default
+include ../../core/mixinComponents/mixinComponents
+block critical-css
+  //inject-css critical-css/shopping-cart-page.css
+block content
+  //- include ../../ProductFilter/product-filter.pug
+  include ../features/ShoppingCart/shopping-cart.pug
+  include ../../core/components/YouMayAlsoLike/you-may-also-like.pug
+  +AddToWishlistModal

@@ -1,0 +1,15 @@
+{
+  "presets": [
+    ["@babel/env", {
+      "targets": {
+        "browsers": ["last 2 Chrome versions"]
+      }
+    }],
+    "@babel/react"
+  ],
+  "env": {
+    "production": {
+      "plugins": ["transform-remove-console"]
+    }
+  }
+}

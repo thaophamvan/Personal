@@ -1,0 +1,72 @@
+include ../../mixinComponents/mixinComponents
+
+form(@submit="handleSubmit" ref="deliveryAddressModalForm")
+  +modalBody
+    .myacc-modal__error(v-if="error && error.length > 0" )
+      .myacc-modal__error-text
+        ul(v-if="isArrayError")
+          li(v-for="item in error" :key="item" v-if="") {{item}}
+        ul(v-else)
+          li {{error}}
+    .form-group.myacc-modal__row
+      label.form_lable First name
+      <input class="form-control" type="text" maxlength="60" name="firstName" placeholder='Enter first name' required data-valueMissing="First name is required" v-model="dataSource.firstName" pattern=".*\S.*" data-patternMismatch="First name is required"/>
+    .form-group.myacc-modal__row
+      label.form_lable Last name
+      <input class="form-control" type="text" maxlength="60" name="lastName" placeholder='Enter last name' required data-valueMissing="Last name is required" v-model="dataSource.lastName" pattern=".*\S.*" data-patternMismatch="Last name is required" />
+    .form-group.myacc-modal__row
+      label.form_lable Address
+      input#deliveryAddress.form-control.js_address-modal__input-geo(name="address" :required="!manually" data-valueMissing="Address is required" placeholder='Enter a location' v-model="dataSource.address" type="text") 
+      .validation-error(data-is-custom="true" v-if="inValidAddress") Sorry your address is not recognizable by Google API, please enter it manually
+      span.lh-24.fs-16.primary.underline.fw-600.cursor-pointer.myacc-modal__enter-address-manually-label(@click="showManuanllyAddress") Or enter manually
+    div(v-bind:class="{hidden:!manually}")
+      .form-group.myacc-modal__row
+        label.form_lable Unit
+          span.myacc-modal__row-optionnal (optional)
+        input.form-control.js_address-unit(id='subpremise' name="unit" placeholder='Enter unit' v-model="dataSource.unit" type="text" maxlength="10") 
+      .form-group.myacc-modal__row
+        label.form_lable Street number
+        <input id="street_number" class="form-control" type="text" name="streetNumber" placeholder='Enter street number' :required="manually"  data-valueMissing="Street number is required" v-model="dataSource.streetNumber" maxlength="5" pattern=".*\S.*" data-patternMismatch="Street number invalid" />
+      .form-group.myacc-modal__row
+        label.form_lable Street name
+        <input id="route" class="form-control" type="text" name="streetName" placeholder='Enter street name' :required="manually" data-valueMissing="Street name is required" v-model="dataSource.streetName" maxlength="45"  pattern=".*\S.*" data-patternMismatch="Street name invalid"/>
+      .form-group.myacc-modal__row
+        label.form_lable Suburb
+        <input id="locality" class="form-control js_address-sublocality_level_1" type="text" name="suburb" placeholder='Enter suburb' :required="manually" data-valueMissing="Suburb is required" v-model="dataSource.suburb" maxlength="40" pattern=".*\S.*" data-patternMismatch="Suburb invalid" /> 
+      .myacc-modal__row
+        label.form_lable State
+        +SelectBox('addressState', [], 'wishlist-detail__sort-selectbox form-control js_address-modal__select','Select state')
+        input#administrative_area_level_1(type="hidden" name="state" v-model="dataSource.state" :required="manually" data-valueMissing="State is required")
+      .form-group.myacc-modal__row
+        label.form_lable Postcode
+        <input id="postal_code" maxlength="4" class="form-control" type="text" name="postcode" placeholder='Enter postcode' :required="manually" data-valueMissing="Postcode is required" v-model="dataSource.postCode" pattern="^[0-9]+$" data-patternMismatch="Postcode invalid" /> 
+      .form-group.myacc-modal__row.mb-20
+        label.form_lable Country
+        input.form-control(type="text" name="country"  readonly :value="countryName") 
+    .form-group.myacc-modal__row
+      label.form_lable Company name
+        span.myacc-modal__row-optionnal (optional)
+      input.form-control(type="text" name="companyName" placeholder='Enter company name' v-model="dataSource.companyName" maxlength="64")
+    .form-group.myacc-modal__row
+      label.form_lable Australian business number (ABN)
+        span.myacc-modal__row-optionnal (optional)
+      input.form-control.js-myacc-model_abn(type="text" data-abn-number name="abn" placeholder='Enter number' v-model="dataSource.abn" maxlength="14")
+    .form-group.myacc-modal__row.row
+      .col-12.mb-10
+        .checkbox-style
+          label.checkbox.d-flex
+            span.fs-14.lh-22  Make this my default delivery address
+            input.checkbox__input(name="defaultShipping" v-model="dataSource.defaultShipping" type="checkbox" data-value-uncheck="0")
+            span.checkbox__checkmark
+      .col-12
+        .checkbox-style
+          label.checkbox.d-flex
+            span.fs-14.lh-22  Make this my default billing address
+            input.checkbox__input(name="defaultBilling" v-model="dataSource.defaultBilling" type="checkbox" data-value-uncheck="0")
+            span.checkbox__checkmark
+    .row
+      .col-md-6.col-12.mb-10.mb-md-0
+        button.btn.btn--primary.mb-1.js_address-detail__save-btn(type="submit" data-current-type='delivery' data-action='add' data-row-id='2' data-user-id="") Save
+      .col-md-6.col-12
+        button.btn.btn--outline-primary.js-close-modal(@click="closeModal") Cancel
+

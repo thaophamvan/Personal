@@ -1,0 +1,24 @@
+include ../../../../core/mixinComponents/mixinComponents
+
++modal('shareWishlistModal', 'wishlist-detail__modal')
+  +modalHeader('Share this list via email')
+  form(@submit="handleSubmitShareWishlist").text--left
+    +modalBody
+      .form-group.mb-20(:class="{error: (!recipientEmail.trim() || !isEmail(recipientEmail)) && submited, success: recipientEmail.trim() && isEmail(recipientEmail) && submited}")
+        p.fs-16.lh-24.mb-5 To
+        input.form-control.w-100(placeholder='Enter recipient email address' v-model="recipientEmail")
+        .fs-12.lh-16.alert(v-if="!recipientEmail.trim() && submited") Required
+        .fs-12.lh-16.alert(v-if="recipientEmail.trim() && !isEmail(recipientEmail) && submited") Invalid Email
+      .form-group.mb-20(:class="{error: !senderName.trim() && submited, success: senderName.trim() & submited}")
+        p.fs-16.lh-24.mb-5 From
+        input.form-control.w-100(placeholder='Enter your name' v-model="senderName")
+        .fs-12.lh-16.alert(v-if="!senderName.trim() & submited") Required
+      .form-group.mb-20(:class="{success: submited}")
+        p.fs-16.lh-24.mb-5 Message
+          span.opacity-05 &nbsp;(Optional)
+        textarea.form-control.wishlist-detail__text-area.w-100(placeholder='Enter a message to go with your email' maxlength="500" v-model="optionalMessage")
+      .row
+        .col-md-6.col-12.mb-10
+          button.btn.btn--primary.w-100(type="submit") Share
+        .col-md-6.col-12
+          button.btn.btn--outline-primary.w-100(type="button" @click="shareWishlistModal.hideModal()") Cancel

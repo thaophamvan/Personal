@@ -1,0 +1,122 @@
+@import "color-vars";
+
+.btn-primary {
+  background-color: $BUTTON-SKY-BLUE !important;
+  border-color: $BUTTON-SKY-BLUE;
+}
+
+.btn-add {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: $test-BLUE;
+  border-color: $test-BLUE;
+
+  &:hover {
+    font-weight: bold;
+    background-color: $BUTTON-SKY-BLUE;
+    border-color: $BUTTON-SKY-BLUE;
+  }
+
+  &__icon {
+    font-size: 0.9rem;
+    padding-left: 15px;
+    color: $WHITE;
+  }
+}
+
+.btn-edit {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: $test-BLUE;
+  border-color: $test-BLUE;
+
+  &:hover {
+    font-weight: bold;
+    background-color: $FACEBOOK-BLUE;
+    border-color: $FACEBOOK-BLUE;
+  }
+
+  &__icon {
+    font-size: 0.9rem;
+    padding-left: 10px;
+    color: $WHITE;
+  }
+}
+
+.btn-view {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: $test-BLUE;
+  border-color: $test-BLUE;
+  font-size: 0.64rem;
+
+  &:hover {
+    font-weight: bold;
+    background-color: $FACEBOOK-BLUE;
+    border-color: $FACEBOOK-BLUE;
+  }
+
+  &__icon {
+    font-size: 0.9rem;
+    color: $WHITE;
+  }
+}
+
+.btn-delete {
+  padding: 0.5rem 1rem;
+  background-color: $RED;
+  border-color: $RED;
+
+  &:hover {
+    background-color: $NAVIGATE-ORANGE;
+    border-color: $NAVIGATE-ORANGE;
+  }
+
+  &__icon {
+    color: $WHITE;
+    font-size: 0.9rem;
+  }
+}
+
+.btn-save {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  background-color: $test-BLUE;
+  border-color: $test-BLUE;
+
+  &:hover {
+    font-weight: bold;
+    background-color: $FACEBOOK-BLUE;
+    border-color: $FACEBOOK-BLUE;
+  }
+
+  &__icon {
+    font-size: 0.9rem;
+    padding-left: 15px;
+    color: $WHITE;
+  }
+}
+
+.btn-cancel {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: $test-BLUE;
+  background-color: #dee8ea;
+  border-color: #dee8ea;
+
+  &:hover {
+    font-weight: bold;
+    background-color: $FACEBOOK-BLUE;
+    border-color: $FACEBOOK-BLUE;
+  }
+
+  &__icon {
+    font-size: 0.9rem;
+    padding-left: 15px;
+    color: $WHITE;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "data": {
+    "orderSummary": {
+      "products": [
+        {
+          "id": 1,
+          "name": "test 71L Build-in Oven width mdart Food Probe",
+          "code": "CODE123X",
+          "price": 1000,
+          "quantity": 1,
+          "delivery": {
+            "date": "10/10/2019",
+            "price": 60.50
+          }
+        }
+      ],
+      "subTotal" : 1100,
+      "delivery": 60.50,
+      "total": 1165
+    }
+  }
+}

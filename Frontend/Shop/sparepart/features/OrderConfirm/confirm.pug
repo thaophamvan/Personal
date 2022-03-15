@@ -1,0 +1,40 @@
+include ../../../core/mixinComponents/mixinComponents
+.pt-30.pb-30.pb-md-60
+  block content
+    .order-confirm-page__confirm.pl-15.pr-15.mx-auto.my-auto
+      a.btn.btn--link.back-to-cart BACK TO CART
+      h1.pt-15.pb-60.text--center Secure Checkout
+      .d-flex
+        .order-confirm-page__confirm-steps.w-100.mx-auto.my-auto.pos-relative
+          +Steps()
+      .w-100.mx-auto.my-auto
+        .lh-26.fs-16.fs-md-20.gray.pb-40.pb-md-60.text--center
+          | Thank you for your purchase. You order number is
+          |
+          span.text--bold.text--primary #PO123456.
+          br
+          br
+          | You will receive an order confirmation email shortly.
+          br
+          br
+          p.d-none.d-md-inline-block.lh-26.fs-16.fs-md-20.gray 
+            | Or go to link
+            |
+            a.link.text--bold  My Account
+              span.icon-checked
+              |
+              | Order History
+            |  to view your order summary.
+      .odh-need-help
+        span.odh-need-help__text.fw-600.fs-32.fs-md-26.lh-26.lh-md-34.primary NEED HELP?
+        .odh-need-help__items
+          a.odh-need-help__item
+            img.lazyImg.odh-need-help__icon
+            span.odh-need-help__item-text Visit the FAQs page 
+          a.odh-need-help__item
+            img.lazyImg.odh-need-help__icon
+            span.odh-need-help__item-text Email staff@test.com.au
+
+
+
+

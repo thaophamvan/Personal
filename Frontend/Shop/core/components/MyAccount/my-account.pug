@@ -1,0 +1,277 @@
+include ../../mixinComponents/mixinComponents
+div.myacc__page(data-component="myAccount")
+  h1.page-title.text--center My Account
+  div#myacc-tabs
+    nav.js_tabs__nav
+      ul.js_tabs__tabs-container.myacc-tabs__tabs-container.text--center
+        li.js_tabs__tab.myacc-tabs__tab.text--center.active Account Details
+        li.js_tabs__tab.myacc-tabs__tab.text--center Order History
+      div.js_tabs__marker
+    ul.js_tabs__content-container
+      li.js_tabs__content.active
+        div.myacc-tabs__wrapper
+          div#myacc-detail.myacc-detail.myacc-content--center
+            div.info-box.account--detail
+              span.info-box__text.js_myacc-detail__info-text Information alert notifying user that their specific change has been made succesfully
+                svg(viewBox="0 0 27 32").e-icon.info-box__icon
+                  use(xlink:href="#info-circle")
+            div.myacc-form.myacc-form-pd
+              button.btn.btn--primary.myacc-form__add.myacc-form--row-reverse.js_myacc-form-dd__add(data-modal="editAddressModal" data-user-id="1") Edit details
+                span.myacc-form__icon-add.myacc-form--redirect.icon-edit
+              </button>
+              h2.myacc-form__header.myacc-detail__header Personal Details
+              div.myacc-form__body
+                div.myacc-form__item
+                  div.myacc-form__content.js_personal-detail-content
+                    div.myacc-form__group
+                      label.myacc-form__label First name
+                      span.myacc-form__value Michelle
+                    div.myacc-form__group
+                      label.myacc-form__label Last name
+                      span.myacc-form__value Rossier
+                    div.myacc-form__group
+                      label.myacc-form__label Email address
+                      span.myacc-form__value michelle.rossier@test.com.au
+                    div.myacc-form__group
+                      label.myacc-form__label Contact number
+                      span.myacc-form__value  0400123456
+            div.myacc-form.myacc-form-pd
+              button.btn.btn--primary.myacc-form__add.myacc-form--row-reverse.js_myacc-form-dd__add(data-modal="editAddressModal" data-user-id="1") Edit details
+                span.myacc-form__icon-add.myacc-form--redirect.icon-edit
+              </button>
+              h2.myacc-form__header.myacc-detail__header Sing In Details
+              div.myacc-form__body
+                div.myacc-form__item
+                  div.myacc-form__content.js_personal-detail-content
+                    div.myacc-form__group
+                      label.myacc-form__label First name
+                    div.myacc-form__group
+                      span.myacc-form__value.myacc-form__password
+            div.myacc-form.myacc-form-dd.js_myacc-form-dd
+              h2.myacc-form__header.myacc-detail__header Delivery Details
+              button.btn.btn--primary.myacc-form__add.js_myacc-form-dd__add(data-modal="editAddressModal" data-user-id="1") Add New
+                span.myacc-form__icon-add.icon-plus
+              div.myacc-form__body.js_myacc-form-dd__list-item
+                div.myacc-form__item
+                  div.myacc-form__group
+                    div.myacc-form__group-label
+                      label.myacc-form__label Default Address
+                    div.myacc-form__group-value
+                      span.myacc-form__value Michelle Rossier
+                      span.myacc-form__value 123 Smith Rd
+                      span.myacc-form__value Casula, NSW 2170
+                  div.myacc-form__group-action
+                    a.myacc-form__btn.js_myacc-form-dd__edit(data-modal="editAddressModal" data-user-id='userId' data-delivery-id="1")
+                      span.myacc-form__icon.icon-edit
+                      span.myacc-form__edit Edit
+                    a.myacc-form__btn.js_myacc-form-dd__delete(data-user-id='userId' data-delivery-id="1" data-modal="deleteAddressModal")
+                      span.myacc-form__icon.icon-delete
+                      span.myacc-form__delete Delete
+                div.myacc-form__item
+                  div.myacc-form__group
+                    div.myacc-form__group-label
+                      label.myacc-form__label Default Address
+                    div.myacc-form__group-value
+                      span.myacc-form__value Michelle Rossier
+                      span.myacc-form__value 123 Smith Rd
+                      span.myacc-form__value Casula, NSW 2170
+                  div.myacc-form__group-action
+                    a.myacc-form__btn.js_myacc-form-dd__edit(data-modal="editAddressModal" data-user-id='userId' data-delivery-id="1")
+                      span.myacc-form__icon.icon-edit
+                      span.myacc-form__edit Edit
+                    a.myacc-form__btn.js_myacc-form-dd__delete(data-user-id='userId' data-delivery-id="1" data-modal="deleteAddressModal")
+                      span.myacc-form__icon.icon-delete
+                      span.myacc-form__delete Delete
+            div.myacc-form.myacc-form-bd.js_myacc-form-bd
+              h2.myacc-form__header.myacc-detail__header Billing Details
+              button.btn.btn--primary.myacc-form__add.js_myacc-form-bd__add(data-modal="editAddressModal" data-user-id="userId") Add New
+                span.myacc-form__icon-add.icon-plus
+              div.myacc-form__body.js_myacc-form-bd__list-item
+                div.myacc-form__item
+                  div.myacc-form__group
+                    div.myacc-form__group-label
+                      label.myacc-form__label Default Address
+                    div.myacc-form__group-value
+                      span.myacc-form__value Michelle Rossier
+                      span.myacc-form__value 123 Smith Rd
+                      span.myacc-form__value Casula, NSW 2170
+                  div.myacc-form__group-action
+                    a.myacc-form__btn.js_myacc-form-bd__edit(data-modal="editAddressModal" data-user-id='userId' data-billing-id="1")
+                      span.myacc-form__icon.icon-edit
+                      span.myacc-form__edit Edit
+                    a.myacc-form__btn.js_myacc-form-bd__delete(data-user-id='userId' data-billing-id="1" data-modal="deleteAddressModal")
+                      span.myacc-form__icon.icon-delete
+                      span.myacc-form__delete Delete
+                div.myacc-form__item
+                  div.myacc-form__group
+                    div.myacc-form__group-label
+                      label.myacc-form__label Default Address
+                    div.myacc-form__group-value
+                      span.myacc-form__value Michelle Rossier
+                      span.myacc-form__value 123 Smith Rd
+                      span.myacc-form__value Casula, NSW 2170
+                  div.myacc-form__group-action
+                    a.myacc-form__btn.js_myacc-form-bd__edit(data-modal="editAddressModal" data-user-id='userId' data-billing-id="1" )
+                      span.myacc-form__icon.icon-edit
+                      span.myacc-form__edit Edit
+                    a.myacc-form__btn.js_myacc-form-bd__delete(data-user-id='userId' data-billing-id="1" data-modal="deleteAddressModal")
+                      span.myacc-form__icon.icon-delete
+                      span.myacc-form__delete Delete
+      li.order-history-tabs__content.js_tabs__content.js_order-history-tabs__content
+        div#order-history.order-history.myacc-content--center.active.js_order-history
+          .odh-empty
+            .odh-empty__header You haven't orderd anything yet
+            a.odh-empty__btn.btn.btn--primary(hr="#") Continue Shopping
+          h2.odh__header.myacc-form__header Order History
+          div.odh-form.odh-form__recent-order
+            h2.odh-form__header Recent order
+            div.odh-form__order-list
+              div.odh-form__order-item
+                div.odh-form__order
+                  div.odh-form__order-wrapper
+                    div.myacc-form__group
+                      label.odh-form__label Order number:
+                      span.odh-form__value PO123456
+                    div.myacc-form__group
+                      label.odh-form__label Order date:
+                      span.odh-form__value 01 Oct 2019
+                    div.myacc-form__group
+                      label.odh-form__label Order status:
+                      span.odh-form__value.text-underline In Progress
+                div.odh-form__product-list
+                  div.odh-form__product-item
+                    div.odh-form__product-thumb
+                      +ImgLazy("odh-form__product-img",'/dist/images/block-img-bg.svg', 'product alt text')
+                    div.odh-form__product-info
+                      span.odh-form__product-title test 71L Build-in Oven with Smart Food Probe
+                      span.odh-form__product-code CODE123x
+                      span.odh-form__product-qty  Qty: 1
+                  div.odh-form__product-action
+                    a.odh-form__view-detail.js_odh-form__view-detail(data-order-number='PO123456' ,data-user-id='1') View order details
+                    a.odh-form__download-invoice.js_odh-form__download-invoice Download invoice
+                      span.odh-form__download-icon.icon-download
+          div.odh-form.odh-form__past-order
+            h2.odh-form__header Past orders
+            div.odh-form__order-list
+              div.odh-form__order-item
+                div.odh-form__order
+                  div.odh-form__order-wrapper
+                    div.myacc-form__group
+                      label.odh-form__label Order number:
+                      span.odh-form__value PO123456
+                    div.myacc-form__group
+                      label.odh-form__label Order date:
+                      span.odh-form__value 01 Oct 2019
+                    div.myacc-form__group
+                      label.odh-form__label Order status:
+                      span.odh-form__value Complete
+                div.odh-form__product-list
+                  .odh-form__product-shipped Shipped 05 Oct 2019
+                  div.odh-form__product-item
+                    div.odh-form__product-thumb
+                      +ImgLazy("odh-form__product-img",'/dist/images/block-img-bg.svg', 'product alt text')
+                    div.odh-form__product-info
+                      span.odh-form__product-title test 71L Build-in Oven with Smart Food Probe
+                      span.odh-form__product-code CODE123x
+                      span.odh-form__product-qty  Qty: 1
+                  div.odh-form__product-item
+                    div.odh-form__product-thumb
+                      +ImgLazy("odh-form__product-img",'/dist/images/block-img-bg.svg', 'product alt text')
+                    div.odh-form__product-info
+                      span.odh-form__product-title test 71L Build-in Oven with Smart Food Probe
+                      span.odh-form__product-code CODE123x
+                      span.odh-form__product-qty  Qty: 1    
+                  div.odh-form__product-item.more-item-box
+                    .odh-form__more-item-box
+                      .odh-form__more-item-num +2
+                    .odh-form__more-item-text More items in this order
+
+                  div.odh-form__product-action
+                    a.odh-form__view-detail.js_odh-form__view-detail(data-order-number='PO123456' ,data-user-id='1')  View order details
+                    a.odh-form__download-invoice.js_odh-form__download-invoice Downlad invoice
+                      span.odh-form__download-icon.icon-download
+                    a.odh-form__reorder.js_odh-form__reorder Re-Order
+                      span.odh-form__download-icon.icon-download
+              div.odh-form__order-item
+                div.odh-form__order
+                  div.odh-form__order-wrapper
+                    div.myacc-form__group
+                      label.odh-form__label Order number:
+                      span.odh-form__value PO123456
+                    div.myacc-form__group
+                      label.odh-form__label Order date:
+                      span.odh-form__value 01 Oct 2019
+                    div.myacc-form__group
+                      label.odh-form__label Order status:
+                      span.odh-form__value Complete
+                div.odh-form__product-list
+                  div.info-box.order--history
+                    span.info-box__text You order was shiped in 2 parcel
+                      svg(viewBox="0 0 27 32").e-icon.info-box__icon
+                        use(xlink:href="#info-circle")
+                  .odh-form__product-shipped Shipped 05 Oct 2019
+                  div.odh-form__product-item
+                    div.odh-form__product-thumb
+                      +ImgLazy("odh-form__product-img",'/dist/images/block-img-bg.svg', 'product alt text')
+                    div.odh-form__product-info
+                      span.odh-form__product-title test 71L Build-in Oven with Smart Food Probe
+                      span.odh-form__product-code CODE123x
+                      span.odh-form__product-qty  Qty:1
+                  div.odh-form__product-action
+                    a.odh-form__view-detail.js_odh-form__view-detail(data-order-number='PO123456' ,data-user-id='1')  View order details
+                    a.odh-form__download-invoice.js_odh-form__download-invoice  View invoice
+                      span.odh-form__download-icon.icon-download
+                    a.odh-form__reorder.js_odh-form__reorder Re-Order
+                      span.odh-form__download-icon.icon-download
+        div.order-history-detail.myacc-content--center.js_order-history-detail
+          a.odhd__back.js_odhd__back Back to Order History
+          div.odhd-form.js_odhd-form
+  +modal('editAccountModal','myacc-modal')
+    +modalHeader('Edit Personal Details')
+    form
+      +modalBody
+        .js_personal-detail__error
+        .js_personal-modal__content
+          .form-group.myacc-modal__row.row
+            .col-md-4.form_lable
+              label First name
+            .col-md-8
+              input.form-control(value="Michelle" placeholder='Enter first name' required name="personalFirstName" data-valueMissing="First name is required") 
+          .form-group.myacc-modal__row.row
+            .col-md-4.form_lable 
+              label Last name
+            .col-md-8  
+              input.form-control(value="Rossier" placeholder='Enter last name' required name="personalLastName" data-valueMissing="Last name is required") 
+          .form-group.myacc-modal__row.row
+            .col-md-4.form_lable
+              label Email address
+            .col-md-8
+              input.form-control(value="michelle.rossier@test.com.au" type="email" placeholder='Enter email address' required name="personalEmail" data-valueMissing="Email is required") 
+          .form-group.myacc-modal__row.row
+            .col-md-4.form_lable
+              label Contact number
+            .col-md-8
+              input.form-control(value="0400123456" type="number" placeholder='Enter contact number' required name="personalNumber" data-valueMissing="Contact number is required") 
+      +modalFooter
+        .row.myacc-modal__action
+          .col-md-6
+            button.btn.btn--primary.mb-1.js_personal-detail__save-btn(data-userId='CUS1') Save
+          .col-md-6
+            button.btn.btn-outline-primary.js-close-modal(onclick="event.preventDefault();") Cancel
+  +modal('editAddressModal','myacc-modal myacc-modal--top')
+    +modalHeader('Edit Delivery Details')
+    .js_address-detail__modal-form
+  +modal('deleteAddressModal','myacc-modal')
+    +modalHeader('Delete Address')
+    +modalBody
+      .js_delete-address-detail__error
+      p.wishlist-detail__modal-text Are you sure you want to delete this saved address?
+        span.text--primary.text--bold.js_confirm-modal__text 
+        |?
+    +modalFooter
+      .row.myacc-modal__action
+        .col-md-6.mb-20.mb-md-0
+          button.btn.btn--primary.mb-1.js_confirm-modal__delete-btn(data-current-type='delivery' data-action='add' data-row-id='2' data-user-id="") Yes, delete address
+        .col-md-6
+          button.btn.btn-outline-primary.js-close-modal(onclick="event.preventDefault();") No, keep this address
+script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXh-BsP3WW3eRWnldpRJXPXcahYU9zMf8&libraries=places&types=regions&country=AU&postal_code=2020")

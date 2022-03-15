@@ -1,0 +1,14 @@
+include ../../../core/mixinComponents/mixinComponents
+
+.container.pos-relative
+  .d-flex.justify-content-center.pos-absolute.loading(v-show="loading")
+    +LoadingIndicator()
+  p.pb-30.fs-16.lh-24 {{searchResult.searchResultText}}
+  div(ref="searchResults")
+    .bg-white.mb-20.px-15.py-20.pa-md-30(v-for="item of searchResult.data")
+      p.fs-20.lh-26.fw-600.pb-10(v-html="item.question")
+      p.fs-16.lh-24(v-html="item.answer") 
+    .text--center
+      button.btn.btn--outline-primary.w-100.w-md-30.mt-10(@click="handleLoadMoreSearchResult" v-if="searchResult.hasMore" v-show="!loadingMore") Load more
+      +LoadingIndicator()(v-show="loadingMore")
+

@@ -1,0 +1,21 @@
+.minicart
+  .minicart__header.js_minicart__header
+    include ./mini-cart-header.pug
+  .minicart__body.js_mini-cart__body
+    include ./mini-cart-body.pug
+  .minicart__footer
+    .minicart__calculate
+      .minicart__sub
+        span.minicart__sub-total Sub-total
+        span.minicart__sub-gst Includes GST
+      span.minicart__total.js_mini-cart__total
+    .row
+      .col-md-6.col-12.mb-10.mb-md-0
+        a(href='{{cartPage}}').btn.btn--primary.w-100.text--center View Cart
+      .col-md-6.col-12
+        button.js-close-modal.btn.btn--outline-primary.w-100 Continue Shopping
+.minicart__delivery.d-flex.d-none.js_minicart__delivery
+  .minicart__delivery-icon
+    svg(viewBox="0 0 46 32").e-icon
+      use(xlink:href="#shipping")
+  .minicart__delivery-text {{shippingInformation}}

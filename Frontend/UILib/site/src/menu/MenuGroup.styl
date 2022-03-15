@@ -1,0 +1,49 @@
+$block = ".menu-group";
+
+{$block} {
+  list-style-type: none;
+  padding-top: 20px;
+
+  &__list {
+    background: $c-white-base;
+    margin-top: 20px;
+  }
+
+  &__list-headline{
+    font-size: 18px;
+    padding-left: 30px;
+    cursor: pointer;
+  }
+
+  &__list-headline:hover{
+    color: $purple;
+  }
+
+  &__list-item {
+    list-style-type: none;
+    line-height: 19px;
+    font-size: 16px;
+    text-align: left;
+    color: $c-gray-darkest;
+    height: 40px;
+  }
+
+  &__list-item__link {
+    display: block;
+    padding: 10px;
+    color: $c-gray-dark;
+    text-decoration-line: none;
+    transition: background .3s;
+
+    &--active{
+      color: $c-brand-base;
+      background: $c-gray-lighter;
+      border-left: 3px solid $c-brand-base;
+      font-weight: 400;
+    }
+    &:hover {
+      color: $c-brand-base;
+      background: $c-gray-lighter;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="ChainOfResponsibilityDemo.Leave">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ActionItem\Leave.cs</FileName>
+      <HashCode>AAAAAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAgAAAAI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChainOfResponsibilityDemo.HR">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConcreteHandlers\HR.cs</FileName>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAABAAAAAAAAAAAAAAQAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChainOfResponsibilityDemo.ProjectLeader">
+    <Position X="7" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConcreteHandlers\ProjectLeader.cs</FileName>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAABAAAAAAAAAAAABAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChainOfResponsibilityDemo.TeamLeader">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConcreteHandlers\TeamLeader.cs</FileName>
+      <HashCode>AAAAAAAAAEAAAAAAACAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChainOfResponsibilityDemo.Employee">
+    <Position X="4.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Handler\Employee.cs</FileName>
+      <HashCode>AACAIAAEACAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Delegate Name="ChainOfResponsibilityDemo.Employee.OnLeaveApplied" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Handler\Employee.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+  </Class>
+  <Class Name="ChainOfResponsibilityDemo.Program">
+    <Position X="1.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Program.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>

@@ -1,0 +1,22 @@
+{
+  "Models": [
+    {
+      "Link": "/product-model-instruction-page/?modelnumber=100S",
+      "Code": "100S",
+      "DisplayName": "Built-under dishwasher with ComfortLift™",
+      "ParCategoryLinks": null
+    }
+  ],
+  "PNCs": [
+    {
+      "Link": "/pnc-result-listing-page/?pncnumber=100S_PNC",
+      "Code": "100S_PNC",
+      "DisplayName": "Built-under dishwasher with ComfortLift™",
+      "ParCategoryLinks": null
+    }
+  ],
+  "Categories": [],
+  "subCategories": [],
+  "TotalMatching": 2,
+  "RedirectLink": null
+}

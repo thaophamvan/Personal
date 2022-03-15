@@ -1,0 +1,908 @@
+{
+  "Message": "Comparison page",
+  "ComparerisonPageViewModel": {
+    "CompareTitle": "Compare Product",
+    "ViewAllText": "Vew All Refrigerators",
+    "ViewAllLink": "/products/refrigerators/",
+    "ProductComparisonData": [
+      {
+        "Brand": "AEG",
+        "BrandCode": null,
+        "RRPPrice": 0,
+        "Price": 181445,
+        "ProductType": "2 dr ff b/mount",
+        "ProductCode": "SCE81826TC",
+        "VariantCode": "SCE81826TC_V",
+        "ProductTitle": "265L integrated bottom mount fridge",
+        "Image": "https://resource.test.com.au/Public/Image2/product/108859/34152.png",
+        "DisplayPrice": "$181,445",
+        "DetailUrl": "/products/refrigerators/SCE81826TC/",
+        "ComparisonGroup": [
+          {
+            "Key": "PRODUCT PROFILE",
+            "DisplayText": "Product Profile 123",
+            "Items": [
+              {
+                "Name": "Domestic warranty details (yrs)",
+                "DisplayText": "Domestic warranty details (yrs)",
+                "Value": "5"
+              },
+              {
+                "Name": "Refrigerator Type",
+                "DisplayText": "Refrigerator Type",
+                "Value": "bottom mount"
+              },
+              {
+                "Name": "Exterior door finish",
+                "DisplayText": "Exterior door finish",
+                "Value": "Cabinetry required (not included)"
+              },
+              {
+                "Name": "Exterior cabinet finish",
+                "DisplayText": "Exterior cabinet finish",
+                "Value": "white"
+              },
+              {
+                "Name": "Fridge door opening",
+                "DisplayText": "Fridge door opening",
+                "Value": "reversible"
+              },
+              {
+                "Name": "Cooling system",
+                "DisplayText": "Cooling system",
+                "Value": "frost free"
+              },
+              {
+                "Name": "Freezer door opening ",
+                "DisplayText": "Freezer door opening ",
+                "Value": "reversible"
+              },
+              {
+                "Name": "Refrigerant",
+                "DisplayText": "Refrigerant",
+                "Value": "R600a"
+              }
+            ]
+          },
+          {
+            "Key": "DIMENSIONS",
+            "DisplayText": "Dimensions 123",
+            "Items": [
+              {
+                "Name": "Total height (mm)",
+                "DisplayText": "Total height (mm)",
+                "Value": "1783"
+              },
+              {
+                "Name": "Cabinet height (mm)",
+                "DisplayText": "Cabinet height (mm)",
+                "Value": "1768"
+              },
+              {
+                "Name": "Total width (mm)",
+                "DisplayText": "Total width (mm)",
+                "Value": "556"
+              },
+              {
+                "Name": "Cabinet width (mm)",
+                "DisplayText": "Cabinet width (mm)",
+                "Value": "556"
+              },
+              {
+                "Name": "Total depth (mm)",
+                "DisplayText": "Total depth (mm)",
+                "Value": "549"
+              },
+              {
+                "Name": "Cabinet depth (mm)",
+                "DisplayText": "Cabinet depth (mm)",
+                "Value": "549"
+              },
+              {
+                "Name": "Food compartment capacity (gross in litres)",
+                "DisplayText": "Food compartment capacity (gross in litres)",
+                "Value": "189"
+              },
+              {
+                "Name": "Total Gross Capacity (L)",
+                "DisplayText": "Total Gross Capacity (L)",
+                "Value": "265"
+              },
+              {
+                "Name": "Freezer compartment capacity (gross in litres)",
+                "DisplayText": "Freezer compartment capacity (gross in litres)",
+                "Value": "76"
+              },
+              {
+                "Name": "Total Net Capacity (L)",
+                "DisplayText": "Total Net Capacity (L)",
+                "Value": "247"
+              }
+            ]
+          },
+          {
+            "Key": "Energy",
+            "DisplayText": "Energy",
+            "Items": [
+              {
+                "Name": "Energy Star Rating",
+                "DisplayText": "Energy Star Rating",
+                "Value": "3"
+              },
+              {
+                "Name": "Energy consumption (KWhr/yr)",
+                "DisplayText": "Energy consumption (KWhr/yr)",
+                "Value": "333"
+              }
+            ]
+          },
+          {
+            "Key": "REFRIGERATOR SYSTEM",
+            "DisplayText": "Refrigerator System",
+            "Items": [
+              {
+                "Name": "Controls",
+                "DisplayText": "Controls",
+                "Value": "electronic (with display)"
+              },
+              {
+                "Name": "Controls location",
+                "DisplayText": "Controls location",
+                "Value": "internal"
+              },
+              {
+                "Name": "Controls type",
+                "DisplayText": "Controls type",
+                "Value": "touch"
+              },
+              {
+                "Name": "Control functions",
+                "DisplayText": "Control functions",
+                "Value": "coolmatic,frostmatic,holiday mode,drinks chill,DynamicAir,Child lock"
+              },
+              {
+                "Name": "Door alarm",
+                "DisplayText": "Door alarm",
+                "Value": "fridge and freezer"
+              }
+            ]
+          },
+          {
+            "Key": "FOOD COMPARTMENT",
+            "DisplayText": "Food Compartment",
+            "Items": [
+              {
+                "Name": "Shelf material",
+                "DisplayText": "Shelf material",
+                "Value": "glass"
+              },
+              {
+                "Name": "Crisper lid/shelf",
+                "DisplayText": "Crisper lid/shelf",
+                "Value": "glass"
+              },
+              {
+                "Name": "Crispers Runner system",
+                "DisplayText": "Crispers Runner system",
+                "Value": "telescopic"
+              },
+              {
+                "Name": "Crisper features",
+                "DisplayText": "Crisper features",
+                "Value": "humidity controlled"
+              },
+              {
+                "Name": "Main light",
+                "DisplayText": "Main light",
+                "Value": "LED"
+              },
+              {
+                "Name": "Other Properties-FOOD COMPARTMENT",
+                "DisplayText": "Other Properties-FOOD COMPARTMENT",
+                "Value": "Small items bin"
+              }
+            ]
+          },
+          {
+            "Key": "FOOD COMPARTMENT DOOR",
+            "DisplayText": "Food Compartment Door",
+            "Items": [
+              {
+                "Name": "Deep bottle bin",
+                "DisplayText": "Deep bottle bin",
+                "Value": "1"
+              },
+              {
+                "Name": "Full width dairy, one lid",
+                "DisplayText": "Full width dairy, one lid",
+                "Value": "1"
+              },
+              {
+                "Name": "Small items bin ",
+                "DisplayText": "Small items bin ",
+                "Value": "1"
+              }
+            ]
+          },
+          {
+            "Key": "FREEZER COMPARTMENT",
+            "DisplayText": "Freezer Compartment",
+            "Items": [
+              {
+                "Name": "Ice cube tray",
+                "DisplayText": "Ice cube tray",
+                "Value": "1"
+              },
+              {
+                "Name": "Full width plastic basket",
+                "DisplayText": "Full width plastic basket",
+                "Value": "3"
+              },
+              {
+                "Name": "Basket/Drawer runner system",
+                "DisplayText": "Basket/Drawer runner system",
+                "Value": "rollers"
+              }
+            ]
+          },
+          {
+            "Key": "Features",
+            "DisplayText": "Features",
+            "Items": [
+              {
+                "Name": "SoftClose hinges",
+                "DisplayText": "SoftClose hinges",
+                "Value": "SoftClose hinges"
+              },
+              {
+                "Name": "DynamicAir Technology",
+                "DisplayText": "DynamicAir Technology",
+                "Value": "DynamicAir Technology"
+              },
+              {
+                "Name": "LCD electronic touch controls",
+                "DisplayText": "LCD electronic touch controls",
+                "Value": "LCD electronic touch controls"
+              },
+              {
+                "Name": "Coolmatic function",
+                "DisplayText": "Coolmatic function",
+                "Value": "Coolmatic function"
+              },
+              {
+                "Name": "Frostmatic function",
+                "DisplayText": "Frostmatic function",
+                "Value": "Frostmatic function"
+              },
+              {
+                "Name": "Frost free",
+                "DisplayText": "Frost free",
+                "Value": "Frost free"
+              },
+              {
+                "Name": "LED lighting",
+                "DisplayText": "LED lighting",
+                "Value": "LED lighting"
+              },
+              {
+                "Name": "High temperature alarm",
+                "DisplayText": "High temperature alarm",
+                "Value": "High temperature alarm"
+              },
+              {
+                "Name": "Adjustable glass shelves",
+                "DisplayText": "Adjustable glass shelves",
+                "Value": "Adjustable glass shelves"
+              },
+              {
+                "Name": "Full width door bins",
+                "DisplayText": "Full width door bins",
+                "Value": "Full width door bins"
+              },
+              {
+                "Name": "Dairy drawer",
+                "DisplayText": "Dairy drawer",
+                "Value": "Dairy drawer"
+              },
+              {
+                "Name": "Door open alarm",
+                "DisplayText": "Door open alarm",
+                "Value": "Door open alarm"
+              },
+              {
+                "Name": "R600a refrigerant",
+                "DisplayText": "R600a refrigerant",
+                "Value": "R600a refrigerant"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Brand": "AEG",
+        "BrandCode": null,
+        "RRPPrice": 0,
+        "Price": 181445,
+        "ProductType": "1Door",
+        "ProductCode": "SKE81821DC",
+        "VariantCode": "SKE81821DC_V",
+        "ProductTitle": "314L integrated refrigerator",
+        "Image": "https://resource.test.com.au/Public/Image2/product/108860/34140.png",
+        "DisplayPrice": "$181,445",
+        "DetailUrl": "/products/refrigerators/SKE81821DC/",
+        "ComparisonGroup": [
+          {
+            "Key": "PRODUCT PROFILE",
+            "DisplayText": "Product Profile 123",
+            "Items": [
+              {
+                "Name": "Domestic warranty details (yrs)",
+                "DisplayText": "Domestic warranty details (yrs)",
+                "Value": "5"
+              },
+              {
+                "Name": "Refrigerator Type",
+                "DisplayText": "Refrigerator Type",
+                "Value": "Vertical Fridge"
+              },
+              {
+                "Name": "Exterior door finish",
+                "DisplayText": "Exterior door finish",
+                "Value": "Cabinetry required (not included)"
+              },
+              {
+                "Name": "Exterior cabinet finish",
+                "DisplayText": "Exterior cabinet finish",
+                "Value": "white"
+              },
+              {
+                "Name": "Fridge door opening",
+                "DisplayText": "Fridge door opening",
+                "Value": "reversible"
+              },
+              {
+                "Name": "Cooling system",
+                "DisplayText": "Cooling system",
+                "Value": "frost free"
+              },
+              {
+                "Name": "Refrigerant",
+                "DisplayText": "Refrigerant",
+                "Value": "R600a"
+              }
+            ]
+          },
+          {
+            "Key": "DIMENSIONS",
+            "DisplayText": "Dimensions 123",
+            "Items": [
+              {
+                "Name": "Total height (mm)",
+                "DisplayText": "Total height (mm)",
+                "Value": "1783"
+              },
+              {
+                "Name": "Cabinet height (mm)",
+                "DisplayText": "Cabinet height (mm)",
+                "Value": "1768"
+              },
+              {
+                "Name": "Total width (mm)",
+                "DisplayText": "Total width (mm)",
+                "Value": "556"
+              },
+              {
+                "Name": "Cabinet width (mm)",
+                "DisplayText": "Cabinet width (mm)",
+                "Value": "556"
+              },
+              {
+                "Name": "Total depth (mm)",
+                "DisplayText": "Total depth (mm)",
+                "Value": "549"
+              },
+              {
+                "Name": "Cabinet depth (mm)",
+                "DisplayText": "Cabinet depth (mm)",
+                "Value": "549"
+              },
+              {
+                "Name": "Food compartment capacity (gross in litres)",
+                "DisplayText": "Food compartment capacity (gross in litres)",
+                "Value": "314"
+              },
+              {
+                "Name": "Total Gross Capacity (L)",
+                "DisplayText": "Total Gross Capacity (L)",
+                "Value": "314"
+              },
+              {
+                "Name": "Food compartment capacity (net in litres)",
+                "DisplayText": "Food compartment capacity (net in litres)",
+                "Value": "310"
+              },
+              {
+                "Name": "Total Net Capacity (L)",
+                "DisplayText": "Total Net Capacity (L)",
+                "Value": "310"
+              }
+            ]
+          },
+          {
+            "Key": "Energy",
+            "DisplayText": "Energy",
+            "Items": [
+              {
+                "Name": "Energy Star Rating",
+                "DisplayText": "Energy Star Rating",
+                "Value": "3"
+              },
+              {
+                "Name": "Energy consumption (KWhr/yr)",
+                "DisplayText": "Energy consumption (KWhr/yr)",
+                "Value": "230"
+              }
+            ]
+          },
+          {
+            "Key": "REFRIGERATOR SYSTEM",
+            "DisplayText": "Refrigerator System",
+            "Items": [
+              {
+                "Name": "Controls",
+                "DisplayText": "Controls",
+                "Value": "electronic (with display)"
+              },
+              {
+                "Name": "Controls location",
+                "DisplayText": "Controls location",
+                "Value": "internal"
+              },
+              {
+                "Name": "Controls type",
+                "DisplayText": "Controls type",
+                "Value": "touch"
+              },
+              {
+                "Name": "Control functions",
+                "DisplayText": "Control functions",
+                "Value": "holiday mode,coolmatic,drinks chill,DynamicAir,Child lock"
+              },
+              {
+                "Name": "Door alarm",
+                "DisplayText": "Door alarm",
+                "Value": "fridge"
+              }
+            ]
+          },
+          {
+            "Key": "FOOD COMPARTMENT",
+            "DisplayText": "Food Compartment",
+            "Items": [
+              {
+                "Name": "Shelf material",
+                "DisplayText": "Shelf material",
+                "Value": "glass"
+              },
+              {
+                "Name": "Crisper lid/shelf",
+                "DisplayText": "Crisper lid/shelf",
+                "Value": "glass"
+              },
+              {
+                "Name": "Crispers Runner system",
+                "DisplayText": "Crispers Runner system",
+                "Value": "telescopic"
+              },
+              {
+                "Name": "Full width crisper",
+                "DisplayText": "Full width crisper",
+                "Value": "1"
+              },
+              {
+                "Name": "Main light",
+                "DisplayText": "Main light",
+                "Value": "LED"
+              }
+            ]
+          },
+          {
+            "Key": "FOOD COMPARTMENT DOOR",
+            "DisplayText": "Food Compartment Door",
+            "Items": [
+              {
+                "Name": "Deep bottle bin",
+                "DisplayText": "Deep bottle bin",
+                "Value": "1"
+              },
+              {
+                "Name": "Full width dairy, one lid",
+                "DisplayText": "Full width dairy, one lid",
+                "Value": "1"
+              }
+            ]
+          },
+          {
+            "Key": "FREEZER COMPARTMENT",
+            "DisplayText": "Freezer Compartment",
+            "Items": []
+          },
+          {
+            "Key": "Features",
+            "DisplayText": "Features",
+            "Items": [
+              {
+                "Name": "SoftClose hinges",
+                "DisplayText": "SoftClose hinges",
+                "Value": "SoftClose hinges"
+              },
+              {
+                "Name": "DynamicAir Technology",
+                "DisplayText": "DynamicAir Technology",
+                "Value": "DynamicAir Technology"
+              },
+              {
+                "Name": "LCD electronic touch controls",
+                "DisplayText": "LCD electronic touch controls",
+                "Value": "LCD electronic touch controls"
+              },
+              {
+                "Name": "Coolmatic function",
+                "DisplayText": "Coolmatic function",
+                "Value": "Coolmatic function"
+              },
+              {
+                "Name": "Frost free",
+                "DisplayText": "Frost free",
+                "Value": "Frost free"
+              },
+              {
+                "Name": "LED lighting",
+                "DisplayText": "LED lighting",
+                "Value": "LED lighting"
+              },
+              {
+                "Name": "Adjustable glass shelves",
+                "DisplayText": "Adjustable glass shelves",
+                "Value": "Adjustable glass shelves"
+              },
+              {
+                "Name": "Full width door bins",
+                "DisplayText": "Full width door bins",
+                "Value": "Full width door bins"
+              },
+              {
+                "Name": "Dairy drawer",
+                "DisplayText": "Dairy drawer",
+                "Value": "Dairy drawer"
+              },
+              {
+                "Name": "Door open alarm",
+                "DisplayText": "Door open alarm",
+                "Value": "Door open alarm"
+              },
+              {
+                "Name": "R600a refrigerant",
+                "DisplayText": "R600a refrigerant",
+                "Value": "R600a refrigerant"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Brand": "AEG",
+        "BrandCode": null,
+        "RRPPrice": 0,
+        "Price": 181445,
+        "ProductType": "2 dr ff b/mount",
+        "ProductCode": "SCE81826TC",
+        "VariantCode": "SCE81826TC_V",
+        "ProductTitle": "265L integrated bottom mount fridge",
+        "Image": "https://resource.test.com.au/Public/Image2/product/108859/34152.png",
+        "DisplayPrice": "$181,445",
+        "DetailUrl": "/products/refrigerators/SCE81826TC/",
+        "ComparisonGroup": [
+          {
+            "Key": "PRODUCT PROFILE",
+            "DisplayText": "Product Profile 123",
+            "Items": [
+              {
+                "Name": "Domestic warranty details (yrs)",
+                "DisplayText": "Domestic warranty details (yrs)",
+                "Value": "5"
+              },
+              {
+                "Name": "Refrigerator Type",
+                "DisplayText": "Refrigerator Type",
+                "Value": "bottom mount"
+              },
+              {
+                "Name": "Exterior door finish",
+                "DisplayText": "Exterior door finish",
+                "Value": "Cabinetry required (not included)"
+              },
+              {
+                "Name": "Exterior cabinet finish",
+                "DisplayText": "Exterior cabinet finish",
+                "Value": "white"
+              },
+              {
+                "Name": "Fridge door opening",
+                "DisplayText": "Fridge door opening",
+                "Value": "reversible"
+              },
+              {
+                "Name": "Cooling system",
+                "DisplayText": "Cooling system",
+                "Value": "frost free"
+              },
+              {
+                "Name": "Freezer door opening ",
+                "DisplayText": "Freezer door opening ",
+                "Value": "reversible"
+              },
+              {
+                "Name": "Refrigerant",
+                "DisplayText": "Refrigerant",
+                "Value": "R600a"
+              }
+            ]
+          },
+          {
+            "Key": "DIMENSIONS",
+            "DisplayText": "Dimensions 123",
+            "Items": [
+              {
+                "Name": "Total height (mm)",
+                "DisplayText": "Total height (mm)",
+                "Value": "1783"
+              },
+              {
+                "Name": "Cabinet height (mm)",
+                "DisplayText": "Cabinet height (mm)",
+                "Value": "1768"
+              },
+              {
+                "Name": "Total width (mm)",
+                "DisplayText": "Total width (mm)",
+                "Value": "556"
+              },
+              {
+                "Name": "Cabinet width (mm)",
+                "DisplayText": "Cabinet width (mm)",
+                "Value": "556"
+              },
+              {
+                "Name": "Total depth (mm)",
+                "DisplayText": "Total depth (mm)",
+                "Value": "549"
+              },
+              {
+                "Name": "Cabinet depth (mm)",
+                "DisplayText": "Cabinet depth (mm)",
+                "Value": "549"
+              },
+              {
+                "Name": "Food compartment capacity (gross in litres)",
+                "DisplayText": "Food compartment capacity (gross in litres)",
+                "Value": "189"
+              },
+              {
+                "Name": "Total Gross Capacity (L)",
+                "DisplayText": "Total Gross Capacity (L)",
+                "Value": "265"
+              },
+              {
+                "Name": "Freezer compartment capacity (gross in litres)",
+                "DisplayText": "Freezer compartment capacity (gross in litres)",
+                "Value": "76"
+              },
+              {
+                "Name": "Total Net Capacity (L)",
+                "DisplayText": "Total Net Capacity (L)",
+                "Value": "247"
+              }
+            ]
+          },
+          {
+            "Key": "Energy",
+            "DisplayText": "Energy",
+            "Items": [
+              {
+                "Name": "Energy Star Rating",
+                "DisplayText": "Energy Star Rating",
+                "Value": "3"
+              },
+              {
+                "Name": "Energy consumption (KWhr/yr)",
+                "DisplayText": "Energy consumption (KWhr/yr)",
+                "Value": "333"
+              }
+            ]
+          },
+          {
+            "Key": "REFRIGERATOR SYSTEM",
+            "DisplayText": "Refrigerator System",
+            "Items": [
+              {
+                "Name": "Controls",
+                "DisplayText": "Controls",
+                "Value": "electronic (with display)"
+              },
+              {
+                "Name": "Controls location",
+                "DisplayText": "Controls location",
+                "Value": "internal"
+              },
+              {
+                "Name": "Controls type",
+                "DisplayText": "Controls type",
+                "Value": "touch"
+              },
+              {
+                "Name": "Control functions",
+                "DisplayText": "Control functions",
+                "Value": "coolmatic,frostmatic,holiday mode,drinks chill,DynamicAir,Child lock"
+              },
+              {
+                "Name": "Door alarm",
+                "DisplayText": "Door alarm",
+                "Value": "fridge and freezer"
+              }
+            ]
+          },
+          {
+            "Key": "FOOD COMPARTMENT",
+            "DisplayText": "Food Compartment",
+            "Items": [
+              {
+                "Name": "Shelf material",
+                "DisplayText": "Shelf material",
+                "Value": "glass"
+              },
+              {
+                "Name": "Crisper lid/shelf",
+                "DisplayText": "Crisper lid/shelf",
+                "Value": "glass"
+              },
+              {
+                "Name": "Crispers Runner system",
+                "DisplayText": "Crispers Runner system",
+                "Value": "telescopic"
+              },
+              {
+                "Name": "Crisper features",
+                "DisplayText": "Crisper features",
+                "Value": "humidity controlled"
+              },
+              {
+                "Name": "Main light",
+                "DisplayText": "Main light",
+                "Value": "LED"
+              },
+              {
+                "Name": "Other Properties-FOOD COMPARTMENT",
+                "DisplayText": "Other Properties-FOOD COMPARTMENT",
+                "Value": "Small items bin"
+              }
+            ]
+          },
+          {
+            "Key": "FOOD COMPARTMENT DOOR",
+            "DisplayText": "Food Compartment Door",
+            "Items": [
+              {
+                "Name": "Deep bottle bin",
+                "DisplayText": "Deep bottle bin",
+                "Value": "1"
+              },
+              {
+                "Name": "Full width dairy, one lid",
+                "DisplayText": "Full width dairy, one lid",
+                "Value": "1"
+              },
+              {
+                "Name": "Small items bin ",
+                "DisplayText": "Small items bin ",
+                "Value": "1"
+              }
+            ]
+          },
+          {
+            "Key": "FREEZER COMPARTMENT",
+            "DisplayText": "Freezer Compartment",
+            "Items": [
+              {
+                "Name": "Ice cube tray",
+                "DisplayText": "Ice cube tray",
+                "Value": "1"
+              },
+              {
+                "Name": "Full width plastic basket",
+                "DisplayText": "Full width plastic basket",
+                "Value": "3"
+              },
+              {
+                "Name": "Basket/Drawer runner system",
+                "DisplayText": "Basket/Drawer runner system",
+                "Value": "rollers"
+              }
+            ]
+          },
+          {
+            "Key": "Features",
+            "DisplayText": "Features",
+            "Items": [
+              {
+                "Name": "SoftClose hinges",
+                "DisplayText": "SoftClose hinges",
+                "Value": "SoftClose hinges"
+              },
+              {
+                "Name": "DynamicAir Technology",
+                "DisplayText": "DynamicAir Technology",
+                "Value": "DynamicAir Technology"
+              },
+              {
+                "Name": "LCD electronic touch controls",
+                "DisplayText": "LCD electronic touch controls",
+                "Value": "LCD electronic touch controls"
+              },
+              {
+                "Name": "Coolmatic function",
+                "DisplayText": "Coolmatic function",
+                "Value": "Coolmatic function"
+              },
+              {
+                "Name": "Frostmatic function",
+                "DisplayText": "Frostmatic function",
+                "Value": "Frostmatic function"
+              },
+              {
+                "Name": "Frost free",
+                "DisplayText": "Frost free",
+                "Value": "Frost free"
+              },
+              {
+                "Name": "LED lighting",
+                "DisplayText": "LED lighting",
+                "Value": "LED lighting"
+              },
+              {
+                "Name": "High temperature alarm",
+                "DisplayText": "High temperature alarm",
+                "Value": "High temperature alarm"
+              },
+              {
+                "Name": "Adjustable glass shelves",
+                "DisplayText": "Adjustable glass shelves",
+                "Value": "Adjustable glass shelves"
+              },
+              {
+                "Name": "Full width door bins",
+                "DisplayText": "Full width door bins",
+                "Value": "Full width door bins"
+              },
+              {
+                "Name": "Dairy drawer",
+                "DisplayText": "Dairy drawer",
+                "Value": "Dairy drawer"
+              },
+              {
+                "Name": "Door open alarm",
+                "DisplayText": "Door open alarm",
+                "Value": "Door open alarm"
+              },
+              {
+                "Name": "R600a refrigerant",
+                "DisplayText": "R600a refrigerant",
+                "Value": "R600a refrigerant"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

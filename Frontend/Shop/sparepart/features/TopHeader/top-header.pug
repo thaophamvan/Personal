@@ -1,0 +1,31 @@
+.top-header.justify-content-between.align-items-center
+  .d-flex.align-items-center
+    .top-header__select-languages.d-flex.align-items-center
+      button.btn-link English
+      i.flag.flag__england.ml-1
+        span.icon-flag-eng
+          span.path1
+          span.path2
+          span.path3
+    .top-header__phone-number.ml-3.d-flex.align-items-center
+      button.btn-link 1300 333 333
+      i.icon__phone.ml-1
+        span.icon-call-us
+  .d-flex.align-items-center
+    .top-header__my-account.ml-3(data-component='popup' data-target="myAccount")
+      button.btn-link.d-flex.top-header__acc-btn
+        |My Account
+        i.top-header__acc-arrow.icon-dropdown
+      #myAccount.popup.top-header__acc
+        ul.top-header__acc-list
+          li.top-header__acc-item
+            i.top-header__acc-icon.top-header__acc-icon-ad
+            a.top-header__acc-item-link(href="#") Account Details
+          li.top-header__acc-item
+            i.top-header__acc-icon.top-header__acc-icon-oh
+            a.top-header__acc-item-link(href="#") Order History
+          li.top-header__acc-item
+            i.top-header__acc-icon.top-header__acc-icon-mwl
+            a.top-header__acc-item-link(href="#") My Wishlists
+    .top-header__sign-out.ml-3
+      a.btn-link.btn--small.top-header__sign-out-link(rel="nofollow") Sign Out

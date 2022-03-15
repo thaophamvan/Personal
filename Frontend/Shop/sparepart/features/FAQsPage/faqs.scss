@@ -1,0 +1,128 @@
+$block: ".faqs";
+
+#{$block} {
+  &__category-img-wrapper {
+    height: 110px;
+
+    .lazyImg:hover {
+      opacity: 0.7;
+    }
+
+  }
+
+  &__topic-banner {
+    .glide__track.no-slider {
+      .glide__slides {
+        flex-wrap: wrap;
+      }
+      .glide__slide {
+        width: 120px;
+        @include md {
+          width: 160px;
+          padding: 0 rem(10);
+        }
+      }
+    }
+  }
+
+  .odh-need-help__card-title {
+    font-size: $faqs_odh-need-help__card-title-font-size;
+  }
+
+  &__content-title {
+    font-size: $faqs__content-title-font-size;
+    font-weight: $faqs__content-title-font-weight;
+    text-transform: $faqs__content-title-text-tranform;
+  }
+
+  &__content-item-question {
+    font-weight: $faqs__content-item-question-font-weight;
+    text-transform: $faqs__content-title-text-tranform;
+  }
+
+  .glide__slide {
+    width: auto;
+  }
+
+  .glide__arrows {
+    display: none;
+    @include md {
+      display: block;
+    }
+  }
+  .glide__arrow {
+    top: calc(50% - 15px);
+    border: none;
+    background: 0 0;
+    box-shadow: none;
+    width: 29px;
+    height: 30px;
+    font-size: 0;
+    color: transparent;
+    position: absolute;
+    z-index: 10;
+    &::before {
+      content: "";
+      width: 29px;
+      height: 29px;
+      border: 2px solid $primary;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid $primary;
+      border-left: 2px solid $primary;
+      right: 8px;
+      top: 10px;
+    }
+
+    &:disabled {
+      &::before,
+      &::after {
+        opacity: 0.25;
+      }
+    }
+  }
+  .glide__arrow--right {
+    right: -15px;
+    &::after {
+      left: 10px;
+    }
+  }
+
+  .glide__arrow--left {
+    left: -15px;
+  }
+
+  &__banner-search-back-btn {
+    visibility: hidden;
+    top: 0;
+    span {
+      color: $faq__banner-search-back-btn-color;
+      &::before {
+        color: $faq__banner-search-back-btn-color;
+      }
+    }
+    &.show {
+      visibility: visible;
+    }
+  }
+
+  .loading {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    .loading-dots {
+      padding-top: 10%;
+      align-self: auto;
+    }
+  }
+}

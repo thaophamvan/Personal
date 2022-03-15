@@ -1,0 +1,36 @@
+
+.demo-text-field-form {
+
+  margin: 0 0 1em;
+
+  &__row,
+  &__controls {
+    display: flex;
+  }
+
+  &__controls {
+    margin: 6px 0 0;
+    justify-content: flex-end;
+  }
+
+  .text-field {
+    flex: 1;
+  }
+
+  &__row:first-of-type {
+
+    .text-field:first-of-type {
+      flex: 2;
+    }
+
+    .text-field:not(:first-of-type) {
+      flex: 3;
+    }
+  }
+
+  .button,
+  .text-field  {
+    margin: 0 8px;
+  }
+
+}

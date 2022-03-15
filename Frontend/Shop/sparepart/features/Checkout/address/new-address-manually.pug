@@ -1,0 +1,29 @@
+include ../../../../core/mixinComponents/mixinComponents
+.form-group
+    label.form-label Unit
+        span.text-muted  (optional)
+    input.form-control.js_shipping-unit(id="shipping_subpremise" name='Model.ShippingAddress.Unit' maxlength="10")
+.form-group
+    label.form-label.required Street Number
+    <input id="shipping_street_number" class="form-control" name='Model.ShippingAddress.StreetNumber' required data-valueMissing="Street number is required" maxlength="15" pattern=".*\S.*" data-patternMismatch="Street number is required"> 
+.form-group
+    label.form-label.required Street Name
+    <input id="shipping_route" class="form-control" name='Model.ShippingAddress.StreetName' required data-valueMissing="Street name is required" maxlength="45" pattern=".*\S.*" data-patternMismatch="Street name is required">
+.form-group
+    label.form-label.required Suburb
+    input.form-control.readonly.js_shipping_sublocality_level_1#shipping_locality(value="" name='Model.ShippingAddress.Suburb' maxlength="40" required data-valueMissing="Suburb is required")
+
+.row
+    .col-md-6
+        .form-group
+            label.form-label.required State
+            +SelectBox('shipingStateCmb', [], 'checkout-page__selectbox js_shipping-state__select','Select state')
+            input#shipping_administrative_area_level_1(type="hidden" name="Model.ShippingAddress.State" required data-valueMissing="State is required")
+    .col-md-6
+        .form-group
+            label.form-label.required Postcode
+            input.form-control.readonly#shipping_postal_code(value="" name='Model.ShippingAddress.PostalCode' required data-valueMissing="Postcode is required")
+.form-group
+    label.form-label.required Country
+    input.form-control.readonly(name='Model.ShippingAddress.CountryName' readonly v-bind:value="countryName")
+

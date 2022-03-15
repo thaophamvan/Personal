@@ -1,0 +1,52 @@
+include ../../../core/mixinComponents/mixinComponents
+
+.product-result-model.pt-15.pb-50.container(data-component="productResultModel")
+  a(href="#").fs-12.lh-14.fw-600.text--uppercase.none-underline.mb-50.mb-md-30.d-flex.align-items-center
+    span.icon-rightarrow.mr-10
+    |back to home
+  .d-flex.align-items-center.mb-30.mb-md-50
+    a.product-result-model__img-wrapper.mr-15.d-flex.mr-md-20
+      img.lazyImg(data-src="images/tech-spec.jpg" src="dist/images/default-img-bg.svg" alt="Technical specification image")
+    div
+      h1.fs-16.lh-24.fs-md-26.lh-34.mb-md-10 Model EOB3400EAX
+      .fs-16.lh-24.fs-md-26.lh-34 test 71L Built-in Oven with Smart Food Probe 
+  h2.fs-20.lh-26.mb-10.fs-md-26.lh-md-34.mb-md-30 How do I find parts and accessories for EOB3400EAX?
+  p.fs-16.lh-24.mb-10.mb-md-20 1. Select your product number (PNC)?
+  .bg-primary-lighten-3.pa-30.product-result-model__find-pnc.mb-30.d-md-table
+    .selectbox(data-component="popup" data-target="product-result-model__product-number" data-type="select" class=cusClass)
+      button.btn.selectbox__btn(type="button") Select a product number (PNC)
+      #product-result-model__product-number.popup.selectbox__options-popup
+        a.selectbox__option(href="#") Test
+        a.selectbox__option(href="#") Test 1
+        a.selectbox__option(href="#") Test 2
+        a.selectbox__option(href="#") Test 3
+        a.selectbox__option(href="#") Test 4
+        a.selectbox__option(href="#") Test 5
+        a.selectbox__option(href="#") Test 6
+        a.selectbox__option(href="#") Test 7
+    a(href="#").fs-14.lh-16.js_finc-pnc-btn How do I find my product number (PNC)?
+  p.mt-30.mb-10.fs-16.lh-24.mb-md-20 2. Click on the parts diagram to find the right part for your appliance
+  .bg-primary-lighten-3.pa-15.product-result-model__view-part-diagrams.mb-5.d-md-inline-flex.flex-md-wrap.align-items-center.pt-md-20.px-md-20.pb-md-10.mb-md-10
+    p.fs-16.lh-24.mb-10.mr-md-50 View part diagrams for this product
+    .d-flex.flex-wrap
+      button.btn.active Door
+      button.btn Control panel
+      button.btn Control panel
+      button.btn Control panel
+      button.btn Control panel
+  p.fs-14.lh-20.second-text.mb-30.text--center.text-md--left Image: example parts diagram links
+  p.fs-16.lh-24.mb-10.mb-md-20 3. Match the number in the drawing
+  .product-result-model__find-part.px-md-20.py-md-25.d-md-inline-block.mb-md-20
+    h2.fs-20.lh-26.mb-10.product-result-model__find-part-title.mb-md-15.lh-md-24 Find parts by product diagram
+    form.form-group.mb-10.pos-relative
+      input.form-control.w-100.pr-50(placeholder="Type in diagram code" arial-label="Type in diagram code")
+      span.icon-search.pos-absolute.fs-14
+  .product-result-model__diagram-img-wrapper.d-flex.mb-5.mb-md-10
+    img.lazyImg(data-src="images/tech-spec.jpg" src="dist/images/default-img-bg.svg" alt="Technical specification image")
+  p.second-text.fs-14.lh-20.text--center.mb-30.text-md--left Image: example parts diagram links
+  p.fs-16.lh-24 4. Then when you find the right part, simply ‘Add to cart’. If you need help call us on 1300 666 019
+
+
+
+
+

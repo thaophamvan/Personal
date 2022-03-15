@@ -1,0 +1,23 @@
+mixin Product(isAddToCompare = true)
+  li.product-list__product.col-md-4
+    .product-list__product-wrapper
+      .product-list__product-body
+        .product-list__product-media
+          a.product-list__product-img-link.btn-link(href="{{Url}}")
+            +ImgLazy("product-list__product-img",'{{ProductImage}}', '{{ProductImageAltText}}', '/dist/images/default-img-bg.svg')
+        .product-list__product-info
+          .product-list__product-brand {{Brand}}
+          a(href="{{Url}}").btn-link.product-list__product-name {{FriendlyName}}
+          a(href="{{Url}}").btn-link.product-list__product-code.text--uppercase {{ProductCode}}
+          |{{avaiable}}
+        .product-list__product-price
+          span.product-list__product-final-price {{DisplayPrice}}
+          span.product-list__product-price-detail {{RecommendedRetailPrices}}
+      .product-list__product-footer
+        .row
+          .col-12.col-md-6.product-list__add-to-cart
+            +BtnAddToCart('{{VariantCode}}')
+          .col-12.col-md-6.product-list__add-to-wishlist
+            +BtnAddToWishlist('{{ProductCode}}')
+      -if(isAddToCompare) 
+        +BtnAddToCompare('{{ProductCode}}')

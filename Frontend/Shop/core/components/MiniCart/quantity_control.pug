@@ -1,0 +1,7 @@
+mixin quantityControl(shipmentId,productCode,quantity,activeRecurringPlanId)
+  .qty-control.clearfix.js_quantity-control(data-product-code=productCode, data-shipmentId=shipmentId, data-activerecurringplanid=activeRecurringPlanId)
+    button.decrease.js_qty-control__decrement
+      span -
+    input(type = "number" place-holder = "1" value=quantity readonly)
+    button.increase.js_qty-control__increment
+      span +

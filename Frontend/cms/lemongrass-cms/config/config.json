@@ -1,0 +1,155 @@
+{
+  "Local": {
+    "cloudant": {
+      "apikey": "__f6boZijXNyVD9cGznvVDJkOGExF4eHaILNnGaLU_xL",
+      "host": "d870aa4d-e481-4478-b0b2-f16a9c771625-bluemix.cloudant.com",
+      "iam_apikey_description": "Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/372284a0bd984108b56be06f8a23b39c:a2266e21-d647-4b65-90cf-cbc48ba5b2e0::",
+      "iam_apikey_name": "auto-generated-apikey-44d0967d-5ea0-476d-9a5f-d3c6fab2ba62",
+      "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+      "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/372284a0bd984108b56be06f8a23b39c::serviceid:ServiceId-035e8181-1582-4253-95de-5df94b9af615",
+      "password": "f8367834194b0b528fdf999e7161164a6bceeadf28521153ba8186b4577e13d4",
+      "port": 443,
+      "url": "https://d870aa4d-e481-4478-b0b2-f16a9c771625-bluemix:f8367834194b0b528fdf999e7161164a6bceeadf28521153ba8186b4577e13d4@d870aa4d-e481-4478-b0b2-f16a9c771625-bluemix.cloudant.com",
+      "username": "d870aa4d-e481-4478-b0b2-f16a9c771625-bluemix"
+    },
+    "user_permission": {
+      "admin": {
+        "user_id": "thao.pham@testgad.net",
+        "family_name": "Pham",
+        "given_name": "Thao"
+      },
+      "init" : false
+    },
+    "aad": {
+        "tenant": "c14aa53d-3c56-46f0-a7dc-d08a9840c240",
+        "client_id": "54995ec7-35fe-4c9b-8910-79cd1d47b870",
+        "secret": "E7lu1Qia7eb0f9N9ijTLiS7FJnY9jMlXNa6J4N2E48M=",
+        "redirect_uri": "https://lemongrass-cms.mybluemix.net"
+    },
+    "wch": {
+      "username": "lemongrass.cms@gmail.com",
+      "password": "Elux@2019",
+      "user_id": "8020a76e-42d4-4bd5-873b-38ee2de66df7",
+      "host_name": "my16.digitalexperience.ibm.com",
+      "path": "/api/da5f897d-8ef8-4cc2-b072-731a38ac3f8e/login/v1/basicauth",
+      "api_url": "https://my16.digitalexperience.ibm.com/api/da5f897d-8ef8-4cc2-b072-731a38ac3f8e",
+      "delivery_url": "https://my16.digitalexperience.ibm.com/da5f897d-8ef8-4cc2-b072-731a38ac3f8e"
+      },
+    "publicApiKey": "93f8c25d-12b4-499c-b659-c1207cb2b6f3"
+  },
+  "Dev": {
+    "cloudant": {
+      "apikey": "1ZhFi_3Q7oSrrWDEKW9gbf-bVLXxSc8SOo_ELbmw3xWH",
+      "host": "7f4151e9-e46c-4ab3-89ec-02beab59a7db-bluemix.cloudantnosqldb.appdomain.cloud",
+      "iam_apikey_description": "Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:au-syd:a/9e1f8dcf62540eaf54860e1790779234:0cd9a0e1-93f6-485c-b9fa-2c61f9fd77f1::",
+      "iam_apikey_name": "auto-generated-apikey-98f483b6-43d0-4ee1-a99e-c63e6ec7ed22",
+      "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+      "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/9e1f8dcf62540eaf54860e1790779234::serviceid:ServiceId-274ba955-d46d-4ecb-a151-8ec425ce6d3f",
+      "password": "1b14ab8b5f3d4a21e9af0412e8729c5b2c3302496b561af32d09235e5e763bad",
+      "port": 443,
+      "url": "https://7f4151e9-e46c-4ab3-89ec-02beab59a7db-bluemix:1b14ab8b5f3d4a21e9af0412e8729c5b2c3302496b561af32d09235e5e763bad@7f4151e9-e46c-4ab3-89ec-02beab59a7db-bluemix.cloudantnosqldb.appdomain.cloud",
+      "username": "7f4151e9-e46c-4ab3-89ec-02beab59a7db-bluemix"
+    },
+    "user_permission": {
+      "admin": {
+        "user_id": "thao.pham@testgad.net",
+        "family_name": "Pham",
+        "given_name": "Thao"
+      },
+      "init" : true
+    },
+    "aad": {
+        "tenant": "c14aa53d-3c56-46f0-a7dc-d08a9840c240",
+        "client_id": "89e2b26f-eb09-413a-ab33-e0bcfb79666a",
+        "secret": "DrhCvwWfy2L9P65Xrg5bZfX+0Qwhz4dJ5pLTPaaMzCA=",
+        "redirect_uri": "https://lemongrass-dev.testmobile.com"
+    },
+    "wch": {
+      "username": "lemongrass.cms@gmail.com",
+      "password": "Elux@2019",
+      "user_id": "8020a76e-42d4-4bd5-873b-38ee2de66df7",
+      "host_name": "my16.digitalexperience.ibm.com",
+      "path": "/api/da5f897d-8ef8-4cc2-b072-731a38ac3f8e/login/v1/basicauth",
+      "api_url": "https://my16.digitalexperience.ibm.com/api/da5f897d-8ef8-4cc2-b072-731a38ac3f8e",
+      "delivery_url": "https://my16.digitalexperience.ibm.com/da5f897d-8ef8-4cc2-b072-731a38ac3f8e"
+      },
+    "publicApiKey": "93f8c25d-12b4-499c-b659-c1207cb2b6f3"
+  },
+
+  "Stage": {
+    "cloudant": {
+      "apikey": "1ZhFi_3Q7oSrrWDEKW9gbf-bVLXxSc8SOo_ELbmw3xWH",
+      "host": "7f4151e9-e46c-4ab3-89ec-02beab59a7db-bluemix.cloudantnosqldb.appdomain.cloud",
+      "iam_apikey_description": "Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:au-syd:a/9e1f8dcf62540eaf54860e1790779234:0cd9a0e1-93f6-485c-b9fa-2c61f9fd77f1::",
+      "iam_apikey_name": "auto-generated-apikey-98f483b6-43d0-4ee1-a99e-c63e6ec7ed22",
+      "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+      "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/9e1f8dcf62540eaf54860e1790779234::serviceid:ServiceId-274ba955-d46d-4ecb-a151-8ec425ce6d3f",
+      "password": "1b14ab8b5f3d4a21e9af0412e8729c5b2c3302496b561af32d09235e5e763bad",
+      "port": 443,
+      "url": "https://7f4151e9-e46c-4ab3-89ec-02beab59a7db-bluemix:1b14ab8b5f3d4a21e9af0412e8729c5b2c3302496b561af32d09235e5e763bad@7f4151e9-e46c-4ab3-89ec-02beab59a7db-bluemix.cloudantnosqldb.appdomain.cloud",
+      "username": "7f4151e9-e46c-4ab3-89ec-02beab59a7db-bluemix"
+    },
+    "user_permission": {
+      "admin": {
+        "user_id": "thao.pham@testgad.net",
+        "family_name": "Pham",
+        "given_name": "Thao"
+      },
+      "init" : true
+    },
+    "aad": {
+      "tenant": "c14aa53d-3c56-46f0-a7dc-d08a9840c240",
+      "client_id": "54995ec7-35fe-4c9b-8910-79cd1d47b870",
+      "secret": "E7lu1Qia7eb0f9N9ijTLiS7FJnY9jMlXNa6J4N2E48M=",
+      "redirect_uri": "https://lemongrass-uat.testmobile.com"
+    },
+    "wch": {
+      "username": "lemongrass.cms@gmail.com",
+      "password": "Elux@2019",
+      "user_id": "8020a76e-42d4-4bd5-873b-38ee2de66df7",
+      "host_name": "my16.digitalexperience.ibm.com",
+      "path": "/api/da5f897d-8ef8-4cc2-b072-731a38ac3f8e/login/v1/basicauth",
+      "api_url": "https://my16.digitalexperience.ibm.com/api/da5f897d-8ef8-4cc2-b072-731a38ac3f8e",
+      "delivery_url": "https://my16.digitalexperience.ibm.com/da5f897d-8ef8-4cc2-b072-731a38ac3f8e"
+     },
+   "publicApiKey": "93f8c25d-12b4-499c-b659-c1207cb2b6f3"
+  },
+  "Prod": {
+    "cloudant": {
+      "apikey": "xXVwXosbyQmuOqhBpDnz8gTSCTg-obcUF2EGh5dmhjjm",
+      "host": "23a934c2-410b-498c-8c66-6328e96c2211-bluemix.cloudantnosqldb.appdomain.cloud",
+      "iam_apikey_description": "Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:au-syd:a/9e1f8dcf62540eaf54860e1790779234:d28a4de8-05b0-4ad4-aa17-0658070fe58a::",
+      "iam_apikey_name": "auto-generated-apikey-05eba3fc-8c26-4670-9d89-0799b23ce248",
+      "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+      "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/9e1f8dcf62540eaf54860e1790779234::serviceid:ServiceId-80ace4c6-29df-4ec3-835f-1161e9642b73",
+      "password": "728c3070d8550e52e194f889746b3c05e9ace5917a02eb4670b8fb66654e5e8e",
+      "port": 443,
+      "url": "https://23a934c2-410b-498c-8c66-6328e96c2211-bluemix:728c3070d8550e52e194f889746b3c05e9ace5917a02eb4670b8fb66654e5e8e@23a934c2-410b-498c-8c66-6328e96c2211-bluemix.cloudantnosqldb.appdomain.cloud",
+      "username": "23a934c2-410b-498c-8c66-6328e96c2211-bluemix"
+    },
+    "user_permission": {
+      "admin": {
+        "user_id": "thao.pham@testgad.net",
+        "family_name": "Pham",
+        "given_name": "Thao"
+      },
+     "init" : true
+    },
+    "aad": {
+      "tenant": "c14aa53d-3c56-46f0-a7dc-d08a9840c240",
+      "client_id": "54995ec7-35fe-4c9b-8910-79cd1d47b870",
+      "secret": "E7lu1Qia7eb0f9N9ijTLiS7FJnY9jMlXNa6J4N2E48M=",
+      "redirect_uri": "https://lemongrass.testmobile.com"
+    },
+    "wch": {
+      "username": "lemongrass.cms@gmail.com",
+      "password": "Elux@2019",
+      "user_id": "8020a76e-42d4-4bd5-873b-38ee2de66df7",
+      "host_name": "my16.digitalexperience.ibm.com",
+      "path": "/api/da5f897d-8ef8-4cc2-b072-731a38ac3f8e/login/v1/basicauth",
+      "api_url": "https://my16.digitalexperience.ibm.com/api/da5f897d-8ef8-4cc2-b072-731a38ac3f8e",
+      "delivery_url": "https://my16.digitalexperience.ibm.com/da5f897d-8ef8-4cc2-b072-731a38ac3f8e"
+      },
+    "publicApiKey": "93f8c25d-12b4-499c-b659-c1207cb2b6f3"
+  }
+}

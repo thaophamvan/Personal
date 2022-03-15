@@ -1,0 +1,108 @@
+$block = ".drop-down";
+$height = 30px;
+
+{$block} {
+  $c-color-border-fill = $c-brand-base;
+  $c-focus-color-fill = $c-active-dark;
+
+  position: relative;
+  height: $height;
+  border: 1px solid $c-color-border-fill;
+  border-radius: 3px;
+  user-select: none;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0 30px 0 15px;
+    color: $c-color-border-fill;
+    white-space: nowrap;
+    line-height: $height - 2px;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    overflow: visible;
+    transition: .2s transform;
+    fill: $c-color-border-fill;
+  }
+
+  &--open {$block}__arrow {
+    transform: rotateX(180deg);
+  }
+
+  &--show-options-above {$block}__options {
+    top: auto;
+    bottom: $height + 5px;
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: $c-focus-color-fill;
+
+    {$block}__label {
+      color: $c-active-darkest;
+    }
+
+    {$block}__arrow {
+      fill: $c-focus-color-fill;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    top: $height + 5px;
+    z-index: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: 1px solid $c-gray-base;
+    border-radius: 3px;
+    background-color: $c-white-base;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+  }
+
+  &__option {
+    position: relative;
+    padding: 0 5px 4px 30px;
+    height: $height;
+    color: $c-gray-dark;
+    list-style: none;
+    white-space: nowrap;
+    line-height: $height;
+    cursor: default;
+
+    > span {
+      display: block;
+      overflow: hidden;
+    }
+
+    > svg {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      fill: $c-focus-color-fill;
+    }
+
+    &:active {
+      background-color: $c-active-lighter;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--highlighted {
+      background-color: $c-active-lightest;
+    }
+  }
+}

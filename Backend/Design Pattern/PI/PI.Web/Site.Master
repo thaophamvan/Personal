@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PI.Web.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Phần mền trình diễn thông tin</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <asp:PlaceHolder runat="server"></asp:PlaceHolder>
+        <link href="../Content/calendar-blue.css" rel="stylesheet" type="text/css" />
+        <link href="../Content/ddmenu.css" rel="stylesheet" type="text/css" />
+       
+        <script src="../Scripts/jquery-1.10.2.min.js"></script>
+        <script src="../Scripts/ddmenu.js"></script>
+        <script src="../Scripts/jquery.dynDateTime.min.js"></script>
+        <script src="../Scripts/calendar-en.min.js"></script>
+    </head>
+    <body>
+    <form runat="server">
+       <nav id="ddmenu">
+    
+    <ul>
+        <li class="no-sub"><a class="top-heading" href="/">Về trang đầu</a></li>
+        <li>
+            <a class="top-heading" href="../Pages/DanhSachTrucBan.aspx">Quản lý trực ban</a>
+        </li>
+        <li>
+            <a class="top-heading" href="../Pages/DanhSachLichLamViec.aspx">Quản lý lịch làm việc</a>
+        </li>
+        <li>
+            <a class="top-heading" href="#">Quản lý danh mục</a>
+			<i class="caret"></i>           
+            <div class="dropdown">
+                <div class="dd-inner">
+                    <div class="column">
+                        <a href="../Pages/DanhMucDonVi.aspx">Quản lý đơn vị trực ban</a>
+                        <a href="../Pages/DanhMucDonViTruc.aspx">Quản lý đơn vị trực theo lịch</a>
+                        <a href="../Pages/DanhMucChucVu.aspx">Quản lý chức vụ</a>
+                        <a href="../Pages/DanhMucCapBac.aspx">Quản lý cấp bậc</a>
+                        <a href="../Pages/DanhMucHinhThucTruc.aspx">Quản lý hình thức trực</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a class="top-heading" href="#">Thiết lập hệ thống</a>
+			<i class="caret"></i>           
+            <div class="dropdown">
+                <div class="dd-inner">
+                    <div class="column">
+                        <a href="#">Quản lý trực ban</a>
+                        <a href="#">Quản lý lịch làm việc</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="no-sub">
+            <a class="top-heading" href="../Pages/TrinhDienThongTinTrucBan">Trình diễn thông tin</a>
+        </li>
+         <li>
+            <asp:Label runat="server" ID="lblDangNhap"></asp:Label>
+            <%--<a style="text-decoration:none" href="../Login/Login">Đăng xuất</a>--%>
+            <asp:LinkButton style="text-decoration:none" runat ="server" ID="btnDangXuat" OnClick="btnDangXuat_Click">Đăng xuất</asp:LinkButton>
+        </li>
+    </ul>
+</nav>
+
+        <div class="container body-content">
+         
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - PHẦN MỀN TRÌNH DIỄN THÔNG TIN</p>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

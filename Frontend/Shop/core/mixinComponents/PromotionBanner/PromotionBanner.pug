@@ -1,0 +1,5 @@
+mixin PromotionBanner(text)
+  .promotion-banner.align-items-center(data-component="promotionalBanner" data-code="code")
+    div.js_promotion-banner__apply-code=text
+      a(href="javaScript:void(0);").js_promotion-banner__apply-code-btn Apply code
+    div.promotion-banner__conditions-input.fw-500 Enter condition here

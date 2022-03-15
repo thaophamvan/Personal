@@ -1,0 +1,12 @@
+include ../../mixinComponents/mixinComponents
+div.odhd-product-item
+  div.odhd-product-item__wrapper.p-0.col-md-8
+    div.odhd-product-item__thumb
+      +ImgLazy("",'{{productImg}}', 'product alt text')
+    div.odhd-product-item__info
+      div.odh-form__product-title {{productName}}
+      div.odh-form__product-code {{productCode}}
+      div.odh-form__product-qty.d-md-none Qty: {{quantity}}
+      div.odh-form__product-sub-total.d-md-none {{subTotal}}
+  div.odhd-product-item__qty.mobile--hide.col-md-2 {{quantity}}
+  div.odhd-product-item__sub-total.mobile--hide.p-0.col-md-2 {{subTotal}}

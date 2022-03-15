@@ -1,0 +1,103 @@
+$block: ".pagination";
+
+#{$block} {
+  padding-bottom: 50px;
+
+  @include md {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 60px;
+  }
+
+  &__btn {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border: 1px solid $pagination__btn-border;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $pagination__btn-color;
+    font-weight: 600;
+
+    &.active {
+      color: $pagination__btn-active-color;
+      background-color: $pagination__btn-active-bg;
+      border-color: $pagination__btn-active-border;
+    }
+
+    &.disable {
+      pointer-events: none;
+    }
+  }
+
+  &__pages {
+    margin: 0 12.5px;
+    #{$block} {
+      &__btn {
+        @include property('border-radius', $pagination__btn-border-radius);
+      }
+      &__btn:first-child {
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        @include property('border-top-right-radius', $pagination__btn-first-child-top-right-border-radius);
+        @include property('border-bottom-right-radius', $pagination__btn-first-child-bottom-right-border-radius);
+      }
+      &__btn:last-child {
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        @include property('border-top-left-radius', $pagination__btn-last-child-top-left-border-radius);
+        @include property('border-bottom-left-radius', $pagination__btn-last-child-bottom-left-border-radius);
+      }
+    }
+  }
+
+  &__btn + &__btn {
+    @include property('border-left', $pagination__btn-btn-border-left);
+    @include property('margin-left', $pagination__btn-btn-margin-left);
+  }
+
+  &__hint-text {
+    text-align: center;
+    margin-bottom: 30px;
+    @include fs(16);
+    line-height: 24px;
+
+    @include md {
+      margin: 0;
+    }
+  }
+
+  &__prev-btn,
+  &__next-btn {
+    position: relative;
+    @include property('border-color', $pagination__prev-border-color);
+    &:after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border: solid $pagination__prev-border;
+      position: absolute;
+      text-align: center;
+      border-width: 0 2px 2px 0;
+    }
+  }
+
+  &__prev-btn {
+    &:after {
+      transform: rotate(135deg);
+      left: 15px;
+      top: 13px;
+    }
+  }
+
+  &__next-btn {
+    &:after {
+      transform: rotate(-45deg);
+      right: 15px;
+      top: 13px;
+    }
+  }
+}

@@ -1,0 +1,154 @@
+include ../../../core/mixinComponents/mixinComponents
+
+div
+  .loading-page.d-flex.align-items-center(v-if="loadingPage")
+    +LoadingIndicator
+  .text--center.mb-30.pb-5.mb-md-50.pb-md-50(v-if="products.length === 0 && loadedPage")
+    include ./empty-cart
+  div(v-if="products.length > 0")
+    h1.py-50.mt-10.text--center.lh-38.lh-md-60.sub-page_head-title
+      span.sub-page_head-title-text Your shopping cart
+    .pos-relative
+      .loading-data.pos-absolute(v-show="loadingData")
+        +LoadingIndicator
+      .mb-10.shopping-cart__hint-box.error.pa-15.pos-relative.d-flex.justify-content-between.align-items-center(v-if="errorProducts")
+        p.fs-16.lh-20.d-flex.align-items-center.alert The following items are not available and cannot be added to cart: {{errorProducts}}
+        span.icon__cross(@click="removeError")
+      .mb-50.shopping-cart__hint-box.hint-text.lh-20.py-10.px-15.py-md-15.d-flex.align-items-center.pos-relative(v-if="promotionMessages.length === 0 && helpMessage && !errorMessage")
+        span.mr-10.icon-info
+        p.fs-16.lh-20.d-block.shopping-cart__hint-box-text-color(v-html="helpMessage")
+      .mb-50.shopping-cart__hint-box.hint-text.lh-20.py-10.px-15.py-md-15.d-flex.align-items-center.pos-relative.error(v-if="errorMessage")
+        p.fs-16.lh-20.d-block.alert {{errorMessage}}
+      .mb-50.shopping-cart__hint-box.approved-code.py-10.px-15.py-md-15.pos-relative(v-if="promotionMessages.length > 0")
+        p.fs-16.lh-20.d-flex.align-items-center(v-for="promotionMessage of promotionMessages" )
+          span.icon-check.mr-10(v-if="!promotionMessage.isAutomatically")
+          span(v-html="promotionMessage.message")
+      .row.text--uppercase.shopping-cart__product-header.mb-10.shopping-cart__product-header-title
+        h2.fs-16.lh-26.col-12(:class="isActiveRecurring ? 'col-md-5' : 'col-md-8'") Product
+        h2.fs-16.lh-26.col-md-3.col-12.d-none.d-md-block(v-if="isActiveRecurring") Frequency
+        h2.fs-16.lh-26.col-md-2.d-none.d-md-block Quantity
+        h2.fs-16.lh-26.col-md-2.d-none.d-md-block.text--right Sub-total
+      .line.mb-20.mb-md-30.shopping-cart__product-list-line
+      //- display for mobile
+      .mb-15.d-md-none.shopping-cart__product-list-content(v-if="isMobile")
+        .mb-20.row.shopping-cart__product-list-item(v-for="product of products")
+          .col-2.pr-0
+            a(:href="product.link").btn.btn-link--primary
+              .shopping-cart__bonus-tag(v-if="product.isGift") BONUS
+              .shopping-cart__product-img-wrapper
+                +ImgLazy('', '', '')(:data-src="product.img", :alt="product.title")
+          .col-6
+            a(:href="product.link").fs-16.lh-24.fw-600.primary.none-underline.d-block.mb-5.shopping-cart__product-name {{product.title}}
+            a(:href="product.link").fs-14.lh-20.skyblue-dark.fw-600.none-underline.d-block.mb-15.shopping-cart__part-number {{product.partNumber}}
+            .mb-15(v-if="product.isAvailable")
+              .qty-control.clearfix
+                button.decrease(@click="decreaseProduct(product)")
+                  span -
+                input(type="number" :value="product.quantity" readonly)
+                button.increase(@click="increaseProduct(product)")
+                  span +
+            +BtnAddToWishlist('product.partNumber')
+          .col-4.text--right.pl-0
+            div(v-if="product.isAvailable")
+              p.fs-16.lh-22.sale-off(v-if="product.isDiscounted") {{product.discountedPriceDisplay}}
+              p.fs-16.lh-22.primary.shopping-cart__product-list-price(v-if="!product.isDiscounted") {{product.subTotalDisplay}}
+              del.fs-14.lh-20.opacity-05.second-text(v-if="product.isDiscounted") {{product.subTotalDisplay}}
+            .shopping-cart__remove-btn.underline.fs-14.lh-22.cursor-pointer(@click="removeProduct(product)" v-if="!product.isGift & product.isAvailable") Remove
+          .col-2(v-if="!product.isAvailable")
+          .col-7.d-flex.align-items-center.mt-10(v-if="!product.isAvailable")
+            span.sale-off.fs-14.lh-20(v-if="product.unavailableMessage") {{product.unavailableMessage}}
+            span.sale-off.fs-14.lh-20(v-else) This item is not available. Please remove them to complete the purchase.
+          .col-3.d-flex.justify-content-end.align-items-center(v-if="!product.isAvailable")
+            .shopping-cart__remove-btn.underline.fs-14.lh-22.cursor-pointer(@click="removeProduct(product)") Remove
+          .col-2(v-if="product.isAvailable && isActiveRecurring")
+          .col-10(v-if="product.isAvailable && isActiveRecurring")
+            .mt-10(v-if="product.listRecurringPlan  && product.listRecurringPlan.length > 0")
+              .js_recurring-popup.selectbox(@click="showPopup")
+                button.btn.selectbox__btn.js_pdp-select-recurring__btn.color-primary(:disabled="product.listRecurringPlan.length == 1") {{ product.activeRecurringPlan.title }}
+                .popup.selectbox__options-popup
+                  .selectbox__option.js_pdp-select-recurring__option(v-for="recurringPlan of product.listRecurringPlan" @click="onChangeRecurring(product, recurringPlan)" ) {{ recurringPlan.title }}
+              .mt-5.fs-14.text--primary(v-html="product.activeRecurringPlan.message")
+      //- end display for mobile
+      //- display for desktop
+      .mb-50.d-none.d-md-block.shopping-cart__product-list-content(v-else)
+        .row.mb-20.shopping-cart__product-list-item(v-for="product of products")
+          div(:class="product.isAvailable ? (isActiveRecurring ? 'col-5' : 'col-8') : 'col-6'")
+            .d-flex
+              a(:href="product.link").btn.btn-link--primary
+                .shopping-cart__product-img-wrapper
+                  .shopping-cart__bonus-tag(v-if="product.isGift") BONUS
+                  +ImgLazy('', '', '')(:data-src="product.img", :alt="product.title")
+              .ml-20
+                a(:href="product.link").fs-18.lh-28.fw-600.primary.none-underline.d-block.mb-5.shopping-cart__product-name {{product.title}}
+                a(:href="product.link").fs-14.lh-20.skyblue-dark.fw-600.none-underline.d-block.mb-15.shopping-cart__part-number {{product.partNumber}}
+                +BtnAddToWishlist('product.partNumber')
+          .col-3(v-if="product.isAvailable && isActiveRecurring")
+            div(v-if="product.listRecurringPlan && product.listRecurringPlan.length > 0")
+              .js_recurring-popup.selectbox(@click="showPopup")
+                button.btn.selectbox__btn.js_pdp-select-recurring__btn.color-primary(:disabled="product.listRecurringPlan.length == 1") {{ product.activeRecurringPlan.title }}
+                .popup.selectbox__options-popup
+                  .selectbox__option.js_pdp-select-recurring__option(v-for="recurringPlan of product.listRecurringPlan" @click="onChangeRecurring(product, recurringPlan)" ) {{ recurringPlan.title }}
+              .mt-10.fs-14.text--primary(v-html="product.activeRecurringPlan.message")
+          .col-2(v-if="product.isAvailable")
+            .qty-control.clearfix
+              button.decrease(@click="decreaseProduct(product)")
+                span -
+              input(type="number" :value="product.quantity" readonly)
+              button.increase(@click="increaseProduct(product)")
+                span +
+          .col-2.text--right(v-if="product.isAvailable")
+            .mb-5
+              p.fs-16.lh-22.sale-off(v-if="product.isDiscounted") {{product.discountedPriceDisplay}}
+              p.fs-16.lh-22.primary.shopping-cart__product-list-price(v-if="!product.isDiscounted") {{product.subTotalDisplay}}
+              del.fs-14.lh-20.opacity-05.second-text(v-if="product.isDiscounted") {{product.subTotalDisplay}}
+            .shopping-cart__remove-btn.underline.fs-14.lh-22.cursor-pointer(@click="removeProduct(product)" v-if="!product.isGift") Remove
+          .col-6.text--right(v-if="!product.isAvailable")
+            span.sale-off.fs-14.lh-20(v-if="product.unavailableMessage") {{product.unavailableMessage}}
+            span.sale-off.fs-14.lh-20(v-else) This item is not available. Please remove them to complete the purchase.
+            .shopping-cart__remove-btn.underline.fs-14.lh-22.cursor-pointer(@click="removeProduct(product)") Remove
+      //- end display for desktop
+      h2.text--uppercase.fs-16.lh-26.mb-10.shopping-cart__product-header-title Delivery
+      .line.mb-20
+      div(v-if="shippingMethods && shippingMethods.length > 0")
+        .pa-15.shopping-cart__delivery.mb-30.mb-md-50(v-for="shippingMethod of shippingMethods")
+          .d-flex.justify-content-between
+            .d-flex
+              label.radio.d-table
+                input.radio__input(type="radio" :checked="shippingMethod.selected")
+                span.radio__checkmark
+                span.radio__label.underline.fs-16.lh-24.shopping-cart__delivery-name {{shippingMethod.displayName}}
+              span.pl-10.skyblue-dark.fs-16.lh-24.d-none.d-md-block {{shippingMethod.description}} 
+            p.skyblue-dark.fs-16.lh-20.fw-600 {{shippingMethod.rateDisplay}}
+          span.pl-25.skyblue-dark.fs-16.lh-24.d-md-none {{shippingMethod.description}}
+      .row
+        .col-md-8.col-12
+          h2.text--uppercase.fs-16.lh-26.mb-10.mt-5.mt-md-0.shopping-cart__product-header-title promotion code
+          .line.mb-20
+          .shopping-cart_promotion-code.mb-30.pb-5.pa-15
+            form.form-group(@submit="handleSubmitPromotionalCode").pos-relative.d-md-flex
+              .pos-relative.flex-basic-75.mr-md-10
+                .loading-promotion-code.pos-absolute(v-if="applyingPromotionCode")
+                  +LoadingIndicator(true)
+                input.form-control.w-100.mb-10.mb-md-0(placeholder="Enter promotional code" v-model="promotionCode")
+              button.flex-basic-25.btn.btn--primary.w-100 Apply
+        .col-md-4.col-12
+          .fs-16.lh-26.d-none.d-md-block.mb-10 &nbsp;
+          .mb-20.mb-md-30
+            .line.mb-20.mb-md-30
+            .d-flex.justify-content-between.align-items-center
+              p.fs-16.lh-26.fw-600.primary.text--uppercase sub-total
+              p.fs-16.lh-22.md-primary {{subTotalDisplay}}
+            .d-flex.justify-content-between.align-items-center
+              p.fs-16.lh-26.fw-600.primary.text--uppercase delivery
+              p.fs-16.lh-22.md-primary {{shippingTotalDisplay}}
+            .d-flex.justify-content-between.align-items-center(v-if="discountAmount")
+              p.fs-16.lh-26.fw-600.primary.text--uppercase total saved
+              p.sale-off.fs-16.lh-22 -{{discountAmountDisplay}}
+            .d-flex.justify-content-between.align-items-center.mt-20
+              p.fs-26.lh-26.primary.fw-600.text--uppercase total
+              p.fs-26.lh-26.primary.fw-600 {{totalDisplay}}
+            p.text--right.fs-14.lh-22.gray.opacity-05 GST Included
+          .line.mb-20.mb-md-30
+          a.btn.w-100.mb-25.mb-md-10.text--center.btn--primary(:rel="isAuthenticated ? '' : 'IDS_Login'" :href="checkoutPage") {{ isAuthenticated ? 'Go to Checkout' : 'Sign in for express checkout'}}
+          a(href="/").shopping-cart__continue-shopping-btn.text--center.lh-20.d-block.fs-14.lh-20.fw-600.none-underline.mb-50 Continue Shopping
+          .line.d-md-none

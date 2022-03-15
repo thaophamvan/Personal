@@ -1,0 +1,100 @@
+$block = ".spinner--robot";
+$duration = 1.25s;
+$delay = .3s;
+$first-frame = 20%;
+$second-frame = 45%;
+$easeOutElastic = cubic-bezier(.175, .885, .32, 1.275); // @stylint ignore
+$translation-distance = 1;
+
+{$block} {
+  path:nth-child(1) {
+    animation: cake-animation-1 $duration $easeOutElastic infinite;
+  }
+
+  path:nth-child(2) {
+    animation: cake-animation-2 $duration $easeOutElastic infinite;
+    animation-delay: $delay;
+  }
+
+  path:nth-child(3) {
+    animation: cake-animation-3 $duration $easeOutElastic infinite;
+    animation-delay: $delay * 2;
+  }
+
+  path:nth-child(4) {
+    animation: cake-animation-4 $duration $easeOutElastic infinite;
+    animation-delay: $delay * 3;
+  }
+}
+
+@keyframes cake-animation-1 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  {$first-frame} {
+    transform: translate($translation-distance px, (-1 * $translation-distance)px);
+  }
+
+  {$second-frame} {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes cake-animation-2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  {$first-frame} {
+    transform: translate($translation-distance px, 0);
+  }
+
+  {$second-frame} {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes cake-animation-3 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  {$first-frame} {
+    transform: translate($translation-distance px, $translation-distance px);
+  }
+
+  {$second-frame} {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes cake-animation-4 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  {$first-frame} {
+    transform: translate((-1 * $translation-distance)px, 0);
+  }
+
+  {$second-frame} {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}

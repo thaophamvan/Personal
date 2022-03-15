@@ -1,0 +1,42 @@
+$block: ".order-confirm-page";
+
+#{$block} {
+    &__confirm{
+        max-width: 780px;
+        &-steps{
+            @include md{
+              max-width: 600px;
+            }
+            &::after {
+                position: absolute;
+                left: 50%;
+                top: $order-confirm-page__steps-after-top;
+                transform: translate3d(-50%, -50%, 0);
+                content: "";
+                width: 90%;
+                border-top: 1px dashed $primary-lighten-1;
+                z-index: 0;
+                @include md {
+                  top: $order-confirm-page__steps-after-top-md;
+                  width: 85%;
+                }
+            }
+        }
+    }
+}
+.back-to-cart {
+    position: relative;
+    &:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border: solid $primary;
+      padding: 3px;
+      position: absolute;
+      transform: rotate(-45deg);
+      border-width: 2px 0 0 2px;
+      left: 0;
+      top: calc(50% - 6px);
+    }
+  }
+  

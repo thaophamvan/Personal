@@ -1,0 +1,17 @@
+$block: ".product-detail-spec";
+#{$block} {
+    @include property('margin-top', $product-detail-spec-margin-top);
+    &__image {
+        height: 300px;
+        @include md {
+            height: 375px;
+        }
+    }
+    &_bg {
+        background-color: $product-detail-spec_bg;
+        color: $product-detail-spec_color;
+        text-transform: $product-detail-spec_text-transform;
+        text-decoration: $product-detail-spec_text-decoration;
+        text-decoration-color: $product-detail-spec_border-bottom;
+    }
+}

@@ -1,0 +1,33 @@
+include ../../mixinComponents/mixinComponents
+.block-video-full 
+	video.player.lazyImg(controls playsinline="" muted="" loop autoplay)
+		source(data-src="images/block-img-content/pesticides-video.mp4" src="images/default-img-bg.png" type="video/mp4") 
+	.auto-content-group
+		.auto-content-group__item
+			.block-img-content
+				img.lazy(src="images/block-img-bg.png" alt="block-img-bg" data-default="images/block-img-bg.png")
+		.auto-content-group__item
+			.block-img-text
+				img.lazy(src="images/block-img-bg.png" alt="block-img-bg" data-default="images/block-img-bg.png") 
+				.block-img-text__content
+					h3.block-img-text__title Black Collection by test
+					.block-img-text__link
+						a(href="/appliances/washing-machines/") View more
+.block-video-full 
+	img.lazy(data-img-mobile = "images/hero-banner/banner-image-mobile-375x350.jpg" data-img-desktop = "images/hero-banner/hero_new.jpg" alt="block-video-full" data-default="images/banner-img-bg.png" src="images/default-img-bg.png") 
+	.auto-content-group
+		.auto-content-group__item
+			.block-img-content
+				img.lazy(src="images/block-img-bg.png" alt="block-img-bg" data-default="images/block-img-bg.png")
+				+BtnPlayVideo('play-video-button',"https://www.youtube.com/embed/LkgCMHyJlxs?autoplay=0&enablejsapi=1&origin=https://elux3.Personal.com")
+				//- i.play-button(data-src = "https://www.youtube.com/embed/LkgCMHyJlxs?autoplay=0&enablejsapi=1&origin=https://elux3.Personal.com")
+		.auto-content-group__item
+			.block-img-text
+				img.lazy(src="images/block-img-bg.png" alt="block-img-bg" data-default="images/block-img-bg.png") 
+				.block-img-text__content
+					h3.block-img-text__title Black Collection by test
+					.block-img-text__link
+						a(href="/appliances/washing-machines/") View more
+
+
+

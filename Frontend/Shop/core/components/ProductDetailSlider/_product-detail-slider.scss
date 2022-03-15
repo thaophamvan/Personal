@@ -1,0 +1,14 @@
+.product-detail-slider {
+  &__img {
+    height: 276px;
+    @include md {
+      height: 516px;
+    }
+  }
+
+  .glide {
+    &__bullet--active {
+      border: 1px solid $product-detail-slider__bullet--active-border;
+    }
+  }
+}

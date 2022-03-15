@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PIFOR_DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TCapBac">
+          <Key>
+            <PropertyRef Name="MaCapBac" />
+          </Key>
+          <Property Name="MaCapBac" Type="int" Nullable="false" />
+          <Property Name="TenCapBac" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MoTaCapBac" Type="nvarchar" MaxLength="255" />
+          <Property Name="NguoiNhapMay" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapMay" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TChucVu">
+          <Key>
+            <PropertyRef Name="MaChucVu" />
+          </Key>
+          <Property Name="MaChucVu" Type="int" Nullable="false" />
+          <Property Name="TenChucVu" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MoTaChucVu" Type="nvarchar" MaxLength="255" />
+          <Property Name="NguoiNhapMay" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapMay" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PIFOR_Database.dbo.TDanhSachTrucBan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TDanhSachTrucBan">
+          <Key>
+            <PropertyRef Name="ThuTu" />
+            <PropertyRef Name="HoVaTen" />
+            <PropertyRef Name="CapBac" />
+            <PropertyRef Name="ChucVu" />
+            <PropertyRef Name="ThoiGianTu" />
+            <PropertyRef Name="ThoiGianDen" />
+          </Key>
+          <Property Name="ThuTu" Type="nchar" MaxLength="5" Nullable="false" />
+          <Property Name="HoVaTen" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CapBac" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="ChucVu" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="GioTu" Type="nchar" MaxLength="10" />
+          <Property Name="GioDen" Type="nchar" MaxLength="10" />
+          <Property Name="ThoiGianTu" Type="datetime" Nullable="false" />
+          <Property Name="ThoiGianDen" Type="datetime" Nullable="false" />
+          <Property Name="NguoiNhapMay" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapMay" Type="datetime" />
+          <Property Name="HinhThucTruc" Type="nvarchar" MaxLength="50" />
+          <Property Name="DonVi" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PIFOR_Database.dbo.TDonVi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TDonVi">
+          <Key>
+            <PropertyRef Name="MaDonVi" />
+            <PropertyRef Name="TenDonVi" />
+          </Key>
+          <Property Name="MaDonVi" Type="int" Nullable="false" />
+          <Property Name="TenDonVi" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MoTaDonVi" Type="nvarchar" MaxLength="255" />
+          <Property Name="NguoiNhapMay" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapMay" Type="datetime" />
+        </EntityType>
+        <EntityType Name="THinhThucTruc">
+          <Key>
+            <PropertyRef Name="MaHinhThucTruc" />
+          </Key>
+          <Property Name="MaHinhThucTruc" Type="int" Nullable="false" />
+          <Property Name="TenHinhThucTruc" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="MoTaHinhThucTruc" Type="nvarchar" MaxLength="255" />
+          <Property Name="NguoiNhapMay" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapMay" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PIFOR_Database.dbo.TLichLamViec' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TLichLamViec">
+          <Key>
+            <PropertyRef Name="NguoiTruc" />
+            <PropertyRef Name="TrucCaNgay" />
+            <PropertyRef Name="NgayTruc" />
+          </Key>
+          <Property Name="NguoiTruc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MoTaTrucCaNgay" Type="nvarchar" MaxLength="350" />
+          <Property Name="MoTaTrucBuoiSang" Type="nvarchar" MaxLength="350" />
+          <Property Name="MoTaTrucBuoiChieu" Type="nvarchar" MaxLength="350" />
+          <Property Name="GioTrucSang" Type="nvarchar" MaxLength="50" />
+          <Property Name="GioTrucChieu" Type="nvarchar" MaxLength="50" />
+          <Property Name="GioTrucCaNgay" Type="nvarchar" MaxLength="50" />
+          <Property Name="TrucCaNgay" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="NgayTruc" Type="datetime" Nullable="false" />
+          <Property Name="NguoiNhapMay" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapMay" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'PIFOR_Database.dbo.TThietLapHeThong' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TThietLapHeThong">
+          <Property Name="ThoiGianSlideTruc" Type="int" />
+          <Property Name="ThoiGianSlideLich" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PIFOR_Database.dbo.TThongTinLichLamViec' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TThongTinLichLamViec">
+          <Key>
+            <PropertyRef Name="MaLichLamViec" />
+            <PropertyRef Name="TenLichLamViec" />
+            <PropertyRef Name="LichTuNgay" />
+            <PropertyRef Name="LichDenNgay" />
+            <PropertyRef Name="TrucChiHuy" />
+          </Key>
+          <Property Name="MaLichLamViec" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenLichLamViec" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="LichTuNgay" Type="datetime" Nullable="false" />
+          <Property Name="LichDenNgay" Type="datetime" Nullable="false" />
+          <Property Name="TrucChiHuy" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NguoiNhapMay" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapMay" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'PIFOR_Database.dbo.TThongTinLichTruc' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TThongTinLichTruc">
+          <Key>
+            <PropertyRef Name="MaTongHopTruc" />
+            <PropertyRef Name="MoTaTongHopTruc" />
+            <PropertyRef Name="TrucTuNgay" />
+            <PropertyRef Name="TrucDenNgay" />
+          </Key>
+          <Property Name="MaTongHopTruc" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="MoTaTongHopTruc" Type="nvarchar" MaxLength="350" Nullable="false" />
+          <Property Name="TrucTuNgay" Type="datetime" Nullable="false" />
+          <Property Name="TrucDenNgay" Type="date" Nullable="false" />
+          <Property Name="NguoiNhapMay" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgayNhapMay" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="PIFOR_DatabaseModelStoreContainer">
+          <EntitySet Name="TCapBac" EntityType="Self.TCapBac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TChucVu" EntityType="Self.TChucVu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THinhThucTruc" EntityType="Self.THinhThucTruc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TDanhSachTrucBan" EntityType="Self.TDanhSachTrucBan" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TDanhSachTrucBan].[ThuTu] AS [ThuTu], 
+    [TDanhSachTrucBan].[HoVaTen] AS [HoVaTen], 
+    [TDanhSachTrucBan].[CapBac] AS [CapBac], 
+    [TDanhSachTrucBan].[ChucVu] AS [ChucVu], 
+    [TDanhSachTrucBan].[GioTu] AS [GioTu], 
+    [TDanhSachTrucBan].[GioDen] AS [GioDen], 
+    [TDanhSachTrucBan].[ThoiGianTu] AS [ThoiGianTu], 
+    [TDanhSachTrucBan].[ThoiGianDen] AS [ThoiGianDen], 
+    [TDanhSachTrucBan].[NguoiNhapMay] AS [NguoiNhapMay], 
+    [TDanhSachTrucBan].[NgayNhapMay] AS [NgayNhapMay], 
+    [TDanhSachTrucBan].[HinhThucTruc] AS [HinhThucTruc], 
+    [TDanhSachTrucBan].[DonVi] AS [DonVi]
+    FROM [dbo].[TDanhSachTrucBan] AS [TDanhSachTrucBan]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TDonVi" EntityType="Self.TDonVi" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TDonVi].[MaDonVi] AS [MaDonVi], 
+    [TDonVi].[TenDonVi] AS [TenDonVi], 
+    [TDonVi].[MoTaDonVi] AS [MoTaDonVi], 
+    [TDonVi].[NguoiNhapMay] AS [NguoiNhapMay], 
+    [TDonVi].[NgayNhapMay] AS [NgayNhapMay]
+    FROM [dbo].[TDonVi] AS [TDonVi]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TLichLamViec" EntityType="Self.TLichLamViec" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TLichLamViec].[NguoiTruc] AS [NguoiTruc], 
+    [TLichLamViec].[MoTaTrucCaNgay] AS [MoTaTrucCaNgay], 
+    [TLichLamViec].[MoTaTrucBuoiSang] AS [MoTaTrucBuoiSang], 
+    [TLichLamViec].[MoTaTrucBuoiChieu] AS [MoTaTrucBuoiChieu], 
+    [TLichLamViec].[GioTrucSang] AS [GioTrucSang], 
+    [TLichLamViec].[GioTrucChieu] AS [GioTrucChieu], 
+    [TLichLamViec].[GioTrucCaNgay] AS [GioTrucCaNgay], 
+    [TLichLamViec].[TrucCaNgay] AS [TrucCaNgay], 
+    [TLichLamViec].[NgayTruc] AS [NgayTruc], 
+    [TLichLamViec].[NguoiNhapMay] AS [NguoiNhapMay], 
+    [TLichLamViec].[NgayNhapMay] AS [NgayNhapMay]
+    FROM [dbo].[TLichLamViec] AS [TLichLamViec]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TThongTinLichLamViec" EntityType="Self.TThongTinLichLamViec" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TThongTinLichLamViec].[MaLichLamViec] AS [MaLichLamViec], 
+    [TThongTinLichLamViec].[TenLichLamViec] AS [TenLichLamViec], 
+    [TThongTinLichLamViec].[LichTuNgay] AS [LichTuNgay], 
+    [TThongTinLichLamViec].[LichDenNgay] AS [LichDenNgay], 
+    [TThongTinLichLamViec].[TrucChiHuy] AS [TrucChiHuy], 
+    [TThongTinLichLamViec].[NguoiNhapMay] AS [NguoiNhapMay], 
+    [TThongTinLichLamViec].[NgayNhapMay] AS [NgayNhapMay]
+    FROM [dbo].[TThongTinLichLamViec] AS [TThongTinLichLamViec]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TThongTinLichTruc" EntityType="Self.TThongTinLichTruc" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TThongTinLichTruc].[MaTongHopTruc] AS [MaTongHopTruc], 
+    [TThongTinLichTruc].[MoTaTongHopTruc] AS [MoTaTongHopTruc], 
+    [TThongTinLichTruc].[TrucTuNgay] AS [TrucTuNgay], 
+    [TThongTinLichTruc].[TrucDenNgay] AS [TrucDenNgay], 
+    [TThongTinLichTruc].[NguoiNhapMay] AS [NguoiNhapMay], 
+    [TThongTinLichTruc].[NgayNhapMay] AS [NgayNhapMay]
+    FROM [dbo].[TThongTinLichTruc] AS [TThongTinLichTruc]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PIFOR_DatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TCapBac">
+          <Key>
+            <PropertyRef Name="MaCapBac" />
+          </Key>
+          <Property Name="MaCapBac" Type="Int32" Nullable="false" />
+          <Property Name="TenCapBac" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MoTaCapBac" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NguoiNhapMay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayNhapMay" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TChucVu">
+          <Key>
+            <PropertyRef Name="MaChucVu" />
+          </Key>
+          <Property Name="MaChucVu" Type="Int32" Nullable="false" />
+          <Property Name="TenChucVu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MoTaChucVu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NguoiNhapMay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayNhapMay" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="THinhThucTruc">
+          <Key>
+            <PropertyRef Name="MaHinhThucTruc" />
+          </Key>
+          <Property Name="MaHinhThucTruc" Type="Int32" Nullable="false" />
+          <Property Name="TenHinhThucTruc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MoTaHinhThucTruc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NguoiNhapMay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayNhapMay" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TDanhSachTrucBan">
+          <Key>
+            <PropertyRef Name="ThuTu" />
+            <PropertyRef Name="HoVaTen" />
+            <PropertyRef Name="CapBac" />
+            <PropertyRef Name="ChucVu" />
+            <PropertyRef Name="ThoiGianTu" />
+            <PropertyRef Name="ThoiGianDen" />
+          </Key>
+          <Property Name="ThuTu" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="HoVaTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CapBac" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ChucVu" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GioTu" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="GioDen" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ThoiGianTu" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ThoiGianDen" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NguoiNhapMay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayNhapMay" Type="DateTime" Precision="3" />
+          <Property Name="HinhThucTruc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DonVi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TDonVi">
+          <Key>
+            <PropertyRef Name="MaDonVi" />
+            <PropertyRef Name="TenDonVi" />
+          </Key>
+          <Property Name="MaDonVi" Type="Int32" Nullable="false" />
+          <Property Name="TenDonVi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MoTaDonVi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NguoiNhapMay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayNhapMay" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TLichLamViec">
+          <Key>
+            <PropertyRef Name="NguoiTruc" />
+            <PropertyRef Name="TrucCaNgay" />
+            <PropertyRef Name="NgayTruc" />
+          </Key>
+          <Property Name="NguoiTruc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MoTaTrucCaNgay" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="MoTaTrucBuoiSang" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="MoTaTrucBuoiChieu" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="GioTrucSang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioTrucChieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GioTrucCaNgay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TrucCaNgay" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NgayTruc" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NguoiNhapMay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayNhapMay" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TThongTinLichLamViec">
+          <Key>
+            <PropertyRef Name="MaLichLamViec" />
+            <PropertyRef Name="TenLichLamViec" />
+            <PropertyRef Name="LichTuNgay" />
+            <PropertyRef Name="LichDenNgay" />
+            <PropertyRef Name="TrucChiHuy" />
+          </Key>
+          <Property Name="MaLichLamViec" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TenLichLamViec" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LichTuNgay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LichDenNgay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TrucChiHuy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NguoiNhapMay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayNhapMay" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TThongTinLichTruc">
+          <Key>
+            <PropertyRef Name="MaTongHopTruc" />
+            <PropertyRef Name="MoTaTongHopTruc" />
+            <PropertyRef Name="TrucTuNgay" />
+            <PropertyRef Name="TrucDenNgay" />
+          </Key>
+          <Property Name="MaTongHopTruc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="MoTaTongHopTruc" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TrucTuNgay" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TrucDenNgay" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="NguoiNhapMay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NgayNhapMay" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="PIFOR_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TCapBacs" EntityType="Self.TCapBac" />
+          <EntitySet Name="TChucVus" EntityType="Self.TChucVu" />
+          <EntitySet Name="THinhThucTrucs" EntityType="Self.THinhThucTruc" />
+          <EntitySet Name="TDanhSachTrucBans" EntityType="Self.TDanhSachTrucBan" />
+          <EntitySet Name="TDonVis" EntityType="Self.TDonVi" />
+          <EntitySet Name="TLichLamViecs" EntityType="Self.TLichLamViec" />
+          <EntitySet Name="TThongTinLichLamViecs" EntityType="Self.TThongTinLichLamViec" />
+          <EntitySet Name="TThongTinLichTrucs" EntityType="Self.TThongTinLichTruc" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PIFOR_DatabaseModelStoreContainer" CdmEntityContainer="PIFOR_DatabaseEntities">
+          <EntitySetMapping Name="TCapBacs">
+            <EntityTypeMapping TypeName="PIFOR_DatabaseModel.TCapBac">
+              <MappingFragment StoreEntitySet="TCapBac">
+                <ScalarProperty Name="MaCapBac" ColumnName="MaCapBac" />
+                <ScalarProperty Name="TenCapBac" ColumnName="TenCapBac" />
+                <ScalarProperty Name="MoTaCapBac" ColumnName="MoTaCapBac" />
+                <ScalarProperty Name="NguoiNhapMay" ColumnName="NguoiNhapMay" />
+                <ScalarProperty Name="NgayNhapMay" ColumnName="NgayNhapMay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TChucVus">
+            <EntityTypeMapping TypeName="PIFOR_DatabaseModel.TChucVu">
+              <MappingFragment StoreEntitySet="TChucVu">
+                <ScalarProperty Name="MaChucVu" ColumnName="MaChucVu" />
+                <ScalarProperty Name="TenChucVu" ColumnName="TenChucVu" />
+                <ScalarProperty Name="MoTaChucVu" ColumnName="MoTaChucVu" />
+                <ScalarProperty Name="NguoiNhapMay" ColumnName="NguoiNhapMay" />
+                <ScalarProperty Name="NgayNhapMay" ColumnName="NgayNhapMay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THinhThucTrucs">
+            <EntityTypeMapping TypeName="PIFOR_DatabaseModel.THinhThucTruc">
+              <MappingFragment StoreEntitySet="THinhThucTruc">
+                <ScalarProperty Name="MaHinhThucTruc" ColumnName="MaHinhThucTruc" />
+                <ScalarProperty Name="TenHinhThucTruc" ColumnName="TenHinhThucTruc" />
+                <ScalarProperty Name="MoTaHinhThucTruc" ColumnName="MoTaHinhThucTruc" />
+                <ScalarProperty Name="NguoiNhapMay" ColumnName="NguoiNhapMay" />
+                <ScalarProperty Name="NgayNhapMay" ColumnName="NgayNhapMay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TDanhSachTrucBans">
+            <EntityTypeMapping TypeName="PIFOR_DatabaseModel.TDanhSachTrucBan">
+              <MappingFragment StoreEntitySet="TDanhSachTrucBan">
+                <ScalarProperty Name="ThuTu" ColumnName="ThuTu" />
+                <ScalarProperty Name="HoVaTen" ColumnName="HoVaTen" />
+                <ScalarProperty Name="CapBac" ColumnName="CapBac" />
+                <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
+                <ScalarProperty Name="GioTu" ColumnName="GioTu" />
+                <ScalarProperty Name="GioDen" ColumnName="GioDen" />
+                <ScalarProperty Name="ThoiGianTu" ColumnName="ThoiGianTu" />
+                <ScalarProperty Name="ThoiGianDen" ColumnName="ThoiGianDen" />
+                <ScalarProperty Name="NguoiNhapMay" ColumnName="NguoiNhapMay" />
+                <ScalarProperty Name="NgayNhapMay" ColumnName="NgayNhapMay" />
+                <ScalarProperty Name="HinhThucTruc" ColumnName="HinhThucTruc" />
+                <ScalarProperty Name="DonVi" ColumnName="DonVi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TDonVis">
+            <EntityTypeMapping TypeName="PIFOR_DatabaseModel.TDonVi">
+              <MappingFragment StoreEntitySet="TDonVi">
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="MoTaDonVi" ColumnName="MoTaDonVi" />
+                <ScalarProperty Name="NguoiNhapMay" ColumnName="NguoiNhapMay" />
+                <ScalarProperty Name="NgayNhapMay" ColumnName="NgayNhapMay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TLichLamViecs">
+            <EntityTypeMapping TypeName="PIFOR_DatabaseModel.TLichLamViec">
+              <MappingFragment StoreEntitySet="TLichLamViec">
+                <ScalarProperty Name="NguoiTruc" ColumnName="NguoiTruc" />
+                <ScalarProperty Name="MoTaTrucCaNgay" ColumnName="MoTaTrucCaNgay" />
+                <ScalarProperty Name="MoTaTrucBuoiSang" ColumnName="MoTaTrucBuoiSang" />
+                <ScalarProperty Name="MoTaTrucBuoiChieu" ColumnName="MoTaTrucBuoiChieu" />
+                <ScalarProperty Name="GioTrucSang" ColumnName="GioTrucSang" />
+                <ScalarProperty Name="GioTrucChieu" ColumnName="GioTrucChieu" />
+                <ScalarProperty Name="GioTrucCaNgay" ColumnName="GioTrucCaNgay" />
+                <ScalarProperty Name="TrucCaNgay" ColumnName="TrucCaNgay" />
+                <ScalarProperty Name="NgayTruc" ColumnName="NgayTruc" />
+                <ScalarProperty Name="NguoiNhapMay" ColumnName="NguoiNhapMay" />
+                <ScalarProperty Name="NgayNhapMay" ColumnName="NgayNhapMay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TThongTinLichLamViecs">
+            <EntityTypeMapping TypeName="PIFOR_DatabaseModel.TThongTinLichLamViec">
+              <MappingFragment StoreEntitySet="TThongTinLichLamViec">
+                <ScalarProperty Name="MaLichLamViec" ColumnName="MaLichLamViec" />
+                <ScalarProperty Name="TenLichLamViec" ColumnName="TenLichLamViec" />
+                <ScalarProperty Name="LichTuNgay" ColumnName="LichTuNgay" />
+                <ScalarProperty Name="LichDenNgay" ColumnName="LichDenNgay" />
+                <ScalarProperty Name="TrucChiHuy" ColumnName="TrucChiHuy" />
+                <ScalarProperty Name="NguoiNhapMay" ColumnName="NguoiNhapMay" />
+                <ScalarProperty Name="NgayNhapMay" ColumnName="NgayNhapMay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TThongTinLichTrucs">
+            <EntityTypeMapping TypeName="PIFOR_DatabaseModel.TThongTinLichTruc">
+              <MappingFragment StoreEntitySet="TThongTinLichTruc">
+                <ScalarProperty Name="MaTongHopTruc" ColumnName="MaTongHopTruc" />
+                <ScalarProperty Name="MoTaTongHopTruc" ColumnName="MoTaTongHopTruc" />
+                <ScalarProperty Name="TrucTuNgay" ColumnName="TrucTuNgay" />
+                <ScalarProperty Name="TrucDenNgay" ColumnName="TrucDenNgay" />
+                <ScalarProperty Name="NguoiNhapMay" ColumnName="NguoiNhapMay" />
+                <ScalarProperty Name="NgayNhapMay" ColumnName="NgayNhapMay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

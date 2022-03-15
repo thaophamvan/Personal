@@ -1,0 +1,138 @@
+html {
+  scroll-behavior: smooth;
+  font-family: $font-family-Sans;
+  line-height: 1.6;
+  @include property('font-size', $body-font-size);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  outline: 0;
+}
+body {
+  font-family: $font-family-Sans;
+  line-height: 1.6;
+  @include property('font-size', $body-font-size);
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  position: relative;
+  background: $body-bg-color;
+  @include property('color', $body-color);
+  @include md {
+    padding: 120px 0 0 0;
+    &.unauthenticated {
+      padding-top: 80px;
+    }
+  }
+}
+.hidden {
+  display: none !important;
+}
+.modal-inner {
+  top: 10%;
+  width: calc(100% - 30px);
+  transition: all 0.32s ease 0s;
+  transform: translateY(-50px);
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  opacity: 0;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 30px 18px -20px rgb(2, 2, 2);
+  @include md {
+    top: 15%;
+  }
+}
+
+[data-pftrigger],
+div[data-pfrecommend] {
+  display: none;
+}
+
+[data-pftrigger="default"] {
+  display: inherit;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  margin: auto;
+
+  &.lazy {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.overlay-bg {
+  display: none;
+  content: "";
+  position: absolute;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: 0.4s;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.active-overlay {
+  .overlay-bg {
+    display: block;
+    @include md {
+      display: none;
+    }
+  }
+}
+
+.sub-page_head-title {
+  text-transform: $sub-page_head-title-text-tranform;
+  font-size: $sub-page_head-title-font-size-sm;
+  font-family: $sub-page_head-title-font-family;
+  font-weight: $sub-page_head-title-font-weight;
+  color: $sub-page_head-title-color;
+  @include md {
+    font-size: $sub-page_head-title-font-size-md;
+    line-height: $sub-page_head-title-line-height-md;
+  }
+}
+
+.back-page-btn {
+  color: $back-page-btn-color;
+  .icon-rightarrow:before {
+    color: $back-page-btn-color;
+  }
+}
+
+.odh-need-help {
+  background-color: $faqs_odh-need-help_bg-color;
+  border: $faqs_odh-need-help-border;
+
+  &__title {
+    text-transform: $faqs_odh-need-help_title-text-transform;
+    font-family: $faqs_odh-need-help_title-font-family;
+    font-weight: $faqs_odh-need-help_title-font-weight;
+    color: $faqs_odh-need-help_title-color;
+    font-size: $faqs_odh-need-help_title-font-size;
+    line-height: $faqs_odh-need-help_title-line-height;
+
+    @include md {
+      font-size: $faqs_odh-need-help_title-font-size-md;
+      line-height: $faqs_odh-need-help_title-line-height-md;
+    }
+  }
+
+  &__card-title {
+    color: $faqs_odh-need-help__card-title-color;
+    text-transform: $faqs_odh-need-help__card-title-text-transform;
+    font-size: $faqs_odh-need-help__card-title-font-size;
+  }
+}

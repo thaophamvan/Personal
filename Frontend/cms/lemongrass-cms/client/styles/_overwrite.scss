@@ -1,0 +1,9 @@
+@import "color-vars";
+
+
+.btn {
+  color: $WHITE;
+  &:hover {
+    color: $WHITE;
+  }
+}

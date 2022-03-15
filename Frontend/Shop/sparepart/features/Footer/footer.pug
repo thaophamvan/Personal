@@ -1,0 +1,69 @@
+- var about = { "name": "About test", "subItems": ["About test Group", "Visit test.com.au"]}
+- var shopping = { "name": "Shopping at test", "subItems": ["Delivery","Refunds","Support FAQs"]}
+- var contact = { "name": "Contact Us", "subItems": ["Get in touch","Customer care 1300 666 019"]}
+- var menuItems = [about, shopping, contact]
+footer.footer.text--white
+  ul.footer__menu
+    each menuItem in menuItems
+      if menuItem.length >= 0
+        li.footer__group-menu-item.col-md-2
+          each subMenuItem in menuItem
+            .footer__menu-item
+              p.footer__menu-item-name.footer__menu-item-expand(data-component="popup" data-target=subMenuItem.name data-type="collapse")= subMenuItem.name
+              div(id = subMenuItem.name).collapse.footer__menu-item-links
+                ul.footer__sub-menu
+                  each subItem in subMenuItem.subItems
+                    li.footer__sub-menu-item
+                      a(href="#").btn-link.text--white= subItem
+      else
+        li.footer__menu-item.col-md-2
+          p.footer__menu-item-name.footer__menu-item-expand(data-component="popup" data-target=menuItem.name data-type="collapse")= menuItem.name
+          div(id = menuItem.name).collapse.footer__menu-item-links
+            ul.footer__sub-menu
+              each subItem in menuItem.subItems
+                li.footer__sub-menu-item
+                  a(href="#").btn-link.text--white= subItem
+  .footer__info
+    .footer__social-section
+      .footer__menu-item-name.footer__menu-item-expand(data-component="popup" data-target="footer-social" data-type="collapse") Social Media
+      .collapse(id = "footer-social").footer__menu-item-links
+        ul.footer__social.d-flex
+          li.footer__social-icon
+            a.none-underline(href="https://www.facebook.com/testsingapore" target="_blank")
+              svg.icon.icon-fb
+                use(xlink:href="#icon-fb")
+          li.footer__social-icon
+            a.none-underline(href="https://www.facebook.com/testsingapore" target="_blank")
+              svg.icon.icon-instagram
+                use(xlink:href="#icon-instagram")
+          li.footer__social-icon
+            a.none-underline(href="https://www.facebook.com/testsingapore" target="_blank")
+              svg.icon.icon-youtube
+                use(xlink:href="#icon-youtube")
+          li.footer__social-icon
+            a.none-underline(href="https://www.facebook.com/testsingapore" target="_blank")
+              svg.icon.icon-twitter
+                use(xlink:href="#icon-twitter")
+    .footer__payment-method
+      p.text--large.text--bold.text--primary.footer__menu-item-name.footer__menu-item-expand(data-component="popup" data-target="footer-payment" data-type="collapse") Secure payment methods
+      .collapse(id = "footer-payment").footer__menu-item-links
+        ul.payment-method-list.d-flex
+          li.payment-method-list__item
+          li.payment-method-list__item
+          li.payment-method-list__item
+  .footer__copyright.text--primary.text--small
+    .footer__copyright-links
+      span
+        a.none-underline(href="" target="_blank") Terms & Condiftions
+        span &nbsp;|&nbsp;
+      span
+        a.none-underline(href="" target="_blank") Data Protection Policy
+        span &nbsp;|&nbsp;
+      span
+        a.none-underline(href="" target="_blank") Cookie Guideline
+        span &nbsp;|&nbsp;
+      span
+        a.none-underline(href="" target="_blank") Sitemap
+    p.copyright-test.text--small Copyright 2019 test - All Rights Reserved.
+
+

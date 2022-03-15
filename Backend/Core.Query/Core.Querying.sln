@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Querying", "Core.Querying.csproj", "{013B2C3F-26E7-4402-A99D-7EE640858154}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CmIntegration|Any CPU = CmIntegration|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Integration|Any CPU = Integration|Any CPU
+		LocalDev|Any CPU = LocalDev|Any CPU
+		LocalStaging|Any CPU = LocalStaging|Any CPU
+		PersonalAsia|Any CPU = PersonalAsia|Any CPU
+		Preproduction|Any CPU = Preproduction|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.CmIntegration|Any CPU.ActiveCfg = CmIntegration|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.CmIntegration|Any CPU.Build.0 = CmIntegration|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.Integration|Any CPU.ActiveCfg = Integration|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.Integration|Any CPU.Build.0 = Integration|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.LocalDev|Any CPU.ActiveCfg = LocalDev|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.LocalDev|Any CPU.Build.0 = LocalDev|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.LocalStaging|Any CPU.ActiveCfg = LocalStaging|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.LocalStaging|Any CPU.Build.0 = LocalStaging|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.PersonalAsia|Any CPU.ActiveCfg = PersonalAsia|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.PersonalAsia|Any CPU.Build.0 = PersonalAsia|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.Preproduction|Any CPU.ActiveCfg = Preproduction|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.Preproduction|Any CPU.Build.0 = Preproduction|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013B2C3F-26E7-4402-A99D-7EE640858154}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46938B1A-FF84-4C4D-A57D-33B2D73A97E8}
+	EndGlobalSection
+EndGlobal

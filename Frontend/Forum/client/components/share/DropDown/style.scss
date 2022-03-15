@@ -1,0 +1,36 @@
+.bn_topbar-filter__list{
+    position: relative;
+    overflow: initial;
+
+    &-options{
+        position: absolute;
+        z-index: 10;
+        background: #fff;
+        top: 26px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        border-bottom: 1px solid #e4e3e1;
+        border-left: 1px solid #e4e3e1;
+        border-right: 1px solid #e4e3e1;        
+        font-family: Helvetica Neue,Helvetica,Arial sans-serif;
+        font-size: 12px;
+        box-shadow: 0 1px 1px 0 rgba(0,0,0,.2);
+        list-style: none;
+        font-weight: 400;
+
+        & .separate{
+            border-bottom: 2px dotted #dec7c0;
+        }
+        & li{            
+            &:hover{
+                background-color: #ddd;
+            }
+            & a{
+                color: #333;
+                display: block;
+                padding: 3px 7px;
+            }
+        }
+    }    
+}

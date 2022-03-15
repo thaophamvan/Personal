@@ -1,0 +1,48 @@
+.pos {
+  &-absolute {
+    position: absolute;
+  }
+  &-relative {
+    position: relative;
+  }
+}
+
+@include md {
+  .pos-md {
+    &-initial {
+      position: initial;
+    }
+
+    &-static {
+      position: static;
+    }
+
+    &-absolute {
+      position: absolute;
+    }
+
+    &-relative {
+      position: relative;
+    }
+  }
+}
+
+.top {
+  &- {
+    &-100 {
+      top: -100px;
+    }
+  }
+}
+
+.right {
+  &-0 {
+    right: 0;
+  }
+}
+
+.left {
+  &-400 {
+    left: 400px;
+  }
+}

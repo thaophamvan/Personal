@@ -1,0 +1,11 @@
+$block: ".qty-control-input-only";
+
+#{$block} {
+  width: 65px;
+  height: 40px;
+  border-color: $light-gray;
+
+  input {
+    width: 62px;
+  }
+}

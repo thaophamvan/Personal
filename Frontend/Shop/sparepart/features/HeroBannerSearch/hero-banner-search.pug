@@ -1,0 +1,43 @@
+include ../../../core/mixinComponents/mixinComponents
+
+- category1 = {"value": 1, "text": "Ovens"}
+- category2 = {"value": 2, "text": "Washing Machine"}
+- category3 = {"value": 3, "text": "Cooker Hoods"}
+- emptySelect = { "value": null, "text": "Select category"}
+- categorys = [emptySelect, category1, category2, category3]
+
+.hero-banner-standard
+	.hero-banner
+		.hero-banner__img
+			+PictureLazy("img","images/hero-banner/banner-image-mobile-375x350.png","images/hero-banner/banner-home-krk.png")
+		.hero-banner__content
+			h1.hero-banner__heading test Spare Parts & Accessories
+		.hero-banner__search(data-component="heroBannerSearch")
+			nav.js_tabs__nav.tabs__nav
+				ul.js_tabs__tabs-container.hero-banner__search-tabs.row
+					li.col-6.js_tabs__tab.hero-banner__tab.active Accessories
+					li.col-6.js_tabs__tab.hero-banner__tab Spare Parts
+				.js_tabs__marker.hero-banner__tab-marker
+			ul.js_tabs__content-container
+				li.js_tabs__content.hero-banner__tab-container.active
+					.row
+						form.form.hero-banner__tab-col.col-full.js_search-category-form
+							.form-group
+								label.form-label Select appliance category
+								+SelectBox('listCategorys', categorys, 'hero-search__selectbox js_hero-search__selectbox', 'Select category')
+						.hero-banner__tab-btn
+							button.btn.btn--primary View accessories
+				li.js_tabs__content.hero-banner__tab-container
+					form.row.js_search-form
+						.form.hero-banner__tab-col
+							.form-group
+								label.form-label Enter PNC or model number to find parts
+								input.form-control(placeholder = "Enter PNC or model number").js_pinc-or-model__input
+								a.js_finc-pnc-btn.cursor-pointer How do I find my product number (PNC)?
+						.form.hero-banner__tab-col
+							.form-group
+								label.form-label Add part type to filter your search&nbsp;
+									span.text-muted (optional)
+								input.form-control(placeholder = "Enter part description or part number").js_part-type__input
+						.hero-banner__tab-btn
+							button.btn.btn--primary View spare parts

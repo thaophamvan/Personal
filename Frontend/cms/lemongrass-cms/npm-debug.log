@@ -1,0 +1,46 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'build:stage' ]
+2 info using npm@3.3.6
+3 info using node@v5.0.0
+4 verbose run-script [ 'prebuild:stage', 'build:stage', 'postbuild:stage' ]
+5 info lifecycle lemongrass@12.1.0~prebuild:stage: lemongrass@12.1.0
+6 silly lifecycle lemongrass@12.1.0~prebuild:stage: no script for prebuild:stage, continuing
+7 info lifecycle lemongrass@12.1.0~build:stage: lemongrass@12.1.0
+8 verbose lifecycle lemongrass@12.1.0~build:stage: unsafe-perm in lifecycle true
+9 verbose lifecycle lemongrass@12.1.0~build:stage: PATH: C:\Users\thao.pham\AppData\Roaming\nvm\v5.0.0\node_modules\npm\bin\node-gyp-bin;C:\Projects\lemongrass-cms\node_modules\.bin;C:\Program Files\Microsoft MPI\Bin\;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\GitExtensions\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Users\thao.pham\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\IBM\Cloud\bin;C:\curl;C:\Users\thao.pham\AppData\Local\Microsoft\WindowsApps;C:\Users\thao.pham\AppData\Roaming\npm
+10 verbose lifecycle lemongrass@12.1.0~build:stage: CWD: C:\Projects\lemongrass-cms
+11 silly lifecycle lemongrass@12.1.0~build:stage: Args: [ '/d /s /c',
+11 silly lifecycle   'webpack --config webpack/webpack.stage.config --mode none' ]
+12 silly lifecycle lemongrass@12.1.0~build:stage: Returned: code: 1  signal: null
+13 info lifecycle lemongrass@12.1.0~build:stage: Failed to exec build:stage script
+14 verbose stack Error: lemongrass@12.1.0 build:stage: `webpack --config webpack/webpack.stage.config --mode none`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (C:\Users\thao.pham\AppData\Roaming\nvm\v5.0.0\node_modules\npm\lib\utils\lifecycle.js:233:16)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at EventEmitter.emit (events.js:172:7)
+14 verbose stack     at ChildProcess.<anonymous> (C:\Users\thao.pham\AppData\Roaming\nvm\v5.0.0\node_modules\npm\lib\utils\spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at ChildProcess.emit (events.js:172:7)
+14 verbose stack     at maybeClose (internal/child_process.js:818:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid lemongrass@12.1.0
+16 verbose cwd C:\Projects\lemongrass-cms
+17 error Windows_NT 10.0.15063
+18 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "run" "build:stage"
+19 error node v5.0.0
+20 error npm  v3.3.6
+21 error code ELIFECYCLE
+22 error lemongrass@12.1.0 build:stage: `webpack --config webpack/webpack.stage.config --mode none`
+22 error Exit status 1
+23 error Failed at the lemongrass@12.1.0 build:stage script 'webpack --config webpack/webpack.stage.config --mode none'.
+23 error This is most likely a problem with the lemongrass package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     webpack --config webpack/webpack.stage.config --mode none
+23 error You can get their info via:
+23 error     npm owner ls lemongrass
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]

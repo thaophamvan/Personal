@@ -1,0 +1,12 @@
+doctype html
+html(lang="en-AU" ontouchmove)
+	include ../../core/layout/head.pug
+	body(tabIndex=0)
+		.overlay-bg
+		.right-nav__overlay-bg
+		include ../layout/header.pug
+		block content
+		include ../layout/footer.pug
+		include ../../core/components/MiniCart/minicart-modal.pug
+		//inject:js
+		//endinject

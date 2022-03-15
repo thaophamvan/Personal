@@ -1,0 +1,13 @@
+.part-category(data-component="partCategory")
+  .part-category__product-wrapper
+    include ./hero-banner-search-listing.pug
+  .part-category__container
+    .part-category__product-filter-list.row
+      .col-md-9.col-12.offset-md-3
+        .product-sorting.d-flex.justify-content-between.align-items-center
+          include ../../../core/components/ProductSorting/product-sorting.pug
+          span.part-category__products-found.js_part-category__products-found 53 products found
+      .part-category__product-filtering.col-md-3
+        include ../../../core/components/ProductFiltering/product-filtering.pug
+      .part-category__product-listing.col-md-9
+        include ../ProductList/product-list.pug

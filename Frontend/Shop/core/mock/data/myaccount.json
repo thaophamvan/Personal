@@ -1,0 +1,109 @@
+{
+  "personalDetail": {
+    "firstName": "Michelle",
+    "lastName": "Rossier",
+    "email": "michelle.rossier@test.com.au",
+    "contactNumber": "0400123456"
+  },
+  "addressData": [
+    {
+      "default": "Default Address",
+      "name": "Michelle Rossier",
+      "streetNumber": "123 Smith Rd",
+      "streetName": "Casula, NSW 2170",
+      "userId": "1",
+      "rowId": "1"
+    },
+    {
+      "default": "",
+      "name": "Michelle Rossier",
+      "streetNumber": "123 Smith Rd",
+      "streetName": "Casula, NSW 2170",
+      "userId": "1",
+      "rowId": "1"
+    },
+    {
+      "default": "",
+      "name": "Michelle Rossier",
+      "streetNumber": "123 Smith Rd",
+      "streetName": "Casula, NSW 2170",
+      "userId": "1",
+      "rowId": "1"
+    }
+  ],
+  "addressDetail": {
+    "attention": "Attention",
+    "address": "125,Mahatan",
+    "unit": "23",
+    "streetNumber": "23",
+    "streetName": "Mhatan",
+    "suburb": "24",
+    "state": "NSW",
+    "postCode": "100000",
+    "country": "Australia",
+    "default": 1
+  },
+  "orderDetail": {
+    "products": [
+      {
+        "productImg": "/dist/images/block-img-bg.svg",
+        "productName": "test 71L Build-in Oven width mdart Food Probe",
+        "productCode": "CODE123X",
+        "quantity": "3",
+        "subTotal": "$1,000.00",
+        "delivery": {
+          "method": "Standard",
+          "deliveryDate": "20/11/2019",
+          "quantity": "3",
+          "subTotal": "$3,000.00"
+        }
+      },
+      {
+        "productImg": "/dist/images/block-img-bg.svg",
+        "productName": "test 71L Build-in Oven width mdart Food Probe",
+        "productCode": "CODE123X",
+        "quantity": "3",
+        "subTotal": "$1,000.00",
+        "delivery": {}
+      }
+    ],
+    "orderNumber": "PO123456",
+    "createdDate": "01 Oct 2019",
+    "status": "In Progress",
+    "deliveryName": "Michelle Rossier",
+    "deliveryStreetNumber": "123 Smith Rd",
+    "deliveryStateAndPostcode": "Casula, NSW 2170",
+    "billingName": "Michelle Rossier",
+    "billingStreetNumber": "123 Smith Rd",
+    "billingStateAndPostcode": "Casula, NSW 2170",
+    "subTotal": "$1,100.00",
+    "shippingTotal": "$60.50",
+    "total": "$1,160.50"
+  },
+  "stateData": [
+    {
+      "key": "NSW",
+      "text": "New South Wales"
+    },
+    {
+      "key": "QLD",
+      "text": "Queensland"
+    },
+    {
+      "key": "SA",
+      "text": "South Australia"
+    },
+    {
+      "key": "TAS",
+      "text": "Tasmania"
+    },
+    {
+      "key": "VIC",
+      "text": "Victoria"
+    },
+    {
+      "key": "WA",
+      "text": "Western Australia"
+    }
+  ]
+}

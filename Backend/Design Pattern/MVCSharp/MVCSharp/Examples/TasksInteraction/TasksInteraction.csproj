@@ -1,0 +1,66 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SolutionNameWithPath>TasksInteraction</SolutionNameWithPath>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{273295B2-2B3C-4723-ACF3-EB8903D9D4C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCSharp.Examples.TasksInteraction</RootNamespace>
+    <AssemblyName>TasksInteraction</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationLogic\ABAdvancedOptionsController.cs" />
+    <Compile Include="ApplicationLogic\ABMainController.cs" />
+    <Compile Include="ApplicationLogic\AwardBonusTask.cs" />
+    <Compile Include="ApplicationLogic\EmployeesController.cs" />
+    <Compile Include="ApplicationLogic\IABAdvancedOptionsView.cs" />
+    <Compile Include="ApplicationLogic\IABMainView.cs" />
+    <Compile Include="ApplicationLogic\IEmployeesView.cs" />
+    <Compile Include="ApplicationLogic\MainTask.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MVCSharp\MVCSharp.csproj">
+      <Project>{C04A36B0-4A58-45D4-B95B-A4A58AFEBC95}</Project>
+      <Name>MVCSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="CleanUp">
+    <RemoveDir Directories="bin;obj;PrecompiledWeb;Presentation\Web\bin" />
+    <Delete Files="$(SolutionNameWithPath).suo" />
+  </Target>
+</Project>

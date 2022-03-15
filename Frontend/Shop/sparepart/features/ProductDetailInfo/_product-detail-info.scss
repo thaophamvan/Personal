@@ -1,0 +1,97 @@
+.product-detail-info {
+  &__title {
+    text-transform: $product-detail-info__title-text-tranform;
+    font-weight: $product-detail-info__title-font-weight;
+    color: $product-detail-info__title-color;
+  }
+
+  &__price {
+    color: $product-detail-info__price-color-sm;
+    @include md {
+      color: $product-detail-info__price-color-md;
+    }
+  }
+
+  &__final-price {
+    color: $product-detail-info__promotion-price;
+  }
+
+  &__description {
+    ul,li {
+      list-style-type: disc;
+    }
+    @include property('color', $product-detail-info__description-color);
+  }
+
+  &__stock {
+    color: $product-detail-info__stock-color;
+    text-transform: $product-detail-info__stock-text-transform;
+    font-weight: $product-detail-info__stock-font-weight;
+  }
+
+  &__product-brand {
+    color: $product-detail-info__product-brand-color;
+  }
+  &__promotion-price {
+    font-size: $product-detail-info__promotion-price-font-size-sm;
+    color: $product-detail-info__promotion-price;
+    @include md {
+      font-size: $product-detail-info__promotion-price-font-size-md;
+    }
+  }
+  &__select-recurring {
+    position: relative;
+    opacity: 0.7;
+    &.is-active {
+      opacity: 1;
+    }
+  }
+  &__promotion-discount-tag {
+    background-color: $product-detail-info__promotion-discount-tag--bg;
+    color: $product-detail-info__promotion-discount-tag--text;
+    padding: 0 8px;
+    border-radius: 0 2px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    @include md {
+      border-radius: 2px;
+      top: 15px;
+      right: 15px;
+    }
+  }
+  &__select-delivery__selectbox {
+    width: 244px;
+    white-space: nowrap;
+    .selectbox__btn, .selectbox__option {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 10px;
+      font-size: 14px;
+      line-height: 16px;
+      height: 40px;
+    }
+  }
+  .add-to-wishlist__btn {
+    @include property('color', $product-detail-info__add-to-wishlist-btn-color);
+		&:hover {
+      @include property('color', $product-detail-info__add-to-wishlist-btn-hover-color);
+		}
+		.e-icon {
+      @include property('fill', $product-detail-info__icon-wishlist-color);
+		}
+		.icon-wishlist::before {
+      @include property('color', $product-detail-info__icon-wishlist-color);
+		}
+    &-text{
+      color: $product-detail-info__add-to-wishlist-btn-text-color;
+    }
+	}
+	.qty-control {
+    @include property('border-color', $product-detail-info__qty-control-border-color);
+		input, span {
+      @include property('color', $product-detail-info__qty-control-text-color);
+      @include property('border-color', $product-detail-info__qty-control-border-color);
+		}
+	}
+}

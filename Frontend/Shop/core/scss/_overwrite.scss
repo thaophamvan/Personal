@@ -1,0 +1,24 @@
+@include md {
+  .nav-move-top {
+    .top-nav {
+      &__submenu,
+      &__submenu:hover,
+      &__submenu:focus {
+        display: none;
+      }
+
+      &__search-results {
+        display: none;
+      }
+    }
+  }
+}
+
+.ids-overlay-container {
+  line-height: 0;
+  border-radius: 0 !important;
+}
+
+#epi-quickNavigator {
+  right: 250px !important;
+}

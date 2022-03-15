@@ -1,0 +1,76 @@
+.bn_thread-comment{
+    &__options{
+        margin: 10px 0 0 14px;
+        .bn_thread__reply-comment__item &{
+            margin: 10px 0 0 0;
+        }
+        .bn_thread-header &{
+            margin-left: 0;
+        }
+        .bn_thread-footer &{
+            margin: 0;            
+        }
+
+        .bn_thread-comment__options__icon{
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            margin-right: 14px
+        }
+        .bn_thread-comment__options__like{
+            background-image: url(/images/thumbs-o-up.svg);
+        }
+        .bn_thread-comment__options__comment{
+            background-image: url(/images/comment-o.svg);
+            background-position: 0 -2px;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+        .bn_thread-comment__options__menu{
+            background-image: url(/images/bars.svg);
+
+            &.active .bn_thread-comment-menu__list{
+                display: block;
+            }
+            .bn_thread-wrapper &{
+                position: relative;
+            }
+        }
+    }
+
+    &__filter-comment{
+        display: inline-block;
+        margin-top: 2px;
+        font-weight: bold;
+        font-size: 16px;
+
+        &__button{
+            color: #bfbdc0;
+            &.selected{
+                color:#000;;
+            }
+        }
+    }
+}
+
+.bn_thread-header__user{
+    flex: 1;
+}
+
+.bn_thread__container{
+    margin-bottom: 10px;
+}
+.bn_thread-comment__item:last-child{
+    margin-bottom: 15px;
+}
+.bn_thread-comment__inlinebox{
+    margin: 0 15px 12px 15px;
+}
+@media only screen and (min-width: 1025px){
+    .bn_thread__box {
+        min-height: calc(100vh - 185px);
+    }
+}

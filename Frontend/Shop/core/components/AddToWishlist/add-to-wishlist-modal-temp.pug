@@ -1,0 +1,41 @@
+include ../../mixinComponents/mixinComponents.pug
+
+div.pos-relative
+  +LoadingIndicator.pos-absolute(v-if="loading")
+  .add-to-wishlist__message.pos-relative.mb-30.bg-primary-lighten-3.fs-14.lh-20.px-15.py-10.text--left.d-flex.align-items-center(v-if="submited && (successMessage || errorMessage)" :class="{ 'error-message': !success, 'success-message': success}")
+    svg(v-if="success", viewBox="0 0 32 32").e-icon.w16.mr-10
+      use(xlink:href="#info-circle")
+    span(v-html="success ? successMessage : errorMessage")
+  .row.mb-30
+    .col-4.col-md-3.d-flex.align-items-center
+      .add-to-wishlist__modal__product-imgwrap.img-center
+        +ImgLazy()(:data-src="product.img")
+    .col-8.col-md-9.text--left
+      .fs-16.lh-24.primary.fw-600.mb-5 {{product.displayName}}
+      .fs-14.lh-20.fw-600.skyblue-dark.mb-5 {{product.code}}
+      .fs-20.lh-24.primary.fw-600(v-if="product.displayButtonState==1") {{product.promotionPrice ? product.promotionPrice : product.totalPrice}}
+      del.fs-14.lh-20.second-text.opacity(v-if="product.displayButtonState==1 && product.promotionPrice") {{product.totalPrice}}
+  .row.mt-30(v-if="submited && success")
+    .col-12.col-md-6.mb-10(v-if="!isWishlistDetailPage")
+      button.btn.btn--primary.w-100(type="button" @click="hideModal") Continue shopping
+    .col-12.col-md-6(v-if="!isWishlistDetailPage")
+      button.btn.btn--outline-primary.w-100(@click="redirect(myFavouritesLink)" type="button") Go to My Favourites
+    .col-12.col-md-6(v-if="isWishlistDetailPage")
+      button.btn.btn--primary.w-100(@click="hideModal" type="button") OK
+  form.text--left.form-group(@submit="handleSubmitForm" v-else :class="{error: wishlist.length === 0 && !wishlistName.trim() && submited && !success}")
+    .mb-20(v-if="wishlist && wishlist.length > 0")
+      p.fs-16.lh-24.fw-600.mb-5 Where would you like to save this item?
+      .selectbox(ref="wishlistSelectBox" data-component="popup" data-target="add-to-wishlist__wishlist" data-type="select")
+        button.btn.selectbox__btn.js_selectbox__btn(type="button" :class="{error: !selectedWishlist && !wishlistName && submited}") Select favourites list
+        .fs-12.lh-16.alert.pos-absolute(v-if="!selectedWishlist && !wishlistName && submited") *Select a favourites list to save this item
+        #add-to-wishlist__wishlist.popup.selectbox__options-popup.js_selectbox__options 
+          .selectbox__option.js_selectbox__option.is-active Select favourites list
+          .selectbox__option.js_selectbox__option(v-for="wishlistItem of wishlist" :data-key="wishlistItem.id") {{wishlistItem.displayName}}
+    p.fs-16.lh-24.fw-600.mb-5 Create new favourites list
+    input.form-control.w-100(placeholder="Enter list name" :disabled="selectedWishlist" v-model="wishlistName")
+    p.fs-12.lh-16.alert(v-if="wishlist.length === 0 && !wishlistName.trim() && submited") Required
+    .row.mt-30
+      .col-12.col-md-6.mb-10
+        button.btn.btn--primary.w-100 Save to Favourites
+      .col-12.col-md-6
+        button.btn.btn--outline-primary.w-100(@click="hideModal" type="button") Cancel

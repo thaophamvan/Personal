@@ -1,0 +1,29 @@
+$block: ".where-to-buy";
+
+#{$block} {
+  &__title {
+    color: $gray;
+    background-color: $light-gray;
+  }
+
+  &__store-img-wrapper {
+    height: 42px;
+    flex: 0 0 120px;
+  }
+
+  &__store + &__store {
+    border-top: 1px solid $dark-gray;
+  }
+
+  &__btn {
+    @include md {
+      min-width: 134px;
+    }
+  }
+
+  &__modal {
+    .modal__body {
+      min-height: 100px;
+    }
+  }
+}

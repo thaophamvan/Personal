@@ -1,0 +1,35 @@
+$block: ".product-detail-comp";
+#{$block} {
+    &__content {
+        border-bottom: 1px solid $white;
+        @include md {
+            border: none;
+            &.collapse {
+                height: auto;
+            }
+        }
+        .icon-check:before{
+           @include property("color", $product-detail-comp-icon-check-color);
+        }
+    }
+
+    &__card {
+        background-color: $product-detail-comp__card-bg;
+        border: 1px solid $product-detail-comp__card-border-color;
+        @include md {
+            max-width: 32%;
+        }
+
+        h6 {
+            color: $product-detail-comp__card-title-color;
+        }
+
+        a {
+            color: $product-detail-comp__card-link-color;
+        }
+    }
+    p,
+    li {
+        color: $product-detail-comp__card-text-color;
+    }
+}

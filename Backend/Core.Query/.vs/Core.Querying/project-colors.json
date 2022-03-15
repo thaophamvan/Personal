@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "013b2c3f-26e7-4402-a99d-7ee640858154": {
+      "ProjectGuid": "013b2c3f-26e7-4402-a99d-7ee640858154",
+      "DisplayName": "Core.Querying",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

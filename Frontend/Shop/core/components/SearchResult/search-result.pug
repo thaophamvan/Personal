@@ -1,0 +1,171 @@
+include ../../mixinComponents/mixinComponents
+.hero-search
+	.container
+		h1.hero-search__title Search Result
+		form.hero-search__form
+			.hero-search__form-controls
+				input.hero-search__form-input(type="text" name="text" value="EHE" placeholder="Enter model number eg:EWF12345")
+				span.hero-search__pipe
+				button.hero-search__btn.icon-search(type="button" style="cursor: pointer;")
+			p.hero-search__result-found 47 results found for "
+				span EHE "
+			p.hero-search__result-all
+				a.hero-search__result-val.js-search__result-val.active(href="#" data-category="all-results") All Results (
+					span 47)
+				| |
+				a.hero-search__result-val.js-search__result-val(href="#" data-category="category") Categories (
+					span 1 )
+				| |
+				a.hero-search__result-val.js-search__result-val(href="#" data-category="product") Products (
+					span 4)
+				//- | |
+				//- a.hero-search__result-val.js-search__result-val(href="#" data-category="support") Support (
+				//- 	span 25)
+				//- | |
+				//- a.hero-search__result-val.js-search__result-val(href="#" data-category="general") General (
+				//- 	span 17)
+.categories-search.js-search-result(data-categorysection="category")
+	.container
+		h2.search-result__title Categories (2)
+		.row.categories-search__item
+			.col-5.col-md-2
+				+ImgLazy("", "/images/hero-product/product1.jpg", "category")
+			.col-7.col-md-10
+				.categories-search__content
+					h4.categories-search__name Stoves & Hobs
+					a.categories-search__link(href="#") View all Stoves & Hobs
+		.row.categories-search__item
+			.col-5.col-md-2
+				+ImgLazy("", "/images/hero-product/product1.jpg", "category")
+			.col-7.col-md-10
+				.categories-search__content
+					h4.categories-search__name Ovens
+					a.categories-search__link(href="#") View all Ovens
+.products-search.js-search-result(data-categorysection="product")
+	.container
+		h2.search-result__title Products (4)
+		ul.row.js_product-list
+			li.product-list__product.col-md-3
+				.product-list__product-wrapper
+					.product-list__product-body
+						.product-list__product-media
+							a.product-list__product-img-link.btn-link(href="#")
+								+ImgLazy("product-list__product-img",'/dist/images/block-img-bg.svg', 'ProductImageAltText')
+						.product-list__product-info
+							.product-list__product-brand
+								+ImgLazy("product-list__product-brand-logo", 'images/brand/logo-aeg.svg', 'Brand')
+								a.btn-link.product-list__product-name ProductName
+								a.btn-link.product-list__product-code.text--uppercase ProductCode
+								//- span.product-list__product-stock-avaiable.product-list__in-stock In-stock
+					.product-list__product-price
+						span.product-list__product-final-price $1000
+						span.product-list__product-price-detail $500 of RPP $1500
+			li.product-list__product.col-md-3
+				.product-list__product-wrapper
+					.product-list__product-body
+						.product-list__product-media
+							a.product-list__product-img-link.btn-link(href="#")
+								+ImgLazy("product-list__product-img",'/dist/images/block-img-bg.svg', 'ProductImageAltText')
+						.product-list__product-info
+							.product-list__product-brand
+								+ImgLazy("product-list__product-brand-logo", 'images/brand/logo-aeg.svg', 'Brand')
+								a.btn-link.product-list__product-name ProductName
+								a.btn-link.product-list__product-code.text--uppercase ProductCode
+								//- span.product-list__product-stock-avaiable.product-list__in-stock In-stock
+					.product-list__product-price
+						span.product-list__product-final-price $1000
+						span.product-list__product-price-detail $500 of RPP $1500
+			li.product-list__product.col-md-3
+				.product-list__product-wrapper
+					.product-list__product-body
+						.product-list__product-media
+							a.product-list__product-img-link.btn-link(href="#")
+								+ImgLazy("product-list__product-img",'/dist/images/block-img-bg.svg', 'ProductImageAltText')
+						.product-list__product-info
+							.product-list__product-brand
+								+ImgLazy("product-list__product-brand-logo", 'images/brand/logo-aeg.svg', 'Brand')
+								a.btn-link.product-list__product-name ProductName
+								a.btn-link.product-list__product-code.text--uppercase ProductCode
+								//- span.product-list__product-stock-avaiable.product-list__in-stock In-stock
+					.product-list__product-price
+						span.product-list__product-final-price $1000
+						span.product-list__product-price-detail $500 of RPP $1500
+			li.product-list__product.col-md-3
+				.product-list__product-wrapper
+					.product-list__product-body
+						.product-list__product-media
+							a.product-list__product-img-link.btn-link(href="#")
+								+ImgLazy("product-list__product-img",'/dist/images/block-img-bg.svg', 'ProductImageAltText')
+						.product-list__product-info
+							.product-list__product-brand
+								+ImgLazy("product-list__product-brand-logo", 'images/brand/logo-aeg.svg', 'Brand')
+								a.btn-link.product-list__product-name ProductName
+								a.btn-link.product-list__product-code.text--uppercase ProductCode
+								//- span.product-list__product-stock-avaiable.product-list__in-stock In-stock
+					.product-list__product-price
+						span.product-list__product-final-price $1000
+						span.product-list__product-price-detail $500 of RPP $1500
+		//- .d-flex.justify-content-center
+		//- 	a.search-result__show-more.none-underline.js-search__result-val(href="#" data-category="product") View all products
+//- .support-search.js-search-result(data-categorysection="support")
+//- 	.container
+//- 		h2.search-result__title Support (25)
+//- 		ul
+//- 			li.support-search__item
+//- 				span.icon-manual
+//- 				a.none-underline(href="/globalassets/5-support/manuals/en-sg/ehed63cs-user-manual-en-sg.pdf" target="_blank")
+//- 					p.support-search__link-head EHED63CS-user-manual-en-sg.pdf
+//- 					p.support-search__link-desc EHED63CS User Manual
+//- 			li.support-search__item
+//- 				span.icon-manual
+//- 				a.none-underline(href="/globalassets/5-support/manuals/en-sg/ehed63cs-user-manual-en-sg.pdf" target="_blank")
+//- 					p.support-search__link-head EHED63CS-user-manual-en-sg.pdf
+//- 					p.support-search__link-desc EHED63CS User Manual
+//- 			li.support-search__item
+//- 				span.icon-manual
+//- 				a.none-underline(href="/globalassets/5-support/manuals/en-sg/ehed63cs-user-manual-en-sg.pdf" target="_blank")
+//- 					p.support-search__link-head EHED63CS-user-manual-en-sg.pdf
+//- 					p.support-search__link-desc EHED63CS User Manual
+//- 			li.support-search__item
+//- 				span.icon-manual
+//- 				a.none-underline(href="/globalassets/5-support/manuals/en-sg/ehed63cs-user-manual-en-sg.pdf" target="_blank")
+//- 					p.support-search__link-head EHED63CS-user-manual-en-sg.pdf
+//- 					p.support-search__link-desc EHED63CS User Manual
+//- 		.d-flex.justify-content-center
+//- 			a.search-result__show-more.none-underline.js-search__result-val(href="#" data-category="support") View all support results
+//- .general-search.js-search-result(data-categorysection="general")
+//- 	.container
+//- 		h2.search-result__title General (25)
+//- 		ul
+//- 			li.general-search__item
+//- 				a.none-underline(href="https://www.test.com.sg/globalassets/5-support/manuals/kitchen/stoves--hobs/ehed64cs_umzh.pdf" target="_blank")
+//- 					p.general-search__link-head EHED64CS_umZH.pdf
+//- 					p.general-search__link-desc 
+//- 						b EHED63CS 
+//- 						| User Manual
+//- 			li.general-search__item
+//- 				a.none-underline(href="https://www.test.com.sg/globalassets/5-support/manuals/kitchen/stoves--hobs/ehed64cs_umzh.pdf" target="_blank")
+//- 					p.general-search__link-head EHED64CS_umZH.pdf
+//- 					p.general-search__link-desc 
+//- 						b EHED63CS 
+//- 						| User Manual
+//- 			li.general-search__item
+//- 				a.none-underline(href="https://www.test.com.sg/globalassets/5-support/manuals/kitchen/stoves--hobs/ehed64cs_umzh.pdf" target="_blank")
+//- 					p.general-search__link-head EHED64CS_umZH.pdf
+//- 					p.general-search__link-desc 
+//- 						b EHED63CS 
+//- 						| User Manual
+//- 			li.general-search__item
+//- 				a.none-underline(href="https://www.test.com.sg/globalassets/5-support/manuals/kitchen/stoves--hobs/ehed64cs_umzh.pdf" target="_blank")
+//- 					p.general-search__link-head EHED64CS_umZH.pdf
+//- 					p.general-search__link-desc 
+//- 						b EHED63CS 
+//- 						| User Manual
+//- 		.d-flex.justify-content-center
+//- 			a.search-result__show-more.none-underline.js-search__result-val(href="#" data-category="general") View all general results
+
+
+
+
+
+

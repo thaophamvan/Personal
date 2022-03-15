@@ -1,0 +1,1 @@
+<%@ Application Inherits="MvpSample.Web.MvpSampleHttpApplication" Language="C#" %>

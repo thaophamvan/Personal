@@ -1,0 +1,14 @@
+include ../../../core/mixinComponents/mixinComponents
+.product-bonus
+  h4.product-bonus__title {{bonusName}}
+  .product-bonus__content
+    p {{bonusDescription}}
+    .product-bonus__item.row
+      .product-bonus__item-image-wrapper.col-5
+        img.img(src="{{itemImage}}")
+      .product-bonus__item-description.col-7
+        .text--bold {{itemName}}
+        div {{itemType}}
+        div {{pnc}}
+    p {{condition}}
+    button.btn.btn--primary.expanded OK

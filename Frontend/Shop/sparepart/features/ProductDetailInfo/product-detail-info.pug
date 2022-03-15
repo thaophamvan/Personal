@@ -1,0 +1,27 @@
+include ../../../core/mixinComponents/mixinComponents
+
+.product-detail-info(data-component="productDetailInfo")
+	+SaleLink
+	h1.fs-20.lh-26.my-5.mt-md-30.mb-md-10.fs-md-36.lh-md-44 9kg UltimateCare™ 500 Washing Machine
+	div.d-md-flex.fs-14.lh-20.mb-30
+		p.fw-600.mb-5.mb-md-0.skyblue-dark E9KLSP01
+		p.primary-lighten-1.mb-25.fw-600.mb-md-0.ml-md-5 In-stock (100)
+	p.fs-16.lh-24.mb-md-30.mb-20 If heat is escaping your oven, and food is taking longer than it should to cook, the problem may be the door gasket.
+	div.d-flex.align-items-center.justify-content-between.mb-10.mb-md-20.d-md-block
+		div.d-flex.align-items-baseline.mb-md-30
+			p.fs-26.lh-34.fs-md-40.lh-md-48.sale-off.md-primary.mr-5.mb-0.fw-600 $1000
+			del.fs-16.lh-24.fs-md-24.lh-md-24.opacity-05 $10.00
+		+QuanityControl("EWF9025BQWA",1)
+	div.d-flex.align-items-center.justify-content-between.mb-10.mb-md-20.d-md-block
+		div.d-flex.align-items-center.mb-md-30
+			p.fs-26.lh-34.fs-md-40.lh-md-48.primary.mr-5.mb-0.fw-600 $1000
+		+QuanityControl("EWF9025BQWA",1)
+	.row
+		.col-12.col-md-6.product-list__add-to-cart
+			+BtnAddToCart('EWF9025BQWA')
+		.col-12.col-md-6.product-list__add-to-wishlist.mt-15.mt-md-0
+			.d-md-none.text--center
+				+BtnAddToWishlist('productCode')
+			.d-none.d-md-block
+				+BtnAddToWishlist('productCode', 'button')
+

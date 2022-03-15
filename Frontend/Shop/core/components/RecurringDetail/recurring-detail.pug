@@ -1,0 +1,183 @@
+include ../../../core/mixinComponents/mixinComponents
+
+div
+  .odhd__box.pt-10
+    .odhd__box-wrapper
+      .mb-md-20.pr-15.pl-15.pr-md-0.pl-md-0.d-flex.justify-content-between(v-if="!isEnableRecurring")
+        span.myacc-form__header.odhd-form__order-number Auto-delivery are no longer available!
+      .d-none.d-md-flex.align-items-center.justify-content-end(v-if="OrderDetail.isEditable != false && !isEditing")
+        button.btn.btn--primary.mr-10.pl-50.pr-50(@click="editOrder(true)" :disabled="loadingData || !isEnableRecurring" @) Edit order
+        button.btn.pr-20.pl-20(@click="showCancelOrder" :disabled="loadingData || !isEnableRecurring" :data-modal="'cancelRecurringModal'" :class="isEnableRecurring ? 'btn--outline-primary' : ''") Cancel auto-delivery
+      .odhd-order(:class="isEditing ? 'mt-60' : 'mt-20'")
+        .odhd-order__wrapper
+          .odhd-order__block.col-md-3.p-0
+            .odhd-order__detail-title Order Details
+            .odhd-form__group
+              span.odhd-form__label Order date:
+              span.odhd-form__value {{ OrderDetail.createdDate }}
+            .odhd-form__group
+              span.odhd-form__label Order status:
+              span.odhd-form__value {{ OrderDetail.status }}
+            .odhd-form__group
+              span.odhd-form__label Next order:
+              span.odhd-form__value {{ OrderDetail.NextScheduledDate }}
+          .odhd-order__block.col-md-3.p-0
+            .odhd-order__detail-title Delivery Details
+            .odhd-form__group
+              span.odhd-form__value {{ OrderDetail.deliveryName }}
+            .odhd-form__group
+              span.odhd-form__value {{ OrderDetail.deliveryStateAndPostcode }}
+            .odhd-form__group
+              span.odhd-form__value {{ OrderDetail.deliveryStreetNumber }}
+          .odhd-order__block.col-md-3.p-0
+            .odhd-order__detail-title Billing Details
+            .odhd-form__group
+              span.odhd-form__value {{ OrderDetail.billingName }}
+            .odhd-form__group
+              span.odhd-form__value {{ OrderDetail.billingStateAndPostcode }}
+            .odhd-form__group
+              span.odhd-form__value {{ OrderDetail.billingStreetNumber }}
+          .odhd-order__block.col-md-3.p-0
+            .odhd-order__detail-title Auto-Delivery
+            .odhd-form__group
+              span.odhd-form__value {{ OrderDetail.CycledTimesMessage }}
+  .loading-page.d-flex.align-items-center(v-if="loadingPage")
+    +LoadingIndicator
+  .text--center.mb-30.pb-5.mb-md-50.pb-md-50(v-if="products.length === 0 && loadedPage")
+    include ./empty-cart
+  .pt-20.pt-md-50.pr-15.pr-md-0.pl-15.pl-md-0
+    .odhd__list-wrapper
+      .d-md-none(v-if="OrderDetail.isEditable != false && !isEditing")
+        button.btn.btn--primary.w-100(@click="editOrder(true)" :disabled="loadingData") Edit order
+        button.btn.btn--outline-primary.w-100.mt-10.mb-20(@click="showCancelOrder" :disabled="loadingData" :data-modal="'cancelRecurringModal'" ) Cancel auto-delivery
+      .pos-relative(v-if="products.length > 0")
+        .row.text--uppercase.shopping-cart__product-header.mb-10.shopping-cart__product-header-title
+          .fw-600.fs-16.lh-26.col-12.col-md-8 Product
+          .fw-600.fs-16.lh-26.col-md-2.d-none.d-md-block.text--center Quantity
+          .fw-600.fs-16.lh-26.col-md-2.d-none.d-md-block.text--right Sub-total
+        .line.mb-20.mb-md-30.shopping-cart__product-list-line
+        .d-flex.justify-content-center.align-items-center
+          .loading-data.pos-absolute(v-show="loadingData")
+            +LoadingIndicator
+        //- display for mobile
+        .mb-15.d-md-none.shopping-cart__product-list-content(v-if="isMobile")
+          .mb-20.row.shopping-cart__product-list-item(v-for="product of products")
+            .col-2.pr-0
+              a(:href="product.link").btn.btn-link--primary
+                .shopping-cart__product-img-wrapper
+                  +ImgLazy('', '', '')(:data-src="product.productImg", :alt="product.productName")
+            .col-6
+              .fs-16.lh-24.fw-600.mb-5.text--primary {{product.productName}}
+              .fs-14.lh-20.fw-600.mb-15.skyblue-dark {{product.productCode}}
+              .mb-15(v-if="product.isAvaiableRecurringPlan != false")
+                .qty-control.clearfix(v-if="isEditing")
+                  button.decrease(@click="decreaseProduct(product)")
+                    span -
+                  input(type="number" :value="product.quantity" readonly)
+                  button.increase(@click="increaseProduct(product)")
+                    span +
+            .col-4.text--right.pl-0
+              div(v-if="product.isAvaiableRecurringPlan != false")
+                p.fs-16.lh-22.text--primary(v-if="!product.isDiscounted") {{product.subTotal}}
+                p.fs-16.lh-22.sale-off(v-if="product.isDiscounted") {{product.discountedPrice}}
+                del.fs-14.lh-20.opacity-05.second-text(v-if="product.isDiscounted") {{product.subTotal}}
+              .primary-lighten-1.underline.fs-14.lh-22.cursor-pointer(v-if="isEditing && product.isAvaiableRecurringPlan != false" @click="showDeleteProduct" :data-modal="'removeProduct'" :data-variant-code="product.VariantCode") Remove
+            .col-2(v-if="product.isAvaiableRecurringPlan == false")
+            .col-7.d-flex.align-items-center.mt-10(v-if="product.isAvaiableRecurringPlan == false")
+              span.sale-off.fs-14.lh-20(v-if="product.unavailableMessage") {{product.unavailableMessage}}
+              span.sale-off.fs-14.lh-20(v-else) This item is not available. Please remove them to complete the purchase.
+            .col-3.d-flex.justify-content-end.align-items-center(v-if="product.isAvaiableRecurringPlan == false")
+              .primary-lighten-1.underline.fs-14.lh-22.cursor-pointer(v-if="isEditing" @click="showDeleteProduct" :data-modal="'removeProduct'" :data-variant-code="product.VariantCode") Remove
+        //- end display for mobile
+        //- display for desktop
+        .mb-50.d-none.d-md-block.shopping-cart__product-list-content(v-else)
+          .row.mb-20.shopping-cart__product-list-item(v-for="product of products")
+            div(:class="product.isAvaiableRecurringPlan != false ? 'col-8' : 'col-6'")
+              .d-flex
+                a(:href="product.link").btn.btn-link--primary
+                  .shopping-cart__product-img-wrapper
+                    +ImgLazy('', '', '')(:data-src="product.productImg", :alt="product.productName")
+                .ml-20
+                  .fs-18.lh-28.fw-600.mb-5.text--primary {{product.productName}}
+                  .fs-14.lh-20.fw-600.none-underline.skyblue-dark {{product.productCode}}
+            .col-2(v-if="product.isAvaiableRecurringPlan != false")
+              .qty-control.clearfix.mx-auto(v-if="isEditing")
+                button.decrease(@click="decreaseProduct(product)")
+                  span -
+                input(type="number" :value="product.quantity" readonly)
+                button.increase(@click="increaseProduct(product)")
+                  span +
+              .text--center(v-else) {{product.quantity}}
+            .col-2.text--right(v-if="(product.isAvaiableRecurringPlan != false)")
+              .mb-5
+                p.fs-16.lh-22.text--primary(v-if="!product.isDiscounted") {{product.subTotal}}
+                p.fs-16.lh-22.sale-off(v-if="product.isDiscounted") {{product.discountedPrice}}
+                del.fs-14.lh-20.opacity-05.second-text(v-if="product.isDiscounted") {{product.subTotal}}
+              .primary-lighten-1.underline.fs-14.lh-22.cursor-pointer(v-if="isEditing" @click="showDeleteProduct" :data-modal="'removeProduct'" :data-variant-code="product.VariantCode") Remove
+            .col-6.text--right(v-if="product.isAvaiableRecurringPlan == false")
+              span.sale-off.fs-14.lh-20(v-if="product.unavailableMessage") {{product.unavailableMessage}}
+              span.sale-off.fs-14.lh-20(v-else) This item is not available. Please remove them to complete the purchase.
+              .primary-lighten-1.underline.fs-14.lh-22.cursor-pointer(v-if="isEditing" @click="showDeleteProduct" :data-modal="'removeProduct'" :data-variant-code="product.VariantCode") Remove
+        //- end display for desktop
+        .row
+          .col-md-8.col-12
+            div.text--uppercase.fs-16.lh-26.mb-10.mt-5.mt-md-0.fw-600.h2 Order's Frequency
+            .line.mb-20
+            .my-30(v-if="ListRecurringPlan && SelectedRecurringPlanInformation")
+              .js_recurring-popup.recurring__selectbox.selectbox(v-if="isEditing" @click="showPopup")
+                button.btn.selectbox__btn.js_pdp-select-recurring__btn.color-primary(:disabled="loadingData") {{ SelectedRecurringPlanInformation.recurringPlanDisplay }}
+                .popup.selectbox__options-popup
+                  .selectbox__option.js_pdp-select-recurring__option(v-for="recurringPlan of ListRecurringPlan" @click="onChangeRecurring(recurringPlan)" ) {{ recurringPlan.recurringPlanDisplay }}
+              span.recurring-border(v-else)
+                span.mr-40.text--primary {{ SelectedRecurringPlanInformation.recurringPlanDisplay }}
+          .col-md-4.col-12
+            .fs-16.lh-26.d-none.d-md-block.mb-10 &nbsp;
+            .mb-20.mb-md-30
+              .line.mb-20.mb-md-30
+              .d-flex.justify-content-between.align-items-center
+                p.fs-16.lh-26.fw-600.primary.text--uppercase sub-total
+                p.fs-16.lh-22.md-primary {{OrderDetail.subTotal}}
+              .d-flex.justify-content-between.align-items-center
+                p.fs-16.lh-26.fw-600.primary.text--uppercase delivery
+                p.fs-16.lh-22.md-primary {{OrderDetail.shippingTotal}}
+              .d-flex.justify-content-between.align-items-center(v-if="OrderDetail.discountTotal")
+                p.fs-16.lh-26.fw-600.primary.text--uppercase total saved
+                p.sale-off.fs-16.lh-22 {{OrderDetail.discountTotal}}
+              .d-flex.justify-content-between.align-items-center.mt-20
+                p.fs-26.lh-26.primary.fw-600.text--uppercase total
+                p.fs-26.lh-26.primary.fw-600 {{OrderDetail.total}}
+              p.text--right.fs-14.lh-22.gray.opacity-05 GST Included
+            .line.mb-20.mb-md-30
+            div(v-if="isEditing")
+              button.btn.btn--primary.w-100(@click="applyChange" :disabled="loadingData || !hasChanged || !OrderDetail.isApplicable") Apply
+              .w-100.text--center.text--primary.mt-10.fs-16.fw-600.cursor-pointer(@click="editOrder(false)" :disabled="loadingData") Cancel
+  .modal.js_modal.cancel-recurring-modal(:id="'cancelRecurringModal'")
+    .modal-inner
+      .modal__header
+        h5.modal__title Cancel your order
+        span.icon__cross.js-close-modal
+      .modal__body
+        p Do you want to cancel this auto-delivery order?
+      .modal__footer
+        div.row
+          .col-6
+            button.btn.btn--primary.w-100(@click="cancelOrder") Yes
+          .col-6
+            button.btn.btn--outline-primary.w-100(@click="hideCancelOrder") No
+  .modal.js_modal(:id="'removeProduct'")
+    .modal-inner
+      .modal__header
+        h5.modal__title Delete this product
+        span.icon__cross.js-close-modal
+      .modal__body.text--left
+        .mb-20.shopping-cart__hint-box.hint-text.lh-20.py-10.px-15.py-md-15.d-flex.align-items-center.pos-relative(v-if="products.length == 1")
+          span.mr-10.icon-info
+          .fs-16.lh-20.shopping-cart__hint-box-text-color This means that you will cancel
+            strong.ml-5 the whole recurring order
+        p Are you sure you want to delete “{{ deletingProduct.productName }}”?
+      .modal__footer
+        div.row
+          .col-6
+            button.btn.btn--primary.w-100(@click="cancelOrder") Yes, delete it
+          .col-6
+            button.btn.btn--outline-primary.w-100(@click="hideDeleteProduct") No

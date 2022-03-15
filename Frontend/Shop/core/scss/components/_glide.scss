@@ -1,0 +1,39 @@
+.glide__thumnail {
+  img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid $light-gray;
+    display: inline-block;
+  }
+}
+.glide__arrow {
+  position: absolute;
+  display: block;
+  cursor: pointer;
+  top: calc(40% - 20px);
+  z-index: 10;
+  width: 22px;
+  height: 22px;
+  border-left: 2px solid;
+  @include property('border-left-color', $glide__arrow-border-left-color);
+  border-top: 2px solid;
+  @include property('border-top-color', $glide__arrow-border-top-color);
+  transform: rotate(-45deg);
+  background: none;
+  left: 5px;
+  font-size: 0;
+  &:focus,
+  &:active,
+  &:hover,
+  &:visited {
+    background: none;
+  }
+  &.glide__arrow--right {
+    left: auto;
+    right: 5px;
+    transform: rotate(135deg);
+  }
+  &[disabled] {
+    border-color: $pale-gray;
+  }
+}

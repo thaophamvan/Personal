@@ -1,0 +1,21 @@
+include ../../../core/mixinComponents/mixinComponents
+
+li.product-list__product.col-6.col-md-4(*for="let product of products")
+  .product-list__product-wrapper
+    .product-list__product-body
+      .product-list__product-media
+        a.product-list__product-img-link.btn-link(href="{{product.Url}}")
+          +ImgLazy("product-list__product-img",'{{product.ProductImage}}', '{{product.ProductImageAltText}}', '/dist/images/default-img-bg.svg')
+      .product-list__product-info
+        .product-list__product-brand((click)="handleClickBrand(product.Brand)") {{product.Brand}}
+        a(href="{{product.Url}}").btn-link.product-list__product-name {{product.ProductName}}
+        a(href="{{product.Url}}").btn-link.product-list__product-code.text--uppercase {{product.ProductCode}}
+      .product-list__product-price
+        span.product-list__product-final-price {{product.DisplayPrice}}
+        span.product-list__product-price-detail {{product.RecommendedRetailPrices}}
+    .product-list__product-footer
+      .row
+        .col-12.col-md-6.product-list__add-to-cart
+          +BtnAddToCart('{{product.VariantCode}}')
+        .col-12.col-md-6.product-list__add-to-wishlist
+          +BtnAddToWishlist('{{product.ProductCode}}')

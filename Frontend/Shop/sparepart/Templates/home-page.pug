@@ -1,0 +1,33 @@
+extends default
+include ../../core/mixinComponents/mixinComponents
+
+block critical-css
+	//inject-css critical-css/home-page.css
+block content
+	.home-page
+		+PromotionBanner("Promotional banner for special offers. ") 
+		include ../features/HeroBannerSearch/hero-banner-search.pug
+		include ../../core/components/CategoryList/category-list.pug
+		include ../../core/components/VideoFullBlock/video-full-block.pug
+		br
+		include ../../core/components/AutoContentGroup/auto-content-group.pug
+		br
+		.auto-content-group
+			.auto-content-group__item
+				.card-img-bg.secondary-bg.theme.theme-topaz
+					img.lazy(data-img-mobile = "images/block-img-content/block-img-content-mobile.jpg" data-img-desktop = "images/block-img-content/block-img-content.jpg" data-default = "images/card-img-bg.png" src="images/card-img-bg.png" alt="card-img-bg")
+					.card-img-bg__content
+						h3.card-img-bg__title Product Registration
+						p.card-img-bg__description To enjoy peace of mind register your test product for warranty coverage.
+						.card-img-bg__link
+							a.btn-link(href="/support/register-warranty/") Call to action
+			.auto-content-group__item
+				include ../../core/components/CardImgBg/card-img-bg.pug
+			.auto-content-group__item
+				.card-img-bg.secondary-bg.theme.theme-palm-leaf
+					img.lazy(data-img-mobile = "images/block-img-content/block-img-content-mobile.jpg" data-img-desktop = "images/block-img-content/block-img-content.jpg" data-default = "images/card-img-bg.png" src="images/card-img-bg.png" alt="card-img-bg")
+					.card-img-bg__content
+						h3.card-img-bg__title Product Registration
+						p.card-img-bg__description To enjoy peace of mind register your test product for warranty coverage.
+						.card-img-bg__link
+							a.btn-link(href="/support/register-warranty/") Call to action

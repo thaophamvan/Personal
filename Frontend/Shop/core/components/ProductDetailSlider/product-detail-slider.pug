@@ -1,0 +1,16 @@
+include ../../mixinComponents/mixinComponents
+.product-detail-slider.pos-relative(data-component="productDetailSlider")
+	.glide__track.text--center(data-glide-el="track")
+		.glide__slides
+			.glide__slide.product-detail-slider__img.img-center
+				+ImgLazy("","images/hero-product/product1.jpg","product1", "images/block-img-bg.png")
+			.glide__slide.product-detail-slider__img.d-flex
+				+ImgLazy("","images/hero-product/product1.jpg","product1", "images/block-img-bg.png")
+	.glide__arrows(data-glide-el="controls")
+		button.glide__arrow.glide__arrow--left(data-glide-dir="<" aria-hidden="true")
+		button.glide__arrow.glide__arrow--right(data-glide-dir=">" aria-hidden="true")
+	.glide__thumnail.mt-30.text--center
+		div(data-glide-el="controls[nav]")
+			img(src="images/hero-product/product1.jpg" alt="2" data-glide-dir="=0").mx-10
+			img(src="images/hero-product/product1.jpg" alt="3" data-glide-dir="=1").mx-10
+

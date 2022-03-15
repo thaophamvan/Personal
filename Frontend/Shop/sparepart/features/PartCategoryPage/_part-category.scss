@@ -1,0 +1,366 @@
+$block: ".part-category";
+
+#{$block} {
+  &__container,
+  &__product {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  &__back-btn {
+    color: $primary;
+    @include fs(12);
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    padding: 15px 0 29px;
+    text-decoration: none;
+    font-weight: 600;
+    .icon-dropdown {
+      transform: rotate(90deg);
+      @include fs(6);
+      font-weight: 900;
+      margin-right: 5px;
+    }
+
+    .head-warning {
+      padding: 15px 10px 15px 15px;
+    }
+  }
+
+  &__product-detail {
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__product-img {
+    height: auto;
+    max-height: 100%;
+    margin: 0;
+  }
+
+  &__product-media {
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    @include md {
+      width: 160px;
+      height: 160px;
+      margin: 0;
+    }
+  }
+
+  &__tabs-container {
+    border-bottom: 1px solid $primary-lighten-3;
+  }
+
+  &__product-info {
+    padding-left: 15px;
+    @include md {
+      padding-left: 20px;
+    }
+  }
+
+  &__product-pnc-model {
+    @include fs(18);
+    font-weight: 600;
+    line-height: 22px;
+    color: $primary;
+    @include md {
+      display: flex;
+      flex-wrap: nowrap;
+      @include fs(26);
+      line-height: 34px;
+    }
+  }
+
+  &__product-name {
+    @include fs(18);
+    font-weight: 600;
+    line-height: 22px;
+    color: $primary;
+    @include md {
+      @include fs(26);
+      line-height: 34px;
+      font-weight: 500;
+      padding-top: 10px;
+    }
+  }
+
+  &__product-separate {
+    display: none;
+    @include md {
+      display: block;
+    }
+  }
+
+  &__products-found {
+    line-height: 19px;
+    padding-top: 20px;
+    @include md {
+      padding-top: 0;
+    }
+    color: $text-color;
+  }
+
+  &__filter-list {
+    padding: 40px 0;
+  }
+  @include md {
+    &__container,
+    &__product {
+      width: 85%;
+    }
+    &__product-listing {
+      padding-left: 30px;
+    }
+    &__product-filtering {
+      margin-top: -140px;
+    }
+  }
+  &__stock-availability {
+    display: flex;
+    flex-wrap: wrap;
+    color: $gray;
+    background: $primary-lighten-3;
+    padding: 20px;
+    width: 91%;
+    margin: 0 auto;
+    .location__entry {
+      border: transparent;
+      height: 36px;
+      width: 100%;
+      @include fs(14);
+      &:disabled {
+        opacity: 1;
+        background-color: transparent;
+        padding: 0;
+        margin: 0 5px;
+        width: auto;
+        color: $gray;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:hover,
+        &:focus {
+          border: none;
+        }
+      }
+
+      @include md {
+        width: 330px;
+        margin-left: 20px;
+      }
+    }
+    .form-group {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      @include md {
+        width: auto;
+      }
+    }
+    @include md {
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 12px;
+      width: 100%;
+    }
+  }
+
+  &__stock-availability-edit {
+    color: $primary;
+    font-size: $font-size-base;
+    line-height: 24px;
+
+    &.show {
+      display: block;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  .icon-map-pin {
+    font-size: 22px;
+    padding: 0 15px 0 0;
+  }
+
+  &__stock-availability-label {
+    display: flex;
+    margin-bottom: 15px;
+    @include md {
+      margin: 0;
+    }
+  }
+}
+
+.hero-banner-listing {
+  position: relative;
+  padding-bottom: 10px;
+  @include md {
+    padding-bottom: 60px;
+  }
+  &__heading {
+    @include property('font-weight', $hero-banner-listing__heading-font-weight);
+  }
+  &__img {
+    top: 0;
+    width: 100%;
+    padding-bottom: 170px;
+    background-color: $hero-banner-listing__img-background-color;
+    @include md {
+      padding-bottom: 350px;
+    }
+    //fix lazy load on edge
+    min-height: 1px;
+  }
+  &__content {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    height: 140px;
+    z-index: 1;
+    @include md {
+      top: 0;
+      max-width: 980px;
+      left: 50%;
+      width: 100%;
+      align-items: center;
+      transform: translate(-50%);
+      height: calc(100% - 155px);
+    }
+  }
+
+  &__back-btn {
+    @include fs(12);
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 600;
+    .icon-dropdown {
+      transform: rotate(90deg);
+      @include fs(6);
+      font-weight: 900;
+      margin-right: 5px;
+    }
+
+    @include md {
+      padding: 20px 0 0 0;
+    }
+  }
+
+  &__heading-container {
+    align-items: center;
+    height: 100%;
+    @include md {
+      height: calc(100% - 40px);
+    }
+  }
+
+  &__search {
+    background: $hero-banner-listing__search-bg;
+    margin: 0 auto;
+    @include md {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      z-index: 1;
+      transform: translate(-50%, 10%);
+      width: calc(100% - 40px);
+    }
+    max-width: 980px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    .primary {
+      color: $hero-banner-listing__search-primary;
+    }
+  }
+
+  &__tab-btn {
+    height: 48px;
+  }
+  &__tab-container {
+    input.invalid {
+      border-color: $alert;
+      &:hover {
+        border-color: $alert;
+      }
+    }
+    .form-label {
+      color: $primary;
+      @include md {
+        line-height: 19px;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  &__collapse-btn {
+    position: relative;
+    padding-right: 22px;
+    &::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: solid $gray;
+      transform: rotate(45deg);
+      border-width: 0 2px 2px 0;
+      display: block;
+      position: absolute;
+      top: 3px;
+      right: 5px;
+    }
+
+    &.is-active::after {
+      transform: rotate(225deg);
+      top: 10px;
+    }
+  }
+
+  .mobile-hide {
+    display: none;
+    @include md {
+      display: inline-block;
+    }
+  }
+
+  &__find-pnc-btn {
+    color: $hero-banner-listing__find-pnc-btn-color;
+    text-decoration-color: $hero-banner-listing__find-text-decoration-color;
+    text-transform: $hero-banner-listing__find-pnc-btn-text-transform;
+    @include md {
+      position: absolute;
+      bottom: -#{rem(25)};
+    }
+  }
+
+  &__collapse.collapse {
+    height: 0;
+    overflow: hidden;
+    @include md {
+      height: auto;
+    }
+  }
+
+  &__fs{
+    font-size: $search-block-fs;
+  }
+
+  & .form-group .form-control {
+    @include md {
+      font-size: $search-block-fs;
+    }
+  }
+
+  &__optional {
+    @include property('color', $hero-banner-listing__optional-color);
+  }
+}

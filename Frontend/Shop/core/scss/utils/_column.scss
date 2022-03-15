@@ -1,0 +1,31 @@
+@include md {
+  .column-md {
+    &-count-2 {
+      column-count: 2;
+    }
+
+    &-count-3 {
+      column-count: 3;
+    }
+
+    &-count-4 {
+      column-count: 4;
+    }
+
+    &-count-5 {
+      column-count: 5;
+    }
+
+    &-fill {
+      &-auto {
+        column-fill: auto;
+      }
+    }
+
+    &-gap {
+      &-60 {
+        column-gap: rem(60);
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SolutionNameWithPath>Basics</SolutionNameWithPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2CC3C9D7-B091-4215-AC2E-B500881522D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCSharp.Examples.Basics</RootNamespace>
+    <AssemblyName>Basics</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationLogic\CustomersController.cs" />
+    <Compile Include="ApplicationLogic\ICustomersView.cs" />
+    <Compile Include="ApplicationLogic\IOrdersView.cs" />
+    <Compile Include="ApplicationLogic\MainTask.cs" />
+    <Compile Include="ApplicationLogic\OrdersController.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\OrderState.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MVCSharp\MVCSharp.csproj">
+      <Project>{C04A36B0-4A58-45D4-B95B-A4A58AFEBC95}</Project>
+      <Name>MVCSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Target Name="CleanUp">
+    <RemoveDir Directories="bin;obj;PrecompiledWeb;Presentation\Web\bin" />
+    <Delete Files="$(SolutionNameWithPath).suo" />
+  </Target>
+</Project>

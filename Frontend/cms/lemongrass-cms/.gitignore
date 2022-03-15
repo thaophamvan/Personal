@@ -1,0 +1,6 @@
+node_modules/*
+package-lock.json
+public/dist
+uploads
+logs/log-file.json
+config/config.js

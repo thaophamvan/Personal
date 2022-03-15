@@ -1,0 +1,151 @@
+.you-may-also-like {
+  &-card {
+    @include property("padding", $you-may-also-like-card-padding);
+    @include property("background-color", $you-may-also-like-card-background-color);
+  }
+
+  &__img-wrapper {
+    height: 165px;
+    @include md {
+      height: 300px;
+    }
+  }
+
+  &__title {
+    font-family: $you-may-also-like__title-font-family;
+    text-transform: $you-may-also-like__title-text-transform;
+    color: $you-may-also-like__title-color;
+    @include property("font-weight", $you-may-also-like__title-font-weight);
+  }
+
+  &__part-name {
+    @include property("color", $you-may-also-like__part-name-color);
+  }
+
+  &__part-number {
+    color: $you-may-also-like__part-number;
+  }
+
+  &__product-stock {
+    color: $you-may-also-like__product-stock;
+  }
+
+  &__part-category{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include property("color", $you-may-also-like__part-category);
+  }
+
+  &__product-price {
+    color: $you-may-also-like__product-price;
+  }
+
+  .add-to-wishlist__btn:hover .add-to-wishlist__btn-text{
+    @include property("color", $you-may-also-like_e-icon_color);
+  }
+
+  .add-to-wishlist__btn-text{
+    @include property("color", $you-may-also-like_add-to-wishlist__btn-text_color);
+    
+  }
+
+  .e-icon{
+    @include property("fill", $you-may-also-like_e-icon_color);
+  }
+
+  .add-to-wishlist__btn:hover .e-icon
+  {
+    @include property("fill", $you-may-also-like_e-icon_color);
+  }
+
+  .glide {
+    &__bullet {
+      width: 12px;
+      height: 12px;
+      border: 2px solid $primary-lighten-3;
+      border-radius: 50%;
+      background-color: $white;
+      &--active {
+        border: 2px solid $primary;
+      }
+    }
+  }
+
+  .loading-indicator {
+    min-height: 40vh;
+  }
+
+  &__add-to-wishlist-btn {
+    @include md {
+      height: 20px;
+    }
+  }
+
+  .glide__slide {
+    height: auto;
+  }
+
+  .glide__slides {
+    margin: 0;
+  }
+  .no-slider {
+    $gutter-xs: map-get(
+      $map: $grid-gutter,
+      $key: "xs",
+    );
+    $gutter-md: map-get(
+      $map: $grid-gutter,
+      $key: "md",
+    );
+    .glide__slides {
+      flex-wrap: wrap;
+      justify-content: center;
+      width: auto;
+      margin: 0 #{-$gutter-xs / 2};
+
+      @include md {
+        justify-content: center;
+        margin: 0 #{-$gutter-md / 2};
+      }
+    }
+    .glide__slide {
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding: 0 $gutter-xs / 2;
+
+      @include md {
+        flex: 0 0 percentage(4 / $grid-columns);
+        max-width: percentage(4 / $grid-columns);
+        padding: 0 $gutter-md / 2;
+      }
+    }
+    .glide__bullets {
+      display: none;
+    }
+  }
+
+  &__recurring-side-box {
+    flex: 1;
+  }
+
+  &__recurring-box {
+    position: relative;
+    padding: 5px 7px 0px 7px;
+    border-radius: 2px;
+    width: 140px;
+    white-space: nowrap;
+    &__discount {
+      padding: 1px 13px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius:0 2px 0 2px;
+      height: 21px;
+      min-height: 21px;
+    }
+    @include md {
+      border: solid 1px $primary;
+    }
+  }
+}

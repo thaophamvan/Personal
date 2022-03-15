@@ -1,0 +1,18 @@
+include ../../../core/mixinComponents/mixinComponents
+
+.faqs__content
+  .faqs__content-bg.pt-30.pb-50.py-md-50.min-h-30(v-if="showSearchResult")
+    include ./search-result.pug
+  div(v-else).pos-relative.min-h-30
+    .d-flex.justify-content-center.pos-absolute.loading(v-show="loading")
+      +LoadingIndicator
+    include ./topic-slider.pug
+    .faqs__content-bg.pt-30.pb-50.py-md-50(v-show="content.length > 0")
+      .container
+        .faqs__content-title.fs-26.lh-34.fw-600.primary.pb-30.fs-md-26.lh-md-34 {{selectedItem.displayName}}
+        .faqs__content-item.bg-white.mb-20.px-15.py-20.pa-md-30(v-for="(item, index) of content")
+          p.fs-20.lh-26.fw-600.pb-10.faqs__content-item-question {{index + 1}}. {{item.question}}
+          p.fs-16.lh-24.faqs__content-item-answer(v-html="item.answer")
+        .text--center
+          button.btn.btn--outline-primary.w-100.mt-10.w-md-30(v-show="selectedItem.hasMore && !loadingMore" @click="handleLoadMore(selectedItem)") Load more
+          +LoadingIndicator()(v-show="loadingMore")

@@ -1,0 +1,14 @@
+include ../../mixinComponents/mixinComponents.pug
+
+section.where-to-buy.pos-relative
+  +LoadingIndicator.pos-absolute(v-if="loading")
+  div(v-else)
+    .where-to-buy__title.fs-16.lh-24.fw-600.pa-20.text-center.text--uppercase {{title}}
+    .pt-10.px-40.mx-5.pb-30
+      .where-to-buy__store.py-20(v-for="store in stores" :key="store.name")
+        .d-flex.align-items-center.justify-content-between
+          .where-to-buy__store-img-wrapper.d-flex.align-items-center.justify-content-center
+            img(:src="store.img" alt="store.name").flex-0.ma-0
+          .pl-md-70.pl-10.flex-1.d-md-flex.justify-content-between.align-items-center.text--right
+            .where-to-buy__store-stock-status.pb-10.pb-md-0.fs-14.lh-20 {{store.stockStatus}}
+            a.btn.btn--primary.where-to-buy__btn.text--center(:href="store.url" :target="store.name") {{btnText}}

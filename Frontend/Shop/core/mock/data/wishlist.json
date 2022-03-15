@@ -1,0 +1,182 @@
+{
+  "productWishlist": {
+    "product": {
+      "img": "/dist/images/block-img-bg.svg",
+      "displayName": "Work for Induction &  Gas Cooking",
+      "code": "E9KLSP01",
+      "promotionPrice": "$90.00",
+      "totalPrice": "$100.00"
+    },
+    "wishlist": [
+      {
+        "id": "123123",
+        "displayName": "wishlist 1",
+        "itemCount": 1,
+        "itemCountStr": "1 items saved",
+        "wishlistDetailUrl": "wishlistDetailUrl",
+        "products": [
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          }
+        ]
+      },
+      {
+        "id": "111",
+        "displayName": "wishlist 2",
+        "itemCount": 6,
+        "itemCountStr": "6 items saved",
+        "wishlistDetailUrl": "wishlistDetailUrl",
+        "products": [
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          }
+        ]
+      },
+      {
+        "id": "1112",
+        "displayName": "wishlist 2",
+        "itemCount": 6,
+        "itemCountStr": "6 items saved",
+        "wishlistDetailUrl": "wishlistDetailUrl",
+        "products": []
+      }
+    ],
+    "wishlistUrl": "wishlist",
+    "isAuthenticated": true,
+    "registerUrl": "registerUrl",
+    "signInUrl": "signInUrl",
+    "sortData": [
+      {
+        "name": "RecentlyAdded",
+        "displayName": "Recently Added"
+      }
+    ]
+  },
+  "addProductSuccess": {
+    "message": "This item has been saved to your &nbsp;<strong>\"manh2324\"</strong>&nbsp; wishlist."
+  },
+  "addProducssFail": {
+    "message": "This item has been saved to your &nbsp;<strong>\"manh2324\"</strong>&nbsp; wishlist."
+  },
+  "sortData": {
+    "wishlist": [
+      {
+        "id": "123123",
+        "displayName": "wishlist 1",
+        "itemCount": 1,
+        "itemCountStr": "1 items saved",
+        "wishlistDetailUrl": "wishlistDetailUrl",
+        "products": [
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          },
+          {
+            "img": "/dist/images/block-img-bg.svg"
+          }
+        ]
+      }
+    ],
+    "sortData": [
+      {
+        "name": "RecentlyAdded",
+        "displayName": "Recently Added"
+      }
+    ]
+  },
+  "wishlistDetail": {
+    "displayName": "wishlist Display Name",
+    "sortData": [
+      {
+        "name": "RecentlyAdded",
+        "displayName": "Recently Added"
+      },
+      {
+        "name": "NameAscending",
+        "displayName": "Name Ascending"
+      },
+      {
+        "name": "NameDecesding",
+        "displayName": "Name Decesding"
+      }
+    ],
+    "products": [
+      {
+        "img": "/dist/images/block-img-bg.svg",
+        "displayName": "Work for Induction &  Gas Cooking 1 ",
+        "code": "E9KLSP011",
+        "variantCode": "variantCode1",
+        "description": "description",
+        "stockText": "in stock",
+        "instock": true,
+        "totalPrice": "$90.00",
+        "promotionPrice": "$90.00"
+      },
+      {
+        "img": "images/hero-product/accessory-image.png",
+        "displayName": "Work for Induction &  Gas Cooking 2",
+        "code": "E9KLSP012",
+        "variantCode": "variantCode2",
+        "description": "description",
+        "stockText": "in stock",
+        "instock": true,
+        "totalPrice": "$90.00",
+        "promotionPrice": "$90.00"
+      },
+      {
+        "img": "images/hero-product/EWF1142BEWA.jpg",
+        "displayName": "Work for Induction &  Gas Cooking 3",
+        "code": "E9KLSP013",
+        "variantCode": "variantCode3",
+        "description": "description",
+        "stockText": "out stock",
+        "instock": false,
+        "totalPrice": "$90.00",
+        "promotionPrice": "$90.00"
+      },
+      {
+        "img": "images/hero-product/hood.jpg",
+        "displayName": "Work for Induction &  Gas Cooking 4",
+        "code": "E9KLSP014",
+        "variantCode": "variantCode4",
+        "description": "description",
+        "stockText": "in stock",
+        "instock": true,
+        "totalPrice": "$90.00",
+        "promotionPrice": "$90.00"
+      }
+    ],
+    "itemCountStr": "1 items saved",
+    "wishlistUrl": "list of wislist url"
+  },
+  "wishlistAddToCart": {
+    "message": "2 Product(s) was successfully updated to your cart.",
+    "cartPageLink": "link to cart page"
+  }
+}

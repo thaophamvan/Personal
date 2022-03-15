@@ -1,0 +1,81 @@
+.text {
+  &--white {
+    color: $white;
+  }
+
+  &--dark {
+    color: $dark;
+  }
+
+  &--primary {
+    color: $primary;
+  }
+
+  &--primary-color {
+    color: $text-primary-color;
+  }
+
+  &--regular {
+    font-size: $font-size-base;
+  }
+
+  &--large {
+    font-size: $large-font-size;
+  }
+
+  &--small {
+    font-size: $small-font-size;
+  }
+
+  &--smallest {
+    font-size: $smallest-font-size;
+  }
+
+  &--bold {
+    font-weight: 600;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--capitalize{
+    text-transform: capitalize;
+  }
+
+  &--left {
+    text-align: left;
+  }
+
+  &--right {
+    text-align: right;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--highlight {
+    font-weight: 600;
+  }
+
+  &--maintenance {
+    color: $text-color-maintenance;
+  }
+
+  @include md {
+    &-md {
+      &--left {
+        text-align: left;
+      }
+
+      &--right {
+        text-align: right;
+      }
+
+      &--uppercase {
+        text-transform: uppercase;
+      }
+    }
+  }
+}

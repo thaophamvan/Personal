@@ -1,0 +1,7 @@
+mixin QuanityControl(productCode,quantity)
+  .qty-control.clearfix.js_qty-control(data-product-code=productCode)
+    button.decrease.js_qty-control__decrease
+      span -
+    input(type = "number" place-holder = "1" value=quantity readonly)
+    button.increase.js_qty-control__increase
+      span +

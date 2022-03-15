@@ -1,0 +1,164 @@
+$block: ".parts-by-diagram";
+
+#{$block} {
+  &__header,
+  &__body {
+    width: 91%;
+    margin: 0 auto;
+  }
+
+  &__header-wrapper {
+    border-bottom: 1px solid $primary-lighten-3;
+  }
+
+  &__header {
+    padding: 20px 15px 10px;
+    @include md {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__filter-btn {
+    height: 32px;
+    padding: 0 20px;
+    border: 1px solid $primary;
+    @include fs(14);
+    line-height: 17px;
+    color: $primary;
+    background-color: $white;
+    margin: 0 20px 10px 0;
+    @include md {
+      margin: 0 0 10px 20px;
+    }
+    font-weight: 600;
+    &.active {
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &__filters {
+    @include md {
+      display: flex;
+      align-items: center;
+      width: 90%;
+    }
+  }
+
+  &__filters-text {
+    margin: 0;
+    @include fs(16);
+    line-height: 19px;
+    margin-bottom: 10px;
+  }
+  &__need-help {
+    margin-bottom: 10px;
+    @include fs(14);
+    font-weight: 600;
+    line-height: 24px;
+    color: $primary;
+    &-content {
+      position: relative;
+      &.active {
+        .parts-by-diagram__need-help-popup {
+          display: block;
+        }
+      }
+    }
+    &-popup {
+      position: absolute;
+      top: 34px;
+      background: $white;
+      left: 0;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+      width: 290px;
+      padding: 15px 23px;
+      border: 1px solid $primary-lighten-3;
+      display: none;
+      z-index: 10;
+      @include md {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+
+  &__filters-btns {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__body-wrapper {
+    padding: 50px 0 100px;
+  }
+
+  &__find-part {
+    position: relative;
+    background-color: $primary-lighten-1;
+    padding: 25px 20px;
+    .form-control {
+      width: 100%;
+      padding: 0 50px 0 20px;
+      line-height: 20px;
+      color: $primary-lighten-1;
+    }
+    .icon-search,
+    .icon-close-icon {
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+      cursor: pointer;
+      &:before {
+        color: $primary;
+      }
+    }
+  }
+
+  &__find-part-label {
+    margin-bottom: 15px;
+    @include fs(20);
+    font-weight: 600;
+    line-height: 24px;
+    color: $white;
+    display: block;
+  }
+
+  &__diagram-img-wrapper {
+    margin-top: 20px;
+    text-align: center;
+    @include md {
+      height: 610px;
+    }
+  }
+
+  &__showing-text {
+    @include fs(20);
+    line-height: 24px;
+    color: $primary;
+    margin-bottom: 40px;
+  }
+}
+.diagram-auto-complate {
+  position: absolute;
+  background: $white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+  border: 1px solid $primary-lighten-3;
+  left: 20px;
+  width: calc(100% - 40px);
+  display: none;
+  min-height: 48px;
+  padding: 15px 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  color: $primary;
+  margin-top: 2px;
+  border-radius: 2px;
+  &__item {
+    padding: 10px;
+    &:hover {
+      background-color: rgba(223, 231, 234, 0.6);
+    }
+  }
+}

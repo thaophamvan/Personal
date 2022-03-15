@@ -1,0 +1,31 @@
+.nav-list {
+  padding-top: 5px;
+  @include md {
+    padding-top: 20px;
+  }
+  @include fs(20);
+  display: flex;
+  &__item {
+    position: relative;
+    padding-right: 18px;
+    text-decoration: none;
+    &:after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border: solid $primary;
+      transform: rotate(-45deg);
+      border-width: 0 1px 1px 0;
+      display: block;
+      position: absolute;
+      top: 14px;
+      right: 4px;
+    }
+  }
+  &__selected {
+    text-transform: uppercase;
+    @include md {
+      margin-left: 9px;
+    }
+  }
+}

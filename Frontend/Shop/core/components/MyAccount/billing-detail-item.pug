@@ -1,0 +1,15 @@
+div.myacc-form__item
+  div.myacc-form__group
+    div.myacc-form__group-label
+      label.myacc-form__label {{defaultBillingAddress}}
+    div.myacc-form__group-value
+      span.myacc-form__value {{name}}
+      span.myacc-form__value {{addressLine1}}
+      span.myacc-form__value {{addressLine2}}
+  div.myacc-form__group-action
+    a.myacc-form__btn.js_myacc-form-bd__edit(data-modal="editAddressModal" data-user-id='{{userId}}' data-billing-id="{{rowId}}")
+      span.icon-edit
+      span.myacc-form__edit Edit
+    a.myacc-form__btn.js_myacc-form-bd__delete(data-user-id='{{userId}}' data-billing-id="{{rowId}}" data-modal="deleteAddressModal")
+      span.icon-delete
+      span.myacc-form__delete Delete

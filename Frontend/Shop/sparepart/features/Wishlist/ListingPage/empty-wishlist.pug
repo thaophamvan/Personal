@@ -1,0 +1,13 @@
+.text--center
+  p.fs-16.lh-24 Your favourites list is empty.
+
+  p.fs-16.lh-24.pb-30(v-if="isAuthenticated") Save items you like and they will appear here.
+  p.fs-16.lh-24.pb-30(v-else)
+    strong.primary Sign in
+    |&nbsp;or&nbsp;
+    strong.primary register
+    |&nbsp;for an account to keep saved items in your favourites
+  .mb-md-50.d-flex.align-items-center.flex-column.flex-md-row.justify-content-center
+    button.btn.btn--primary.wishlist__empty-wishlist-btn(v-if="isAuthenticated" @click="redirect('/')") Start Shopping
+    a.btn.btn--primary.wishlist__empty-wishlist-btn.mb-10.mb-md-0.mr-md-20.js_sap__login(v-if="!isAuthenticated" rel="IDS_Login" :href="signInUrl") Sign In
+    a.btn.btn--outline-primary.wishlist__empty-wishlist-btn.js_sap__login(v-if="!isAuthenticated" rel="IDS_Login" :href="registerUrl") Register

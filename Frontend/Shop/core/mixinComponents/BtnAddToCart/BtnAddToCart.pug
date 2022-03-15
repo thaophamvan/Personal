@@ -1,0 +1,3 @@
+mixin BtnAddToCart(sku, text = "Add To Cart")
+  button.btn.btn--primary.js_add-to-cart__button.w-100(data-modal="miniCart-center" data-skuCode=sku, v-bind:data-skuCode=sku)&attributes(attributes)=text
+    block

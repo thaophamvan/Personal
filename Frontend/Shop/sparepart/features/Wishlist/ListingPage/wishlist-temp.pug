@@ -1,0 +1,39 @@
+include ../../../../core/mixinComponents/mixinComponents
+
+section.py-50.mt-md-10
+  h1.wishlist__title.fs-32.lh-38.fs-md-54.lh-md-60.pb-50.text--center My Favourites
+  .loading.wishlist__loading.pos-absolute.d-flex(v-show="loading")
+    +LoadingIndicator()
+  div(v-if="loaded && wishlist.length === 0")
+    include ./empty-wishlist
+  div(v-if="loaded && wishlist.length > 0")
+    .d-md-flex.align-items-center.justify-content-between.mb-5
+      .selectbox.wishlist__sortby-selectbox.mb-20.mb-md-0.selectbox--sort(ref="sortBySelectbox" data-component="popup" data-target="wishlist__sortby" data-type="select" :key="sortValue")
+        button.btn.selectbox__btn.js_selectbox__btn(type="button") 
+          div {{ activeSort.displayName ? activeSort.displayName : 'Sort by'}}
+        #wishlist__sortby.popup.selectbox__options-popup.js_selectbox__options 
+          .selectbox__option.js_selectbox__option(v-for="sortItem of sortData" :key="sortItem.name" :data-key="sortItem.name" :class="{'is-active': isSortActive(sortItem.name)}") {{sortItem.displayName}}
+      button.btn.btn--primary.w-100.wishlist__create-new-btn(@click="showCreateNewModal" data-modal='createNewWishlistModal' ref="createNewBtn") Create New
+    .row
+      .col-12.col-md-4(v-for="wishlistItem of wishlist" :key="wishlistItem.id").wishlist__item.py-25
+        .wishlist__item-content
+          a(:href="wishlistItem.wishlistDetailUrl").d-block
+            .wishlist__products-img.wishlist__item-content-img.pa-10.d-flex.flex-wrap
+              .col-6(v-for="(product, index) of displayProduct(wishlistItem.products)").d-flex.align-items-center.pa-20.pos-relative
+                .wishlist__product-imgwrap.img-center
+                  +ImgLazy("", "", "")(:data-src="product.img" :alt="product.displayName" v-if="product")
+                .wislist__product-imgwrap.wishlist__product-mask.pos-absolute.ma-20.bg-primary(v-if="index === 3 && hasMoreProduct(wishlistItem)")
+                .fs-26.lh-32.white.pos-absolute.wishlist__product-mask-number.fw-600.d-flex.align-items-center.justify-content-center(v-if="index === 3 && hasMoreProduct(wishlistItem)") +{{ hasMoreProduct(wishlistItem).numberMoreProduct }}
+          .pt-15.px-15.wishlist__item-info
+            .d-flex.mb-5.align-items-center
+              .form-group.w-100.pos-relative(v-if="editing[wishlistItem.id]")
+                input.w-100.form-control.fs-26.lh-34.fw-600.primary(:ref="'wishlist-' + wishlistItem.id" v-model="listNameModel[wishlistItem.id]" @blur="handleSubmitChangeWishlistName(wishlistItem, $event)" @keydown.enter="$event.target.blur()")
+                +LoadingIndicator(true)(class="pos-absolute loading-input" v-if="loadingName[wishlistItem.id]")
+              a(:href="wishlistItem.wishlistDetailUrl" v-show="!editing[wishlistItem.id]").fs-26.lh-34.fw-600.primary.none-underline.flex-1 {{wishlistItem.displayName}}
+              a.none-underline.cursor-pointer.icon-edit.d-table.fs-16.ml-10(href="#" v-show="!editing[wishlistItem.id]" @click="editWishlistName(wishlistItem, $event)")
+            p.fs-16.lh-20.mb-10.wishlist__item-content-description {{wishlistItem.itemCountStr}}
+            a(href="#" @click="deleteWishlist(wishlistItem, $event)" data-modal="deleteWishlistConfirmModal").d-flex.align-items-center.none-underline
+              span.icon-delete.mr-10.fs-20(data-modal="deleteWishlistConfirmModal")
+              span.fs-14.lh-20.fw-600.pt-5.wishlist__item-delete(data-modal="deleteWishlistConfirmModal") Delete Favourite
+  include ../create-new-modal.pug
+  include ../delete-confirm-modal.pug

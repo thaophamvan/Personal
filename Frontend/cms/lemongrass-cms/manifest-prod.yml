@@ -1,0 +1,9 @@
+applications:
+- name: lemongrass-cms-prod
+  command: npm run prod
+  memory: 128M
+  instances: 1
+  routes:
+- route: lemongrass.testmobile.com
+  doman: lemongrass.testmobile.com
+  

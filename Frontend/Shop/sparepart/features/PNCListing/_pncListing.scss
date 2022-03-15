@@ -1,0 +1,138 @@
+$block: ".category";
+
+#{$block} {
+  &__container,
+  &__product {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  &__back-btn {
+    color: $primary;
+    @include fs(12);
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    padding: 15px 0 29px;
+    text-decoration: none;
+    font-weight: 600;
+    .icon-dropdown {
+      transform: rotate(90deg);
+      @include fs(6);
+      font-weight: 900;
+      margin-right: 5px;
+    }
+
+    @include md {
+      padding: 20px 0 30px;
+    }
+  }
+
+  &__product-detail {
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__product-img {
+    height: auto;
+    max-height: 100%;
+    margin: 0;
+  }
+
+  &__product-media {
+    width: 105px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    @include md {
+      width: 160px;
+      height: 160px;
+      margin: 0;
+    }
+  }
+
+  &__product-info {
+    padding-left: 15px;
+    @include md {
+      padding-left: 20px;
+    }
+  }
+
+  &__product-pnc-model {
+    @include fs(18);
+    font-weight: 600;
+    line-height: 22px;
+    color: $primary;
+    @include md {
+      display: flex;
+      flex-wrap: nowrap;
+      @include fs(26);
+      line-height: 34px;
+    }
+  }
+
+  &__product-name {
+    @include fs(18);
+    font-weight: 600;
+    line-height: 22px;
+    color: $primary;
+    @include md {
+      @include fs(26);
+      line-height: 34px;
+      font-weight: 500;
+      padding-top: 10px;
+    }
+  }
+
+  &__product-separate {
+    display: none;
+    @include md {
+      display: block;
+    }
+  }
+
+  &__products-found {
+    line-height: 19px;
+    color: $gray;
+    padding-top: 20px;
+    @include md {
+      padding-top: 0;
+    }
+  }
+
+  &__filter-list {
+    padding: 40px 0;
+  }
+
+  @include md {
+    &__container,
+    &__product {
+      width: 85%;
+    }
+    &__product-listing {
+      padding-left: 30px;
+    }
+    &__product-filtering {
+      margin-top: -140px;
+    }
+  }
+
+  .head-warning {
+    &__content {
+      border-radius: 2px;
+      color: $primary;
+      &::before {
+        content: "";
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background-color: $primary;
+        border-radius: 2px 0 0 2px;
+      }
+    }
+  }
+}

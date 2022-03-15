@@ -1,0 +1,59 @@
+.primary {
+  color: $text-primary-color;
+}
+
+.secondary {
+  color: $secondary;
+}
+
+.success {
+  color: $success;
+}
+
+.white {
+  color: $white;
+}
+
+.skyblue-dark {
+  color: $skyblue-dark;
+}
+
+.primary-lighten-1 {
+  color: $primary-lighten-1;
+}
+
+.primary-lighten-3 {
+  color: $primary-lighten-3;
+}
+
+.sale-off {
+  color: $sale-off-color;
+}
+
+.second-text {
+  color: $second-text-color;
+}
+
+.blue {
+  color: $blue;
+}
+.gray {
+  color: $gray;
+}
+
+.danger {
+  color: $danger-color;
+}
+
+.alert {
+  color: $alert;
+  a{
+    color: $alert;
+  }
+}
+
+@include md {
+  .md-primary {
+    color: $text-primary-color;
+  }
+}

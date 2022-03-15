@@ -1,0 +1,108 @@
+.icon {
+  display: inline-block;
+  width: 15px;
+  height: 20px;
+  vertical-align: bottom;
+}
+
+.icon__phone {
+  height: 22px;
+  display: block;
+}
+
+.icon__cross {
+  width: 12px;
+  height: 12px;
+  //opacity: 0.3;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: " ";
+    height: 11px;
+    width: 1px;
+    background-color: $gray;
+    display: block;
+    top: 0;
+    right: 0;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.e-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  fill: $icomoon-color;
+  &.primary {
+    fill: $text-primary-color;
+  }
+  &.white {
+    fill: $white;
+    &.none-hover {
+      &:hover {
+        fill: $white;
+      }
+    }
+  }
+  &.deg45 {
+    transform: rotate(45deg);
+  }
+  &.deg270 {
+    transform: rotate(270deg);
+  }
+  &.w12 {
+    width: 12px;
+    height: 12px;
+  }
+  &.w16 {
+    width: 16px;
+    height: 16px;
+  }
+  &.w20 {
+    width: 20px;
+  }
+  &.w32 {
+    width: 24px;
+    @include md {
+      width: 32px;
+    }
+  }
+  &.h17 {
+    height: 17px;
+  }
+  &.h16 {
+    height: 16px;
+  }
+  &.h14 {
+    height: 14px;
+  }
+  &.h12 {
+    height: 12px;
+  }
+  &.h11 {
+    height: 11px;
+  }
+  &:hover {
+    fill: $icomoon-hover-color;
+  }
+  &__check {
+    fill: $e-icon__check;
+  }
+  &__x {
+    fill: #be3d3d;
+  }
+}

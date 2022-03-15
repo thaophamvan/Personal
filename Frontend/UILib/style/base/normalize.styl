@@ -1,0 +1,71 @@
+/*
+    Fork of normalize.css 3.0.3
+    Removed unnecessary css rules since we only use chrome/chromium in electron
+*/
+
+body {
+  margin: 0;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+b,
+strong {
+  font-weight: $font-weight-bold;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: .67em 0;
+}
+
+small {
+  font-size: 80%;
+}
+
+pre {
+  overflow: auto;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+fieldset {
+  border: 1px solid $brand-duller;
+  margin: 0 2px;
+  padding: .35em .625em .75em;
+}
+
+textarea {
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}

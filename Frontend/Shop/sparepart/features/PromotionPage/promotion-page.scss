@@ -1,0 +1,17 @@
+$block: ".promotion-page";
+
+#{$block} {
+  &__img-wrap {
+    height: 210px;
+    @include md {
+      height: 230px;
+    }
+  }
+
+  .btn {
+    width: 150px;
+    @include md {
+      width: 164px;
+    }
+  }
+}

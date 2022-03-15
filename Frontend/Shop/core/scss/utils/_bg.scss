@@ -1,0 +1,25 @@
+.bg {
+  &-primary {
+    background-color: $primary;
+  }
+
+  &-primary-lighten-3 {
+    background-color: $bg-primary-lighten-3;
+  }
+  &-primary-lighten-1 {
+    background-color: $primary-lighten-1;
+  }
+  &-primary-lighten-2 {
+    background-color: $primary-lighten-2;
+  }
+
+  &-primary-lighten-4 {
+    background-color: $primary-lighten-4;
+  }
+  &-sale-off {
+    background-color: $sale-off-color;
+  }
+  &-white {
+    background-color: $white;
+  }
+}

@@ -1,0 +1,15 @@
+.callout{
+  border-radius: 3px;
+  padding: 14px 20px;
+  line-height: 1rem;
+  &.primary{
+    border: 1px solid $callout-primary-border-color;
+    .checkbox{
+    	@include fs(15);
+    	color: $callout-primary-color;
+    	@include md{
+    		@include fs(16);
+    	}
+    }
+  }
+}

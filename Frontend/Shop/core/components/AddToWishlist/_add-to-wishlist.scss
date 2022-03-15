@@ -1,0 +1,79 @@
+$block: ".add-to-wishlist";
+
+#{$block} {
+  &__modal {
+    &__product-imgwrap {
+      height: 90px;
+    }
+
+    .selectbox {
+      width: 100%;
+      .error {
+        border-color: $alert;
+      }
+      &.is-active {
+        .error {
+          border-color: $primary;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    &:hover{
+      .add-to-wishlist__btn-text{
+        color: $add-to-wishlist__btn-text-hover-color;
+      }
+      .icon-wishlist:before{
+        color: $add-to-wishlist__btn-text-hover-color;
+      }
+      .e-icon {
+        fill: $add-to-wishlist__btn-text-hover-color;
+        transition: all .3s ease-in-out;
+      }
+      .e-icon-primary {
+        fill: $btn--outline-primary-hover-color;
+      }
+    }
+  }
+
+  &__btn-text {
+    padding-left: 10px;
+    font-size: rem(14);
+    line-height: rem(20);
+    color: $add-to-wishlist__btn-text-color;
+    font-weight: 600;
+    transition: all ease-in-out 0.3s;
+    text-transform: $add-to-wishlist__btn-text-transform;
+  }
+
+  &__message {
+    border-radius: 2px;
+    &::before {
+      content: "";
+      width: 4px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      border-bottom-left-radius: 2px;
+      border-top-left-radius: 2px;
+    }
+
+    &.success-message {
+      &::before {
+        background-color: $add-to-wishlist__success-message-before;
+      }
+    }
+
+    &.error-message {
+      color: $alert;
+      &::before {
+        background-color: $alert;
+      }
+    }
+  }
+}

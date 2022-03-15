@@ -1,0 +1,215 @@
+$time: 320ms;
+$ease: ease;
+$block: ".modal";
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: "";
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+  animation: $animations;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@include keyframes(fadeOut) {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@mixin transition($val...) {
+  transition: $val;
+}
+
+@mixin transform($val...) {
+  transform: $val;
+}
+
+$block: ".modal";
+
+#{$block} {
+  border-radius: 3px;
+  @include transition(all $ease 0.01s);
+  display: block;
+  opacity: 0;
+  height: 0;
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  text-align: center;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &.modal-visible {
+    opacity: 1;
+    height: auto;
+    bottom: 0;
+  }
+
+  &-inner {
+    &.modal-reveal {
+      @include transform(translateY(0));
+      opacity: 1;
+    }
+  }
+  &-body {
+    position: relative;
+
+    &.no-back-drop {
+      .modal,
+      &::before {
+        z-index: 10;
+      }
+
+      .modal {
+        @include md {
+          z-index: 999;
+        }
+      }
+
+      &::before {
+        @include md {
+          display: none;
+        }
+      }
+    }
+
+    &:before {
+      position: fixed;
+      display: block;
+      content: "";
+      top: 0px;
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 22;
+      @include animation(fadeIn $time $ease);
+      @include transition(opacity $ease $time);
+    }
+    &.modal-fadeOut {
+      &:before {
+        opacity: 0;
+      }
+    }
+  }
+  &__header {
+    background-color: $primary;
+    padding: 15px 15px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    @include md {
+      padding: 15px 20px 16px;
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-size: rem(16);
+    line-height: rem(19);
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-weight: 600;
+  }
+
+  &__body {
+    padding: 30px 15px;
+    @include md {
+      padding: 30px 20px;
+    }
+  }
+
+  &__footer {
+    padding: 0 15px 30px;
+    @include md {
+      padding: 0 20px 30px;
+    }
+  }
+
+  .icon {
+    &__cross {
+      height: 15px;
+      &::before,
+      &::after {
+        width: 2px;
+        background-color: $white;
+        height: 15px;
+      }
+    }
+  }
+
+  @include md {
+    &-inner {
+      width: 600px;
+    }
+  }
+}
+
+.close-modal-icon:hover {
+  opacity: 1;
+  background: $white;
+}
+
+.close-modal-icon {
+  transition: color 320ms ease;
+  color: $dark;
+  opacity: 0.75;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  @include fs(30);
+  font-weight: 500;
+  position: absolute;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  right: 15px;
+  top: 5px;
+}

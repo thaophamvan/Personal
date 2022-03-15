@@ -1,0 +1,31 @@
+<h1>Drink Temperature</h1>
+
+<a href="/drink-temperature/new" class="btn btn-primary btn-md">New</a>
+
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Desired temperature</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each drinkTemperature}}
+      <tr>
+        <td>{{this.id}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.description}}</td>
+        <td>{{this.desired_temperature}}</td>
+        <td>
+          <a class="btn btn-secondary btn-sm" href="/drink-temperature/{{this.id}}/edit">Edit</a>
+          <a class="btn btn-danger btn-sm" href="/drink-temperature/{{this.id}}/delete">Delete</a>
+        </td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+</div>

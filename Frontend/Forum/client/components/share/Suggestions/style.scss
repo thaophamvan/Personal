@@ -1,0 +1,20 @@
+.suggestions {
+    position: absolute;
+    width: 184px !important;
+    z-index: 1;
+
+    & a{
+        &:hover{
+            color: #333;
+            text-decoration: none;
+            background-color: #f4f4f4;
+        }
+    }
+
+    &--search-page {
+        text-align: left;
+        width: 240px !important;
+        top: 24px;
+        left: 30px; 
+    }
+}

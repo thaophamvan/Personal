@@ -1,0 +1,9 @@
+applications:
+- name: lemongrass-cms-dev
+  command: npm start
+  memory: 128M
+  instances: 1
+  routes:
+- route: lemongrass-dev.testmobile.com
+  doman: lemongrass-dev.testmobile.com
+  

@@ -1,0 +1,185 @@
+.category-list {
+  margin: $category-list_margin;
+  width: 100%;
+  max-width: 100%;
+  padding: $category-list_padding-sm;
+  position: relative;
+  background: $category-list_bg;
+  @include md {
+    padding: $category-list_padding-md;
+  }
+  .glide__track {
+    align-items: center;
+  }
+
+  &__img-wrap {
+    height: 110px;
+    @include md {
+      height: 146px;
+    }
+  }
+
+  .glide__slides {
+    margin: 0 auto;
+    width: auto;
+  }
+  .glide__slide {
+    width: auto;
+    min-width: 110px;
+    @include md {
+      width: calc(12.5vw - 20px);
+    }
+  }
+  &__slider {
+    margin: 35px 0;
+    @include md {
+      margin: 40px 0;
+    }
+    &.glide--slider {
+      opacity: 1;
+    }
+    &.no-slider {
+      .category-list {
+        &__item {
+          width: 110px;
+          @media (min-width: 1333px) {
+            width: 160px;
+          }
+        }
+      }
+      .glide__slides {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        @include md {
+          display: flex;
+          white-space: nowrap;
+        }
+      }
+      .glide__arrow {
+        display: none;
+      }
+    }
+  }
+  &__item {
+    text-align: center;
+    p {
+      @include fs(14);
+      line-height: 17px;
+      color: $category-list__item-color;
+      text-transform: $category-list__item-text-transform;
+      font-weight: $category-list__item-font-weight;
+      margin: 10px auto;
+      display: inline-block;
+      @include md {
+        @include fs(16);
+        line-height: 19px;
+      }
+    }
+    a {
+      .category-list_description {
+        @include property('border-bottom', $category-list__item-border-bottom);
+        padding-bottom: 3px;
+        @include property('display', $category-list_description-display)
+      }
+      &:hover {
+        @include animation($category-list__item-hover-animation);
+        .category-list_description {
+          @include property('border-bottom', $category-list__item-hover-border-bottom);
+        }
+      }
+    }
+  }
+  &__title {
+    @include md {
+      text-align: center;
+    }
+    h3 {
+      overflow: hidden;
+      color: $category-list__title-color;
+      font-family: $category-list__title-font-family;
+      @include property('font-weight', $category-list__title-font-weight);
+      text-transform: $category-list__title-text-tranform;
+      @include md {
+        font-size: $category-list__title-font-size-md;
+        line-height: $category-list__title-line-height-md;
+      }
+    }
+    h2 {
+      overflow: hidden;
+      @extend h3;
+    }
+    button {
+      @include md {
+        display: none;
+      }
+      background: none;
+      display: block;
+      float: right;
+      text-transform: uppercase;
+      @include fs(14);
+      font-weight: 600;
+      line-height: 20px;
+      margin-top: 8px;
+      color: $primary;
+      padding-right: 0;
+    }
+  }
+  &_description{
+    @include property('border-bottom', $category-list_description-border-bottom);
+    @include property('display', $category-list_description-display);
+  }
+  .glide__arrows {
+    display: none;
+    @include md {
+      display: block;
+    }
+    .glide__arrow {
+      border: none;
+      background: none;
+      box-shadow: none;
+      width: 29px;
+      height: 30px;
+      font-size: 0;
+      color: transparent;
+      position: absolute;
+      top: calc(50% - 14px);
+      z-index: 10;
+      &:before {
+        content: "";
+        width: 29px;
+        height: 29px;
+        border: 2px solid $category-list_glide__arrow-border;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid $category-list_glide__arrow-border;
+        border-left: 2px solid $category-list_glide__arrow-border;
+        right: 8px;
+        top: 10px;
+      }
+      &[disabled] {
+        &:after,
+        &:before {
+          opacity: 0.25;
+        }
+      }
+      &.glide__arrow--left {
+        left: -15px;
+      }
+      &.glide__arrow--right {
+        right: -15px;
+        &:after {
+          left: 10px;
+        }
+      }
+    }
+  }
+}

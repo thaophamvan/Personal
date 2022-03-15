@@ -1,0 +1,108 @@
+{
+  "page1": {
+    "Data": [
+      {
+        "Suburb": "WOODSTOCK",
+        "Postcode": "2793",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "COOKTOWN",
+        "Postcode": "4895",
+        "State": "",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "SPECIAL",
+        "Postcode": "0000",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "AUSTRALIAN NATIONAL UNIVE",
+        "Postcode": "0200",
+        "State": "ACT",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "DARWIN",
+        "Postcode": "0800",
+        "State": "NT",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "DARWIN",
+        "Postcode": "0801",
+        "State": "NT",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "PARAP",
+        "Postcode": "0804",
+        "State": "NT",
+        "Country": "AU"
+      }
+    ],
+    "HasNextPage": true
+  },
+  "page2": {
+    "Data": [
+      {
+        "Suburb": "COOGEE",
+        "Postcode": "2034",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "COOGEE BAY",
+        "Postcode": "2034",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "SOUTH COOGEE",
+        "Postcode": "2034",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "LURLINE BAY",
+        "Postcode": "2035",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "MAROUBRA",
+        "Postcode": "2035",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "MAROUBRA BAY",
+        "Postcode": "2035",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "MAROUBRA JUNCTION",
+        "Postcode": "2035",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "MAROUBRA SOUTH",
+        "Postcode": "2035",
+        "State": "NSW",
+        "Country": "AU"
+      },
+      {
+        "Suburb": "PAGEWOOD",
+        "Postcode": "2035",
+        "State": "NSW",
+        "Country": "AU"
+      }
+    ],
+    "HasNextPage": false
+  }
+}

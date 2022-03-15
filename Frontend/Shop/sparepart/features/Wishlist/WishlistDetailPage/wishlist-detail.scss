@@ -1,0 +1,105 @@
+$block: ".wishlist-detail";
+
+#{$block} {
+  min-height: 50vh;
+  position: relative;
+  &__product{
+    &-wraper{
+      @include property ('background', $wishlist-detail__product-wraper-bg-color);
+      @include property ('padding', $wishlist-detail__product-padding);
+      .qty-control {
+        @include property('border-color', $product-detail-info__qty-control-border-color);
+        input, span {
+          @include property('color', $product-detail-info__qty-control-text-color);
+          @include property('border-color', $product-detail-info__qty-control-border-color);
+        }
+      }
+    }
+    &.py-30{
+      @include property('padding-top', $wishlist-detail-padding-top);
+      @include property('padding-bottom', $wishlist-detail-padding-bottom);
+    }
+  }
+  &-info__text-color{
+    @include property('color', $wishlist-detail-info__text-color);
+  }
+  &__product-imgwrap {
+    height: 285px;
+
+    @include md {
+      height: 300px;
+    }
+  }
+
+  &__sortby {
+    width: 100%;
+
+    @include md {
+      width: 220px;
+    }
+  }
+  .form-group {
+    #{$block} {
+      &__text-area {
+        height: 110px;
+        resize: none;
+      }
+    }
+  }
+
+  &__btn {
+    width: 220px;
+    &:hover .icon-cart:before, &:hover .icon-delete:before{
+      @include property ('color', $wishlist-detail__btn-icon-hover-color);
+    }
+  }
+
+  .loading {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .loading-dots {
+    align-self: auto;
+    padding-top: 10%;
+  }
+  .loading-name {
+    top: calc(50% - 15px);
+    right: rem(20);
+  }
+  &__item-count {
+    @include md {
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+    }
+  }
+
+  &__back-to-list-btn {
+    color: $wishlist-detail__back-to-list-btn-color;
+  }
+  &__recurring-side-box {
+    flex: 1;
+  }
+  &__recurring-box {
+    position: relative;
+    padding: 5px 7px 0px 7px;
+    border-radius: 2px;
+    width: 140px;
+    white-space: nowrap;
+    border: solid 1px $primary;
+    &__discount {
+      padding: 1px 13px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      border-radius:0 2px 0 2px;
+      height: 21px;
+      min-height: 21px;
+    }
+  }
+}

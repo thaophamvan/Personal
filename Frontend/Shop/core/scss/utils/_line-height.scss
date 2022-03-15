@@ -1,0 +1,24 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint);
+  $line-height-list: map-get($grid-line-height, $breakpoint);
+
+  @if $infix != "" {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      .lh#{$infix} {
+        @each $line-height-value in $line-height-list {
+          &-#{$line-height-value} {
+            line-height: rem($line-height-value);
+          }
+        }
+      }
+    }
+  } @else {
+    .lh {
+      @each $line-height-value in $line-height-list {
+        &-#{$line-height-value} {
+          line-height: rem($line-height-value);
+        }
+      }
+    }
+  }
+}

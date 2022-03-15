@@ -1,0 +1,41 @@
+.DayPickerKeyboardShortcuts__show--bottom-right{
+  display: none;
+}
+.CalendarMonth__caption{
+  font-size: 15px;
+}
+
+.DayPickerNavigation--horizontal {
+  .DayPickerNavigation__prev--default, 
+  .DayPickerNavigation__next--default {
+    padding: 3px 5px;
+    svg{
+      height: 17px;
+      width: 14px;
+    }
+  }
+}
+.DayPicker__week-header{
+  top: 54px;
+}
+.DateRangePicker{
+  &__picker{
+    top: 45px;
+  }
+
+  .DateInput {
+      width: auto;
+      padding: 4px;
+      &__display-text{
+          font: 14px Helvetica Neue,Helvetica,Arial,sans-serif;
+      }
+      &__input{
+        cursor: pointer;
+      }
+  }
+}
+.DateInput--with-caret{
+  &::after,&::before{
+    top:34px !important;
+  }
+}

@@ -1,0 +1,72 @@
+$block = ".autocomplete";
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+$fadeInAnimation = .2s fadein; // @stylint ignore
+
+{$block} {
+  position: relative;
+  outline: 0;
+
+  &__pill-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__suggestions {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 2px 0 0;
+    margin-top: -21px;
+    padding: 0;
+    min-width: 100%;
+    max-height: 300px;
+    border: 1px solid $c-white-darker;
+    background-color: $c-white-base;
+    box-shadow: 0 2px 10px $c-gray-dark;
+    list-style-type: none;
+    font-size: $font-size-medium;
+    animation: $fadeInAnimation;
+  }
+
+  &__suggestion {
+    padding: 10px;
+
+    &--active {
+      background-color: $c-gray-lighter;
+    }
+  }
+
+  &__input {
+    flex: 1 0 50px;
+
+    input {
+      flex: 1;
+      min-width: 100px;
+    }
+
+    &--hidden {
+      input {
+        width: 1px;
+        opacity: 0;
+
+        &:hover {
+          cursor: default;
+        }
+      }
+    }
+  }
+}

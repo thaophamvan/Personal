@@ -1,0 +1,7 @@
+.pagination(v-show="isShow")
+  .pagination__hint-text {{hintText}}
+  .pagination__page-section.d-flex.justify-content-center
+    .pagination__btn.pagination__prev-btn(@click="handleClickPrevPage")
+    .pagination__pages.d-flex
+      .pagination__btn(v-for="pageNum of pageList", @click="handleClickPageBtn(pageNum)", :class="{active: pageNum === currentPage, disable: !pageNum}") {{pageNum || '...'}}
+    .pagination__btn.pagination__next-btn(@click="handleClickNextPage")

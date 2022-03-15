@@ -1,0 +1,110 @@
+$block: '.maintenance';
+$block-modal: '.maintenance-modal';
+
+#{$block} {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include md {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    h1 {
+        color: $maintenance-page_title-color;
+        margin-top: 20px;
+
+        @include md {
+            margin-top: 40px;
+            font-size: 40px;
+        }
+    }
+
+    .row {
+        margin-top: 10px;
+    }
+}
+
+#{$block-modal} {
+    color: #666;
+
+    img {
+        width: 200px;
+    }
+
+    .modal {
+        &-inner {
+            @include md {
+                width: 620px;
+            }
+        }
+
+        &__header {
+            background-color: $white;
+            justify-content: flex-end;
+            border-bottom-width: 0;
+        }
+
+        &__body {
+            padding: 10px 20px 20px;
+            @include md {
+                padding: 14px 40px 40px;
+            }
+        }
+
+        &__footer {
+            padding: 0 30px 30px;
+            @include md {
+                padding: 0 40px 30px;
+            }
+        }
+    }
+
+    .icon__cross {
+        &::before,
+        &::after {
+            background-color: #ADB9C3;
+        }
+    }
+
+    .btn {
+        border-color: #111111;
+        background-color: $white;
+    }
+
+    .btn--primary {
+        background-color: #111111;
+        color: $white;
+        margin-bottom: 10px;
+
+        @include md {
+            margin-bottom: 0;
+        }
+    }
+
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: #111111;
+        
+        @include md {
+            margin-top: 30px;
+            font-size: 40px;
+        }
+    }
+
+    &_countdown {
+        color: #111111;
+        font-weight: 600;
+        font-size: 24px;
+
+        @include md {
+            font-size: 40px;
+        }
+
+        &-time {
+            margin-top: 10px;
+        }
+    }
+}

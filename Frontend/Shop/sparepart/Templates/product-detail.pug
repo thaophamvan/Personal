@@ -1,0 +1,18 @@
+extends default
+include ../../core/mixinComponents/mixinComponents
+block critical-css
+	//inject-css critical-css/product-detail-page.css
+block content
+	.product-detail.container
+		a(href="#").none-underline.text--uppercase.lh-14.fs-12.fw-600.d-flex.align-item-center.py-15.pt-md-20.pb-md-15.product-detail-back-btn
+			span.icon-dropdown.rotate-90.d-block
+			span back to (previous)
+		.row
+			.col-md-7
+				include ../../core/components/ProductDetailSlider/product-detail-slider
+			.col-md-5
+				include ../features/ProductDetailInfo/product-detail-Info
+	include ../features/ProductDetailSpecification/product-detail-specification
+	include ../features/ProductDetailCompatibility/product-detail-compatibility
+	include ../../core/components/YouMayAlsoLike/you-may-also-like
+	+AddToWishlistModal

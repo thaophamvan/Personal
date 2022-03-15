@@ -1,0 +1,18 @@
+.general-search-result(data-component="generalSearchResult")
+  .general-search-result__container
+    a(href="/").general-search-result__back-btn.text--uppercase
+        span.icon-dropdown
+        span BACK TO HOME
+    .general-search-result__info.row.align-items-center
+      .col-12.general-search-result__info-text.text--center Result for&nbsp;
+        span.general-search-result__info-keyword.text--bold "seal nut laundry"
+    .general-search-result__product-filter-list.row
+      .col-md-9.col-12.offset-md-3
+        .general-search-result__product-sorting.d-flex.justify-content-between.align-items-center
+          include ../../../core/components/ProductSorting/product-sorting.pug
+          span.general-search-result__products-found.js_general-search-result__products-found 1000 items
+      .general-search-result__product-filtering.col-md-3
+        include ../../../core/components/ProductFiltering/product-filtering.pug
+      .general-search-result__product-listing.col-md-9
+        include ../ProductList/product-list.pug
+        

@@ -1,0 +1,22 @@
+$block: ".error-container";
+
+#{$block} {
+  padding: 160px 15px;
+  text-align: center;
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    @include fs(20);
+    line-height: 26px;
+    color: $not-found-page-text-color;
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    color: $primary;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}

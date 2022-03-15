@@ -1,0 +1,327 @@
+{
+  "page1": {
+    "topics": [
+      {
+        "img": "images/category/Ovens.png",
+        "displayName": "Ovens",
+        "name": "ovens",
+        "currentPage": 1,
+        "hasMore": true,
+        "data": [
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          }
+        ]
+      },
+      {
+        "img": "images/category/Cooker.png",
+        "displayName": "Cooker hood",
+        "name": "cooker_hood",
+        "currentPage": 1,
+        "hasMore": true,
+        "data": [
+          {
+            "question": "Cooker hood",
+            "answer": "Cooker hood"
+          },
+          {
+            "question": "Cooker hood",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "Cooker hood",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "Cooker hood",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "Cooker hood",
+            "answer": "PayPal, Visa, Mastercard."
+          }
+        ]
+      },
+      {
+        "img": "images/category/Fridges.png",
+        "displayName": "Fridges",
+        "name": "fridges",
+        "currentPage": 1,
+        "hasMore": false,
+        "data": [
+          {
+            "question": "Fridges",
+            "answer": "Fridges"
+          },
+          {
+            "question": "Fridges",
+            "answer": "Fridges"
+          }
+        ]
+      },
+      {
+        "img": "images/category/Fridges.png",
+        "displayName": "Irons",
+        "name": "irons",
+        "currentPage": 1,
+        "hasMore": false,
+        "data": [
+          {
+            "question": "Irons",
+            "answer": "Irons"
+          },
+          {
+            "question": "Irons",
+            "answer": "Irons"
+          }
+        ]
+      },
+      {
+        "img": "images/category/Fridges.png",
+        "displayName": "Fridges",
+        "name": "fridges",
+        "currentPage": 1,
+        "hasMore": false,
+        "data": [
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          }
+        ]
+      },
+      {
+        "img": "images/category/Fridges.png",
+        "displayName": "Fridges",
+        "name": "fridges",
+        "currentPage": 1,
+        "hasMore": false,
+        "data": [
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          }
+        ]
+      },
+      {
+        "img": "images/category/Fridges.png",
+        "displayName": "Fridges",
+        "name": "fridges",
+        "currentPage": 1,
+        "hasMore": false,
+        "data": [
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          }
+        ]
+      },
+      {
+        "img": "images/category/Fridges.png",
+        "displayName": "Fridges",
+        "name": "fridges",
+        "currentPage": 1,
+        "hasMore": false,
+        "data": [
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          }
+        ]
+      },
+      {
+        "img": "images/category/Fridges.png",
+        "displayName": "Fridges",
+        "name": "fridges",
+        "currentPage": 1,
+        "hasMore": false,
+        "data": [
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          }
+        ]
+      },
+      {
+        "img": "images/category/Fridges.png",
+        "displayName": "Fridges",
+        "name": "fridges",
+        "currentPage": 1,
+        "hasMore": false,
+        "data": [
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          },
+          {
+            "question": "1. What payment methods can we use at the checkout?",
+            "answer": "PayPal, Visa, Mastercard."
+          }
+        ]
+      },
+      {
+        "img": "images/category/Fridges.png",
+        "displayName": "Top Questions",
+        "name": "top_question",
+        "currentPage": 1,
+        "hasMore": false,
+        "data": [
+          {
+            "question": "top_question",
+            "answer": "top_question"
+          },
+          {
+            "question": "top_question",
+            "answer": "top_question"
+          },
+          {
+            "question": "top_question",
+            "answer": "top_question"
+          }
+        ]
+      }
+    ],
+    "selected": "ovens"
+  },
+  "page2": {
+    "currentPage": 2,
+    "hasMore": false,
+    "data": [
+      {
+        "question": "page2",
+        "answer": "page2"
+      },
+      {
+        "question": "page2",
+        "answer": "page2"
+      },
+      {
+        "question": "page2",
+        "answer": "page2"
+      },
+      {
+        "question": "page2",
+        "answer": "page2"
+      }
+    ]
+  },
+  "searchResult": {
+    "searchResultText": "Results 1-5 of 10 for “PNC”",
+    "data": [
+      {
+        "question": "1. What payment methods can we use at the checkout?",
+        "answer": "answer"
+      }
+    ],
+    "currentPage": 1,
+    "hasMore": true
+  }
+}

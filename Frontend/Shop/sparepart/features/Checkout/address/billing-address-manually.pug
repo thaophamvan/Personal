@@ -1,0 +1,29 @@
+include ../../../../core/mixinComponents/mixinComponents
+.form-group
+    label.form-label Unit
+        span.text-muted  (optional)
+    input.form-control.js_billing-unit(id="billing_subpremise" name='Model.BillingAddress.Unit' maxlength="10")
+.form-group
+    label.form-label.required Street number
+    <input id="billing_street_number" class="form-control" name='Model.BillingAddress.StreetNumber' required data-valueMissing="Street number is required" maxlength="15" pattern=".*\S.*" data-patternMismatch="Street number is required">
+.form-group
+    label.form-label.required Street name
+    <input id="billing_route" class="form-control" name='Model.BillingAddress.StreetName' required data-valueMissing="Street name is required" maxlength="45" pattern=".*\S.*" data-patternMismatch="Street name is required">
+.form-group
+    label.form-label.required Suburb
+    <input id="billing_locality" class="form-control js_billing_sublocality_level_1" name='Model.BillingAddress.Suburb' maxlength="40" required data-valueMissing="Suburb is required" pattern=".*\S.*" data-patternMismatch="Suburb is required">
+.row
+    .col-md-6
+        .form-group
+            label.form-label.required State
+            +SelectBox('billingStateCmb', [], 'checkout-page__selectbox js_billing-state__select','Select state')
+            input#billing_administrative_area_level_1(type="hidden" name="Model.BillingAddress.State" required data-valueMissing="State is required")
+    .col-md-6
+        .form-group
+            label.form-label.required Postcode
+            <input id="billing_postal_code" class="form-control" name='Model.BillingAddress.PostalCode' required data-valueMissing="Postcode is required" pattern=".*\S.*" data-patternMismatch="Postcode is required">
+.form-group
+    label.form-label Country
+    input.form-control.readonly(name="Model.BillingAddress.CountryName" readonly v-bind:value="countryName")
+
+

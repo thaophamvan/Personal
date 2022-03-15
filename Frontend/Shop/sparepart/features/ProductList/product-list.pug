@@ -1,0 +1,51 @@
+include ../../../core/mixinComponents/mixinComponents
+
+.product-list.js_product-list-container
+  .js_product-list-wrapper
+    ul.row.js_product-list
+      li.product-list__product.col-md-4.col-6
+        .product-list__product-wrapper
+          .product-list__product-body
+            .product-list__product-media
+              .product-list__sale-off-label 20% OFF
+              a.product-list__product-img-link.btn-link(href="#")
+                +ImgLazy("product-list__product-img",'/dist/images/block-img-bg.svg', 'ProductImageAltText')
+            .product-list__product-info
+              //- .product-list__product-brand AEG
+              a.btn-link.product-list__product-name.cursor-pointer ProductName
+              a.btn-link.product-list__product-code.cursor-pointer.text--uppercase ProductCode
+              span.product-list__information Cookware, Promotions, Infinite Chef Collection
+              span.product-list__product-stock-avaiable.product-list__in-stock In-stock (100)
+            .product-list__product-price
+              span.product-list__product-final-price $1000
+              del.product-list__product-sale-price $1200
+          .product-list__product-footer
+            .row
+              .col-12.product-list__add-to-cart
+                +BtnAddToCart('1')
+              .col-12.product-list__add-to-wishlist
+                +BtnAddToWishlist('productCode')
+      li.product-list__product.col-md-4.col-6
+        .product-list__product-wrapper
+          .product-list__product-body
+            .product-list__product-media
+              .product-list__sale-off-label 20% OFF
+              a.product-list__product-img-link.btn-link(href="#")
+                +ImgLazy("product-list__product-img",'/dist/images/block-img-bg.svg', 'ProductImageAltText')
+            .product-list__product-info
+              //- .product-list__product-brand AEG
+              a.btn-link.product-list__product-name.cursor-pointer ProductName
+              a.btn-link.product-list__product-code.cursor-pointer.text--uppercase ProductCode
+              span.product-list__information Cookware, Promotions, Infinite Chef Collection
+              span.product-list__product-stock-avaiable.product-list__in-stock In-stock (100)
+            .product-list__product-price
+              span.product-list__product-final-price $1000
+              del.product-list__product-sale-price $1200
+          .product-list__product-footer
+            .row
+              .col-12.product-list__add-to-cart
+                +BtnAddToCart('1')
+              .col-12.product-list__add-to-wishlist
+                +BtnAddToWishlist('productCode')
+    .js_pagination(data-current-page="1" data-total-page="20" data-hint-text="You’ve viewed 20 of 1,000 parts")
+  +AddToWishlistModal

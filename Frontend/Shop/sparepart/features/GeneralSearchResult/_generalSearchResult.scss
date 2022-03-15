@@ -1,0 +1,124 @@
+$block: ".general-search-result";
+
+#{$block} {
+  &__container {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  &__back-btn {
+    color: $primary;
+    @include fs(12);
+    line-height: 14px;
+    display: inline-flex;
+    align-items: center;
+    padding-top: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    .icon-dropdown {
+      transform: rotate(90deg);
+      @include fs(6);
+      font-weight: 900;
+      margin-right: 5px;
+    }
+
+    @include md {
+      padding-top: 20px;
+    }
+  }
+
+  &__filter-list {
+    padding: 40px 0;
+  }
+
+  &__info {
+    padding: 30px 0;
+  }
+
+  &__info-text {
+    @include fs(20);
+    height: 26px;
+    line-height: 26px;
+    color: $primary;
+    text-align: left;
+  }
+
+  &__product-sorting {
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+  }
+
+  .product-sorting__sort-by {
+    padding-top: 0;
+  }
+
+  &__suggestion {
+    &-block {
+      margin-bottom: 30px;
+    }
+
+    &-title {
+      height: 24px;
+      line-height: 24px;
+      color: $gray;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &:before {
+        content: "•";
+        left: 0;
+        position: absolute;
+      }
+
+      line-height: 24px;
+      color: $gray;
+      letter-spacing: -0.4px;
+    }
+
+    &-search-form {
+      margin: 0 -15px;
+      padding: 30px 15px;
+      background-color: $primary-lighten-3;
+    }
+
+    &-search-find-pnc-btn {
+      @include fs(14);
+    }
+  }
+
+  @include md {
+    &__container {
+      width: 85%;
+    }
+
+    &__info {
+      padding: 70px 0;
+    }
+
+    &__info-text {
+      @include fs(26);
+      text-align: center;
+    }
+
+    &__product-listing {
+      padding-left: 30px;
+    }
+
+    &__product-filtering {
+      margin-top: -93px;
+    }
+
+    &__suggestion {
+      margin: 0 auto 70px;
+    }
+
+    &__suggestion-search-form {
+      margin: unset;
+    }
+  }
+}

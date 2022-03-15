@@ -1,0 +1,92 @@
+.card {
+  display: block;
+  position: relative;
+  background-color: $card-bg;
+  box-shadow: $card-box-shadow; 
+  margin-bottom: $spacer * 5;
+  border: $card-border;
+  @include md {
+    border-radius: $card-border-radius-md;
+  }
+  &__header {
+    display: block;
+    width: 100%;
+    background-color: $card__header-bg;
+    color: $card__header-color;
+    padding: 10px 15px;
+    height: $card__header-height;
+    line-height: 26px;
+    margin-bottom: 0;
+    font-family: $head-title-font-family;
+    text-transform: $head-title-text-transform;
+    font-size: $cart-head-title-font-size;
+    line-height: $cart-head-title-line-height;
+    font-weight: $cart-head-title-font-weight;
+    @include md {
+      padding: 10px 30px;
+      border-radius: $card-border-radius-md;
+    }
+    .btn-link{
+      font-family: $card__header-btn-link-font-family;
+      text-transform: $card__header-btn-link-text-transform;
+    }
+    &-disabled {
+      opacity: $card__header-disabled-opacity;
+      background-color: $card__header-disabled-background-color;
+    }
+    &-wrapper {
+      background-color: $card__header-wraper-bg $primary;
+      display: flex;
+    }
+    &--order-summary {
+      font-size: $h5-font-sise;
+      height: 54px;
+      padding: 15px 30px;
+      background-color: $card__header--order-summary-bg;
+      &:after {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-bottom: 2px solid $card__header--order-summary-after-border;
+        border-right: 2px solid $card__header--order-summary-after-border;
+        transform: rotate(45deg);
+        @include md {
+          content: none;
+        }
+      }
+      &.is-active:after {
+        transform: rotate(-135deg);
+        top: 25px;
+      }
+    }
+  }
+  &__number {
+    display: inline-block;
+    width: $card__number-width;
+    height: $card__number-height;
+    background-color: $card__number-bg;
+    border-radius: 50%;
+    font-weight: 600;
+    color: $card__number-color;
+    text-align: center;
+    font-size: $font-size-base;
+    margin-right: 15px;
+    line-height: $card__number-line-height;
+  }
+  &__body {
+    border: $card__body-border;
+    padding: 15px;
+    @include md {
+      padding: 30px;
+    }
+    .btn {
+      font-size: 1rem;
+    }
+  }
+  .container {
+    padding: 0;
+  }
+}

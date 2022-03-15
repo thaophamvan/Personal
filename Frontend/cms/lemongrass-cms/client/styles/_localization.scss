@@ -1,0 +1,9 @@
+.unlocalization-filter {
+    &:after {
+        content: 'clear';
+        margin-left: 5px;
+        font-weight: 700;
+        vertical-align: top;
+        @extend .material-icons;
+    }
+}

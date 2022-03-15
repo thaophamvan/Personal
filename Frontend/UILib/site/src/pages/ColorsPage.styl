@@ -1,0 +1,101 @@
+$block = ".colors-page"
+
+{$block} {
+  &__palette {
+    display: inline-block;
+    box-shadow: 1px 3px 6px 0 rgba(0, 0, 0, .2);
+    width: 180px;
+    border-radius: 5px;
+    margin:10px 20px 10px 0;
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &__data {
+      padding: 10px;
+    }
+    &__title {
+      font-weight: bold;
+      margin: 0;
+    }
+    &__code {
+      font-family: monospace;
+      margin: 0;
+    }
+    &__display {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      width: 180px;
+      height: 180px;
+      &--white {
+        background-color: $c-white-base;
+      }
+      &--white-darker {
+        background-color: $c-white-darker;
+      }
+      &--gray-lightest {
+        background-color: $c-gray-lightest;
+      }
+      &--gray-lighter {
+        background-color: $c-gray-lighter;
+      }
+      &--gray-light {
+        background-color: $c-gray-light;
+      }
+      &--gray-base {
+        background-color: $c-gray-base;
+      }
+      &--gray-dark {
+        background-color: $c-gray-dark;
+      }
+      &--gray-darker {
+        background-color: $c-gray-darker;
+      }
+      &--gray-darkest {
+        background-color: $c-gray-darkest;
+      }
+      &--brand-lightest {
+        background-color: $c-brand-lightest;
+      }
+      &--brand-light {
+        background-color: $c-brand-light;
+      }
+      &--brand-base {
+        background-color: $c-brand-base;
+      }
+      &--active-lightest {
+        background-color: $c-active-lightest;
+      }
+      &--active-base {
+        background-color: $c-active-base;
+      }
+      &--success-lightest {
+        background-color: $c-success-lightest;
+      }
+      &--success-base {
+        background-color: $c-success-base;
+      }
+      &--warning-lightest {
+        background-color: $c-warning-lightest;
+      }
+      &--warning-base {
+        background-color: $c-warning-base;
+      }
+      &--danger-lightest {
+        background-color: $c-danger-lightest;
+      }
+      &--danger-base {
+        background-color: $c-danger-base;
+      }
+      &--attention-base {
+        background-color: $c-attention-base;
+      }
+      &--link-light {
+        background-color: $c-link-light;
+      }
+      &--link-base {
+        background-color: $c-link-base;
+      }
+    }
+  }
+}

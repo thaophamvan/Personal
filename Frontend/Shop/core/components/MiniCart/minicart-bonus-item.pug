@@ -1,0 +1,17 @@
+include ../../mixinComponents/mixinComponents
+
+.minicart__item.js_mini-cart__product-item(data-shipmentid='{{shipmentId}}')
+  .minicart__item-info.d-flex.justify-content-between.align-items-center
+    .d-flex.align-items-center
+      .pos-relative
+        .minicart__bonus-tag BONUS
+        +ImgLazy('', '{{img}}').minicart__item-img
+      .minicart__item-text
+        span.minicart__item-title {{title}}
+        span.minicart__item-code {{partNumber}}
+        .minicart__item-plus
+        include ./quantity_control.pug
+        +quantityControl('{{shipmentId}}','{{code}}','{{quantity}}')
+    .minicart__item-aside
+      span.minicart__item-price.discount {{discountedPriceDisplay}}
+      span.minicart__item-price.real {{subTotalDisplay}}

@@ -1,0 +1,1 @@
+MSBuild "Basics.sln" /target:Build

@@ -1,0 +1,45 @@
+.promotion-banner {
+  background: $promotion-banner-bg;
+  padding: 15px;
+  text-align: center;
+  color: $promotion-banner-color;
+  font-weight: 600;
+  @include fs(14);
+  line-height: 20px;
+  a {
+    font-weight: 500;
+  }
+
+  &__conditions-input {
+    border: none;
+    background-color: $promotion-banner__conditions-input-bg;
+    @include fs(14);
+    line-height: 20px;
+    outline: none;
+  }
+
+  @include md {
+    display: flex;
+    justify-content: center;
+    @include fs(16);
+    line-height: 24px;
+    &__conditions-input {
+      margin-left: 20px;
+    }
+  }
+}
+.hero-banner__wrapper {
+  width: $hero-banner__wrapper-width;
+  max-width: 90%;
+  padding: 10px;
+  background: $hero-banner__wrapper-bg;
+  opacity: $hero-banner__wrapper-opacity;
+  @include md {
+    width: $hero-banner__wrapper-width-md;
+    max-width: unset;
+    position: absolute;
+    left: 0;
+    bottom: 55px;
+    padding: 15px 20px;
+  }
+}

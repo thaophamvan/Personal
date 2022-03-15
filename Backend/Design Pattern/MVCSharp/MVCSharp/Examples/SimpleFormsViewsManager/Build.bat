@@ -1,0 +1,1 @@
+MSBuild SimpleFormsViewsManager.sln /target:Build

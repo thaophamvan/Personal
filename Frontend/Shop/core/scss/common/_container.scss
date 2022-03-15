@@ -1,0 +1,16 @@
+.container {
+  max-width: 100%;
+  padding: 0 rem($container-padding-x / 1px);
+  margin: 0 auto;
+  @include md {
+    max-width: map-get($container-max-width, "md") + ($container-padding-x * 2);
+  }
+}
+
+.md-container {
+  @include md {
+    max-width: map-get($container-max-width, "md") + ($container-padding-x * 2);
+    padding: 0 rem($container-padding-x / 1px);
+    margin: 0 auto;
+  }
+}

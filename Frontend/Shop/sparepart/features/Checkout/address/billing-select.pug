@@ -1,0 +1,16 @@
+.select-form
+    .form-group
+        label.form-label Primary Number
+        <input class='form-control' type='text' name="Model.BillingAddress.DaytimePhoneNumber" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$" data-patternMismatch="Invalid Number"/>
+    .form-group
+        label.form-label Email address 
+            span.text-muted (Your order confirmation will be sent to this email)
+            //|
+            //span.text-muted  (Your order confirmation will be sent to this email)
+            //- input.form-control(name='shippingAddress.Email' placeholder='your order confirmation will be sent to this email')
+            <input class="form-control" required  type="email" name="Model.BillingAddress.Email" data-valueMissing="Email is required" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$" data-patternMismatch="Invalid Email" />
+    .form-group
+        label.form-label Delivery instruction
+            span.text-muted  (optional)
+        textarea.form-control
+    hr.divider

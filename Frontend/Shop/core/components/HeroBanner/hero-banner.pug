@@ -1,0 +1,30 @@
+include ../Layout/Include/mixins.pug
+.hero-banner-standard.js_hero-banner-standard
+	.hero-banner-slider.glide(data-component="heroBannerSlider")
+		.glide__track(data-glide-el="track")
+			.glide__slides
+				.hero-banner.theme.theme--brown.glide__slide
+					.hero-banner__img
+						+PictureLazy("img","images/hero-banner/banner-image-mobile-375x350.jpg","images/hero-banner/banner-home-krk.jpg")
+						//- picture
+						//- 	source(srcset="images/hero-banner/banner-image-mobile-375x350.jpg" media="(max-width: 991px)")
+						//- 	source(srcset="images/hero-banner/banner-home-krk.jpg")
+						//- 	img(src="images/hero-banner/banner-home-krk.jpg")
+					.hero-banner__content
+						.hero-banner__wrapper
+							h1.hero-banner__heading Swedish thinking. Better living.
+							p During 2018, demand for core appliances increased in Europe driven by strong growth in Eastern Europe. Demand in the U.S. declined. 
+							button.btn.btn--primary View more
+				.hero-banner.theme.theme--brown.glide__slide
+					.hero-banner__img
+						+PictureLazy("img","images/hero-banner/banner-image-mobile-375x350-2.jpg","images/hero-banner/banner-home-krk-2.jpg")
+					.hero-banner__content
+						.hero-banner__wrapper
+							.h1-title.hero-banner__heading Swedish thinking. Better living.
+							p During 2018, demand for core appliances increased in Europe driven by strong growth in Eastern Europe. Demand in the U.S. declined. 
+							button.btn.btn--primary View more
+		.glide__bullets(data-glide-el="controls[nav]")
+			button.glide__bullet(data-glide-dir="=0" aria-hidden="true")
+			button.glide__bullet(data-glide-dir="=1" aria-hidden="true") 
+
+

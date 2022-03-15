@@ -1,0 +1,31 @@
+.icon-menu--more{
+    top: 5px;
+    font-size: 24px;
+    position: relative;
+}
+
+.bn_top-nav__item--more{
+    position: relative;
+}
+
+.bn_top-nav__menu-more{
+    position: absolute;
+    z-index: 1;
+    padding: 0;
+    list-style-type: none;
+    background: #e9e9e9;
+
+    & .bn_top-nav__item {
+        display: block;
+        padding: 5px 0;
+        border-bottom: 1px solid #fff;
+
+        &:first-child{
+            border-top: 1px solid #fff;
+        }
+    }
+
+    & .bn_top-nav__link{
+        font-size: 1rem;
+    }
+}

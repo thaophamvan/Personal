@@ -1,0 +1,40 @@
+.notification-publish {
+    background-color: #337ab7;
+    position: relative;
+    color: #fff;
+    display: inline-block;
+    padding-left: 18px;
+    animation: slide1 1s ease-in-out;
+    margin-right: 10px;
+    animation-iteration-count: 10;
+
+    &__arrow {
+        border-style: dashed;
+        border-color: transparent;
+        border-width: 0.20em;
+        display: -moz-inline-box;
+        display: inline-block;
+        /* Use font-size to control the size of the arrow. */
+        font-size: 75px;
+        height: 0;
+        line-height: 0;
+        vertical-align: middle;
+        width: 0;
+        background-color:#fff; /* change background color acc to bg color */ 
+        border-left-width: 0.2em;
+        border-left-style: solid;
+        border-left-color: #337ab7;
+        left:0.25em;
+    }
+}
+
+@keyframes slide1 {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(10px, 0);
+    }
+  }

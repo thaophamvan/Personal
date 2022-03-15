@@ -1,0 +1,33 @@
+$block = ".icons-page";
+
+{$block} {
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+.icon-card {
+  flex: 1 0 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+
+  &__title {
+    padding: 3px;
+    background: $c-white-base;
+    border-radius: 3px;
+    font-weight: normal;
+    transition: background .5s;
+
+    &:hover {
+      background: $c-gray-lighter;
+    }
+  }
+
+  &__icon {
+    flex: 0 0 auto;
+    margin-right: 10px;
+  }
+}

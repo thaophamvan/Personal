@@ -1,0 +1,144 @@
+$block: ".simple-notification";
+#{$block} {
+  position: relative;
+  color: $white;
+  padding: 0 10px 0 5px;
+  /* Default */
+  border-radius: 2px;
+  min-width: 320px;
+  opacity: 1;
+  border: 1px solid transparent;
+  /* Animation on creation */
+  // animation: slideIn 500ms forwards;
+  // animation-delay: 100ms;
+  // justify-content: space-between;
+  @include md {
+    padding: 0 15px;
+  }
+  @include fs(14);
+  &-container {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 9999;
+    // min-height: 45px;
+    @include md {
+      width: auto;
+    }
+    &.active {
+      #{$block} {
+        &-wrapper {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  &-wrapper {
+    /* Animation on creation */
+    transition: 0.4s;
+    transform: translateX(1000%);
+  }
+  .icon-success,
+  .icon-error {
+    position: absolute;
+    top: 14px;
+    left: 5px;
+    display: inline-block;
+  }
+
+  &__text-content {
+    padding: 10px 15px 10px 25px;
+    display: inline-block;
+
+    a {
+      color: $white;
+    }
+
+    @include md {
+      padding: 10px 15px 10px 15px;
+      white-space: nowrap;
+      margin: 0 10px 0 0;
+    }
+  }
+  .icon__cross {
+    position: absolute;
+    display: inline-block;
+    right: 10px;
+    top: 14px;
+    &:before,
+    &:after {
+      background-color: $white;
+      height: 12px;
+      width: 2px;
+    }
+  }
+  &.warning {
+    background-color: $warning;
+    border-color: #faebcc;
+  }
+  &.good {
+    background-color: $secondary-highlight;
+    border-color: $secondary-highlight;
+  }
+  &.danger {
+    background-color: $alert;
+    border-color: $alert;
+  }
+  &.fade-out {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+  }
+}
+
+/* CSS Animations */
+
+@keyframes slideIn {
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@-moz-keyframes slideIn {
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@-o-keyframes slideIn {
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@keyframes pushDown {
+  100% {
+    max-height: 200px;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  100% {
+    max-height: 200px;
+  }
+}
+
+@-moz-keyframes slideIn {
+  100% {
+    max-height: 200px;
+  }
+}
+
+@-o-keyframes slideIn {
+  100% {
+    max-height: 200px;
+  }
+}

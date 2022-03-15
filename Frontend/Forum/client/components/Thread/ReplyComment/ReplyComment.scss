@@ -1,0 +1,134 @@
+.bn_thread-comment{
+    &__reply{
+        font-weight: bold;
+        margin: 10px 0 0px 14px;
+        color: #000;
+        position: relative;
+        padding-right: 20px;
+        display: inline-block;
+
+        &--collapse{
+            &::after { 
+                content: " ";
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;  
+                border-top: 5px solid #000;
+                position: absolute;
+                right: 0;
+                top: 6px;
+            }
+        }
+        &--expand{
+            &::after { 
+                content: " ";
+                border-bottom: 5px solid transparent;
+                border-top: 5px solid transparent;
+                border-left: 5px solid #000;
+                position: absolute;
+                right: 6px;
+                top: 3px;
+            }
+        }
+    }
+}
+
+.bn_thread__reply-comment{
+    &__box{
+        margin: 15px 18px 5px 40px;
+        border-left: 1px solid #4ab8f7;
+        padding: 0 0 0 20px;
+    }
+    &__item{
+        margin: 30px 0;
+        align-items: center;
+        &:first-child { 
+            margin-top: 15px;
+        }
+
+        .bn_thread-comment-menu{
+            margin-right: 10px
+        }
+    }
+    &__wrapper{
+        flex: 1;
+        -ms-flex: 1 0 auto;
+    }
+
+    &__input-box{
+        
+    }
+
+    &__textbox{        
+        border: 1px solid #c9c9c9;
+        background: #FFF;
+        flex: 1;
+        -ms-flex: 1 0 auto;
+        flex-direction: column;
+        margin-right: 10px;
+        border-radius: 15px;
+        padding: 0 10px;
+
+        &-wrapper{
+            flex: 1;
+            -ms-flex: 1 0 auto;
+        }
+
+        &-input{
+            background: transparent;
+            border: 0;                       
+            outline: none;
+            padding: 4px 0 0 0;
+            line-height: 1.5;
+            flex: 1;
+
+            .ie &{
+                white-space:pre-wrap;
+                word-break: break-all;
+                word-wrap: break-word;
+                display: inline-block;
+            }
+
+            &.placeholder {
+                &:before {
+                    content: attr(placeholder);
+                    color: #b5b5b5; 
+                    font-style: italic;
+                    position: absolute;
+                }
+            }
+
+            p:first-child { 
+                padding:0;
+                margin: 0;
+            }
+        }
+    }
+    &__upload-link{
+        overflow: hidden;
+        background: url(/images/add_image_icon.svg) no-repeat;
+        height: 22px;
+        width: 23px;
+        margin: 2px 3px 0 0;
+    }
+    &__upload-button{
+        opacity: 0;
+        z-index: 2;
+    }
+    
+    &__send-button{
+        border: 1px solid #c9c9c9;
+        background: #FFF;
+        color: #494949;
+        padding: 7px 10px;
+        margin: 0;
+        font-weight: bold;
+        max-height: 30px;
+        outline: none;
+        cursor: pointer;
+        border-radius: 15px;
+
+        .firefox &{
+            padding: 5px 10px 7px;
+        }
+    }
+}

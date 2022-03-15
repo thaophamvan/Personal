@@ -1,0 +1,26 @@
+.notification__container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: $c-white-base;
+  border: 1px solid $c-gray-base;
+
+  .notification__content {
+    flex: 1 1 auto;
+    justify-content center;
+    align-items: center;
+    padding: 10px;
+
+    &.centered-column {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &.fixed-height {
+    height: 250px;
+  }
+}

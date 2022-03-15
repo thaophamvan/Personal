@@ -1,0 +1,63 @@
+.transition.top-nav__menu-body.w-100.d-md-flex.h-100(ref="menuBody" v-if="menuData && isRenderMenu")
+  .top-nav__menu-main-content.top-nav__first-menu
+    form.form-group.top-nav__menu-search-form.pos-relative.d-md-none(@submit="submitSearch")
+      input.form-control.js_top-nav__search-input-mobile(placeholder="Search spare parts, accessories" v-model="searchText")
+      button.icon-search.fs-20.pos-absolute.btn.btn-link.btn-link--primary(aria-label="Search")
+    .top-nav__menu-group-item.px-30.py-20.d-md-none(v-if="menuData.IsAuthenticated")
+      a(href="#" @click="showMenu('myAccount', $refs.menuBody, 'level1')").top-nav__menu-group-item-label.fs-16.lh-24.fw-600.btn.btn-link--primary.d-flex.align-items-center.justify-content-between My Account
+        span.icon-rightarrow.rotate-180
+    .top-nav__menu-group-item.px-30.py-20.d-md-none(v-else)
+      a(rel="IDS_Login nofollow" :href="menuData.LoginLink").top-nav__menu-group-item-label.fs-16.lh-24.fw-600.btn.btn-link--primary.d-flex.align-items-center Sign In
+        span.icon-log-in.ml-10
+    .top-nav__menu-group-item.px-30.py-20.pa-md-0
+      p.fs-14.lh-20.second-text.mb-20.d-md-none Browse by appliances
+      .top-nav__menu-group-item-label(v-for="menuItem of menuData.MainMenuItems" :key="menuItem.Id" :class="{active: isActiveMenu(menuItem.Id, 'level1')}")
+        a(role="button" @click="showMenu(menuItem.Id, $refs.menuBody, 'level1')").fs-16.lh-24.fs-md-20.lh-md-28.fw-600.btn.btn-link--primary.d-flex.align-items-center.justify-content-between {{menuItem.Title}}
+          span.icon-rightarrow.rotate-180
+    .top-nav__menu-group-item.px-30.py-20.d-md-none
+      a(:href="menuData.PromotionPage").top-nav__menu-group-item-label.fs-16.lh-24.fw-600.btn.btn-link--primary Promotions
+    .top-nav__menu-group-item.px-30.py-20.d-md-none
+      a(:href="menuData.FaqPage").top-nav__menu-group-item-label.fs-16.lh-24.fw-600.btn.btn-link--primary FAQs
+    .top-nav__menu-group-item.px-30.py-20.d-md-none
+      a(:href="menuData.WishlistPage").top-nav__menu-group-item-label.fs-16.lh-24.fw-600.btn.btn-link--primary Favourites
+    .top-nav__menu-group-item.px-30.py-20.d-md-none
+      a(:href="menuData.testPage").top-nav__menu-group-item-label.fs-16.lh-24.fw-600.btn.btn-link--primary {{menuData.testPageTitle}}
+    .top-nav__menu-group-item.px-30.py-20.d-md-none(v-if="menuData.IsAuthenticated")
+      a(:href="menuData.LogoutLink").top-nav__menu-group-item-label.fs-16.lh-24.fw-600.btn.btn-link--primary Sign Out
+    .top-nav__padding-bottom
+  .top-nav__menu-sub-content.top-nav__sencond-menu
+    .h-100(v-for="menuItem of menuData.MainMenuItems" :key="menuItem.Id" :class="isActiveMenu(menuItem.Id, 'level1') ? 'd-block': 'd-none'")
+      .transition.d-md-flex.h-100(:ref="concatString('menu-', menuItem.Id)")
+        .top-nav__menu-main-content.h-100
+          a(role="button" @click="closeMenu(menuItem.Id, $refs.menuBody, 'level1')").top-nav__menu-title.d-flex.align-items-center.px-30.fs-16.lh-24.btn.btn-link--primary.d-md-none
+            span.icon-rightarrow.mr-10
+            span {{menuItem.Title}}
+          .px-30.py-30.my-5.pa-md-0.my-md-0
+            .top-nav__menu-group-item-label(v-for="subMenuItem of menuItem.Columns" :class="{active: isActiveMenu(subMenuItem.Id, 'level2')}")
+              a(role="button" @click="showMenu(subMenuItem.Id, $refs[concatString('menu-', menuItem.Id)][0], 'level2')").fs-16.lh-24.fs-md-20.lh-md-28.fw-600.btn.btn-link--primary.d-flex.align-items-center.justify-content-between
+                span {{subMenuItem.Title}}
+                span.icon-rightarrow.fs-16.lh-24.fs-md-20.lh-md-20.rotate-180
+        .top-nav__menu-sub-content.top-nav__third-menu
+          div(v-for="subMenuItem of menuItem.Columns" :key="subMenuItem.Id" :class="isActiveMenu(subMenuItem.Id, 'level2') ? 'd-block': 'd-none'")
+            a(role="button" @click="closeMenu(subMenuItem.Id, $refs[concatString('menu-', menuItem.Id)][0], 'level2')").top-nav__menu-title.d-flex.align-items-center.px-30.fs-16.lh-24.btn.btn-link--primary.d-md-none
+              span.icon-rightarrow.mr-10
+              span {{subMenuItem.Title}}
+            .pt-35.px-30.px-md-0.pt-md-0.pb-md-30
+              a(:href="subMenuItem.Url").btn.btn-link--primary.fs-20.lh-26.fs-md-26.lh-md-34 {{subMenuItem.Title}}
+            .line--small.mb-30.d-none.d-md-block
+            .px-30.py-30.py-5.pa-md-0.d-md-flex
+              .mb-20.mb-md-0.flex-grow-0.flex-shrink-0.flex-auto.top-nav__collapse-section(v-for="item of subMenuItem.Items" :key="item.Id" )
+                a.btn.btn-link--primary.fs-16.lh-24.fs-md-20.lh-md-28.d-md-inline-flex.d-flex.align-items-center.justify-content-between.top-nav__sub-menu-collapse(v-bind:class="{ 'pointer-md-none' : isDisablePointer(item.Url)  }" role="button" ref="collapse" data-component="popup" :data-target="concatString('top-nav__collapse', menuItem.Id, subMenuItem.Id, item.Id)" data-type="collapse") 
+                  a.btn.btn-link--primary.fs-16.lh-24.fs-md-20.lh-md-28(:href="item.Url") {{item.GroupName}}
+                  span.icon-rightarrow.d-md-none
+                .collapse(:id="concatString('top-nav__collapse', menuItem.Id, subMenuItem.Id, item.Id)")
+                  .py-15.py-md-0.column-md-fill-auto.column-md-gap-60(:class="getClassColumnCount(menuItem.ColumnCount, item.GroupItem.length)" :style="{height: setHeight(menuItem.ColumnCount, 40)}")
+                    a(:href="groupItem.Url" v-for="groupItem of item.GroupItem").btn.btn-link--primary.fs-16.lh-40.fw-500.d-block.lh-md-36 {{groupItem.Title}}
+    div(:class="isActiveMenu('myAccount', 'level1') ? 'd-block': 'd-none'")
+      a(role="btn" @click="closeMenu('myAccount', $refs.menuBody, 'level1')").top-nav__menu-title.d-flex.align-items-center.px-30.fs-16.lh-24.btn.btn-link--primary
+        span.icon-rightarrow.mr-10
+        |Main Menu
+      .px-30.pt-30.mt-5
+        a(:href="menuData.MyAccountPageDetailLink").fs-16.lh-24.fw-500.btn.btn-link--primary.mb-30.d-block Account Details
+        a(:href="menuData.MyAccountPageOrderLink").fs-16.lh-24.fw-500.btn.btn-link--primary.mb-30.d-block Order History
+        a(:href="menuData.WishlistPage").fs-16.lh-24.fw-500.btn.btn-link--primary.d-block Favourites

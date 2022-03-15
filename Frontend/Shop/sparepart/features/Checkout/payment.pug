@@ -1,0 +1,92 @@
+.card.checkout-payment
+    h2.card__header
+        span.card__number 2
+        | Payment
+    .card__body
+        .form
+            h5.form__header.mb-2 Pay by
+            .row.payments
+                .col-6
+                    .payments__option.selected
+                        p Credit Card
+                .col-6
+                    .payments__option
+                        p PayPal
+            p.text--large.mb-0 We accept
+            ul.payment-method-list.row.mb-3
+                li.payment-method-list__item
+                    span.icon-visa
+                        span.path1
+                        span.path2
+                        span.path3
+                        span.path4
+                        span.path5
+                        span.path6
+                li.payment-method-list__item
+                    span.icon-master-card
+                        span.path1
+                        span.path2
+                        span.path3
+                        span.path4
+                        span.path5
+                        span.path6
+                        span.path7
+                        span.path8
+                        span.path9
+                        span.path10
+                        span.path11
+                        span.path12
+                        span.patt13
+                        span.path14
+                        span.path15
+                        span.path16
+                        span.path17
+                        span.path18
+                        span.path19
+                        span.path20
+                        span.path21
+                li.payment-method-list__item
+                    span.icon-paypal
+                        span.path1
+                        span.path2
+                        span.path3
+                        span.path4
+                        span.path5
+                        span.path6
+                        span.path7
+                li.payment-method-list__item
+                    span.icon-american-express
+                        span.path1
+                        span.path2
+                        span.path3
+                li.payment-method-list__item
+                    span.icon-JCB-dark
+                        span.path1
+                        span.path2
+                        span.path3
+                        span.path4
+
+
+            .form-group
+                label.form-label Name on card
+                input.form-control
+            .form-group
+                label.form-label Card Number
+                input(type="number" placeholder="For example: 1234 5678 9123 4567").form-control
+            .row
+                .col-md-6
+                    .form-group
+                        label.form-label Expiry Date (MM/YY)
+                        select.form-control
+                .col-md-6
+                    .form-group
+                        label.form-label CVC
+                        input.form-control
+            label.checkbox.text--primary.mb-3
+                input.checkbox__input.js_delivery__radio-input(type="checkbox")
+                span.checkbox__checkmark
+                    i.fa.fa-check
+                | I have read and aggree to the
+                |
+                a.link.text--bold(href="#")  Term & Conditions
+            button.btn.btn--primary.expanded.disabled.mb-1 Complete Purchase

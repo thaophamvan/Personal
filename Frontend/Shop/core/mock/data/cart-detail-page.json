@@ -1,0 +1,55 @@
+{
+  "cartPage": "/cart/",
+  "checkoutPage": "/login?returnUrl=/checkout/",
+  "total": 2116.95,
+  "totalDisplay": "$2,116.95",
+  "subTotal": 2102.0,
+  "subTotalDisplay": "$2,102.00",
+  "shippingTotal": 14.95,
+  "shippingTotalDisplay": "$14.95",
+  "discountAmount": 0.0,
+  "discountAmountDisplay": "$0.00",
+  "currencyPrefix": "$",
+  "currencySuffix": null,
+  "isAuthenticated": false,
+  "shippingInformation": "Standard Australia-wide delivery for $14.95",
+  "itemCount": 2.0,
+  "products": [
+    {
+      "img": "https://d3oxsuk3vvw3rq.cloudfront.net/assets/images/000/033/257/mini/cross.png?1420687888",
+      "title": "BUTTON IGNITION BLACK",
+      "code": "AU_0022040935_PART_SKU",
+      "productCode": "AU_0022040935_PART",
+      "quantity": 2.0,
+      "SubTotal": {
+        "_amount": 2102.0,
+        "_currency": "AUD"
+      },
+      "subTotal": 2102.0,
+      "subTotalDisplay": "$2,102.00",
+      "link": null,
+      "shipmentId": -1,
+      "extendPrice": 2102.0,
+      "extendPriceDisplay": "$2,102.00",
+      "discountedPrice": 2102.0,
+      "discountedPriceDisplay": "$2,102.00",
+      "isDiscounted": false,
+      "placedPrice": 1051.0,
+      "placedPriceDisplay": "$1,051.00"
+    }
+  ],
+  "shippingMethods": [
+    {
+      "id": "c29fd7ec-221e-4a1a-b9ab-9d6b897069b8",
+      "displayName": "Standard Delivery*",
+      "name": "Standard Delivery",
+      "description": "Australia-wide",
+      "rate": 14.950000000,
+      "rateDisplay": "$14.95",
+      "availableDays": null,
+      "selected": true
+    }
+  ],
+  "promotionMessages": [],
+  "helpMessage": "For help with your order call&nbsp;<a title=\"1300 666 019\" href=\"tel:1300666019\">1300 666 019</a>"
+}

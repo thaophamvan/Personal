@@ -1,0 +1,35 @@
+.bn_jump-to-top{
+    &__container{
+        text-align: center;
+        padding: 20px 0 30px 0;;
+    }
+    &__button{
+        max-width: 80%;
+        width: 290px;
+        color: #222;
+        background: #FFF;
+        border: 1px solid #222;
+        border-radius: 4px;
+        text-align: center;        
+        display: inline-block;
+        padding: 5px 0;
+
+        &:hover{
+            text-decoration: none;
+            background: #69abf5;
+            color: #222;
+            border-color: #69abf5;
+        }
+
+        .material-icons{
+            vertical-align: middle;
+        }
+    }
+
+    &__label{
+        vertical-align: middle;
+        margin: 3px 0 0 5px;
+        display: inline-block;
+        font-size: 17px;
+    }
+}

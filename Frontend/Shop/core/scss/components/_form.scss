@@ -1,0 +1,207 @@
+.qty-control {
+  height: 30px;
+  width: 100px;
+  max-width: 100px;
+  border-radius: 3px;
+  display: flex;
+  border: 1px solid $qty-control_border;
+  .increase,
+  .decrease {
+    font-weight: 600;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    font-size: 1rem;
+    padding: 6px 0;
+    line-height: 14px;
+    cursor: pointer;
+    background: none;
+    font-family: Arial;
+  }
+  .decrease {
+    span {
+      width: 100%;
+      display: block;
+      border-right: 1px solid $qty-control_decrease-border;
+      color: $qty-control_input-color;
+    }
+  }
+  .increase {
+    span {
+      width: 100%;
+      display: block;
+      border-left: 1px solid $qty-control_increase-border;
+      color: $qty-control_input-color;
+    }
+  }
+  input {
+    color: $qty-control_input-color;
+    font-weight: 600;
+    width: 40px;
+    font-size: $font-size-base;
+    border: none;
+    outline: none;
+    text-align: center;
+    background-color: transparent;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}
+
+.form-group {
+  .form-label {
+    display: inline-block;
+    font-size: $font-size-base;
+    margin-bottom: 6px;
+    color: $form-group_label-color;
+    text-transform: $form-group_label-text-transform;
+  }
+  .form-control {
+    display: block;
+    box-sizing: border-box;
+    outline: 0;
+    height: 48px;
+    font-size: 1rem;
+    color: $form-group_control-color;
+    border: 1px solid $form-group_control-border;
+    padding: ($spacer + $spacer/5) $spacer * 2;
+    line-height: 24px;
+    word-break: normal;
+    @include property('border-radius', $form-group_control-border-radius);
+    @include property('background-color', $form-group_control-bg);
+    &::placeholder {
+      color: $form-group_control-placeholder;
+    }
+    &:hover {
+      border: 1px solid $form-group_control-hover;
+    }
+    &:focus {
+      border: 1px solid $form-group_control-focus;
+    }
+    &.borderless {
+      border-color: $form-group_control-borderless;
+    }
+
+    &:disabled {
+      pointer-events: none;
+    }
+
+    &.error {
+      border-color: $form-group_control--error;
+    }
+  }
+  &.error {
+    .form-control {
+      border-color: $form-group_control--error;
+    }
+    .error-message {
+      color: $form-group_control--error;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    .selectbox__btn {
+      border-color: $form-group_control--error;
+    }
+  }
+  &.success {
+    .form-control {
+      border-color: $form-group_control-success;
+    }
+  }
+}
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.custom-select {
+  position: relative;
+  .form-control {
+    appearance: none;
+    display: none; /*hide original SELECT element:*/
+  }
+  option {
+    border: 0 1px 0 1px solid $custom-select_option-border;
+    background-color: $white;
+  }
+  .select-selected {
+    width: 100%;
+    &:after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: solid $custom-select_selected-border;
+      transform: rotate(45deg);
+      border-width: 0 2px 2px 0;
+      display: block;
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+  }
+  &.select-arrow-active:after {
+    border-color: transparent transparent $custom-select_-arrow-active transparent;
+    top: 7px;
+  }
+  .select-items div,
+  .select-selected {
+    color: $custom-select_selected-color;
+    cursor: pointer;
+    user-select: none;
+    height: 42px;
+    padding: 10px 20px;
+  }
+
+  /*style items (options):*/
+  .select-items {
+    position: absolute;
+    background-color: $custom-select_items-bg;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border: 1px solid $custom-select_items-border;
+    border-radius: 2px;
+    max-height: 235px;
+    overflow: auto;
+  }
+
+  /*hide the items when the select box is closed:*/
+  .select-hide {
+    display: none;
+  }
+
+  .select-items div:hover,
+  .same-as-selected {
+    background-color: rgba(223, 231, 234, 0.6);
+  }
+}
+
+.form {
+  &__header {
+    color: $form__header-color;
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+    .form-control,
+    .select-selected {
+      width: 100%;
+    }
+  }
+  .form-link {
+    font-weight: 600;
+    text-decoration: $form-link_underline;
+  }
+}
+.required:after {
+  content: " *";
+  color: $form-required-color;
+}
+/*point the arrow upwards when the select box is open (active):*/
+
+/*style the items (options), including the selected item:*/

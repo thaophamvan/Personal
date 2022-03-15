@@ -1,0 +1,35 @@
+.category(data-component="category")
+  .category__product-wrapper
+    .category__product
+      a(href="/").category__back-btn.text--uppercase
+        span.icon-dropdown
+        span Back To home
+      .category__product-detail
+        .category__product-media
+          img(data-src="/dist/images/block-img-bg.svg" alt="").lazyImg.category__product-img
+        .category__product-info
+          .category__product-pnc-model
+            .category__product-pnc PNC: 94418490600
+            .category__product-separate &nbsp;/&nbsp;
+            .category__product-model Model: KOFDP40X
+          .category__product-name 68L Built-In Oven with Easy To Clean Enamel Coating
+  #category-tabs
+    nav.js_tabs__nav
+      ul.js_tabs__tabs-container.category__tabs-container
+        li.js_tabs__tab.category__tab.active All Parts
+        li.js_tabs__tab.category__tab(data-tab='part') Parts by Diagram
+      .js_tabs__marker.category__tab-marker
+    ul.js_tabs__content-container
+      li.js_tabs__content.active
+        .category__container
+          .category__product-filter-list.row
+            .col-md-9.col-12.offset-md-3
+              .product-sorting.d-flex.justify-content-between.align-items-center
+                include ../../../core/components/ProductSorting/product-sorting.pug
+                span.category__products-found.js_category__products-found 53 products found
+            .category__product-filtering.col-md-3
+              include ../../../core/components/ProductFiltering/product-filtering.pug
+            .category__product-listing.col-md-9
+              include ../ProductList/product-list.pug
+      li.js_tabs__content
+        include ../PartsByDiagram/parts-by-diagram.pug

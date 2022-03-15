@@ -1,0 +1,112 @@
+@import "../variables";
+
+// theme color
+$primary: #011e41;
+$primary-lighten-1: #7a8a9c;
+$primary-lighten-2: #adb9c3;
+$primary-lighten-3: #dfe7ea;
+$primary-lighten-4: #fafcfc;
+
+$bg-primary-lighten-3: $primary-lighten-3;
+$divider-color: $primary-lighten-3;
+
+$disabled-color: #b8bbbd;
+$disabled-bgr: $pistachio-gray;
+
+$not-found-page-text-color: #353536;
+$odhd-box-bg: #f4f7f8;
+$product-list-product: #e0dfdf;
+
+$font-family-Sans: "test Sans", "Microsoft YaHei", "SimSun", "Heiti SC", Roboto, Arial, sans-serif;
+$font-family-regular: "test Sans Regular", "Microsoft YaHei", "SimSun", "Heiti SC", Roboto, Arial, sans-serif;
+$font-family-SemiBold: "test Sans SemiBold", "Microsoft YaHei", "SimSun", "Heiti SC", Roboto, Arial, sans-serif;
+$search-block-fs: 1rem;
+
+@import "default";
+
+//specific style go here
+
+// top header
+
+//hi user
+
+//top nav
+
+//hero banner
+
+//category list
+
+//block img text
+
+//card img bg
+
+//footer
+
+//mini cart
+
+//button
+
+//qty
+
+//form
+
+//select
+
+//selectbox
+
+//category
+
+//product filter
+$product-filter__filter-title-color: $primary;
+
+//product list
+
+//pagination
+
+//product detail
+$product-detail-info__title-color: $primary;
+$product-detail-info__promotion-price: $gray;
+$product-detail-comp__card-text-color: $primary;
+
+//my account
+
+//tabs
+
+//order history
+
+//h1, h2, h3, h4, h5, h6
+
+//shopping cart
+$shopping-cart__product-header-color: $primary;
+$shopping-cart__product-name-color: $primary;
+
+//checkout
+$checkout-page_head-title-font-size-md: rem(54);
+
+//step
+
+//card
+
+//icomoon color
+
+//subpage
+
+//line
+
+//checkbox, radio
+
+//back btn
+
+//collout
+
+//you-may-also-like
+
+//wishlist
+
+//wishlist detail
+
+//faqs
+$faqs__content-title-font-size: rem(32);
+$faqs__content-title-font-weight: $font-weight-regular;
+$faqs__content-item-question-font-weight: $font-weight-regular;
+$faqs_odh-need-help__card-title-text-transform: none;

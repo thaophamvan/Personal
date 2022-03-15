@@ -1,0 +1,57 @@
+.block-img-content {
+  position: relative;
+    video.player {
+        display: none;
+        @include md {
+            display: block;
+        }
+    }
+
+  > img {
+    min-height: 313px;
+  }
+
+  .img-text-small {
+    position: relative;
+    margin-top: 20px;
+    @include md {
+      margin-top: 0;
+    }
+
+    .block-img-content {
+      &__content {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+      }
+      &__title {
+        color: $white;
+        padding: 0 20px;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      opacity: 0.8;
+    }
+  }
+
+  .play-video-button {
+    width: 106px;
+    height: 106px;
+    border: 4px solid $white;
+    &:after {
+      border-top: 22px solid transparent;
+      border-bottom: 22px solid transparent;
+      border-left: 36px solid $white;
+      border-radius: 4px;
+    }
+  }
+}

@@ -1,0 +1,330 @@
+@import "../variables";
+
+// theme color
+$primary: #0066a4;
+$primary-lighten-1: #62b7e6;
+$primary-lighten-2: #96ca3d;
+$primary-lighten-3: #b2d7f2;
+$primary-lighten-4: #ebebeb;
+
+$bg-primary-lighten-3: #e9f6fc;
+$divider-color: $primary-lighten-3;
+
+$light-gray: #999999;
+$gray: #000;
+$text-color: #000;
+
+$disabled-color: #b8bbbd;
+$disabled-bgr: $pistachio-gray;
+
+$not-found-page-text-color: #353536;
+$odhd-box-bg: #f4f7f8;
+$product-list-product: #e0dfdf;
+
+$font-family-Sans: "Avenir", "Microsoft YaHei", "SimSun", "Heiti SC", Roboto, Arial, sans-serif;
+$font-family-regular: "Avenir", "Microsoft YaHei", "SimSun", "Heiti SC", Roboto, Arial, sans-serif;
+$font-family-SemiBold: "Avenir", "Microsoft YaHei", "SimSun", "Heiti SC", Roboto, Arial, sans-serif;
+$search-block-fs: 1rem;
+
+@import "default";
+
+$blue: $primary;
+//specific style go here
+//This theme defination has too much specific style, should consider to move it to logic scss rather than place it here
+.shopping-cart,
+.order-summary {
+	.primary,
+	.md-primary {
+		color: black;
+	}
+	.divider {
+		background-color: $disabled-color;
+	}
+	.shopping-cart__product-name {
+		color: $primary-lighten-2;
+	}
+}
+.checkout-page__address-md-selector {
+	@media (min-width: 992px) {
+		border-right: 1px solid $disabled-color;
+	}
+}
+.order-summary__item-detail h4 {
+	text-transform: uppercase;
+}
+
+.hero-banner__tab-col .form-group .selected .selectbox__btn {
+	color: black;
+}
+.home-page {
+	.hero-banner__img:after {
+		opacity: 0.3;
+		background: black;
+		position: absolute;
+		z-index: 1;
+		content: "";
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	.card-img-bg__description{
+		color: #000000;
+	}
+}
+
+.top-nav{
+	&__logo > div{
+		max-width: calc(100% - 140px);
+		@media (min-width: 992px) {
+			max-width: 100%;
+		}
+	}
+	&__third-menu a:hover,
+	&__third-menu .collapse .btn:hover {
+		color: $primary-lighten-2;
+	}
+	&__first-menu .top-nav__menu-group-item-label > a {
+		font-weight: 600;
+	} 
+	&__first-menu {
+		border-right: 1px solid $primary-lighten-4;
+	}
+	&__basket-icon{
+		margin-left: 10px;
+	}
+}
+
+.top-nav__third-menu a:hover,
+.top-nav__third-menu .collapse .btn:hover {
+	color: $primary-lighten-2;
+}
+.faqs,
+.category {
+	.hero-banner__wrapper {
+		background: $primary;
+	}
+}
+.hero-banner-standard .bg-primary-lighten-3{
+	background-color: #e9f6fc;
+}
+button:hover {
+	opacity: 1;
+}
+// top header
+.category-list .glide__slides {
+    justify-content: center;
+}
+//hi user
+
+//top nav
+$top-nav__category-title-btn-font-weight: 600;
+$top-nav__category-title-btn-hover: $primary-lighten-2;
+$top-nav__category-title-font-size: 1.125rem;
+$top-nav__search-area-bottom-boder: $disabled-color;
+$top-nav__search-input-placeholder-color: $light-gray;
+$top-nav__menu-group-item-label-font-weight: 500;
+$top-nav__first-menu-bg: $white;
+$top-nav__second-menu-border: $primary-lighten-4;
+$top-nav__second-menu-active-bg: $primary-lighten-4;
+$top-nav__third-menu-color: black;
+$top-nav__need-help-search: $primary-lighten-4;
+
+//hero banner
+$hero-banner__heading-line-height-md: 70px;
+$hero-banner__wrapper-bg: transparent;
+$hero-banner__tab-color: $light-gray;
+$hero-banner__tab-form-label-color: black;
+$hero-banner__tab-col-form-group-selectbox__btn-color: #999999;
+$hero-banner-listing__optional-color: $primary-lighten-2;
+$hero-banner-listing__img-background-color: #e9f6fc;
+$hero-banner-listing__heading-font-weight: 600;
+$hero-banner__wrapper-bg: transparent;
+
+//category list
+$category-list__item-color: $primary-lighten-2;
+$category-list__title-color: #9c9c9c;
+$category-list__title-font-size-md: 2.4rem;
+$category-list__item-font-weight: 600;
+$category-list__title-font-weight: 500;
+//block img text
+
+//card img bg
+$card-img-bg__link-btn-bg-color: #b7d660;
+$card-img-bg__link-btn-border: 1px solid #b7d660;
+$card-img-bg__img-text__link-border: $primary-lighten-2;
+$card-img-bg__description-color: $light-gray;
+$theme-none_btn-bg: $primary-lighten-2;
+$card-img-bg__link-btn-hover-bg-color: #6b9128;
+$card-img-bg__link-btn-hover-opacity: 1;
+$card-img-bg__link-btn-hover-border: 1px solid #6b9128;
+
+//footer
+$footer__menu-item-name-font-size: 1.125rem;
+$footer__menu-item-name-text-transform: inherit;
+$footer__copyright-bg: $white;
+
+$footer__subscribe-form-wrapper-content: #0066a4;
+$footer__subscribe-form-wrapper-bg:#ededed;
+$footer__subscribe-form-wrapper-button-bg:#0066a4;
+$footer__subscribe-form-wrapper-button-content:#fff;
+$footer__subscribe-form-wrapper-errormsg:red;
+
+//mini cart
+
+//button
+$btn_radius: 3px;
+$btn-font-size: 1rem;
+$btn_primary-bg: #b7d660;
+$btn_primary-hover-bg: #6b9128;
+$btn--outline-primary-border: $primary-lighten-2;
+$btn--outline-primary-color: $primary-lighten-2;
+$btn--outline-primary-hover-bg: $white;
+$btn--outline-primary-hover-border: $primary-lighten-2;
+$btn--outline-primary-hover-color: $primary-lighten-2;
+$btn--outline-primary-icon-color: $primary-lighten-2;
+$btn--outline-primary-icon-hover-color: $primary-lighten-2;
+
+//qty
+$qty-control_border: $disabled-color;
+$qty-control_decrease-border: $disabled-color;
+$qty-control_increase-border: $disabled-color;
+$qty-control_input-color: black;
+
+//form
+$form-group_control-bg: $white;
+$form-group_control-placeholder: $light-gray;
+
+//select
+
+//selectbox
+$selectbox__btn-border: $disabled-color;
+$selectbox__btn-border-radius: 3px;
+$selectbox__btn-color: black;
+$selectbox__btn-primary-color: $light-gray;
+$selectbox__btn-after-border: $primary;
+
+//category
+
+//product filter
+$product-filter_title-text-tranform: uppercase;
+$product-filter__filter-title-color: $primary;
+$product-filter__applied-filters-title-color: $primary-lighten-2;
+$product-filter__filter-title-font-size: 1.5rem;
+$product-filter__filter-title-text-tranform: inherit;
+$product-filter__filter-item-text-transform: inherit;
+
+//product list
+$product-list__product-name-font-weight: 500;
+$product-list__product-name-text-transform: uppercase;
+$product-list__product-code-color: $primary-lighten-2;
+$product-list_product-stock-avaiable-color: $primary;
+
+//pagination
+$pagination__btn-border: transparent;
+$pagination__btn-color: $light-gray;
+$pagination__btn-active-border: transparent;
+$pagination__prev-border: $primary-lighten-2;
+
+//product detail
+$product-detail-info__title-text-tranform: uppercase;
+$product-detail-info__title-color: $primary;
+$product-detail-info__product-brand-color: $primary-lighten-2;
+$product-detail-info__stock-color: $primary;
+$product-detail-spec_bg: #f2f2f2;
+$product-detail-comp__card-text-color: $light-gray;
+$product-detail-comp__card-bg: #f2f2f2;
+$product-detail-comp__card-border-color: #f2f2f2;
+$product-detail-info__stock-text-transform: uppercase;
+$product-detail-info__stock-font-weight: 500;
+
+//my account
+
+//tabs
+
+//order history
+$odh-need-help-bg: $white;
+$faqs_odh-need-help__card-title-font-size: rem(14);
+
+//h1, h2, h3, h4, h5, h6
+$heading-font-weight: 500;
+
+//shopping cart
+$shopping-cart__hint-box-bg: #efefef;
+$shopping-cart__hint-box-text-decoration-color: $primary;
+$shopping-cart__delivery-border: $light-gray;
+$shopping-cart_promotion-code-bg: #f2f2f2;
+$shopping-cart__continue-shopping-btn-color: $primary-lighten-2;
+$shopping-cart__product-header-font-weight: 600;
+$shopping-cart__product-header-color: $primary;
+$shopping-cart__product-name-color: $primary;
+$shopping-cart__product-number-color: $gray;
+$shopping-cart__hint-box-icon-info-color: $gray;
+$shopping-cart__remove-btn-color: $primary-lighten-2;
+$shopping-cart__product-name-text-tranform: uppercase;
+
+//checkout
+$checkout-page__address-warning-before-bg: $disabled-color;
+$checkout-page__address-warning-bg: #f2f2f2;
+$checkout-page__address-info-border: $disabled-color;
+$payment-frame-padding: 0px;
+
+//step
+$step__number-color: $light-gray;
+$step__name-color: $light-gray;
+$step__number-line-height: 19px;
+
+//card
+
+//icomoon color
+$icomoon-color: $primary;
+$icomoon-hover-color: $primary-lighten-2;
+
+//rightarrow-color
+$rightarrow-color: $primary;
+$rightarrow-hover-color: $primary;
+$rightarrow-second-menu-color: $rightarrow-color;
+$rightarrow-second-menu-hover-color: $rightarrow-hover-color;
+
+//subpage
+
+//line
+$line-border: #efefef;
+
+//checkbox, radio
+$checkbox-radio__checkmark-border: black;
+$checkbox__checkmark-color: black;
+$radio__checkmark-bg-color: black;
+
+//back btn
+
+//collout
+$callout-primary-color: $gray;
+
+//you-may-also-like
+$you-may-also-like__title-color: #9c9c9c;
+$you-may-also-like__title-font-weight: 500;
+
+//wishlist
+
+//wishlist detail
+
+//faqs
+$faqs__a-color: $primary-lighten-2;
+$faqs__a-text-decoration-color: $primary-lighten-2;
+$faqs__content-title-font-weight: 500;
+$faq__topic-title-font-size-md: rem(40);
+$faq__topic-title-font-weight: 500;
+$faq__topic-title-color: #9c9c9c;
+$faqs__content-title-font-size: rem(28);
+$faqs_odh-need-help_bg-color: $white;
+$faqs_odh-need-help_title-text-transform: inherit;
+$faqs_odh-need-help__card-title-text-transform: none;
+$faqs__main-content-area-bg-color: transparent;
+$faqs_odh-need-help__card-title-color: $primary-lighten-2;
+$faqs_odh-need-help__card-title-text-transform: inherit;
+$faqs_odh-need-help_title-font-weight: 500;
+$faqs__category-title-color: $primary-lighten-2;
+$faqs__main-content-area-bg-color: $primary-lighten-4;
+$faqs_odh-need-help_title-color: #9c9c9c;
+$add-to-wishlist__btn-text-hover-color: $primary-lighten-1;
