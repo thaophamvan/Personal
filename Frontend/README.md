@@ -1,2 +1,3 @@
 # Front-end for back-end architecture
-![image](https://user-images.githubusercontent.com/11343747/158349709-9b65e7df-665b-498b-8916-a333e7d27e6d.png)
+
+![T12022 - Architecture](https://user-images.githubusercontent.com/11343747/158383704-1328b68b-4fc9-4bf8-9e87-15c084f8df58.png)
